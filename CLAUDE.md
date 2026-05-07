@@ -23,11 +23,19 @@ There is no build, compile, or install step. Edit the file and refresh the brows
 
 ## Git Workflow
 
+Commit and push to GitHub regularly throughout every session — after each meaningful change, not just at the end. This ensures no work is ever lost and the history stays meaningful.
+
+- Commit after completing each logical unit of work (new feature, bug fix, style change).
+- Never batch unrelated changes into a single commit.
+- Always push immediately after committing.
+
 ```bash
 git add <file>
 git commit -m "feat: description"
 git push
 ```
+
+Commit message prefixes: `feat:` new feature, `fix:` bug fix, `style:` visual/CSS change, `refactor:` restructure without behaviour change, `chore:` tooling/config.
 
 ## Current Projects
 
