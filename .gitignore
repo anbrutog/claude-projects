@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude Code
+.claude/
+
+# Local directories (not part of this project)
+dump/
+argus/
+firsttest/
+fullstack-seo-video Tutorial/
+report/
