@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ComplyLoft — The compliance management platform that helps businesses track regulations, manage policies, and prove compliance. Trusted by 2,400+ teams.">
+  <title>ComplyLoft — Compliance Management Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --color-primary:     #0F172A;
+      --color-accent:      #0369A1;
+      --color-accent-hover:#0284C7;
+      --color-accent-light:#EFF6FF;
+      --color-background:  #F8FAFC;
+      --color-surface:     #FFFFFF;
+      --color-border:      #E2E8F0;
+      --color-muted:       #E8ECF1;
+      --color-text:        #020617;
+      --color-text-mid:    #475569;
+      --color-text-light:  #94A3B8;
+      --color-success:     #059669;
+      --color-danger:      #DC2626;
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --space-1: 4px;   --space-2: 8px;   --space-3: 12px;
+      --space-4: 16px;  --space-6: 24px;  --space-8: 32px;
+      --space-10: 40px; --space-12: 48px; --space-16: 64px;
+      --space-20: 80px; --space-24: 96px;
+      --radius-sm: 6px;  --radius-md: 10px;
+      --radius-lg: 16px; --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.10);
+      --transition: 180ms ease;
+      --transition-slow: 300ms ease;
+    }
+
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-surface);
+    }
+
+    /* ── Skip link ── */
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--color-accent); color: #fff;
+      padding: 8px 16px; border-radius: var(--radius-sm);
+      font-size: 14px; font-weight: 600; z-index: 9999; text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* ── Container ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 1024px) { .container { padding: 0 48px; } }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font); font-weight: 600; font-size: 15px;
+      padding: 12px 24px; border-radius: var(--radius-sm);
+      border: none; cursor: pointer;
+      transition: all var(--transition); text-decoration: none; line-height: 1;
+    }
+    .btn-primary { background: var(--color-accent); color: #fff; }
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(3,105,161,0.25);
+    }
+    .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .btn-outline { background: transparent; color: var(--color-accent); border: 1.5px solid var(--color-accent); }
+    .btn-outline:hover { background: var(--color-accent-light); }
+    .btn-outline:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+    .btn-ghost:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .btn-lg { padding: 15px 32px; font-size: 16px; }
+    .btn-sm { padding: 9px 16px; font-size: 13px; }
+
+    /* ── Sticky Nav ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--color-primary);
+      font-weight: 800; font-size: 20px; letter-spacing: -0.3px;
+    }
+    .nav-logo-icon {
+      width: 32px; height: 32px;
+      background: var(--color-accent); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .nav-links {
+      display: none; align-items: center; gap: var(--space-8); list-style: none;
+    }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
+    .nav-links a {
+      text-decoration: none; font-size: 15px; font-weight: 500; color: var(--color-text-mid);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--color-accent); outline: none; }
+    .nav-ctas { display: flex; align-items: center; gap: var(--space-3); }
+    .nav-signin {
+      font-size: 14px; font-weight: 600; color: var(--color-text-mid);
+      text-decoration: none; padding: 8px 14px;
+      border-radius: var(--radius-sm); transition: color var(--transition);
+    }
+    .nav-signin:hover { color: var(--color-accent); }
+    .nav-signin:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+    .nav-mobile-btn {
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      color: var(--color-text-mid); padding: 8px; border-radius: var(--radius-sm);
+    }
+    .nav-mobile-btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+    @media (min-width: 768px) { .nav-mobile-btn { display: none; } }
+
+    /* Mobile nav drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed; inset: 0; z-index: 99; background: var(--color-surface);
+      padding: 80px 24px 24px; flex-direction: column; gap: 8px;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      display: block; padding: 14px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 17px; font-weight: 600; color: var(--color-text);
+      text-decoration: none;
+    }
+    .nav-drawer-ctas { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+
+    /* ── Section reset ── */
+    section { scroll-margin-top: 80px; }
+
+    /* ── Section typography ── */
+    .section-eyebrow {
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--color-accent); margin-bottom: 12px; display: inline-block;
+    }
+    .section-eyebrow-light { color: rgba(147,197,253,1); }
+    .section-title {
+      font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--color-primary);
+      margin-bottom: 16px; letter-spacing: -0.5px; line-height: 1.2;
+    }
+    .section-title-light { color: #fff; }
+    .section-desc { font-size: 17px; color: var(--color-text-mid); line-height: 1.7; max-width: 640px; }
+    .section-desc-light { color: rgba(203,213,225,1); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header .section-desc { margin: 0 auto; }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 32px;
+      transition: all 250ms ease; position: relative;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { border-color: var(--color-accent); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background: var(--color-accent);
+      transform: scaleX(0); transform-origin: left; transition: transform 250ms ease;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .card:hover::before { transform: scaleX(1); }
+    .card--featured {
+      border-color: var(--color-accent);
+      background: var(--color-accent-light);
+      box-shadow: var(--shadow-lg);
+    }
+    .card--featured::before { transform: scaleX(1); }
+    .card-body { flex: 1; }
+
+    .card-dark {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-lg); padding: 32px;
+      transition: all 250ms ease;
+    }
+    .card-dark:hover { background: rgba(255,255,255,0.08); border-color: rgba(3,105,161,0.5); transform: translateY(-3px); }
+
+    .badge-float {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--color-accent); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 4px 14px; border-radius: var(--radius-full); white-space: nowrap;
+    }
+
+    /* ── Grids ── */
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
+    @media (min-width: 1024px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    /* ── Reveal animation ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      background: var(--color-primary);
+      padding: var(--space-24) 0;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(3,105,161,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: var(--space-12); align-items: center;
+      position: relative; z-index: 1;
+    }
+    @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr; gap: var(--space-16); } }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(3,105,161,0.2); border: 1px solid rgba(3,105,161,0.4);
+      border-radius: var(--radius-full); padding: 6px 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+      color: rgba(147,197,253,1); margin-bottom: var(--space-6);
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(147,197,253,1);
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 60px); font-weight: 800; color: #fff;
+      letter-spacing: -1px; line-height: 1.1; margin-bottom: var(--space-6);
+    }
+    .hero h1 em {
+      font-style: normal; color: rgba(147,197,253,1);
+    }
+    .hero-desc {
+      font-size: 18px; color: rgba(203,213,225,1); line-height: 1.7;
+      max-width: 520px; margin-bottom: var(--space-10);
+    }
+    .hero-ctas { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-10); }
+    .hero-trust {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: rgba(148,163,184,1);
+    }
+    .hero-trust-avatars {
+      display: flex;
+    }
+    .hero-trust-avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(3,105,161,0.4); border: 2px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; color: rgba(147,197,253,1);
+    }
+    .hero-trust-avatar:not(:first-child) { margin-left: -8px; }
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+    }
+    @media (max-width: 1023px) { .hero-visual { display: none; } }
+    .hero-dashboard {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-lg); padding: 24px; width: 100%; max-width: 440px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+    }
+    .dash-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
+    }
+    .dash-header-left { font-size: 14px; font-weight: 700; color: #fff; }
+    .dash-header-right { font-size: 12px; color: rgba(148,163,184,1); }
+    .dash-progress-items { display: flex; flex-direction: column; gap: 14px; }
+    .dash-item { }
+    .dash-item-top {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 6px;
+    }
+    .dash-item-label { font-size: 13px; font-weight: 500; color: rgba(203,213,225,1); }
+    .dash-item-pct { font-size: 12px; font-weight: 700; color: rgba(147,197,253,1); }
+    .dash-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; }
+    .dash-bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-accent), rgba(147,197,253,0.8)); border-radius: 99px; }
+    .dash-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; }
+    .dash-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .dash-stat { text-align: center; }
+    .dash-stat-val { font-size: 20px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .dash-stat-label { font-size: 11px; color: rgba(148,163,184,1); }
+    .dash-alerts { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .dash-alert {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md); padding: 10px 12px;
+    }
+    .dash-alert-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .dash-alert-dot--green { background: #10b981; }
+    .dash-alert-dot--yellow { background: #f59e0b; }
+    .dash-alert-dot--blue { background: rgba(147,197,253,1); }
+    .dash-alert-text { font-size: 12px; color: rgba(203,213,225,1); }
+    .dash-alert-time { font-size: 11px; color: rgba(148,163,184,1); margin-left: auto; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════
+       LOGOS
+    ══════════════════════════════════════ */
+    .logos { background: var(--color-surface); padding: var(--space-12) 0; border-bottom: 1px solid var(--color-border); }
+    .logos-label { text-align: center; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-text-light); margin-bottom: var(--space-8); }
+    .logos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: center;
+    }
+    @media (min-width: 768px) { .logos-grid { grid-template-columns: repeat(6, 1fr); } }
+    .logo-item {
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px; filter: grayscale(1); opacity: 0.45;
+      transition: filter var(--transition), opacity var(--transition);
+    }
+    .logo-item:hover { filter: grayscale(0); opacity: 0.9; }
+    .logo-text {
+      font-size: 16px; font-weight: 800; color: var(--color-text-mid); letter-spacing: -0.3px;
+      user-select: none;
+    }
+
+    /* ══════════════════════════════════════
+       STATS
+    ══════════════════════════════════════ */
+    .stats { background: var(--color-primary); padding: var(--space-20) 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: #fff;
+      letter-spacing: -1px; line-height: 1; margin-bottom: 8px;
+    }
+    .stat-number span { color: rgba(147,197,253,1); }
+    .stat-label { font-size: 15px; color: rgba(148,163,184,1); font-weight: 500; }
+
+    /* ══════════════════════════════════════
+       PROBLEM → SOLUTION
+    ══════════════════════════════════════ */
+    .problem-solution { background: var(--color-surface); padding: var(--space-24) 0; }
+    .ps-eyebrow { color: var(--color-accent); }
+    .ps-problem-box {
+      background: var(--color-background); border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 32px;
+    }
+    .ps-problem-title { font-size: 20px; font-weight: 700; color: var(--color-primary); margin-bottom: 24px; line-height: 1.3; }
+    .ps-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .ps-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 15px; color: var(--color-text-mid); line-height: 1.5;
+    }
+    .ps-list-icon { flex-shrink: 0; margin-top: 1px; }
+    .ps-icon-x { color: var(--color-danger); }
+    .ps-icon-check { color: var(--color-success); }
+    .ps-solution-box {
+      background: var(--color-primary); border-radius: var(--radius-lg); padding: 32px;
+    }
+    .ps-solution-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 24px; line-height: 1.3; }
+    .ps-solution-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .ps-solution-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 15px; color: rgba(203,213,225,1); line-height: 1.5;
+    }
+    .ps-bridge {
+      display: flex; align-items: center; justify-content: center;
+      margin: 32px 0;
+    }
+    @media (min-width: 1024px) { .ps-bridge { margin: 0; flex-direction: column; } }
+    .ps-bridge-arrow {
+      width: 48px; height: 48px; background: var(--color-accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(3,105,161,0.35);
+    }
+    .ps-layout {
+      display: grid; grid-template-columns: 1fr; gap: 0; align-items: stretch;
+    }
+    @media (min-width: 1024px) { .ps-layout { grid-template-columns: 1fr 48px 1fr; gap: 0; align-items: center; } }
+
+    /* ══════════════════════════════════════
+       PRODUCTS
+    ══════════════════════════════════════ */
+    .products { background: var(--color-background); padding: var(--space-24) 0; }
+    .product-icon {
+      width: 52px; height: 52px; background: var(--color-accent-light);
+      border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--space-6); color: var(--color-accent);
+    }
+    .card--featured .product-icon { background: rgba(3,105,161,0.12); }
+    .product-name { font-size: 20px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; line-height: 1.3; }
+    .product-desc { font-size: 15px; color: var(--color-text-mid); line-height: 1.6; margin-bottom: 20px; }
+    .product-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .product-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--color-text-mid);
+    }
+    .product-features li svg { color: var(--color-success); flex-shrink: 0; }
+    .product-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600; color: var(--color-accent);
+      text-decoration: none; transition: gap var(--transition);
+      margin-top: auto;
+    }
+    .product-link:hover { gap: 10px; }
+    .product-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+
+    /* ══════════════════════════════════════
+       INDUSTRIES
+    ══════════════════════════════════════ */
+    .industries { background: var(--color-primary); padding: var(--space-24) 0; }
+    .industries-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (min-width: 768px) { .industries-grid { grid-template-columns: repeat(3, 1fr); } }
+    .industry-card {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md); padding: 20px;
+      transition: all 250ms ease; cursor: default;
+    }
+    .industry-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(3,105,161,0.4); transform: translateY(-2px); }
+    .industry-icon {
+      width: 44px; height: 44px; background: rgba(3,105,161,0.2); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      color: rgba(147,197,253,1);
+    }
+    .industry-name { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.3; }
+    .industry-regs { font-size: 12px; color: rgba(148,163,184,1); margin-top: 3px; }
+
+    /* ══════════════════════════════════════
+       SECURITY
+    ══════════════════════════════════════ */
+    .security { background: var(--color-background); padding: var(--space-24) 0; }
+    .security-certs {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      margin-top: 48px;
+    }
+    @media (min-width: 768px) { .security-certs { grid-template-columns: repeat(3, 1fr); } }
+    .cert-card {
+      background: var(--color-surface); border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md); padding: 24px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      transition: all var(--transition);
+    }
+    .cert-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-md); }
+    .cert-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--color-accent-light); display: flex; align-items: center; justify-content: center;
+      color: var(--color-accent); margin-bottom: 12px;
+    }
+    .cert-name { font-size: 14px; font-weight: 700; color: var(--color-primary); margin-bottom: 4px; }
+    .cert-desc { font-size: 12px; color: var(--color-text-light); }
+
+    /* ══════════════════════════════════════
+       PROCESS
+    ══════════════════════════════════════ */
+    .process { background: var(--color-surface); padding: var(--space-24) 0; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 0; }
+    @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step { padding: 32px; text-align: center; position: relative; }
+    @media (min-width: 768px) {
+      .step:not(:last-child)::after {
+        content: '';
+        position: absolute; top: 48px; right: -1px;
+        width: 2px; height: calc(100% - 96px);
+        background: var(--color-border);
+      }
+    }
+    .step-number {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--color-accent); color: #fff;
+      font-size: 20px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(3,105,161,0.30);
+    }
+    .step-title { font-size: 18px; font-weight: 700; color: var(--color-primary); margin-bottom: 10px; line-height: 1.3; }
+    .step-desc { font-size: 15px; color: var(--color-text-mid); line-height: 1.6; }
+
+    /* ══════════════════════════════════════
+       TESTIMONIAL
+    ══════════════════════════════════════ */
+    .testimonial { background: var(--color-primary); padding: var(--space-24) 0; }
+    .testimonial-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .testimonial-stars { display: flex; justify-content: center; gap: 6px; margin-bottom: 32px; color: #FCD34D; }
+    .testimonial-quote {
+      font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; color: #fff;
+      line-height: 1.6; margin-bottom: 32px; font-style: italic;
+    }
+    .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
+    .testimonial-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(3,105,161,0.4); border: 2px solid rgba(3,105,161,0.6);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: rgba(147,197,253,1);
+    }
+    .testimonial-name { font-size: 15px; font-weight: 700; color: #fff; }
+    .testimonial-role { font-size: 13px; color: rgba(148,163,184,1); }
+
+    /* ══════════════════════════════════════
+       EMAIL OPTIN
+    ══════════════════════════════════════ */
+    .optin { background: var(--color-accent-light); padding: var(--space-24) 0; border-top: 1px solid rgba(3,105,161,0.15); border-bottom: 1px solid rgba(3,105,161,0.15); }
+    .optin-inner {
+      display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+    }
+    @media (min-width: 1024px) { .optin-inner { grid-template-columns: 1fr 1fr; } }
+    .optin-checklist {
+      background: var(--color-surface); border: 1.5px solid rgba(3,105,161,0.2);
+      border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-md);
+    }
+    .optin-checklist-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-accent); margin-bottom: 16px; }
+    .optin-checklist-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .optin-checklist-items li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--color-text-mid);
+    }
+    .optin-checklist-items li svg { color: var(--color-success); flex-shrink: 0; }
+    .optin-checklist-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-border); font-size: 13px; font-weight: 600; color: var(--color-text-mid); }
+    .form-group { margin-bottom: 14px; }
+    .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--color-text-mid); margin-bottom: 6px; }
+    .form-input {
+      width: 100%; padding: 11px 14px; font-family: var(--font); font-size: 15px;
+      background: var(--color-surface); border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm); color: var(--color-text);
+      transition: border-color var(--transition);
+    }
+    .form-input::placeholder { color: var(--color-text-light); }
+    .form-input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(3,105,161,0.12); }
+    .form-submit {
+      width: 100%; padding: 14px 24px; font-family: var(--font); font-size: 16px; font-weight: 700;
+      background: var(--color-accent); color: #fff; border: none; border-radius: var(--radius-sm);
+      cursor: pointer; transition: all var(--transition); margin-top: 4px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .form-submit:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(3,105,161,0.25); }
+    .form-submit:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .form-privacy { font-size: 12px; color: var(--color-text-light); text-align: center; margin-top: 10px; }
+    .form-success {
+      display: none; background: var(--color-surface); border: 1.5px solid var(--color-success);
+      border-radius: var(--radius-md); padding: 20px 24px; text-align: center;
+      margin-top: 16px;
+    }
+    .form-success-icon { color: var(--color-success); margin-bottom: 8px; display: flex; justify-content: center; }
+    .form-success-title { font-size: 16px; font-weight: 700; color: var(--color-primary); margin-bottom: 4px; }
+    .form-success-desc { font-size: 14px; color: var(--color-text-mid); }
+
+    /* ══════════════════════════════════════
+       FINAL CTA
+    ══════════════════════════════════════ */
+    .final-cta { background: var(--color-surface); padding: var(--space-24) 0; }
+    .final-cta-inner { text-align: center; max-width: 680px; margin: 0 auto; }
+    .final-cta-title {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--color-primary);
+      letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px;
+    }
+    .final-cta-desc { font-size: 17px; color: var(--color-text-mid); line-height: 1.7; margin-bottom: 36px; }
+    .final-cta-btns { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .final-cta-note { font-size: 13px; color: var(--color-text-light); }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    .footer { background: var(--color-primary); padding: var(--space-16) 0 var(--space-8); }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr; gap: 40px;
+      padding-bottom: var(--space-12); border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (min-width: 768px) { .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+    .footer-brand { }
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: #fff;
+      font-weight: 800; font-size: 18px; margin-bottom: 12px;
+    }
+    .footer-logo-icon {
+      width: 28px; height: 28px; background: var(--color-accent); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-tagline { font-size: 14px; color: rgba(148,163,184,1); line-height: 1.6; max-width: 280px; margin-bottom: 20px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(148,163,184,1); text-decoration: none;
+      transition: all var(--transition);
+    }
+    .footer-social:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .footer-social:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+    .footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: rgba(148,163,184,1); margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 14px; color: rgba(203,213,225,0.7); text-decoration: none; transition: color var(--transition);
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-links a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      padding-top: var(--space-8); font-size: 13px; color: rgba(148,163,184,1);
+    }
+    .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal a { color: rgba(148,163,184,1); text-decoration: none; transition: color var(--transition); }
+    .footer-legal a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── Sticky Nav ── -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="ComplyLoft home">
+          <div class="nav-logo-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          ComplyLoft
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#security">Security</a></li>
+        </ul>
+
+        <div class="nav-ctas">
+          <a href="#" class="nav-signin">Sign In</a>
+          <a href="#demo" class="btn btn-primary btn-sm">Request Demo</a>
+          <button class="nav-mobile-btn" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="mobile-drawer" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <a href="#products" class="drawer-link">Products</a>
+    <a href="#industries" class="drawer-link">Industries</a>
+    <a href="#how-it-works" class="drawer-link">How It Works</a>
+    <a href="#security" class="drawer-link">Security</a>
+    <div class="nav-drawer-ctas">
+      <a href="#" class="btn btn-outline" style="justify-content:center;">Sign In</a>
+      <a href="#demo" class="btn btn-primary" style="justify-content:center;">Request a Demo</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Hero ── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge" aria-hidden="true">
+              <span class="hero-badge-dot"></span>
+              GDPR &nbsp;·&nbsp; EAA &nbsp;·&nbsp; ISO 27001 &nbsp;·&nbsp; SOC 2
+            </div>
+            <h1 id="hero-heading">
+              Compliance That <em>Keeps Up</em><br>With the World
+            </h1>
+            <p class="hero-desc">
+              ComplyLoft gives your team a single platform to track regulations, manage policies, and prove compliance — without the spreadsheets, the panic, or the expensive consultants.
+            </p>
+            <div class="hero-ctas">
+              <a href="#demo" class="btn btn-primary btn-lg" id="demo">Request a Demo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+            </div>
+            <div class="hero-trust">
+              <div class="hero-trust-avatars" aria-hidden="true">
+                <div class="hero-trust-avatar">SC</div>
+                <div class="hero-trust-avatar">MR</div>
+                <div class="hero-trust-avatar">AK</div>
+                <div class="hero-trust-avatar">+</div>
+              </div>
+              <span>Trusted by <strong style="color:#fff;">2,400+</strong> compliance teams across 30 countries</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-dashboard">
+              <div class="dash-header">
+                <div class="dash-header-left">Compliance Overview</div>
+                <div class="dash-header-right">Q2 2026</div>
+              </div>
+              <div class="dash-progress-items">
+                <div class="dash-item">
+                  <div class="dash-item-top">
+                    <span class="dash-item-label">GDPR Compliance</span>
+                    <span class="dash-item-pct">94%</span>
+                  </div>
+                  <div class="dash-bar"><div class="dash-bar-fill" style="width:94%"></div></div>
+                </div>
+                <div class="dash-item">
+                  <div class="dash-item-top">
+                    <span class="dash-item-label">EAA Readiness</span>
+                    <span class="dash-item-pct">82%</span>
+                  </div>
+                  <div class="dash-bar"><div class="dash-bar-fill" style="width:82%"></div></div>
+                </div>
+                <div class="dash-item">
+                  <div class="dash-item-top">
+                    <span class="dash-item-label">ISO 27001</span>
+                    <span class="dash-item-pct">100%</span>
+                  </div>
+                  <div class="dash-bar"><div class="dash-bar-fill" style="width:100%"></div></div>
+                </div>
+              </div>
+              <div class="dash-divider"></div>
+              <div class="dash-stats">
+                <div class="dash-stat">
+                  <div class="dash-stat-val">47</div>
+                  <div class="dash-stat-label">Regs tracked</div>
+                </div>
+                <div class="dash-stat">
+                  <div class="dash-stat-val">3</div>
+                  <div class="dash-stat-label">Audits due</div>
+                </div>
+                <div class="dash-stat">
+                  <div class="dash-stat-val">12d</div>
+                  <div class="dash-stat-label">Next deadline</div>
+                </div>
+              </div>
+              <div class="dash-alerts">
+                <div class="dash-alert">
+                  <div class="dash-alert-dot dash-alert-dot--green"></div>
+                  <span class="dash-alert-text">GDPR audit complete — all docs signed</span>
+                  <span class="dash-alert-time">2h ago</span>
+                </div>
+                <div class="dash-alert">
+                  <div class="dash-alert-dot dash-alert-dot--yellow"></div>
+                  <span class="dash-alert-text">EAA gap report ready for review</span>
+                  <span class="dash-alert-time">1d ago</span>
+                </div>
+                <div class="dash-alert">
+                  <div class="dash-alert-dot dash-alert-dot--blue"></div>
+                  <span class="dash-alert-text">3 policies due for renewal</span>
+                  <span class="dash-alert-time">3d ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Client Logos ── -->
+    <section class="logos" aria-label="Client logos">
+      <div class="container">
+        <p class="logos-label">Trusted by compliance teams at leading organisations</p>
+        <div class="logos-grid" role="list">
+          <div class="logo-item" role="listitem"><span class="logo-text">Nexara</span></div>
+          <div class="logo-item" role="listitem"><span class="logo-text">VaultBank</span></div>
+          <div class="logo-item" role="listitem"><span class="logo-text">Helix Health</span></div>
+          <div class="logo-item" role="listitem"><span class="logo-text">Torro Legal</span></div>
+          <div class="logo-item" role="listitem"><span class="logo-text">CivicLink</span></div>
+          <div class="logo-item" role="listitem"><span class="logo-text">Orbis Tech</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Stats ── -->
+    <section class="stats" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="sr-only">Platform statistics</h2>
+        <div class="stats-grid reveal">
+          <div class="stat-item">
+            <div class="stat-number">2,400<span>+</span></div>
+            <div class="stat-label">Active compliance teams</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">47</div>
+            <div class="stat-label">Regulations covered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.8<span>%</span></div>
+            <div class="stat-label">Platform uptime SLA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">&lt;4<span>hrs</span></div>
+            <div class="stat-label">Average time to first audit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Problem → Solution ── -->
+    <section class="problem-solution" aria-labelledby="ps-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">The Problem</span>
+          <h2 id="ps-heading" class="section-title">Compliance Chaos Is Costing You</h2>
+          <p class="section-desc">Most teams are one missed deadline or one failed audit away from serious trouble — not because they don't care, but because their tools aren't built for compliance.</p>
+        </div>
+
+        <div class="ps-layout reveal">
+          <div class="ps-problem-box">
+            <h3 class="ps-problem-title">Without ComplyLoft, teams are stuck with:</h3>
+            <ul class="ps-list" role="list">
+              <li>
+                <span class="ps-list-icon ps-icon-x" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                Scattered spreadsheets and shared drives no one trusts
+              </li>
+              <li>
+                <span class="ps-list-icon ps-icon-x" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                Regulatory deadlines missed because no one got the memo
+              </li>
+              <li>
+                <span class="ps-list-icon ps-icon-x" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                Audit preparation that takes weeks of frantic fire-fighting
+              </li>
+              <li>
+                <span class="ps-list-icon ps-icon-x" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                Six-figure fines and reputational damage from gaps
+              </li>
+              <li>
+                <span class="ps-list-icon ps-icon-x" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                No single source of truth for auditors or regulators
+              </li>
+            </ul>
+          </div>
+
+          <div class="ps-bridge" aria-hidden="true">
+            <div class="ps-bridge-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="ps-solution-box">
+            <h3 class="ps-solution-title">With ComplyLoft, your team gets:</h3>
+            <ul class="ps-solution-list" role="list">
+              <li>
+                <span aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                </span>
+                A unified dashboard for every regulation you're responsible for
+              </li>
+              <li>
+                <span aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                </span>
+                Automated alerts before deadlines hit — not after
+              </li>
+              <li>
+                <span aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                </span>
+                Audit-ready reports generated in minutes, not weeks
+              </li>
+              <li>
+                <span aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                </span>
+                Pre-built policy templates for GDPR, EAA, ISO 27001 and more
+              </li>
+              <li>
+                <span aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                </span>
+                One secure, auditor-friendly source of truth
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Products ── -->
+    <section id="products" class="products" aria-labelledby="products-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Our Products</span>
+          <h2 id="products-heading" class="section-title">Everything Compliance in One Place</h2>
+          <p class="section-desc">Three powerful modules. One integrated platform. Built for teams that can't afford gaps.</p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <!-- Compliance Tracker -->
+          <div class="card">
+            <div class="product-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="product-name">Compliance Tracker</h3>
+              <p class="product-desc">Monitor regulatory changes across 47 frameworks in real time. Never be caught off-guard by a new requirement again.</p>
+              <ul class="product-features" role="list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Real-time regulatory change alerts
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Deadline management dashboard
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Team task assignment and tracking
+                </li>
+              </ul>
+            </div>
+            <a href="#demo" class="product-link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Policy Hub (featured) -->
+          <div class="card card--featured" style="position:relative;">
+            <div class="badge-float" aria-label="Most popular product">Most Popular</div>
+            <div class="product-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="product-name">Policy Hub</h3>
+              <p class="product-desc">Create, manage, version, and distribute policies across your organisation. Keep everyone aligned, always.</p>
+              <ul class="product-features" role="list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  150+ pre-built policy templates
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Version control and approval workflows
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Staff acknowledgement tracking
+                </li>
+              </ul>
+            </div>
+            <a href="#demo" class="product-link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Audit Manager -->
+          <div class="card">
+            <div class="product-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="9,11 12,14 22,4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="product-name">Audit Manager</h3>
+              <p class="product-desc">Prepare for internal and external audits without the chaos. Collect evidence, close gaps, and generate reports at the click of a button.</p>
+              <ul class="product-features" role="list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Automated evidence collection
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Gap analysis with remediation tasks
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  One-click auditor report export
+                </li>
+              </ul>
+            </div>
+            <a href="#demo" class="product-link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Industries ── -->
+    <section id="industries" class="industries" aria-labelledby="industries-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow section-eyebrow-light">Industries</span>
+          <h2 id="industries-heading" class="section-title section-title-light">Built for the Sectors That Get Scrutinised Most</h2>
+          <p class="section-desc section-desc-light" style="margin: 0 auto;">ComplyLoft comes pre-configured for the regulatory frameworks that matter most in your industry.</p>
+        </div>
+
+        <div class="industries-grid reveal">
+          <div class="industry-card">
+            <div class="industry-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="industry-name">Financial Services</div>
+              <div class="industry-regs">MiFID II · FCA · PSD2 · Basel III</div>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="industry-name">Healthcare</div>
+              <div class="industry-regs">HIPAA · MDR · GDPR · NIS2</div>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div>
+              <div class="industry-name">Technology & SaaS</div>
+              <div class="industry-regs">SOC 2 · ISO 27001 · EAA · GDPR</div>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="industry-name">Public Sector</div>
+              <div class="industry-regs">EAA · WCAG · GDPR · NIS2</div>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="industry-name">Legal & Professional Services</div>
+              <div class="industry-regs">GDPR · AML · SRA · CCPA</div>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="industry-name">Retail & eCommerce</div>
+              <div class="industry-regs">EAA · GDPR · PCI DSS · DSA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Security ── -->
+    <section id="security" class="security" aria-labelledby="security-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Security & Trust</span>
+          <h2 id="security-heading" class="section-title">Enterprise-Grade Security,<br>Built In From Day One</h2>
+          <p class="section-desc">We hold ourselves to the same high standards we help you achieve. ComplyLoft is independently certified and audited annually.</p>
+        </div>
+
+        <div class="security-certs reveal">
+          <div class="cert-card">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="cert-name">SOC 2 Type II</div>
+            <div class="cert-desc">Independently audited annually by KPMG</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+            </div>
+            <div class="cert-name">ISO 27001 Certified</div>
+            <div class="cert-desc">Information security management certified</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div class="cert-name">256-bit Encryption</div>
+            <div class="cert-desc">AES-256 at rest and in transit</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="cert-name">EU Data Residency</div>
+            <div class="cert-desc">All data stored within the EU by default</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+              </svg>
+            </div>
+            <div class="cert-name">99.8% Uptime SLA</div>
+            <div class="cert-desc">Contractually guaranteed availability</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="cert-name">GDPR Compliant</div>
+            <div class="cert-desc">Full DPA available. Privacy by design</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How It Works ── -->
+    <section id="how-it-works" class="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">How It Works</span>
+          <h2 id="process-heading" class="section-title">Up and Running in Under 4 Hours</h2>
+          <p class="section-desc">No lengthy implementation projects. No consultants. Just connect, configure, and start tracking compliance from day one.</p>
+        </div>
+
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-number" aria-hidden="true">1</div>
+            <h3 class="step-title">Connect</h3>
+            <p class="step-desc">Import your existing policies, connect your tools, and select the regulatory frameworks that apply to your business. We support 47 out of the box.</p>
+          </div>
+          <div class="step">
+            <div class="step-number" aria-hidden="true">2</div>
+            <h3 class="step-title">Track</h3>
+            <p class="step-desc">Monitor requirements, assign tasks to your team, and get automated alerts before deadlines arrive. ComplyLoft does the watching so you don't have to.</p>
+          </div>
+          <div class="step">
+            <div class="step-number" aria-hidden="true">3</div>
+            <h3 class="step-title">Report</h3>
+            <p class="step-desc">Generate audit-ready evidence packs, gap analysis reports, and board-level compliance summaries at the click of a button. Auditors love it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonial ── -->
+    <section class="testimonial" aria-labelledby="testimonial-heading">
+      <div class="container">
+        <h2 id="testimonial-heading" class="sr-only">Customer testimonial</h2>
+        <div class="testimonial-inner reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <blockquote class="testimonial-quote">
+            "ComplyLoft completely transformed how we manage regulatory compliance. What used to take our team weeks of painful preparation now takes hours. We sailed through our last FCA audit — the examiner was genuinely impressed with how organised our evidence was."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">SC</div>
+            <div>
+              <div class="testimonial-name">Sarah Chen</div>
+              <div class="testimonial-role">Head of Compliance, Nexara Financial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Email Optin ── -->
+    <section class="optin" aria-labelledby="optin-heading">
+      <div class="container">
+        <div class="optin-inner">
+          <div class="reveal">
+            <span class="section-eyebrow">Free Resource</span>
+            <h2 id="optin-heading" class="section-title" style="max-width:480px;">Is Your Business Ready for the EAA?</h2>
+            <p class="section-desc" style="max-width:480px;">
+              The European Accessibility Act came into effect in June 2025. Thousands of businesses are still not compliant — and the fines are significant.
+            </p>
+            <p class="section-desc" style="max-width:480px; margin-top: 12px;">
+              Download our free <strong>EAA Readiness Checklist</strong> and find out exactly where your business stands in under 30 minutes.
+            </p>
+
+            <div class="optin-checklist" style="margin-top: 32px; max-width: 400px;">
+              <div class="optin-checklist-title">The checklist covers:</div>
+              <ul class="optin-checklist-items" role="list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Web &amp; app accessibility (WCAG 2.2 AA)
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Digital product compliance requirements
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Documentation and reporting obligations
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Gap analysis framework with priority scoring
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                  Enforcement risk assessment by country
+                </li>
+              </ul>
+              <div class="optin-checklist-footer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline; vertical-align:middle; margin-right:6px; color: var(--color-success);" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                Used by 1,200+ compliance teams
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal" style="max-width:440px; width:100%;">
+            <div style="background: var(--color-surface); border: 1.5px solid rgba(3,105,161,0.2); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lg);">
+              <h3 style="font-size: 20px; font-weight: 700; color: var(--color-primary); margin-bottom: 6px; line-height: 1.3;">Download Free EAA Checklist</h3>
+              <p style="font-size: 14px; color: var(--color-text-mid); margin-bottom: 24px; line-height: 1.5;">Get instant access to our 47-point EAA Readiness Checklist — no credit card required.</p>
+              <form id="optin-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="optin-name">Full Name <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="text" id="optin-name" name="name" autocomplete="name" required placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="optin-email">Work Email <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="email" id="optin-email" name="email" autocomplete="email" required placeholder="jane@company.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="optin-company">Company</label>
+                  <input class="form-input" type="text" id="optin-company" name="company" autocomplete="organization" placeholder="Company Ltd">
+                </div>
+                <button type="submit" class="form-submit">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download Free Checklist
+                </button>
+                <p class="form-privacy">No spam. Unsubscribe any time. We respect your privacy.</p>
+              </form>
+              <div class="form-success" id="form-success" role="alert">
+                <div class="form-success-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="20,6 9,17 4,12"/></svg>
+                </div>
+                <div class="form-success-title">You're in! Check your inbox.</div>
+                <div class="form-success-desc">Your EAA Readiness Checklist is on its way. It should arrive within a few minutes.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ── -->
+    <section class="final-cta" aria-labelledby="final-cta-heading">
+      <div class="container">
+        <div class="final-cta-inner reveal">
+          <span class="section-eyebrow">Get Started</span>
+          <h2 id="final-cta-heading" class="final-cta-title">Ready to Simplify Compliance?</h2>
+          <p class="final-cta-desc">Join 2,400+ compliance teams using ComplyLoft to stay ahead of every regulation. Set up in under 4 hours — no lengthy contracts, no consultants.</p>
+          <div class="final-cta-btns">
+            <a href="#demo" class="btn btn-primary btn-lg">Request a Demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#" class="btn btn-outline btn-lg">Talk to Sales</a>
+          </div>
+          <p class="final-cta-note">Free 14-day trial &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Cancel any time</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="ComplyLoft home">
+            <div class="footer-logo-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            ComplyLoft
+          </a>
+          <p class="footer-tagline">The compliance management platform built for teams that can't afford to get it wrong.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="Twitter / X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Products</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#">Compliance Tracker</a></li>
+            <li><a href="#">Policy Hub</a></li>
+            <li><a href="#">Audit Manager</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#">EAA Checklist</a></li>
+            <li><a href="#">GDPR Guide</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">API Docs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 ComplyLoft Ltd. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+          <a href="#">DPA</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* Screen reader only utility */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    // Close drawer on link click
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        drawer.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        menuBtn.focus();
+      }
+    });
+
+    // Optin form
+    const form = document.getElementById('optin-form');
+    const success = document.getElementById('form-success');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('optin-name');
+      const email = document.getElementById('optin-email');
+      let valid = true;
+      [name, email].forEach(field => {
+        field.style.borderColor = '';
+        if (!field.value.trim() || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value))) {
+          field.style.borderColor = 'var(--color-danger)';
+          field.focus();
+          valid = false;
+        }
+      });
+      if (!valid) return;
+      form.style.display = 'none';
+      success.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
