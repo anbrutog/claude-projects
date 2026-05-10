@@ -3,36 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ComplyLoft — The compliance management platform that helps businesses track regulations, manage policies, and prove compliance. Trusted by 2,400+ teams.">
-  <title>ComplyLoft — Compliance Management Platform</title>
+  <meta name="description" content="Enterprise compliance automation platform. Automate document auditing, PII redaction, and accessible PDF remediation for regulated industries.">
+  <title>ComplyLoft | Compliance Automation for Enterprises</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     :root {
-      --color-primary:     #0F172A;
-      --color-accent:      #0369A1;
-      --color-accent-hover:#0284C7;
-      --color-accent-light:#EFF6FF;
+      --color-primary:     #040A17;
+      --color-accent:      #5910F8;
+      --color-accent-hover:#6B24FF;
+      --color-accent-light:#F3EFFE;
       --color-background:  #F8FAFC;
       --color-surface:     #FFFFFF;
       --color-border:      #E2E8F0;
       --color-muted:       #E8ECF1;
-      --color-text:        #020617;
+      --color-text:        #040A17;
       --color-text-mid:    #475569;
       --color-text-light:  #94A3B8;
       --color-success:     #059669;
       --color-danger:      #DC2626;
-      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font: 'Rubik', system-ui, sans-serif;
       --space-1: 4px;   --space-2: 8px;   --space-3: 12px;
       --space-4: 16px;  --space-6: 24px;  --space-8: 32px;
       --space-10: 40px; --space-12: 48px; --space-16: 64px;
       --space-20: 80px; --space-24: 96px;
-      --radius-sm: 6px;  --radius-md: 10px;
-      --radius-lg: 16px; --radius-full: 9999px;
+      /* Buttons use 6px per brand; all other shapes use 0px */
+      --radius-btn: 6px;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --radius-full: 9999px;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
       --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
       --shadow-lg: 0 12px 32px rgba(0,0,0,0.10);
@@ -42,7 +46,7 @@
 
     body {
       font-family: var(--font);
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.6;
       color: var(--color-text);
       background: var(--color-surface);
@@ -52,7 +56,7 @@
     .skip-link {
       position: absolute; top: -100%; left: 1rem;
       background: var(--color-accent); color: #fff;
-      padding: 8px 16px; border-radius: var(--radius-sm);
+      padding: 8px 16px; border-radius: var(--radius-btn);
       font-size: 14px; font-weight: 600; z-index: 9999; text-decoration: none;
     }
     .skip-link:focus { top: 1rem; }
@@ -65,20 +69,23 @@
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       font-family: var(--font); font-weight: 600; font-size: 15px;
-      padding: 12px 24px; border-radius: var(--radius-sm);
+      padding: 12px 24px; border-radius: var(--radius-btn);
       border: none; cursor: pointer;
       transition: all var(--transition); text-decoration: none; line-height: 1;
     }
+    /* Primary: brand purple */
     .btn-primary { background: var(--color-accent); color: #fff; }
-    .btn-primary:hover {
-      background: var(--color-accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(3,105,161,0.25);
-    }
+    .btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(89,16,248,0.30); }
     .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    /* Secondary: dark bg with lavender text (brand spec) */
+    .btn-secondary { background: var(--color-primary); color: #E8E0FD; border: 1.5px solid #E8E0FD; }
+    .btn-secondary:hover { background: #0d1526; }
+    .btn-secondary:focus-visible { outline: 2px solid #E8E0FD; outline-offset: 3px; }
+    /* Outline: for light sections */
     .btn-outline { background: transparent; color: var(--color-accent); border: 1.5px solid var(--color-accent); }
     .btn-outline:hover { background: var(--color-accent-light); }
     .btn-outline:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    /* Ghost: transparent on dark bg */
     .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
     .btn-ghost:hover { background: rgba(255,255,255,0.08); }
     .btn-ghost:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
@@ -92,18 +99,11 @@
       border-bottom: 1px solid var(--color-border);
       box-shadow: 0 1px 8px rgba(0,0,0,0.06);
     }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between; height: 64px;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
       text-decoration: none; color: var(--color-primary);
       font-weight: 800; font-size: 20px; letter-spacing: -0.3px;
-    }
-    .nav-logo-icon {
-      width: 32px; height: 32px;
-      background: var(--color-accent); border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .nav-links {
       display: none; align-items: center; gap: var(--space-8); list-style: none;
@@ -117,35 +117,31 @@
     .nav-ctas { display: flex; align-items: center; gap: var(--space-3); }
     .nav-signin {
       font-size: 14px; font-weight: 600; color: var(--color-text-mid);
-      text-decoration: none; padding: 8px 14px;
-      border-radius: var(--radius-sm); transition: color var(--transition);
+      text-decoration: none; padding: 8px 14px; transition: color var(--transition);
     }
     .nav-signin:hover { color: var(--color-accent); }
     .nav-signin:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
     .nav-mobile-btn {
       display: flex; align-items: center; justify-content: center;
       background: none; border: none; cursor: pointer;
-      color: var(--color-text-mid); padding: 8px; border-radius: var(--radius-sm);
+      color: var(--color-text-mid); padding: 8px;
     }
     .nav-mobile-btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
     @media (min-width: 768px) { .nav-mobile-btn { display: none; } }
-
-    /* Mobile nav drawer */
     .nav-drawer {
-      display: none;
-      position: fixed; inset: 0; z-index: 99; background: var(--color-surface);
-      padding: 80px 24px 24px; flex-direction: column; gap: 8px;
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: var(--color-surface); padding: 80px 24px 24px;
+      flex-direction: column; gap: 8px;
     }
     .nav-drawer.open { display: flex; }
     .nav-drawer a {
       display: block; padding: 14px 0;
       border-bottom: 1px solid var(--color-border);
-      font-size: 17px; font-weight: 600; color: var(--color-text);
-      text-decoration: none;
+      font-size: 17px; font-weight: 600; color: var(--color-text); text-decoration: none;
     }
     .nav-drawer-ctas { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
 
-    /* ── Section reset ── */
+    /* ── Sections ── */
     section { scroll-margin-top: 80px; }
 
     /* ── Section typography ── */
@@ -153,13 +149,13 @@
       font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
       color: var(--color-accent); margin-bottom: 12px; display: inline-block;
     }
-    .section-eyebrow-light { color: rgba(147,197,253,1); }
+    .section-eyebrow-light { color: rgba(196,181,253,1); }
     .section-title {
-      font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--color-primary);
+      font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; color: var(--color-primary);
       margin-bottom: 16px; letter-spacing: -0.5px; line-height: 1.2;
     }
     .section-title-light { color: #fff; }
-    .section-desc { font-size: 17px; color: var(--color-text-mid); line-height: 1.7; max-width: 640px; }
+    .section-desc { font-size: 18px; color: var(--color-text-mid); line-height: 1.7; max-width: 640px; }
     .section-desc-light { color: rgba(203,213,225,1); }
     .section-header { text-align: center; margin-bottom: 56px; }
     .section-header .section-desc { margin: 0 auto; }
@@ -177,7 +173,6 @@
       content:''; position:absolute; top:0; left:0; right:0; height:3px;
       background: var(--color-accent);
       transform: scaleX(0); transform-origin: left; transition: transform 250ms ease;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
     .card:hover::before { transform: scaleX(1); }
     .card--featured {
@@ -187,15 +182,12 @@
     }
     .card--featured::before { transform: scaleX(1); }
     .card-body { flex: 1; }
-
     .card-dark {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.10);
-      border-radius: var(--radius-lg); padding: 32px;
-      transition: all 250ms ease;
+      border-radius: var(--radius-lg); padding: 32px; transition: all 250ms ease;
     }
-    .card-dark:hover { background: rgba(255,255,255,0.08); border-color: rgba(3,105,161,0.5); transform: translateY(-3px); }
-
+    .card-dark:hover { background: rgba(255,255,255,0.08); border-color: rgba(89,16,248,0.4); transform: translateY(-3px); }
     .badge-float {
       position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
       background: var(--color-accent); color: #fff;
@@ -209,92 +201,68 @@
     .grid-2 { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
     @media (min-width: 1024px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 
-    /* ── Reveal animation ── */
+    /* ── Reveal ── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
+    /* ── SR only ── */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
     /* ══════════════════════════════════════
        HERO
     ══════════════════════════════════════ */
-    .hero {
-      background: var(--color-primary);
-      padding: var(--space-24) 0;
-      position: relative; overflow: hidden;
-    }
+    .hero { background: var(--color-primary); padding: var(--space-24) 0; position: relative; overflow: hidden; }
     .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(3,105,161,0.18) 0%, transparent 70%);
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(89,16,248,0.22) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-grid {
-      display: grid; grid-template-columns: 1fr;
-      gap: var(--space-12); align-items: center;
+      display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: center;
       position: relative; z-index: 1;
     }
     @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr; gap: var(--space-16); } }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(3,105,161,0.2); border: 1px solid rgba(3,105,161,0.4);
+      background: rgba(89,16,248,0.18); border: 1px solid rgba(89,16,248,0.35);
       border-radius: var(--radius-full); padding: 6px 14px;
       font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
-      color: rgba(147,197,253,1); margin-bottom: var(--space-6);
+      color: rgba(196,181,253,1); margin-bottom: var(--space-6);
     }
-    .hero-badge-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: rgba(147,197,253,1);
-    }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(196,181,253,1); }
     .hero h1 {
-      font-size: clamp(36px, 5.5vw, 60px); font-weight: 800; color: #fff;
+      font-size: clamp(36px, 5vw, 48px); font-weight: 800; color: #fff;
       letter-spacing: -1px; line-height: 1.1; margin-bottom: var(--space-6);
     }
-    .hero h1 em {
-      font-style: normal; color: rgba(147,197,253,1);
-    }
-    .hero-desc {
-      font-size: 18px; color: rgba(203,213,225,1); line-height: 1.7;
-      max-width: 520px; margin-bottom: var(--space-10);
-    }
+    .hero h1 em { font-style: normal; color: rgba(196,181,253,1); }
+    .hero-desc { font-size: 18px; color: rgba(203,213,225,1); line-height: 1.7; max-width: 520px; margin-bottom: var(--space-10); }
     .hero-ctas { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-10); }
-    .hero-trust {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 13px; color: rgba(148,163,184,1);
-    }
-    .hero-trust-avatars {
-      display: flex;
-    }
+    .hero-trust { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(148,163,184,1); }
+    .hero-trust-avatars { display: flex; }
     .hero-trust-avatar {
       width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(3,105,161,0.4); border: 2px solid rgba(255,255,255,0.15);
+      background: rgba(89,16,248,0.35); border: 2px solid rgba(255,255,255,0.15);
       display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 700; color: rgba(147,197,253,1);
+      font-size: 10px; font-weight: 700; color: rgba(196,181,253,1);
     }
     .hero-trust-avatar:not(:first-child) { margin-left: -8px; }
-    .hero-visual {
-      display: flex; align-items: center; justify-content: center;
-    }
+    .hero-visual { display: flex; align-items: center; justify-content: center; }
     @media (max-width: 1023px) { .hero-visual { display: none; } }
     .hero-dashboard {
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
-      border-radius: var(--radius-lg); padding: 24px; width: 100%; max-width: 440px;
+      border-radius: 0; padding: 24px; width: 100%; max-width: 440px;
       box-shadow: 0 24px 64px rgba(0,0,0,0.3);
     }
-    .dash-header {
-      display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
-    }
+    .dash-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
     .dash-header-left { font-size: 14px; font-weight: 700; color: #fff; }
     .dash-header-right { font-size: 12px; color: rgba(148,163,184,1); }
     .dash-progress-items { display: flex; flex-direction: column; gap: 14px; }
-    .dash-item { }
-    .dash-item-top {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 6px;
-    }
+    .dash-item-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
     .dash-item-label { font-size: 13px; font-weight: 500; color: rgba(203,213,225,1); }
-    .dash-item-pct { font-size: 12px; font-weight: 700; color: rgba(147,197,253,1); }
+    .dash-item-pct { font-size: 12px; font-weight: 700; color: rgba(196,181,253,1); }
     .dash-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; }
-    .dash-bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-accent), rgba(147,197,253,0.8)); border-radius: 99px; }
+    .dash-bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-accent), rgba(196,181,253,0.8)); border-radius: 99px; }
     .dash-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; }
     .dash-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .dash-stat { text-align: center; }
@@ -304,14 +272,12 @@
     .dash-alert {
       display: flex; align-items: center; gap: 10px;
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-md); padding: 10px 12px;
+      border-radius: 0; padding: 10px 12px;
     }
-    .dash-alert-dot {
-      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-    }
+    .dash-alert-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .dash-alert-dot--green { background: #10b981; }
     .dash-alert-dot--yellow { background: #f59e0b; }
-    .dash-alert-dot--blue { background: rgba(147,197,253,1); }
+    .dash-alert-dot--purple { background: rgba(196,181,253,1); }
     .dash-alert-text { font-size: 12px; color: rgba(203,213,225,1); }
     .dash-alert-time { font-size: 11px; color: rgba(148,163,184,1); margin-left: auto; flex-shrink: 0; }
 
@@ -320,20 +286,11 @@
     ══════════════════════════════════════ */
     .logos { background: var(--color-surface); padding: var(--space-12) 0; border-bottom: 1px solid var(--color-border); }
     .logos-label { text-align: center; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-text-light); margin-bottom: var(--space-8); }
-    .logos-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: center;
-    }
+    .logos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: center; }
     @media (min-width: 768px) { .logos-grid { grid-template-columns: repeat(6, 1fr); } }
-    .logo-item {
-      display: flex; align-items: center; justify-content: center;
-      padding: 12px; filter: grayscale(1); opacity: 0.45;
-      transition: filter var(--transition), opacity var(--transition);
-    }
+    .logo-item { display: flex; align-items: center; justify-content: center; padding: 12px; filter: grayscale(1); opacity: 0.45; transition: filter var(--transition), opacity var(--transition); }
     .logo-item:hover { filter: grayscale(0); opacity: 0.9; }
-    .logo-text {
-      font-size: 16px; font-weight: 800; color: var(--color-text-mid); letter-spacing: -0.3px;
-      user-select: none;
-    }
+    .logo-text { font-size: 16px; font-weight: 800; color: var(--color-text-mid); letter-spacing: -0.3px; user-select: none; }
 
     /* ══════════════════════════════════════
        STATS
@@ -342,53 +299,32 @@
     .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
     @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
     .stat-item { text-align: center; }
-    .stat-number {
-      font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: #fff;
-      letter-spacing: -1px; line-height: 1; margin-bottom: 8px;
-    }
-    .stat-number span { color: rgba(147,197,253,1); }
+    .stat-number { font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: #fff; letter-spacing: -1px; line-height: 1; margin-bottom: 8px; }
+    .stat-number span { color: rgba(196,181,253,1); }
     .stat-label { font-size: 15px; color: rgba(148,163,184,1); font-weight: 500; }
 
     /* ══════════════════════════════════════
        PROBLEM → SOLUTION
     ══════════════════════════════════════ */
     .problem-solution { background: var(--color-surface); padding: var(--space-24) 0; }
-    .ps-eyebrow { color: var(--color-accent); }
-    .ps-problem-box {
-      background: var(--color-background); border: 1.5px solid var(--color-border);
-      border-radius: var(--radius-lg); padding: 32px;
-    }
+    .ps-problem-box { background: var(--color-background); border: 1.5px solid var(--color-border); border-radius: 0; padding: 32px; }
     .ps-problem-title { font-size: 20px; font-weight: 700; color: var(--color-primary); margin-bottom: 24px; line-height: 1.3; }
     .ps-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .ps-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 15px; color: var(--color-text-mid); line-height: 1.5;
-    }
+    .ps-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: var(--color-text-mid); line-height: 1.5; }
     .ps-list-icon { flex-shrink: 0; margin-top: 1px; }
     .ps-icon-x { color: var(--color-danger); }
-    .ps-icon-check { color: var(--color-success); }
-    .ps-solution-box {
-      background: var(--color-primary); border-radius: var(--radius-lg); padding: 32px;
-    }
+    .ps-solution-box { background: var(--color-primary); border-radius: 0; padding: 32px; }
     .ps-solution-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 24px; line-height: 1.3; }
     .ps-solution-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .ps-solution-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 15px; color: rgba(203,213,225,1); line-height: 1.5;
-    }
-    .ps-bridge {
-      display: flex; align-items: center; justify-content: center;
-      margin: 32px 0;
-    }
+    .ps-solution-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(203,213,225,1); line-height: 1.5; }
+    .ps-bridge { display: flex; align-items: center; justify-content: center; margin: 32px 0; }
     @media (min-width: 1024px) { .ps-bridge { margin: 0; flex-direction: column; } }
     .ps-bridge-arrow {
       width: 48px; height: 48px; background: var(--color-accent); border-radius: 50%;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      box-shadow: 0 4px 16px rgba(3,105,161,0.35);
+      box-shadow: 0 4px 16px rgba(89,16,248,0.35);
     }
-    .ps-layout {
-      display: grid; grid-template-columns: 1fr; gap: 0; align-items: stretch;
-    }
+    .ps-layout { display: grid; grid-template-columns: 1fr; gap: 0; align-items: stretch; }
     @media (min-width: 1024px) { .ps-layout { grid-template-columns: 1fr 48px 1fr; gap: 0; align-items: center; } }
 
     /* ══════════════════════════════════════
@@ -397,26 +333,22 @@
     .products { background: var(--color-background); padding: var(--space-24) 0; }
     .product-icon {
       width: 52px; height: 52px; background: var(--color-accent-light);
-      border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;
+      border-radius: 0; display: flex; align-items: center; justify-content: center;
       margin-bottom: var(--space-6); color: var(--color-accent);
     }
-    .card--featured .product-icon { background: rgba(3,105,161,0.12); }
+    .card--featured .product-icon { background: rgba(89,16,248,0.12); }
     .product-name { font-size: 20px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; line-height: 1.3; }
     .product-desc { font-size: 15px; color: var(--color-text-mid); line-height: 1.6; margin-bottom: 20px; }
     .product-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .product-features li {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; color: var(--color-text-mid);
-    }
+    .product-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--color-text-mid); }
     .product-features li svg { color: var(--color-success); flex-shrink: 0; }
     .product-link {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 14px; font-weight: 600; color: var(--color-accent);
-      text-decoration: none; transition: gap var(--transition);
-      margin-top: auto;
+      text-decoration: none; transition: gap var(--transition); margin-top: auto;
     }
     .product-link:hover { gap: 10px; }
-    .product-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+    .product-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
     /* ══════════════════════════════════════
        INDUSTRIES
@@ -427,14 +359,13 @@
     .industry-card {
       display: flex; align-items: center; gap: 14px;
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-md); padding: 20px;
-      transition: all 250ms ease; cursor: default;
+      border-radius: 0; padding: 20px; transition: all 250ms ease; cursor: default;
     }
-    .industry-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(3,105,161,0.4); transform: translateY(-2px); }
+    .industry-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(89,16,248,0.4); transform: translateY(-2px); }
     .industry-icon {
-      width: 44px; height: 44px; background: rgba(3,105,161,0.2); border-radius: var(--radius-sm);
+      width: 44px; height: 44px; background: rgba(89,16,248,0.2); border-radius: 0;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      color: rgba(147,197,253,1);
+      color: rgba(196,181,253,1);
     }
     .industry-name { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.3; }
     .industry-regs { font-size: 12px; color: rgba(148,163,184,1); margin-top: 3px; }
@@ -443,14 +374,11 @@
        SECURITY
     ══════════════════════════════════════ */
     .security { background: var(--color-background); padding: var(--space-24) 0; }
-    .security-certs {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-      margin-top: 48px;
-    }
+    .security-certs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
     @media (min-width: 768px) { .security-certs { grid-template-columns: repeat(3, 1fr); } }
     .cert-card {
       background: var(--color-surface); border: 1.5px solid var(--color-border);
-      border-radius: var(--radius-md); padding: 24px;
+      border-radius: 0; padding: 24px;
       display: flex; flex-direction: column; align-items: center; text-align: center;
       transition: all var(--transition);
     }
@@ -472,10 +400,8 @@
     .step { padding: 32px; text-align: center; position: relative; }
     @media (min-width: 768px) {
       .step:not(:last-child)::after {
-        content: '';
-        position: absolute; top: 48px; right: -1px;
-        width: 2px; height: calc(100% - 96px);
-        background: var(--color-border);
+        content: ''; position: absolute; top: 48px; right: -1px;
+        width: 2px; height: calc(100% - 96px); background: var(--color-border);
       }
     }
     .step-number {
@@ -483,7 +409,7 @@
       background: var(--color-accent); color: #fff;
       font-size: 20px; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(3,105,161,0.30);
+      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(89,16,248,0.30);
     }
     .step-title { font-size: 18px; font-weight: 700; color: var(--color-primary); margin-bottom: 10px; line-height: 1.3; }
     .step-desc { font-size: 15px; color: var(--color-text-mid); line-height: 1.6; }
@@ -494,16 +420,13 @@
     .testimonial { background: var(--color-primary); padding: var(--space-24) 0; }
     .testimonial-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .testimonial-stars { display: flex; justify-content: center; gap: 6px; margin-bottom: 32px; color: #FCD34D; }
-    .testimonial-quote {
-      font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; color: #fff;
-      line-height: 1.6; margin-bottom: 32px; font-style: italic;
-    }
+    .testimonial-quote { font-size: clamp(18px, 2.5vw, 24px); font-weight: 500; color: #fff; line-height: 1.6; margin-bottom: 32px; font-style: italic; }
     .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
     .testimonial-avatar {
       width: 52px; height: 52px; border-radius: 50%;
-      background: rgba(3,105,161,0.4); border: 2px solid rgba(3,105,161,0.6);
+      background: rgba(89,16,248,0.4); border: 2px solid rgba(89,16,248,0.6);
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 800; color: rgba(147,197,253,1);
+      font-size: 18px; font-weight: 800; color: rgba(196,181,253,1);
     }
     .testimonial-name { font-size: 15px; font-weight: 700; color: #fff; }
     .testimonial-role { font-size: 13px; color: rgba(148,163,184,1); }
@@ -511,46 +434,42 @@
     /* ══════════════════════════════════════
        EMAIL OPTIN
     ══════════════════════════════════════ */
-    .optin { background: var(--color-accent-light); padding: var(--space-24) 0; border-top: 1px solid rgba(3,105,161,0.15); border-bottom: 1px solid rgba(3,105,161,0.15); }
-    .optin-inner {
-      display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+    .optin {
+      background: var(--color-accent-light); padding: var(--space-24) 0;
+      border-top: 1px solid rgba(89,16,248,0.15); border-bottom: 1px solid rgba(89,16,248,0.15);
     }
+    .optin-inner { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
     @media (min-width: 1024px) { .optin-inner { grid-template-columns: 1fr 1fr; } }
     .optin-checklist {
-      background: var(--color-surface); border: 1.5px solid rgba(3,105,161,0.2);
-      border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-md);
+      background: var(--color-surface); border: 1.5px solid rgba(89,16,248,0.2);
+      border-radius: 0; padding: 28px; box-shadow: var(--shadow-md);
     }
     .optin-checklist-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-accent); margin-bottom: 16px; }
     .optin-checklist-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .optin-checklist-items li {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; color: var(--color-text-mid);
-    }
+    .optin-checklist-items li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--color-text-mid); }
     .optin-checklist-items li svg { color: var(--color-success); flex-shrink: 0; }
     .optin-checklist-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-border); font-size: 13px; font-weight: 600; color: var(--color-text-mid); }
     .form-group { margin-bottom: 14px; }
     .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--color-text-mid); margin-bottom: 6px; }
     .form-input {
-      width: 100%; padding: 11px 14px; font-family: var(--font); font-size: 15px;
+      width: 100%; padding: 11px 14px; font-family: var(--font); font-size: 16px;
       background: var(--color-surface); border: 1.5px solid var(--color-border);
-      border-radius: var(--radius-sm); color: var(--color-text);
-      transition: border-color var(--transition);
+      border-radius: 0; color: var(--color-text); transition: border-color var(--transition);
     }
     .form-input::placeholder { color: var(--color-text-light); }
-    .form-input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(3,105,161,0.12); }
+    .form-input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(89,16,248,0.12); }
     .form-submit {
       width: 100%; padding: 14px 24px; font-family: var(--font); font-size: 16px; font-weight: 700;
-      background: var(--color-accent); color: #fff; border: none; border-radius: var(--radius-sm);
+      background: var(--color-accent); color: #fff; border: none; border-radius: var(--radius-btn);
       cursor: pointer; transition: all var(--transition); margin-top: 4px;
       display: flex; align-items: center; justify-content: center; gap: 8px;
     }
-    .form-submit:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(3,105,161,0.25); }
+    .form-submit:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(89,16,248,0.30); }
     .form-submit:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
     .form-privacy { font-size: 12px; color: var(--color-text-light); text-align: center; margin-top: 10px; }
     .form-success {
       display: none; background: var(--color-surface); border: 1.5px solid var(--color-success);
-      border-radius: var(--radius-md); padding: 20px 24px; text-align: center;
-      margin-top: 16px;
+      border-radius: 0; padding: 20px 24px; text-align: center; margin-top: 16px;
     }
     .form-success-icon { color: var(--color-success); margin-bottom: 8px; display: flex; justify-content: center; }
     .form-success-title { font-size: 16px; font-weight: 700; color: var(--color-primary); margin-bottom: 4px; }
@@ -561,11 +480,8 @@
     ══════════════════════════════════════ */
     .final-cta { background: var(--color-surface); padding: var(--space-24) 0; }
     .final-cta-inner { text-align: center; max-width: 680px; margin: 0 auto; }
-    .final-cta-title {
-      font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--color-primary);
-      letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px;
-    }
-    .final-cta-desc { font-size: 17px; color: var(--color-text-mid); line-height: 1.7; margin-bottom: 36px; }
+    .final-cta-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--color-primary); letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px; }
+    .final-cta-desc { font-size: 18px; color: var(--color-text-mid); line-height: 1.7; margin-bottom: 36px; }
     .final-cta-btns { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
     .final-cta-note { font-size: 13px; color: var(--color-text-light); }
 
@@ -573,43 +489,25 @@
        FOOTER
     ══════════════════════════════════════ */
     .footer { background: var(--color-primary); padding: var(--space-16) 0 var(--space-8); }
-    .footer-top {
-      display: grid; grid-template-columns: 1fr; gap: 40px;
-      padding-bottom: var(--space-12); border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    .footer-top { display: grid; grid-template-columns: 1fr; gap: 40px; padding-bottom: var(--space-12); border-bottom: 1px solid rgba(255,255,255,0.08); }
     @media (min-width: 768px) { .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; } }
-    .footer-brand { }
-    .footer-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none; color: #fff;
-      font-weight: 800; font-size: 18px; margin-bottom: 12px;
-    }
-    .footer-logo-icon {
-      width: 28px; height: 28px; background: var(--color-accent); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 18px; margin-bottom: 12px; }
     .footer-tagline { font-size: 14px; color: rgba(148,163,184,1); line-height: 1.6; max-width: 280px; margin-bottom: 20px; }
     .footer-socials { display: flex; gap: 12px; }
     .footer-social {
-      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      width: 36px; height: 36px; border-radius: 0;
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
       display: flex; align-items: center; justify-content: center;
-      color: rgba(148,163,184,1); text-decoration: none;
-      transition: all var(--transition);
+      color: rgba(148,163,184,1); text-decoration: none; transition: all var(--transition);
     }
     .footer-social:hover { background: rgba(255,255,255,0.12); color: #fff; }
     .footer-social:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
     .footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: rgba(148,163,184,1); margin-bottom: 16px; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a {
-      font-size: 14px; color: rgba(203,213,225,0.7); text-decoration: none; transition: color var(--transition);
-    }
+    .footer-links a { font-size: 14px; color: rgba(203,213,225,0.7); text-decoration: none; transition: color var(--transition); }
     .footer-links a:hover { color: #fff; }
-    .footer-links a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
-    .footer-bottom {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-      padding-top: var(--space-8); font-size: 13px; color: rgba(148,163,184,1);
-    }
+    .footer-links a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: var(--space-8); font-size: 13px; color: rgba(148,163,184,1); }
     .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer-legal a { color: rgba(148,163,184,1); text-decoration: none; transition: color var(--transition); }
     .footer-legal a:hover { color: #fff; }
@@ -623,11 +521,23 @@
     <div class="container">
       <div class="nav-inner">
         <a href="/" class="nav-logo" aria-label="ComplyLoft home">
-          <div class="nav-logo-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
+          <!-- ComplyLoft SVG logo (brand asset) -->
+          <svg viewBox="0 0 413 598" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" aria-hidden="true">
+            <defs>
+              <linearGradient id="nav_g0" x1="63.127" y1="103.613" x2="343.734" y2="498.13" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#96A0FA"/><stop offset="1" stop-color="#E0E4FE"/>
+              </linearGradient>
+              <linearGradient id="nav_g1" x1="81.851" y1="351.969" x2="32.597" y2="276.761" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#AFB7FB"/><stop offset="1" stop-color="#97A1FA"/>
+              </linearGradient>
+              <linearGradient id="nav_g2" x1="372.877" y1="325.947" x2="323.623" y2="250.739" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#C9CFFD"/><stop offset="1" stop-color="#ACB4FB"/>
+              </linearGradient>
+            </defs>
+            <path d="M412.999 149.315V447.947L206.499 597.263L0 447.947V149.315L206.499 0L412.999 149.315ZM80.9795 207.115V390.147L206.499 481.664L332.019 390.147V207.115L206.499 115.6L80.9795 207.115Z" fill="url(#nav_g0)"/>
+            <path d="M0 298.715L81.0484 245.257V352.172L0 298.715Z" fill="url(#nav_g1)"/>
+            <path d="M413 298.714L331.952 352.171V245.257L413 298.714Z" fill="url(#nav_g2)"/>
+          </svg>
           ComplyLoft
         </a>
 
@@ -653,10 +563,10 @@
 
   <!-- Mobile Drawer -->
   <div class="nav-drawer" id="mobile-drawer" role="dialog" aria-label="Navigation menu" aria-modal="true">
-    <a href="#products" class="drawer-link">Products</a>
-    <a href="#industries" class="drawer-link">Industries</a>
-    <a href="#how-it-works" class="drawer-link">How It Works</a>
-    <a href="#security" class="drawer-link">Security</a>
+    <a href="#products">Products</a>
+    <a href="#industries">Industries</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#security">Security</a>
     <div class="nav-drawer-ctas">
       <a href="#" class="btn btn-outline" style="justify-content:center;">Sign In</a>
       <a href="#demo" class="btn btn-primary" style="justify-content:center;">Request a Demo</a>
@@ -669,22 +579,22 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero-grid">
-          <div class="hero-content">
+          <div>
             <div class="hero-badge" aria-hidden="true">
               <span class="hero-badge-dot"></span>
               GDPR &nbsp;·&nbsp; EAA &nbsp;·&nbsp; ISO 27001 &nbsp;·&nbsp; SOC 2
             </div>
             <h1 id="hero-heading">
-              Compliance That <em>Keeps Up</em><br>With the World
+              Compliance<br>Automation for<br><em>Regulated Industries</em>
             </h1>
             <p class="hero-desc">
-              ComplyLoft gives your team a single platform to track regulations, manage policies, and prove compliance — without the spreadsheets, the panic, or the expensive consultants.
+              ComplyLoft automates document auditing, PII redaction, and accessible PDF remediation — so your compliance team spends less time on manual work and more time on what matters.
             </p>
-            <div class="hero-ctas">
-              <a href="#demo" class="btn btn-primary btn-lg" id="demo">Request a Demo
+            <div class="hero-ctas" id="demo">
+              <a href="#request-demo" class="btn btn-primary btn-lg">Request a Demo
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+              <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
             </div>
             <div class="hero-trust">
               <div class="hero-trust-avatars" aria-hidden="true">
@@ -706,55 +616,55 @@
               <div class="dash-progress-items">
                 <div class="dash-item">
                   <div class="dash-item-top">
-                    <span class="dash-item-label">GDPR Compliance</span>
+                    <span class="dash-item-label">Document Audits Complete</span>
                     <span class="dash-item-pct">94%</span>
                   </div>
                   <div class="dash-bar"><div class="dash-bar-fill" style="width:94%"></div></div>
                 </div>
                 <div class="dash-item">
                   <div class="dash-item-top">
-                    <span class="dash-item-label">EAA Readiness</span>
-                    <span class="dash-item-pct">82%</span>
-                  </div>
-                  <div class="dash-bar"><div class="dash-bar-fill" style="width:82%"></div></div>
-                </div>
-                <div class="dash-item">
-                  <div class="dash-item-top">
-                    <span class="dash-item-label">ISO 27001</span>
+                    <span class="dash-item-label">PII Redaction Coverage</span>
                     <span class="dash-item-pct">100%</span>
                   </div>
                   <div class="dash-bar"><div class="dash-bar-fill" style="width:100%"></div></div>
+                </div>
+                <div class="dash-item">
+                  <div class="dash-item-top">
+                    <span class="dash-item-label">EAA / PDF Accessibility</span>
+                    <span class="dash-item-pct">82%</span>
+                  </div>
+                  <div class="dash-bar"><div class="dash-bar-fill" style="width:82%"></div></div>
                 </div>
               </div>
               <div class="dash-divider"></div>
               <div class="dash-stats">
                 <div class="dash-stat">
-                  <div class="dash-stat-val">47</div>
-                  <div class="dash-stat-label">Regs tracked</div>
+                  <div class="dash-stat-val">1.2k</div>
+                  <div class="dash-stat-label">Docs audited</div>
                 </div>
                 <div class="dash-stat">
-                  <div class="dash-stat-val">3</div>
-                  <div class="dash-stat-label">Audits due</div>
+                  <div class="dash-stat-val">340</div>
+                  <div class="dash-stat-label">PDFs fixed</div>
                 </div>
                 <div class="dash-stat">
-                  <div class="dash-stat-val">12d</div>
-                  <div class="dash-stat-label">Next deadline</div>
+                  <div class="dash-stat-val">0</div>
+                  <div class="dash-stat-label">PII exposed</div>
                 </div>
               </div>
               <div class="dash-alerts">
                 <div class="dash-alert">
                   <div class="dash-alert-dot dash-alert-dot--green"></div>
-                  <span class="dash-alert-text">GDPR audit complete — all docs signed</span>
+                  <span class="dash-alert-text">147 PDFs remediated to WCAG 2.2 AA</span>
                   <span class="dash-alert-time">2h ago</span>
                 </div>
                 <div class="dash-alert">
                   <div class="dash-alert-dot dash-alert-dot--yellow"></div>
-                  <span class="dash-alert-text">EAA gap report ready for review</span>
+                  <span class="dash-alert-text">PII scan flagged 3 new documents</span>
                   <span class="dash-alert-time">1d ago</span>
                 </div>
                 <div class="dash-alert">
-                  <div class="dash-alert-dot dash-alert-dot--blue"></div>
-                  <span class="dash-alert-text">3 policies due for renewal</span>
+                  <div class="dash-alert-dot dash-alert-dot--purple"></div>
+                  <span class="dash-alert-text">GDPR audit pack ready for review</span>
                   <span class="dash-alert-time">3d ago</span>
                 </div>
               </div>
@@ -789,16 +699,16 @@
             <div class="stat-label">Active compliance teams</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">47</div>
-            <div class="stat-label">Regulations covered</div>
+            <div class="stat-number">12M<span>+</span></div>
+            <div class="stat-label">Documents audited</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">99.8<span>%</span></div>
             <div class="stat-label">Platform uptime SLA</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">&lt;4<span>hrs</span></div>
-            <div class="stat-label">Average time to first audit</div>
+            <div class="stat-number">0<span>%</span></div>
+            <div class="stat-label">PII data breaches on platform</div>
           </div>
         </div>
       </div>
@@ -809,43 +719,43 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">The Problem</span>
-          <h2 id="ps-heading" class="section-title">Compliance Chaos Is Costing You</h2>
-          <p class="section-desc">Most teams are one missed deadline or one failed audit away from serious trouble — not because they don't care, but because their tools aren't built for compliance.</p>
+          <h2 id="ps-heading" class="section-title">Manual Compliance Work Is Holding You Back</h2>
+          <p class="section-desc">Regulated industries face mountains of documents to audit, sensitive data to protect, and accessibility mandates to meet — all handled manually by teams already stretched thin.</p>
         </div>
 
         <div class="ps-layout reveal">
           <div class="ps-problem-box">
-            <h3 class="ps-problem-title">Without ComplyLoft, teams are stuck with:</h3>
+            <h3 class="ps-problem-title">Without automation, teams are stuck with:</h3>
             <ul class="ps-list" role="list">
               <li>
                 <span class="ps-list-icon ps-icon-x" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </span>
-                Scattered spreadsheets and shared drives no one trusts
+                Manually reviewing thousands of documents for compliance gaps
               </li>
               <li>
                 <span class="ps-list-icon ps-icon-x" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </span>
-                Regulatory deadlines missed because no one got the memo
+                PII scattered across documents with no systematic way to redact it
               </li>
               <li>
                 <span class="ps-list-icon ps-icon-x" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </span>
-                Audit preparation that takes weeks of frantic fire-fighting
+                PDF libraries that fail accessibility audits under WCAG and EAA
               </li>
               <li>
                 <span class="ps-list-icon ps-icon-x" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </span>
-                Six-figure fines and reputational damage from gaps
+                Regulatory fines and reputational damage from undetected gaps
               </li>
               <li>
                 <span class="ps-list-icon ps-icon-x" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </span>
-                No single source of truth for auditors or regulators
+                No audit trail when regulators come knocking
               </li>
             </ul>
           </div>
@@ -862,34 +772,24 @@
             <h3 class="ps-solution-title">With ComplyLoft, your team gets:</h3>
             <ul class="ps-solution-list" role="list">
               <li>
-                <span aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                </span>
-                A unified dashboard for every regulation you're responsible for
+                <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span>
+                AI-powered document auditing across your entire library
               </li>
               <li>
-                <span aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                </span>
-                Automated alerts before deadlines hit — not after
+                <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span>
+                Automatic PII detection and redaction with a full audit log
               </li>
               <li>
-                <span aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                </span>
-                Audit-ready reports generated in minutes, not weeks
+                <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span>
+                Bulk PDF remediation to WCAG 2.2 AA and EAA standards
               </li>
               <li>
-                <span aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                </span>
-                Pre-built policy templates for GDPR, EAA, ISO 27001 and more
+                <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span>
+                Audit-ready evidence packs generated in minutes
               </li>
               <li>
-                <span aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                </span>
-                One secure, auditor-friendly source of truth
+                <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span>
+                Complete audit trail for every action taken on every document
               </li>
             </ul>
           </div>
@@ -902,100 +802,103 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">Our Products</span>
-          <h2 id="products-heading" class="section-title">Everything Compliance in One Place</h2>
-          <p class="section-desc">Three powerful modules. One integrated platform. Built for teams that can't afford gaps.</p>
+          <h2 id="products-heading" class="section-title">Three Modules. One Compliance Platform.</h2>
+          <p class="section-desc">Everything regulated industries need to automate compliance — from document auditing to accessible PDFs.</p>
         </div>
 
         <div class="grid-3 reveal">
-          <!-- Compliance Tracker -->
+          <!-- Document Auditor -->
           <div class="card">
             <div class="product-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/>
               </svg>
             </div>
             <div class="card-body">
-              <h3 class="product-name">Compliance Tracker</h3>
-              <p class="product-desc">Monitor regulatory changes across 47 frameworks in real time. Never be caught off-guard by a new requirement again.</p>
+              <h3 class="product-name">Document Auditor</h3>
+              <p class="product-desc">AI-powered compliance auditing across your entire document library. Identify gaps, flag violations, and generate audit-ready reports automatically.</p>
               <ul class="product-features" role="list">
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Real-time regulatory change alerts
+                  Supports GDPR, ISO 27001, SOC 2 and 44 more
                 </li>
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Deadline management dashboard
+                  Batch-process thousands of documents at once
                 </li>
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Team task assignment and tracking
+                  One-click evidence pack for auditors
                 </li>
               </ul>
             </div>
-            <a href="#demo" class="product-link">
+            <a href="#request-demo" class="product-link">
               Learn more
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
 
-          <!-- Policy Hub (featured) -->
+          <!-- PII Redaction (featured) -->
           <div class="card card--featured" style="position:relative;">
             <div class="badge-float" aria-label="Most popular product">Most Popular</div>
             <div class="product-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                <rect x="3" y="11" width="18" height="11" rx="0"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                <line x1="12" y1="15" x2="12" y2="17"/>
               </svg>
             </div>
             <div class="card-body">
-              <h3 class="product-name">Policy Hub</h3>
-              <p class="product-desc">Create, manage, version, and distribute policies across your organisation. Keep everyone aligned, always.</p>
+              <h3 class="product-name">PII Redaction</h3>
+              <p class="product-desc">Automatically detect and redact personally identifiable information across every document format. GDPR-compliant with a tamper-proof audit log.</p>
               <ul class="product-features" role="list">
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  150+ pre-built policy templates
+                  Detects 40+ PII categories in 30+ languages
                 </li>
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Version control and approval workflows
+                  Works on PDF, Word, Excel, and images
                 </li>
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Staff acknowledgement tracking
+                  Tamper-proof audit log for every redaction
                 </li>
               </ul>
             </div>
-            <a href="#demo" class="product-link">
+            <a href="#request-demo" class="product-link">
               Learn more
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
 
-          <!-- Audit Manager -->
+          <!-- PDF Accessibility -->
           <div class="card">
             <div class="product-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <polyline points="9,11 12,14 22,4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4M12 16h.01"/>
               </svg>
             </div>
             <div class="card-body">
-              <h3 class="product-name">Audit Manager</h3>
-              <p class="product-desc">Prepare for internal and external audits without the chaos. Collect evidence, close gaps, and generate reports at the click of a button.</p>
+              <h3 class="product-name">PDF Accessibility</h3>
+              <p class="product-desc">Remediate your entire PDF library to WCAG 2.2 AA and European Accessibility Act standards — automatically, at scale, without manual tagging.</p>
               <ul class="product-features" role="list">
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Automated evidence collection
+                  Auto-tags structure, headings, alt text, and tables
                 </li>
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Gap analysis with remediation tasks
+                  EAA &amp; PDF/UA compliance certification
                 </li>
                 <li>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  One-click auditor report export
+                  Batch-process thousands of PDFs in hours
                 </li>
               </ul>
             </div>
-            <a href="#demo" class="product-link">
+            <a href="#request-demo" class="product-link">
               Learn more
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -1010,81 +913,44 @@
         <div class="section-header reveal">
           <span class="section-eyebrow section-eyebrow-light">Industries</span>
           <h2 id="industries-heading" class="section-title section-title-light">Built for the Sectors That Get Scrutinised Most</h2>
-          <p class="section-desc section-desc-light" style="margin: 0 auto;">ComplyLoft comes pre-configured for the regulatory frameworks that matter most in your industry.</p>
+          <p class="section-desc section-desc-light" style="margin: 0 auto;">ComplyLoft comes pre-configured for the compliance frameworks that matter most in your industry.</p>
         </div>
-
         <div class="industries-grid reveal">
           <div class="industry-card">
             <div class="industry-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="0"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
             </div>
-            <div>
-              <div class="industry-name">Financial Services</div>
-              <div class="industry-regs">MiFID II · FCA · PSD2 · Basel III</div>
-            </div>
+            <div><div class="industry-name">Financial Services</div><div class="industry-regs">MiFID II · FCA · PSD2 · GDPR</div></div>
           </div>
-
           <div class="industry-card">
             <div class="industry-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
-            <div>
-              <div class="industry-name">Healthcare</div>
-              <div class="industry-regs">HIPAA · MDR · GDPR · NIS2</div>
-            </div>
+            <div><div class="industry-name">Healthcare</div><div class="industry-regs">HIPAA · MDR · GDPR · NIS2</div></div>
           </div>
-
           <div class="industry-card">
             <div class="industry-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="0"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <div>
-              <div class="industry-name">Technology & SaaS</div>
-              <div class="industry-regs">SOC 2 · ISO 27001 · EAA · GDPR</div>
-            </div>
+            <div><div class="industry-name">Technology & SaaS</div><div class="industry-regs">SOC 2 · ISO 27001 · EAA · GDPR</div></div>
           </div>
-
           <div class="industry-card">
             <div class="industry-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
             </div>
-            <div>
-              <div class="industry-name">Public Sector</div>
-              <div class="industry-regs">EAA · WCAG · GDPR · NIS2</div>
-            </div>
+            <div><div class="industry-name">Public Sector</div><div class="industry-regs">EAA · WCAG · GDPR · NIS2</div></div>
           </div>
-
           <div class="industry-card">
             <div class="industry-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div>
-              <div class="industry-name">Legal & Professional Services</div>
-              <div class="industry-regs">GDPR · AML · SRA · CCPA</div>
-            </div>
+            <div><div class="industry-name">Legal & Professional Services</div><div class="industry-regs">GDPR · AML · SRA · CCPA</div></div>
           </div>
-
           <div class="industry-card">
             <div class="industry-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             </div>
-            <div>
-              <div class="industry-name">Retail & eCommerce</div>
-              <div class="industry-regs">EAA · GDPR · PCI DSS · DSA</div>
-            </div>
+            <div><div class="industry-name">Retail & eCommerce</div><div class="industry-regs">EAA · GDPR · PCI DSS · DSA</div></div>
           </div>
         </div>
       </div>
@@ -1098,60 +964,34 @@
           <h2 id="security-heading" class="section-title">Enterprise-Grade Security,<br>Built In From Day One</h2>
           <p class="section-desc">We hold ourselves to the same high standards we help you achieve. ComplyLoft is independently certified and audited annually.</p>
         </div>
-
         <div class="security-certs reveal">
           <div class="cert-card">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
+            <div class="cert-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="cert-name">SOC 2 Type II</div>
             <div class="cert-desc">Independently audited annually by KPMG</div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-              </svg>
-            </div>
+            <div class="cert-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <div class="cert-name">ISO 27001 Certified</div>
             <div class="cert-desc">Information security management certified</div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </div>
+            <div class="cert-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="0"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
             <div class="cert-name">256-bit Encryption</div>
             <div class="cert-desc">AES-256 at rest and in transit</div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
+            <div class="cert-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div class="cert-name">EU Data Residency</div>
             <div class="cert-desc">All data stored within the EU by default</div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-              </svg>
-            </div>
+            <div class="cert-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg></div>
             <div class="cert-name">99.8% Uptime SLA</div>
             <div class="cert-desc">Contractually guaranteed availability</div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
+            <div class="cert-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
             <div class="cert-name">GDPR Compliant</div>
             <div class="cert-desc">Full DPA available. Privacy by design</div>
           </div>
@@ -1164,25 +1004,24 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">How It Works</span>
-          <h2 id="process-heading" class="section-title">Up and Running in Under 4 Hours</h2>
-          <p class="section-desc">No lengthy implementation projects. No consultants. Just connect, configure, and start tracking compliance from day one.</p>
+          <h2 id="process-heading" class="section-title">Automated Compliance in Three Steps</h2>
+          <p class="section-desc">Connect your document sources, configure your compliance rules, and let ComplyLoft do the rest — automatically, at scale.</p>
         </div>
-
         <div class="steps reveal">
           <div class="step">
             <div class="step-number" aria-hidden="true">1</div>
             <h3 class="step-title">Connect</h3>
-            <p class="step-desc">Import your existing policies, connect your tools, and select the regulatory frameworks that apply to your business. We support 47 out of the box.</p>
+            <p class="step-desc">Connect your document storage (SharePoint, S3, Google Drive, or API), choose your compliance frameworks, and import your existing document library.</p>
           </div>
           <div class="step">
             <div class="step-number" aria-hidden="true">2</div>
-            <h3 class="step-title">Track</h3>
-            <p class="step-desc">Monitor requirements, assign tasks to your team, and get automated alerts before deadlines arrive. ComplyLoft does the watching so you don't have to.</p>
+            <h3 class="step-title">Automate</h3>
+            <p class="step-desc">ComplyLoft automatically audits documents, detects and redacts PII, and remediates PDFs for accessibility — continuously, as new documents arrive.</p>
           </div>
           <div class="step">
             <div class="step-number" aria-hidden="true">3</div>
             <h3 class="step-title">Report</h3>
-            <p class="step-desc">Generate audit-ready evidence packs, gap analysis reports, and board-level compliance summaries at the click of a button. Auditors love it.</p>
+            <p class="step-desc">Generate audit-ready evidence packs, compliance certificates, and board-level reports at the click of a button. Every action logged and traceable.</p>
           </div>
         </div>
       </div>
@@ -1201,7 +1040,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
           </div>
           <blockquote class="testimonial-quote">
-            "ComplyLoft completely transformed how we manage regulatory compliance. What used to take our team weeks of painful preparation now takes hours. We sailed through our last FCA audit — the examiner was genuinely impressed with how organised our evidence was."
+            "ComplyLoft eliminated weeks of manual document review. We fed it our entire legacy PDF library — 4,200 documents — and it had everything remediated to EAA standards and fully PII-clean in 48 hours. Our data protection officer called it a game changer."
           </blockquote>
           <div class="testimonial-author">
             <div class="testimonial-avatar" aria-hidden="true">SC</div>
@@ -1222,47 +1061,31 @@
             <span class="section-eyebrow">Free Resource</span>
             <h2 id="optin-heading" class="section-title" style="max-width:480px;">Is Your Business Ready for the EAA?</h2>
             <p class="section-desc" style="max-width:480px;">
-              The European Accessibility Act came into effect in June 2025. Thousands of businesses are still not compliant — and the fines are significant.
+              The European Accessibility Act came into effect in June 2025. Thousands of organisations — particularly those with large PDF libraries — are still not compliant.
             </p>
-            <p class="section-desc" style="max-width:480px; margin-top: 12px;">
-              Download our free <strong>EAA Readiness Checklist</strong> and find out exactly where your business stands in under 30 minutes.
+            <p class="section-desc" style="max-width:480px; margin-top:12px;">
+              Download our free <strong>EAA Readiness Checklist</strong> and find out exactly where your document estate stands — including a PDF accessibility audit framework you can use today.
             </p>
-
-            <div class="optin-checklist" style="margin-top: 32px; max-width: 400px;">
+            <div class="optin-checklist" style="margin-top:32px; max-width:400px;">
               <div class="optin-checklist-title">The checklist covers:</div>
               <ul class="optin-checklist-items" role="list">
-                <li>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Web &amp; app accessibility (WCAG 2.2 AA)
-                </li>
-                <li>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Digital product compliance requirements
-                </li>
-                <li>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Documentation and reporting obligations
-                </li>
-                <li>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Gap analysis framework with priority scoring
-                </li>
-                <li>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
-                  Enforcement risk assessment by country
-                </li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg> PDF accessibility requirements (WCAG 2.2 AA)</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg> Document audit scope and prioritisation</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg> PII exposure risk in your document library</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg> EAA enforcement risk by country and sector</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg> Remediation priority scoring framework</li>
               </ul>
               <div class="optin-checklist-footer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline; vertical-align:middle; margin-right:6px; color: var(--color-success);" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:6px;color:var(--color-success);" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
                 Used by 1,200+ compliance teams
               </div>
             </div>
           </div>
 
-          <div class="reveal" style="max-width:440px; width:100%;">
-            <div style="background: var(--color-surface); border: 1.5px solid rgba(3,105,161,0.2); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lg);">
-              <h3 style="font-size: 20px; font-weight: 700; color: var(--color-primary); margin-bottom: 6px; line-height: 1.3;">Download Free EAA Checklist</h3>
-              <p style="font-size: 14px; color: var(--color-text-mid); margin-bottom: 24px; line-height: 1.5;">Get instant access to our 47-point EAA Readiness Checklist — no credit card required.</p>
+          <div class="reveal" style="max-width:440px; width:100%;" id="request-demo">
+            <div style="background:var(--color-surface);border:1.5px solid rgba(89,16,248,0.2);border-radius:0;padding:36px;box-shadow:var(--shadow-lg);">
+              <h3 style="font-size:20px;font-weight:700;color:var(--color-primary);margin-bottom:6px;line-height:1.3;">Download Free EAA Checklist</h3>
+              <p style="font-size:14px;color:var(--color-text-mid);margin-bottom:24px;line-height:1.5;">Get instant access to our 47-point EAA Readiness Checklist — no credit card required.</p>
               <form id="optin-form" novalidate>
                 <div class="form-group">
                   <label class="form-label" for="optin-name">Full Name <span aria-hidden="true">*</span></label>
@@ -1283,11 +1106,9 @@
                 <p class="form-privacy">No spam. Unsubscribe any time. We respect your privacy.</p>
               </form>
               <div class="form-success" id="form-success" role="alert">
-                <div class="form-success-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="20,6 9,17 4,12"/></svg>
-                </div>
+                <div class="form-success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="20,6 9,17 4,12"/></svg></div>
                 <div class="form-success-title">You're in! Check your inbox.</div>
-                <div class="form-success-desc">Your EAA Readiness Checklist is on its way. It should arrive within a few minutes.</div>
+                <div class="form-success-desc">Your EAA Readiness Checklist is on its way and should arrive within a few minutes.</div>
               </div>
             </div>
           </div>
@@ -1300,10 +1121,10 @@
       <div class="container">
         <div class="final-cta-inner reveal">
           <span class="section-eyebrow">Get Started</span>
-          <h2 id="final-cta-heading" class="final-cta-title">Ready to Simplify Compliance?</h2>
-          <p class="final-cta-desc">Join 2,400+ compliance teams using ComplyLoft to stay ahead of every regulation. Set up in under 4 hours — no lengthy contracts, no consultants.</p>
+          <h2 id="final-cta-heading" class="final-cta-title">Ready to Automate Your Compliance?</h2>
+          <p class="final-cta-desc">Join 2,400+ compliance teams using ComplyLoft to automate document auditing, redact PII, and remediate PDFs — without the manual work.</p>
           <div class="final-cta-btns">
-            <a href="#demo" class="btn btn-primary btn-lg">Request a Demo
+            <a href="#request-demo" class="btn btn-primary btn-lg">Request a Demo
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="#" class="btn btn-outline btn-lg">Talk to Sales</a>
@@ -1319,46 +1140,49 @@
   <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-top">
-        <div class="footer-brand">
+        <div>
           <a href="/" class="footer-logo" aria-label="ComplyLoft home">
-            <div class="footer-logo-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
+            <svg viewBox="0 0 413 598" fill="none" xmlns="http://www.w3.org/2000/svg" height="24" aria-hidden="true">
+              <defs>
+                <linearGradient id="ft_g0" x1="63.127" y1="103.613" x2="343.734" y2="498.13" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#96A0FA"/><stop offset="1" stop-color="#E0E4FE"/>
+                </linearGradient>
+                <linearGradient id="ft_g1" x1="81.851" y1="351.969" x2="32.597" y2="276.761" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#AFB7FB"/><stop offset="1" stop-color="#97A1FA"/>
+                </linearGradient>
+                <linearGradient id="ft_g2" x1="372.877" y1="325.947" x2="323.623" y2="250.739" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#C9CFFD"/><stop offset="1" stop-color="#ACB4FB"/>
+                </linearGradient>
+              </defs>
+              <path d="M412.999 149.315V447.947L206.499 597.263L0 447.947V149.315L206.499 0L412.999 149.315ZM80.9795 207.115V390.147L206.499 481.664L332.019 390.147V207.115L206.499 115.6L80.9795 207.115Z" fill="url(#ft_g0)"/>
+              <path d="M0 298.715L81.0484 245.257V352.172L0 298.715Z" fill="url(#ft_g1)"/>
+              <path d="M413 298.714L331.952 352.171V245.257L413 298.714Z" fill="url(#ft_g2)"/>
+            </svg>
             ComplyLoft
           </a>
-          <p class="footer-tagline">The compliance management platform built for teams that can't afford to get it wrong.</p>
+          <p class="footer-tagline">Enterprise compliance automation — document auditing, PII redaction, and accessible PDF remediation for regulated industries.</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="#" class="footer-social" aria-label="Twitter / X">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
             </a>
             <a href="#" class="footer-social" aria-label="GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             </a>
           </div>
         </div>
-
         <div>
           <div class="footer-col-title">Products</div>
           <ul class="footer-links" role="list">
-            <li><a href="#">Compliance Tracker</a></li>
-            <li><a href="#">Policy Hub</a></li>
-            <li><a href="#">Audit Manager</a></li>
+            <li><a href="#">Document Auditor</a></li>
+            <li><a href="#">PII Redaction</a></li>
+            <li><a href="#">PDF Accessibility</a></li>
             <li><a href="#">Integrations</a></li>
             <li><a href="#">Pricing</a></li>
           </ul>
         </div>
-
         <div>
           <div class="footer-col-title">Resources</div>
           <ul class="footer-links" role="list">
@@ -1369,7 +1193,6 @@
             <li><a href="#">API Docs</a></li>
           </ul>
         </div>
-
         <div>
           <div class="footer-col-title">Company</div>
           <ul class="footer-links" role="list">
@@ -1381,7 +1204,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 ComplyLoft Ltd. All rights reserved.</span>
         <div class="footer-legal">
@@ -1394,14 +1216,6 @@
     </div>
   </footer>
 
-  <style>
-    /* Screen reader only utility */
-    .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-    }
-  </style>
-
   <script>
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
@@ -1411,7 +1225,7 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Mobile nav toggle
+    // Mobile nav
     const menuBtn = document.getElementById('menu-toggle');
     const drawer = document.getElementById('mobile-drawer');
     menuBtn.addEventListener('click', () => {
@@ -1419,7 +1233,6 @@
       menuBtn.setAttribute('aria-expanded', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    // Close drawer on link click
     drawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         drawer.classList.remove('open');
@@ -1427,7 +1240,6 @@
         document.body.style.overflow = '';
       });
     });
-    // Close on Escape
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && drawer.classList.contains('open')) {
         drawer.classList.remove('open');
@@ -1449,7 +1261,7 @@
         field.style.borderColor = '';
         if (!field.value.trim() || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value))) {
           field.style.borderColor = 'var(--color-danger)';
-          field.focus();
+          if (valid) field.focus();
           valid = false;
         }
       });
