@@ -216,6 +216,7 @@ nav{
 .industries-wrap{background:var(--navy);padding:88px var(--col-pad)}
 .dark-cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.07)}
 .dark-card{background:var(--navy-mid);padding:32px;transition:all .2s}
+.dark-card-icon{color:rgba(255,255,255,0.75);margin-bottom:20px;}
 .dark-card:hover{background:rgba(89,16,248,0.12)}
 .dark-card .eyebrow{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--purple-light);margin-bottom:12px}
 .dark-card h3{font-size:20px;font-weight:700;color:var(--white);margin-bottom:12px}
@@ -903,7 +904,7 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
   <div class="cards-3">
     <article class="card">
       <div class="card-icon">
-        <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,112a56,56,0,1,1,56-56A56.06,56.06,0,0,1,256,112Z" fill="currentColor"/><path d="M432,112.8l-.45.12h0l-.42.13c-1,.28-2,.58-3,.89-18.61,5.46-108.93,30.92-172.56,30.92-59.13,0-141.28-22-167.56-29.47a73.79,73.79,0,0,0-8-2.58c-19-5-32,14.3-32,31.94,0,17.47,15.7,25.79,31.55,31.76v.28l95.22,29.74c9.73,3.73,12.33,7.54,13.6,10.84,4.13,10.59.83,31.56-.34,38.88l-5.8,45L150.05,477.44q-.15.72-.27,1.47l-.23,1.27h0c-2.32,16.15,9.54,31.82,32,31.82,19.6,0,28.25-13.53,32-31.94h0s28-157.57,42-157.57,42.84,157.57,42.84,157.57h0c3.75,18.41,12.4,31.94,32,31.94,22.52,0,34.38-15.74,32-31.94-.21-1.38-.46-2.74-.76-4.06L329,301.27l-5.79-45c-4.19-26.21-.82-34.87.32-36.9a1.09,1.09,0,0,0,.08-.15c1.08-2,6-6.48,17.48-10.79l89.28-31.21a16.9,16.9,0,0,0,1.62-.52c16-6,32-14.3,32-31.93S451,107.81,432,112.8Z" fill="currentColor"/></svg>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H28V12H20V4ZM16 12H32V24H16V12ZM4 16H16V20H4V16ZM32 16H44V20H32V16ZM16 24H20V44H16V24ZM28 24H32V44H28V24Z"/></svg>
       </div>
       <h3>Make Your PDFs Accessible: Without the Pain</h3>
       <p>The European Accessibility Act is here. If your PDFs aren't accessible to people using screen readers, you're exposed. ComplyLoft auto-tags structure, fixes reading order, and flags what still needs a human eye.</p>
@@ -917,7 +918,7 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
     </article>
     <article class="card">
       <div class="card-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 4H32V8H28V16H20V8H16V4ZM8 16H40V44H8V16Z"/></svg>
       </div>
       <h3>Stop Redacting Names and Numbers One by One</h3>
       <p>Every DSAR or FOI request means someone going through hundreds of pages, blacking out personal information. It's slow, repetitive, and error-prone. ComplyLoft detects personal data automatically, cutting that workload by up to 90%.</p>
@@ -931,7 +932,7 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
     </article>
     <article class="card">
       <div class="card-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H44V8H4V4ZM4 8H8V44H4V8ZM40 8H44V44H40V8ZM4 40H44V44H4V40ZM12 12H20V20H12V12ZM24 14H36V18H24V14ZM12 24H20V32H12V24ZM24 26H36V30H24V26ZM12 32H20V40H12V32ZM24 34H32V38H24V34Z"/></svg>
       </div>
       <h3>Know Exactly Where You Stand Against Any Regulation</h3>
       <p>Whether you're preparing for a DORA audit, reviewing call centre quality under the Consumer Protection Code, or tracking gaps ahead of an inspection — the Document Auditor checks your documents against any standard you define.</p>
@@ -958,18 +959,21 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
   </div>
   <div class="dark-cards-3">
     <article class="dark-card">
+      <div class="dark-card-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H44V12H4V4ZM8 12H16V36H8V12ZM20 12H28V36H20V12ZM32 12H40V36H32V12ZM4 36H44V40H4V36ZM8 40H40V44H8V40Z"/></svg></div>
       <div class="eyebrow">Industry</div>
       <h3>Financial Services</h3>
       <p>Banks, insurers, credit unions, asset managers: if you're dealing with high document volumes, EAA obligations, DSAR requests, or a regulator like the Central Bank breathing down your neck, you'll feel this immediately.</p>
       <div class="tags"><span class="tag">DORA</span><span class="tag">CPC</span><span class="tag">EAA</span><span class="tag">DSAR</span><span class="tag">MiFID II</span></div>
     </article>
     <article class="dark-card">
+      <div class="dark-card-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 16H44V32H4V16ZM16 4H32V44H16V4Z"/></svg></div>
       <div class="eyebrow">Industry</div>
       <h3>Medical &amp; Pharmaceutical</h3>
       <p>Clinical records, trial documentation, regulatory submissions, patient communications: the standard of review in healthcare has to be exact. ComplyLoft gives your teams a consistent, evidenced audit process at scale.</p>
       <div class="tags"><span class="tag">Clinical Governance</span><span class="tag">Pharmacovigilance</span><span class="tag">GDPR</span></div>
     </article>
     <article class="dark-card">
+      <div class="dark-card-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4H36V8H40V12H8V8H12V4ZM8 12H16V32H8V12ZM20 12H28V32H20V12ZM32 12H40V32H32V12ZM4 32H44V36H4V32ZM18 36H30V44H18V36Z"/></svg></div>
       <div class="eyebrow">Industry</div>
       <h3>Public Sector &amp; Government</h3>
       <p>FOI responses, public records redaction, accessible documents for citizens: government bodies, healthcare organisations, and universities face the same document compliance pressures as any regulated business.</p>
