@@ -110,6 +110,15 @@ nav{
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-links a{color:#040A17;font-size:14px;font-weight:700;padding:6px 16px;border-radius:var(--btn-radius);text-decoration:none;transition:all .15s}
 .nav-links a:hover,.nav-links a.active{color:var(--purple);background:rgba(89,16,248,0.06)}
+.nav-dropdown{position:relative;}
+.nav-dropdown-btn{display:flex;align-items:center;gap:6px;color:#040A17;font-size:14px;font-weight:700;padding:6px 16px;border-radius:var(--btn-radius);background:none;border:none;cursor:pointer;font-family:var(--font);transition:all .15s;}
+.nav-dropdown-btn:hover,.nav-dropdown.open .nav-dropdown-btn{color:var(--purple);background:rgba(89,16,248,0.06);}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .2s;}
+.nav-dropdown.open .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-panel{display:none;position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:6px;z-index:200;}
+.nav-dropdown.open .nav-dropdown-panel{display:block;}
+.nav-dropdown-panel a{display:block;padding:9px 14px;font-size:14px;font-weight:500;color:#040A17;text-decoration:none;border-radius:6px;transition:all .15s;}
+.nav-dropdown-panel a:hover{background:rgba(89,16,248,0.06);color:var(--purple);}
 .btn-demo{background:var(--accent);color:var(--white);font-size:14px;font-weight:600;padding:8px 24px;border-radius:var(--btn-radius);text-decoration:none;margin-left:16px;transition:all .15s}
 .btn-demo:hover{background:var(--accent-hover)}
 
@@ -638,8 +647,40 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
   </a>
   <div class="nav-links">
     <a href="/" class="active">Platform</a>
-    <a href="/products/accessibility">Products</a>
-    <a href="/industries/financial-services">Industries</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+        Products
+        <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="/products/accessibility">PDF Accessibility Remediation</a>
+        <a href="/products/redaction">PII Redaction</a>
+        <a href="/products/auditing">Document Auditing</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+        Services
+        <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="/services/implementation">Onboarding &amp; Implementation</a>
+        <a href="/services/consulting">Compliance Consulting</a>
+        <a href="/services/training">Team Training</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+        Industries
+        <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="/industries/financial-services">Financial Services</a>
+        <a href="/industries/healthcare">Healthcare</a>
+        <a href="/industries/legal">Legal</a>
+        <a href="/industries/public-sector">Public Sector</a>
+      </div>
+    </div>
     <a href="/blog">Blog</a>
     <a href="/about">About</a>
     <a href="/contact" class="btn-demo">Get a Demo</a>
@@ -1258,6 +1299,22 @@ updateTimelineProgress();
   },{threshold:0.3});
   const sg=document.querySelector('.stats-grid');
   if(sg)cObs.observe(sg);
+})();
+
+// Nav dropdowns
+(function(){
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd){
+    dd.querySelector('.nav-dropdown-btn').addEventListener('click', function(e){
+      e.stopPropagation();
+      const isOpen = dd.classList.contains('open');
+      dropdowns.forEach(function(d){ d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ dd.classList.add('open'); this.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(){
+    dropdowns.forEach(function(d){ d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded','false'); });
+  });
 })();
 
 </script>
