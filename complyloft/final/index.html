@@ -245,10 +245,21 @@ nav{
 
 /* ── SECURITY ── */
 .security-wrap{background:var(--bg-light);padding:88px var(--col-pad);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.security-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.security-item{background:var(--white);padding:24px;display:flex;align-items:flex-start;gap:14px}
-.security-icon{width:36px;height:36px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.security-icon svg{fill:white}
+.security-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:transparent;}
+.security-item{
+  background:var(--white);
+  border:1px solid #e4e6f0;
+  background-image:
+    linear-gradient(#6b7080,#6b7080),linear-gradient(#6b7080,#6b7080),
+    linear-gradient(#6b7080,#6b7080),linear-gradient(#6b7080,#6b7080),
+    linear-gradient(#6b7080,#6b7080),linear-gradient(#6b7080,#6b7080),
+    linear-gradient(#6b7080,#6b7080),linear-gradient(#6b7080,#6b7080);
+  background-position:0 0,0 100%,100% 0,100% 100%,0 0,100% 0,0 100%,100% 100%;
+  background-size:1px 20px,1px 20px,1px 20px,1px 20px,20px 1px,20px 1px,20px 1px,20px 1px;
+  background-repeat:no-repeat;
+  padding:24px;display:flex;align-items:flex-start;gap:16px;
+}
+.security-icon{color:var(--accent);flex-shrink:0;}
 .security-item h4{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
 .security-item p{font-size:13px;color:var(--body-mid)}
 
@@ -1020,12 +1031,12 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
     <p>We're not a generic SaaS tool that happens to touch compliance documents. ComplyLoft was built specifically for regulated environments where data security isn't optional.</p>
   </div>
   <div class="security-grid">
-    <div class="security-item"><div class="security-icon"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><div><h4>ISO 27001 Certified</h4><p>Independently audited, not just claimed</p></div></div>
-    <div class="security-item"><div class="security-icon"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div><div><h4>Multi-Factor Authentication</h4><p>Required for every login, no exceptions</p></div></div>
-    <div class="security-item"><div class="security-icon"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><div><h4>Role-Based Access Control</h4><p>Your team only sees what they need to</p></div></div>
-    <div class="security-item"><div class="security-icon"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg></div><div><h4>Full Audit Logs</h4><p>Every action is recorded, so you can prove it</p></div></div>
-    <div class="security-item"><div class="security-icon"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg></div><div><h4>Your Data, Isolated</h4><p>Completely separated from every other client</p></div></div>
-    <div class="security-item"><div class="security-icon"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13 13v8h8v-8h-8zM3 21h8v-8H3v8zM3 3v8h8V3H3zm13.66-1.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65z"/></svg></div><div><h4>Fits Into Your Existing Workflow</h4><p>Connect via API or use the platform directly</p></div></div>
+    <div class="security-item"><div class="security-icon"><svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H44V8H4V4ZM4 8H8V32H4V8ZM40 8H44V32H40V8ZM8 32H12V36H8V32ZM36 32H40V36H36V32ZM12 36H16V40H12V36ZM32 36H36V40H32V36ZM16 40H32V44H16V40ZM14 20H18V24H14V20ZM18 24H22V28H18V28ZM22 14H26V24H22V24Z"/></svg></div><div><h4>ISO 27001 Certified</h4><p>Independently audited, not just claimed</p></div></div>
+    <div class="security-item"><div class="security-icon"><svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H24V8H4V4ZM4 8H8V20H4V8ZM20 8H24V20H20V8ZM4 20H24V24H4V20ZM24 12H44V16H24V12ZM32 16H36V20H32V16ZM40 16H44V20H40V16Z"/></svg></div><div><h4>Multi-Factor Authentication</h4><p>Required for every login, no exceptions</p></div></div>
+    <div class="security-item"><div class="security-icon"><svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18 4H30V12H18V4ZM14 12H34V28H14V12ZM6 16H14V24H6V16ZM34 16H42V24H34V16ZM14 28H20V44H14V28ZM28 28H34V44H28V28Z"/></svg></div><div><h4>Role-Based Access Control</h4><p>Your team only sees what they need to</p></div></div>
+    <div class="security-item"><div class="security-icon"><svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 40H44V44H4V40ZM4 28H14V40H4V28ZM18 20H28V40H18V20ZM32 12H42V40H32V12Z"/></svg></div><div><h4>Full Audit Logs</h4><p>Every action is recorded, so you can prove it</p></div></div>
+    <div class="security-item"><div class="security-icon"><svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H20V20H4V4ZM28 4H44V20H28V4ZM4 28H20V44H4V28ZM28 28H44V44H28V28Z"/></svg></div><div><h4>Your Data, Isolated</h4><p>Completely separated from every other client</p></div></div>
+    <div class="security-item"><div class="security-icon"><svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 18H16V30H4V18ZM16 23H20V25H16V23ZM20 20H28V28H20V20ZM28 23H32V25H28V23ZM32 18H44V30H32V18Z"/></svg></div><div><h4>Fits Into Your Existing Workflow</h4><p>Connect via API or use the platform directly</p></div></div>
   </div>
 </div>
 
