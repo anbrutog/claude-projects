@@ -582,14 +582,13 @@ footer{background:var(--navy);padding:64px var(--col-pad) 32px;border-top:1px so
 
 /* ── LOGO SCROLL ── */
 .logo-scroll-wrap{padding:40px 0;background:transparent;overflow:hidden;}
-.logo-scroll-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:28px;}
+.logo-scroll-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#fff;margin-bottom:28px;}
 .logo-scroll-track-wrap{position:relative;overflow:hidden;}
 .logo-scroll-track-wrap::before,.logo-scroll-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
 .logo-scroll-track-wrap::before{left:0;background:linear-gradient(to right,var(--navy),transparent);}
 .logo-scroll-track-wrap::after{right:0;background:linear-gradient(to left,var(--navy),transparent);}
 .logo-scroll-track{display:flex;gap:72px;align-items:center;animation:logoScroll 56s linear infinite;width:max-content;}
-.logo-scroll-track img{height:24px;width:auto;opacity:0.4;filter:brightness(0) invert(1);transition:opacity .2s;}
-.logo-scroll-track img:hover{opacity:0.75;}
+.logo-scroll-track img{height:24px;width:auto;filter:brightness(0) invert(1);}
 @keyframes logoScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 @media(prefers-reduced-motion:reduce){.logo-scroll-track{animation:none;}}
 
