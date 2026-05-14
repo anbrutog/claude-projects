@@ -45,6 +45,7 @@
   --col-pad:calc(5% + 48px);
 }
 
+html{overflow-x:hidden}
 body{
   background:var(--white);
   color:var(--text-primary);
@@ -53,6 +54,8 @@ body{
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   position:relative;
+  overflow-x:hidden;
+  max-width:100%;
 }
 
 /* ── HEADING FONT ── */
@@ -532,6 +535,8 @@ nav.open .nav-mobile-toggle .icon-close{display:block}
   /* Footer */
   .footer-grid{grid-template-columns:repeat(2,1fr);gap:32px}
   .footer-bottom{flex-direction:column;align-items:flex-start}
+  .footer-legal{gap:12px;flex-wrap:wrap}
+  .footer-bottom p{font-size:11px}
 
   /* Section padding */
   .stats-wrap,.products-wrap,.industries-wrap,.security-wrap,
