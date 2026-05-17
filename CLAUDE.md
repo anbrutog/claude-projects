@@ -19,15 +19,20 @@ http://localhost/sites/claude/<directory>/          # directory project
 | Path | Description |
 |------|-------------|
 | `tictactoe.html` | Two-player Tic Tac Toe — dark UI, score tracking, win animations |
-| `complyloft/index.html` | ComplyLoft homepage redesign — enterprise compliance automation platform |
+| `complyloft/index.html` | ComplyLoft homepage — enterprise compliance automation platform |
+| `complyloft/final/index.html` | ComplyLoft homepage v2 — corner brackets, pixel-art SVG icons, hamburger nav |
+| `complyloft/prop/index.html` | 15-slide marketing proposal deck for bestsalesfunnels.net |
 | `argus/index.html` | Argus — niche trend-tracking landing page |
 | `report/index.html` | Anthropic News Report (April 2026) |
 | `firsttest/index.html` | Marketing Camelot — Doberman Dan |
+| `the-four-systems/` | Four-SEO-skills dashboard (keyword research, content, links, tracking) |
+| `next-app/` | Next.js app — has `node_modules`, needs `npm run dev` (see note below) |
 
 ## Repository Conventions
 
 - Each project is a **single self-contained HTML file** — all CSS in `<style>`, all JS in `<script>`, no CDN/npm.
-- The one exception: directory projects (`complyloft/`) use `index.html` inside a folder but are still self-contained.
+- Directory projects (`complyloft/`, `argus/`, etc.) use `index.html` inside a folder but are still self-contained.
+- `next-app/` is the exception — it is a full Next.js project. Run with `npm run dev` from that directory; it does **not** serve via XAMPP.
 - Commit messages follow Conventional Commits: `feat:`, `fix:`, `style:`, `refactor:`, `chore:`.
 - Commit and push after every logical unit of work — never batch unrelated changes, never leave a session without pushing.
 
@@ -55,6 +60,21 @@ Brand-accurate design system — do not deviate from these tokens:
 | Secondary button | `#040A17` bg · `#E8E0FD` text · `#E8E0FD` border |
 
 Product: document auditing automation, PII redaction, accessible PDF remediation.
+
+### ComplyLoft Proposal (`complyloft/prop/index.html`)
+
+15-slide JS-driven presentation for bestsalesfunnels.net. Uses `position:absolute` + `.active`/`.out` CSS transitions. Each slide has a base64-embedded watermark logo; slide 2 has a base64 portrait photo.
+
+| Token | Value |
+|-------|-------|
+| Font | Inter (300–900) via Google Fonts |
+| Dark / primary | `#000000` pure black (Uber B&W aesthetic) |
+| Accent | `#ed9b33` amber — sole colour accent |
+| Bg-light | `#f5f5f5` |
+| Page surround | `#111111` |
+| Border radius | **0px** containers, cards, step numbers, nav buttons; **2px** on badges and tags only |
+
+Do not introduce additional colours. Amber is the only non-black/white element.
 
 ### Tictactoe (`tictactoe.html`)
 
