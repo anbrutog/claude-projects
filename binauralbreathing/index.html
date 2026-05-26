@@ -21,10 +21,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binaural Breathing — Change How You Feel in Minutes</title>
   <meta name="description" content="Guided breathing sessions enhanced with immersive binaural sound. Reduce stress. Reset your focus. Build calm that actually lasts.">
-  <!-- WP: move to functions.php → wp_enqueue_style('bb-fonts', 'https://fonts.googleapis.com/...') -->
+  <!-- WP: move to functions.php → wp_enqueue_style('bb-fonts', ...) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,600,500,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!-- WP: move all CSS below to theme's style.css and enqueue via wp_enqueue_style() -->
   <style>
     /* ===== RESET ===== */
@@ -59,7 +61,7 @@
       --color-glass:        rgba(255,255,255,0.04);
       --color-glass-hover:  rgba(255,255,255,0.07);
       --color-glass-border: rgba(255,255,255,0.09);
-      --font-heading: 'Poppins', system-ui, sans-serif;
+      --font-heading: 'Satoshi', system-ui, sans-serif;
       --font-body:    'Inter', system-ui, sans-serif;
       --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
       --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px;
@@ -89,13 +91,10 @@
     /* ===== NAV ===== */
     /* WP: this entire <header> becomes get_header() → header.php */
     .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      position: relative; z-index: 10;
       height: var(--nav-h);
-      background: rgba(7,18,36,0.80);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: var(--color-bg-deep);
       border-bottom: 1px solid var(--color-glass-border);
-      transition: background var(--transition-slow);
     }
     .nav-inner {
       display: flex; align-items: center;
@@ -160,12 +159,12 @@
     }
     .btn-primary {
       background: var(--color-blue); color: #fff;
-      box-shadow: 0 0 28px rgba(40,120,255,0.28);
+      box-shadow: 0 0 28px rgba(40,120,255,0.32), inset 0 1px 0 rgba(255,255,255,0.12);
     }
     .btn-primary:hover {
       background: var(--color-blue-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 0 40px rgba(40,120,255,0.42);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 48px rgba(100,240,214,0.30), 0 8px 28px rgba(40,120,255,0.45), inset 0 1px 0 rgba(255,255,255,0.14);
     }
     .btn-ghost {
       background: transparent; color: var(--color-text);
@@ -206,9 +205,8 @@
     /* ===== HERO ===== */
     .hero {
       position: relative; overflow: hidden;
-      min-height: 100dvh;
+      min-height: calc(100dvh - var(--nav-h));
       display: flex; align-items: center;
-      padding-top: var(--nav-h);
       background: var(--color-bg);
     }
     .hero-bg { position: absolute; inset: 0; pointer-events: none; }
@@ -279,30 +277,20 @@
 
     /* Hero social proof */
     .hero-proof {
-      display: flex; align-items: center; gap: 14px;
-      padding: 16px 20px;
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 14px 20px;
       background: var(--color-glass);
       border: 1px solid var(--color-glass-border);
       border-radius: var(--radius-lg);
       max-width: 420px;
     }
-    .proof-avatars {
-      display: flex; flex-shrink: 0;
-    }
-    .proof-av {
-      width: 32px; height: 32px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-heading); font-size: 11px; font-weight: 700; color: #fff;
-      border: 2px solid var(--color-bg-mid);
-      margin-right: -8px; flex-shrink: 0;
-    }
-    .proof-av:last-child { margin-right: 0; }
-    .proof-right { flex: 1; }
-    .proof-stars { color: var(--color-gold); font-size: 11px; letter-spacing: 1px; margin-bottom: 3px; }
+    .proof-star-cluster { display: flex; gap: 2px; flex-shrink: 0; }
+    .proof-star-cluster span { color: var(--color-gold); font-size: 15px; line-height: 1; }
+    .proof-right { min-width: 0; }
+    .proof-rating { font-size: 13px; font-weight: 600; color: var(--color-text); margin-bottom: 2px; }
     .proof-text {
       font-size: 12px; color: var(--color-text-mid); line-height: 1.45;
     }
-    .proof-text strong { color: var(--color-text); font-weight: 500; }
 
     /* ===== PHONE MOCKUP ===== */
     .hero-visual {
@@ -421,7 +409,14 @@
     @media (min-width:1400px) { .float-card-left{left:-110px;} .float-card-right{right:-110px;} }
 
     /* ===== STATES ===== */
-    .states { background: var(--color-bg-mid); }
+    .states {
+      position: relative;
+      background: var(--color-bg-mid);
+    }
+    .states::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 50% 0%, rgba(40,120,255,0.07) 0%, transparent 50%);
+    }
     .states-intro {
       font-size: 16px; color: var(--color-text-mid); line-height: 1.7;
       text-align: center; max-width: 480px; margin: -32px auto 48px;
@@ -461,25 +456,114 @@
     .state-link  { font-size: 12px; font-weight: 600; color: var(--color-aqua); display: inline-flex; align-items: center; gap: 4px; transition: gap var(--transition); }
     .state-card:hover .state-link { gap: 8px; }
 
-    /* ===== HOW IT WORKS ===== */
-    .how { background: var(--color-bg); }
-    .steps-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
-    @media (min-width:768px)  { .steps-grid { grid-template-columns: repeat(3,1fr); } }
-    @media (min-width:1600px) { .steps-grid { gap: 72px; } }
-    .step { display: flex; flex-direction: column; }
-    .step-num {
-      font-family: var(--font-heading); font-size: 56px; font-weight: 800;
-      color: rgba(100,240,214,0.12); line-height: 1; letter-spacing: -2px; margin-bottom: 16px;
+    /* ===== BENTO / HOW IT WORKS ===== */
+    .how {
+      position: relative;
+      background: var(--color-bg-deep);
     }
-    .step-icon-box {
-      width: 50px; height: 50px; border-radius: var(--radius-md);
+    .how::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 30% 40%, rgba(40,120,255,0.08) 0%, transparent 55%),
+                  radial-gradient(ellipse at 75% 70%, rgba(100,240,214,0.05) 0%, transparent 50%);
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .bc-breath { grid-column: 1 / 3; grid-row: auto; }
+      .bc-sound  { grid-column: 1 / 3; grid-row: auto; min-height: 220px; }
+      .bc-state, .bc-shift { grid-column: auto; grid-row: auto; }
+    }
+    @media (max-width: 560px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .bc-breath, .bc-sound, .bc-state, .bc-shift { grid-column: 1; min-height: 200px; }
+    }
+    .bento-card {
+      position: relative; overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-glass-border);
+      padding: 32px; display: flex; flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition-mid);
+    }
+    .bento-card:hover { border-color: var(--color-aqua-border); transform: translateY(-3px); }
+    .bc-breath {
+      grid-column: 1 / 3; grid-row: 1;
+      background: linear-gradient(140deg, #061628 0%, #0c2244 60%, #0a3460 100%);
+    }
+    .bc-sound {
+      grid-column: 3; grid-row: 1 / 3;
+      background: linear-gradient(180deg, #050a1e 0%, #06132a 60%, #060d20 100%);
+    }
+    .bc-state {
+      grid-column: 1; grid-row: 2;
+      background: linear-gradient(140deg, #050c1a 0%, #08172a 100%);
+    }
+    .bc-shift {
+      grid-column: 2; grid-row: 2;
+      background: linear-gradient(140deg, #061e18 0%, #0b2c26 100%);
+    }
+    .bento-icon {
+      width: 46px; height: 46px; border-radius: var(--radius-sm);
       background: var(--color-aqua-glow); border: 1px solid var(--color-aqua-border);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px; color: var(--color-aqua);
+      margin-bottom: 20px; flex-shrink: 0;
     }
-    .step-title { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--color-text); margin-bottom: 10px; }
-    .step-desc  { font-size: 15px; color: var(--color-text-mid); line-height: 1.72; }
-    .how-cta    { text-align: center; margin-top: 56px; }
+    .bento-title {
+      font-family: var(--font-heading); font-size: clamp(18px, 2vw, 24px);
+      font-weight: 700; color: var(--color-text); margin-bottom: 10px; line-height: 1.2;
+    }
+    .bento-desc { font-size: 14px; color: var(--color-text-mid); line-height: 1.72; max-width: 320px; }
+    .bento-stat {
+      margin-top: auto; padding-top: 20px;
+      font-family: var(--font-heading); font-size: 44px; font-weight: 700;
+      color: var(--color-aqua); line-height: 1;
+      padding-bottom: 2px;
+    }
+    .bento-stat-label { font-size: 11px; color: var(--color-text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+    /* Breathing orb inside bento */
+    .bento-orb-wrap { position: absolute; right: 28px; bottom: 28px; pointer-events: none; }
+    .bento-orb-ring {
+      width: 100px; height: 100px; border-radius: 50%;
+      border: 1px solid rgba(100,240,214,0.20);
+      animation: bentoOrb 4s ease-in-out infinite;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bento-orb-ring::after {
+      content: ''; width: 60px; height: 60px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(100,240,214,0.22) 0%, rgba(40,120,255,0.10) 60%, transparent 100%);
+      animation: bentoOrb 4s ease-in-out infinite reverse;
+    }
+    @keyframes bentoOrb { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.18); opacity: 1; } }
+    /* Sound wave bars */
+    .bento-waves { display: flex; gap: 4px; align-items: flex-end; height: 64px; margin-top: auto; }
+    .bwave {
+      width: 3px; border-radius: 2px; background: var(--color-aqua); opacity: 0.55;
+      animation: waveAnim 1.6s ease-in-out infinite;
+    }
+    .bwave:nth-child(1)  { height:22%; animation-delay:0s; }
+    .bwave:nth-child(2)  { height:40%; animation-delay:.1s; }
+    .bwave:nth-child(3)  { height:65%; animation-delay:.2s; }
+    .bwave:nth-child(4)  { height:85%; animation-delay:.3s; }
+    .bwave:nth-child(5)  { height:100%;animation-delay:.4s; }
+    .bwave:nth-child(6)  { height:78%; animation-delay:.35s; }
+    .bwave:nth-child(7)  { height:55%; animation-delay:.25s; }
+    .bwave:nth-child(8)  { height:38%; animation-delay:.15s; }
+    .bwave:nth-child(9)  { height:24%; animation-delay:.05s; }
+    .bwave:nth-child(10) { height:48%; animation-delay:.1s; }
+    .bwave:nth-child(11) { height:72%; animation-delay:.2s; }
+    .bwave:nth-child(12) { height:52%; animation-delay:.3s; }
+    @keyframes waveAnim { 0%,100%{transform:scaleY(.45);opacity:.3;} 50%{transform:scaleY(1);opacity:.8;} }
+    /* Glowing pulsing border on featured bento card */
+    @keyframes bentoGlow { 0%,100%{box-shadow:0 0 0 0 rgba(100,240,214,0);} 50%{box-shadow:0 0 24px 2px rgba(100,240,214,0.10);} }
+    .bc-breath { animation: bentoGlow 5s ease-in-out infinite; }
+    .how-cta { text-align: center; margin-top: 40px; }
 
     /* ===== ENVIRONMENTS ===== */
     .environments { background: var(--color-bg-mid); }
@@ -575,36 +659,50 @@
     .streak-cta { margin-top: 28px; }
 
     /* ===== TESTIMONIALS ===== */
-    .testimonials { background: var(--color-bg-mid); }
+    .testimonials {
+      position: relative;
+      background: var(--color-bg-mid);
+    }
+    .testimonials::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 50% 100%, rgba(100,240,214,0.04) 0%, transparent 55%);
+    }
     .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
     @media (min-width:768px)  { .testimonials-grid { grid-template-columns: repeat(3,1fr); } }
     @media (min-width:1600px) { .testimonials-grid { gap: 28px; } }
     .t-card {
       background: var(--color-glass); border: 1px solid var(--color-glass-border);
-      border-radius: var(--radius-lg); padding: 32px;
+      border-radius: var(--radius-lg); padding: 36px 32px;
       transition: all var(--transition-slow);
+      display: flex; flex-direction: column;
     }
     .t-card:hover {
       background: var(--color-glass-hover);
-      border-color: rgba(100,240,214,0.13);
+      border-color: rgba(100,240,214,0.15);
       transform: translateY(-4px);
     }
-    .stars  { display: flex; gap: 3px; margin-bottom: 16px; }
-    .star   { color: var(--color-gold); font-size: 13px; }
-    .t-quote { font-size: 15px; font-style: italic; color: var(--color-text); line-height: 1.68; margin-bottom: 20px; }
-    .t-author { display: flex; align-items: center; gap: 12px; }
-    .t-avatar {
-      width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--color-blue), var(--color-aqua));
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: #fff;
+    .stars  { display: flex; gap: 3px; margin-bottom: 18px; }
+    .star   { color: var(--color-gold); font-size: 14px; }
+    .t-quote {
+      font-size: 16px; color: var(--color-text); line-height: 1.7;
+      margin-bottom: 24px; flex: 1;
     }
-    .t-name  { font-size: 13px; font-weight: 600; color: var(--color-text); }
-    .t-title { font-size: 11px; color: var(--color-text-mid); }
+    .t-quote strong { color: var(--color-aqua); font-style: normal; }
+    .t-author { display: flex; flex-direction: column; gap: 3px; padding-top: 16px; border-top: 1px solid var(--color-glass-border); }
+    .t-name  { font-size: 14px; font-weight: 600; color: var(--color-text); }
+    .t-title { font-size: 12px; color: var(--color-text-mid); }
     .t-cta   { text-align: center; margin-top: 40px; }
 
     /* ===== SCIENCE ===== */
-    .science { background: var(--color-bg); }
+    .science {
+      position: relative;
+      background: var(--color-bg);
+    }
+    .science::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 80% 50%, rgba(100,240,214,0.04) 0%, transparent 50%),
+                  radial-gradient(ellipse at 20% 80%, rgba(40,120,255,0.05) 0%, transparent 45%);
+    }
     .science-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width:640px)  { .science-grid { grid-template-columns: repeat(2,1fr); } }
     @media (min-width:1024px) { .science-grid { grid-template-columns: repeat(4,1fr); gap: 20px; } }
@@ -787,12 +885,13 @@
 
     /* ===== FINAL CTA ===== */
     .final-cta {
-      background: var(--color-bg); text-align: center;
-      position: relative; overflow: hidden;
+      text-align: center; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 60%, rgba(40,120,255,0.14) 0%, rgba(100,240,214,0.05) 35%, transparent 65%),
+                  var(--color-bg-deep);
     }
     .cta-glow {
       position: absolute; width: 700px; height: 700px; border-radius: 50%;
-      filter: blur(130px); opacity: 0.08; background: var(--color-aqua);
+      filter: blur(130px); opacity: 0.10; background: var(--color-aqua);
       top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
     }
     .cta-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
@@ -921,7 +1020,7 @@
       </nav>
 
       <div class="nav-right">
-        <a href="#final-cta" class="btn btn-primary btn-sm" style="display:none;" id="nav-cta">Start Free</a>
+        <a href="#final-cta" class="btn btn-primary btn-sm" id="nav-cta">Start Free</a>
         <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span><span></span>
         </button>
@@ -989,18 +1088,13 @@
 
           <!-- Social proof — visible above the fold -->
           <!-- WP: testimonial data from get_field() or WP_Query on 'testimonial' CPT -->
-          <div class="hero-proof" aria-label="Customer testimonials">
-            <div class="proof-avatars" aria-hidden="true">
-              <span class="proof-av" style="background:linear-gradient(135deg,#2878FF,#64F0D6)">S</span>
-              <span class="proof-av" style="background:linear-gradient(135deg,#64F0D6,#2878FF)">J</span>
-              <span class="proof-av" style="background:linear-gradient(135deg,#EAB65C,#2878FF)">A</span>
-              <span class="proof-av" style="background:linear-gradient(135deg,#a78bfa,#64F0D6)">M</span>
+          <div class="hero-proof" aria-label="App Store rating">
+            <div class="proof-star-cluster" aria-label="5 stars" aria-hidden="true">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
             <div class="proof-right">
-              <div class="proof-stars" aria-label="5 stars">★★★★★</div>
-              <p class="proof-text">
-                <strong>"That felt different."</strong> — loved by thousands of breathers
-              </p>
+              <p class="proof-rating">4.9 · App Store</p>
+              <p class="proof-text">"That felt different." — loved by thousands of breathers</p>
             </div>
           </div>
         </div>
@@ -1208,41 +1302,65 @@
     </div>
   </section>
 
-  <!-- ===== HOW IT WORKS ===== -->
+  <!-- ===== HOW IT WORKS — BENTO ===== -->
   <section class="how" id="how" aria-labelledby="how-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">How It Works</span>
-        <h2 class="section-title" id="how-heading">Simple. Powerful.<br>Backed by science.</h2>
+        <span class="section-eyebrow">Three minutes. Real change.</span>
+        <h2 class="section-title" id="how-heading">Simple by design.<br>Deep by science.</h2>
       </div>
-      <div class="steps-grid">
-        <div class="step reveal">
-          <div class="step-num">01</div>
-          <div class="step-icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+      <div class="bento-grid" role="list">
+
+        <!-- Card A: Follow the Breath — wide top -->
+        <div class="bento-card bc-breath reveal" role="listitem">
+          <div class="bento-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64F0D6" stroke-width="1.8" aria-hidden="true"><path d="M12 22c0-5.523-4.477-10-10-10"/><path d="M12 22c0-5.523 4.477-10 10-10"/><path d="M12 22V12"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <h3 class="step-title">Follow the Breath</h3>
-          <p class="step-desc">Gentle visual guidance helps regulate your breathing naturally. No experience needed.</p>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">02</div>
-          <div class="step-icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <p class="bento-title">Follow the Breath</p>
+          <p class="bento-desc">A pulsing orb guides every inhale, hold, and exhale. No instruction needed — your body already knows how. Just follow along.</p>
+          <div class="bento-orb-wrap" aria-hidden="true">
+            <div class="bento-orb-ring"></div>
           </div>
-          <h3 class="step-title">Add Immersive Sound</h3>
-          <p class="step-desc">Binaural sound creates a richer, more focused experience. Headphones unlock the full effect.</p>
         </div>
-        <div class="step reveal">
-          <div class="step-num">03</div>
-          <div class="step-icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+
+        <!-- Card B: Binaural Sound — tall right -->
+        <div class="bento-card bc-sound reveal" role="listitem">
+          <div class="bento-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64F0D6" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
           </div>
-          <h3 class="step-title">Feel the Shift</h3>
-          <p class="step-desc">A few intentional minutes can change how the next hour feels. Consistently.</p>
+          <p class="bento-title">Binaural Sound</p>
+          <p class="bento-desc">Each ear hears a slightly different frequency. Your brain produces the third tone — a perceived beat that shifts your mental state without effort.</p>
+          <div class="bento-waves" aria-hidden="true">
+            <div class="bwave"></div><div class="bwave"></div><div class="bwave"></div>
+            <div class="bwave"></div><div class="bwave"></div><div class="bwave"></div>
+            <div class="bwave"></div><div class="bwave"></div><div class="bwave"></div>
+            <div class="bwave"></div><div class="bwave"></div><div class="bwave"></div>
+          </div>
         </div>
+
+        <!-- Card C: Choose Your State — bottom left -->
+        <div class="bento-card bc-state reveal" role="listitem">
+          <div class="bento-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64F0D6" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <p class="bento-title">Choose Your State</p>
+          <p class="bento-desc">Calm, focus, energy, sleep, or recovery. Each session is tuned to where you want to go.</p>
+        </div>
+
+        <!-- Card D: Feel the Shift — bottom middle -->
+        <div class="bento-card bc-shift reveal" role="listitem">
+          <div class="bento-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64F0D6" stroke-width="1.8"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <p class="bento-title">Feel the Shift</p>
+          <p class="bento-desc">Three intentional minutes. The next hour feels different — calmer, sharper, lighter.</p>
+          <p class="bento-stat" aria-label="5 minutes average session">5 min</p>
+          <p class="bento-stat-label">average session · lasting effect</p>
+        </div>
+
       </div>
       <div class="how-cta reveal">
-        <a href="#science" class="btn btn-aqua">Learn More →</a>
+        <a href="#science" class="btn btn-aqua">The Science Behind It →</a>
       </div>
     </div>
   </section>
@@ -1252,7 +1370,7 @@
   <section class="environments" id="environments" aria-labelledby="env-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">Immersive Environments</span>
+        <span class="section-eyebrow">Where your breath takes you</span>
         <h2 class="section-title" id="env-heading">Choose where your<br>breath takes you.</h2>
       </div>
       <p class="env-intro reveal">Sessions combine breath with carefully designed sound environments.</p>
@@ -1275,7 +1393,7 @@
   <section class="sessions" id="sessions" aria-labelledby="sessions-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">Popular Sessions</span>
+        <span class="section-eyebrow">Start here. Come back often.</span>
         <h2 class="section-title" id="sessions-heading">Press play. Follow along.</h2>
       </div>
       <div class="sessions-list" role="list">
@@ -1430,62 +1548,57 @@
           </div>
           <div class="lb-row">
             <span class="lb-rank gold" aria-label="1st place">1</span>
-            <div class="lb-avatar" style="background:linear-gradient(135deg,#EAB65C,#2878FF)" aria-hidden="true">S</div>
             <div class="lb-info">
               <p class="lb-name">Sarah M.</p>
               <p class="lb-sub">Box Breathing · 4 pattern types</p>
             </div>
             <div class="lb-stat">
               <p class="lb-sessions">21 sessions</p>
-              <p class="lb-streak">🔥 14-day streak</p>
+              <p class="lb-streak">14-day streak</p>
             </div>
           </div>
           <div class="lb-row">
             <span class="lb-rank silver" aria-label="2nd place">2</span>
-            <div class="lb-avatar" style="background:linear-gradient(135deg,#2878FF,#64F0D6)" aria-hidden="true">J</div>
             <div class="lb-info">
               <p class="lb-name">James T.</p>
               <p class="lb-sub">Power Cycle · Custom builder</p>
             </div>
             <div class="lb-stat">
               <p class="lb-sessions">19 sessions</p>
-              <p class="lb-streak">🔥 9-day streak</p>
+              <p class="lb-streak">9-day streak</p>
             </div>
           </div>
           <div class="lb-row">
             <span class="lb-rank bronze" aria-label="3rd place">3</span>
-            <div class="lb-avatar" style="background:linear-gradient(135deg,#a78bfa,#64F0D6)" aria-hidden="true">A</div>
             <div class="lb-info">
               <p class="lb-name">Aoife R.</p>
               <p class="lb-sub">Sleep Drift · Ocean env.</p>
             </div>
             <div class="lb-stat">
               <p class="lb-sessions">16 sessions</p>
-              <p class="lb-streak">🔥 7-day streak</p>
+              <p class="lb-streak">7-day streak</p>
             </div>
           </div>
           <div class="lb-row">
             <span class="lb-rank" aria-label="4th place">4</span>
-            <div class="lb-avatar" style="background:linear-gradient(135deg,#2878FF,#a78bfa)" aria-hidden="true">M</div>
             <div class="lb-info">
               <p class="lb-name">Marcus K.</p>
               <p class="lb-sub">Focus · Deep Rain env.</p>
             </div>
             <div class="lb-stat">
               <p class="lb-sessions">14 sessions</p>
-              <p class="lb-streak">🔥 5-day streak</p>
+              <p class="lb-streak">5-day streak</p>
             </div>
           </div>
           <div class="lb-row">
             <span class="lb-rank" aria-label="5th place">5</span>
-            <div class="lb-avatar" style="background:linear-gradient(135deg,#64F0D6,#2878FF)" aria-hidden="true">L</div>
             <div class="lb-info">
               <p class="lb-name">Lena V.</p>
               <p class="lb-sub">Morning Activation · Forest</p>
             </div>
             <div class="lb-stat">
               <p class="lb-sessions">13 sessions</p>
-              <p class="lb-streak">🔥 4-day streak</p>
+              <p class="lb-streak">4-day streak</p>
             </div>
           </div>
         </div>
@@ -1548,32 +1661,32 @@
   <section class="testimonials" id="testimonials" aria-labelledby="t-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">Real People</span>
-        <h2 class="section-title" id="t-heading">People don't come back for another app.<br>They come back for how they feel.</h2>
+        <span class="section-eyebrow">It changes how you feel</span>
+        <h2 class="section-title" id="t-heading">People don't come back<br>for an app. For a feeling.</h2>
       </div>
       <div class="testimonials-grid" role="list">
         <article class="t-card reveal" role="listitem">
-          <div class="stars" aria-label="5 stars"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div>
+          <div class="stars" aria-label="5 out of 5 stars"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div>
           <blockquote class="t-quote">"I didn't expect five minutes to make such a difference. The sound environment pulls you in completely."</blockquote>
           <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">S</div>
-            <div><p class="t-name">Sarah M.</p><p class="t-title">Product Designer</p></div>
+            <p class="t-name">Sarah M.</p>
+            <p class="t-title">Product Designer · Dublin</p>
           </div>
         </article>
         <article class="t-card reveal" role="listitem">
-          <div class="stars" aria-label="5 stars"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div>
-          <blockquote class="t-quote">"The sound makes it feel completely different to anything else I've tried. It bypasses the thinking brain."</blockquote>
+          <div class="stars" aria-label="5 out of 5 stars"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div>
+          <blockquote class="t-quote">"The sound makes it feel completely different to anything else I've tried. It bypasses the thinking brain entirely."</blockquote>
           <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">J</div>
-            <div><p class="t-name">James O.</p><p class="t-title">Entrepreneur</p></div>
+            <p class="t-name">James O.</p>
+            <p class="t-title">Entrepreneur · London</p>
           </div>
         </article>
         <article class="t-card reveal" role="listitem">
-          <div class="stars" aria-label="5 stars"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div>
+          <div class="stars" aria-label="5 out of 5 stars"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div>
           <blockquote class="t-quote">"This became part of my evening routine. The 10-minute sleep session is the reason I get to sleep before midnight."</blockquote>
           <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">A</div>
-            <div><p class="t-name">Aoife R.</p><p class="t-title">UX Researcher</p></div>
+            <p class="t-name">Aoife R.</p>
+            <p class="t-title">UX Researcher · Cork</p>
           </div>
         </article>
       </div>
@@ -1587,7 +1700,7 @@
   <section class="science" id="science" aria-labelledby="sci-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">Why Breathwork</span>
+        <span class="section-eyebrow">Your breath changes more than you think</span>
         <h2 class="section-title" id="sci-heading">Your breath changes<br>more than you think.</h2>
       </div>
       <div class="science-grid" role="list">
@@ -1626,7 +1739,7 @@
   <section class="faq" id="faq" aria-labelledby="faq-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">FAQ</span>
+        <span class="section-eyebrow">Common questions, honest answers</span>
         <h2 class="section-title" id="faq-heading">Questions answered.</h2>
       </div>
       <div class="faq-list" role="list">
@@ -1831,9 +1944,10 @@
   }, { threshold: 0.07, rootMargin: '0px 0px -28px 0px' });
 
   /* — directional variants: swap .reveal on specific elements — */
-  const steps = document.querySelectorAll('.steps-grid .step');
-  if (steps[0]) steps[0].classList.replace('reveal', 'reveal-left');
-  if (steps[2]) steps[2].classList.replace('reveal', 'reveal-right');
+  /* bento cards: left→right directional entrance */
+  const bentoCards = document.querySelectorAll('.bento-grid .bento-card');
+  if (bentoCards[0]) bentoCards[0].classList.replace('reveal', 'reveal-left');
+  if (bentoCards[1]) bentoCards[1].classList.replace('reveal', 'reveal-right');
 
   document.querySelectorAll('.state-card').forEach(el => el.classList.replace('reveal', 'reveal-scale'));
   document.querySelectorAll('.science-grid .sci-card').forEach(el => el.classList.replace('reveal', 'reveal-scale'));
@@ -1847,12 +1961,12 @@
   /* — auto-stagger: assign --reveal-delay to list/grid children — */
   [
     ['.states-grid .state-card',         65],
+    ['.bento-grid .bento-card',          90],
     ['.community-grid .comm-feat',       85],
     ['.sessions-list .session-card',     65],
     ['.env-grid .env-card',              50],
     ['.science-grid .sci-card',          75],
     ['.testimonials-grid .t-card',       95],
-    ['.steps-grid .step',               115],
     ['.lb-row',                          55],
     ['.badge-item',                      50],
     ['.faq-item',                        38],
@@ -1935,11 +2049,7 @@
     });
   });
 
-  /* ===== NAV CTA on scroll ===== */
-  const navCta = document.getElementById('nav-cta');
-  window.addEventListener('scroll', () => {
-    navCta.style.display = window.scrollY > 400 ? 'inline-flex' : 'none';
-  }, { passive: true });
+  /* Nav CTA always visible — nav is static, no scroll toggle needed */
 </script>
 </body>
 </html>
