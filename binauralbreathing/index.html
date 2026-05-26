@@ -212,13 +212,15 @@
     .hero-bg { position: absolute; inset: 0; pointer-events: none; }
     .glow {
       position: absolute; border-radius: 50%;
-      filter: blur(110px); opacity: 0;
+      /* Reduced from 110px — smaller blur is cheaper to composite */
+      filter: blur(70px); opacity: 0;
+      will-change: opacity;
       animation: glowFade 1.2s ease forwards;
     }
-    .glow-aqua { width: 600px; height: 600px; background: var(--color-aqua); top: -180px; right: 6%; animation-delay: 0.3s; }
-    .glow-blue { width: 500px; height: 500px; background: var(--color-blue); bottom: -80px; right: 28%; animation-delay: 0.5s; }
-    .glow-gold { width: 380px; height: 380px; background: var(--color-gold); top: 40%; left: -130px; animation-delay: 0.7s; }
-    @keyframes glowFade { to { opacity: 0.10; } }
+    .glow-aqua { width: 500px; height: 500px; background: var(--color-aqua); top: -150px; right: 6%; animation-delay: 0.3s; }
+    .glow-blue { width: 420px; height: 420px; background: var(--color-blue); bottom: -60px; right: 28%; animation-delay: 0.5s; }
+    .glow-gold { width: 320px; height: 320px; background: var(--color-gold); top: 40%; left: -100px; animation-delay: 0.7s; }
+    @keyframes glowFade { to { opacity: 0.09; } }
     .hero-grid-bg {
       position: absolute; inset: 0;
       background-image:
@@ -344,10 +346,12 @@
     .phone-orb-glow-ring {
       position: absolute; width: 180px; height: 180px; border-radius: 50%;
       background: radial-gradient(circle, rgba(100,240,214,0.14) 0%, transparent 65%);
+      will-change: transform, opacity;
       animation: orbBreath 5.5s ease-in-out infinite;
     }
     .phone-orb-svg {
       width: 140px; height: 140px;
+      will-change: transform, opacity;
       animation: orbBreath 5.5s ease-in-out infinite;
     }
     @keyframes orbBreath {
@@ -380,22 +384,27 @@
       border-radius: 2px; overflow: hidden;
     }
     .phone-progress-fill {
-      height: 100%; width: 35%;
+      height: 100%; width: 100%;
       background: linear-gradient(90deg, var(--color-blue), var(--color-aqua));
       border-radius: 2px;
+      /* transform: scaleX avoids width layout recalc — GPU-composited */
+      transform: scaleX(0.35); transform-origin: left center;
+      will-change: transform;
       animation: progressAnim 5.5s ease-in-out infinite;
     }
     @keyframes progressAnim {
-      0%  { width: 15%; }
-      47% { width: 55%; }
-      100%{ width: 15%; }
+      0%  { transform: scaleX(0.15); }
+      47% { transform: scaleX(0.55); }
+      100%{ transform: scaleX(0.15); }
     }
     .float-card {
       position: absolute;
-      background: rgba(5,13,28,0.88); backdrop-filter: blur(16px);
+      /* Removed backdrop-filter: blur — blurs behind element every frame */
+      background: rgba(5,13,28,0.96);
       border: 1px solid rgba(255,255,255,0.11);
       border-radius: 14px; padding: 10px 14px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.45); white-space: nowrap;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.6); white-space: nowrap;
+      will-change: transform;
     }
     .float-card-left  { left: -72px; top: 22%;    animation: floatUp   6s ease-in-out infinite; }
     .float-card-right { right: -72px; bottom: 28%; animation: floatDown 7s ease-in-out infinite; }
@@ -545,6 +554,7 @@
     .bento-waves { display: flex; gap: 4px; align-items: flex-end; height: 64px; margin-top: auto; }
     .bwave {
       width: 3px; border-radius: 2px; background: var(--color-aqua); opacity: 0.55;
+      will-change: transform;
       animation: waveAnim 1.6s ease-in-out infinite;
     }
     .bwave:nth-child(1)  { height:22%; animation-delay:0s; }
@@ -560,9 +570,15 @@
     .bwave:nth-child(11) { height:72%; animation-delay:.2s; }
     .bwave:nth-child(12) { height:52%; animation-delay:.3s; }
     @keyframes waveAnim { 0%,100%{transform:scaleY(.45);opacity:.3;} 50%{transform:scaleY(1);opacity:.8;} }
-    /* Glowing pulsing border on featured bento card */
-    @keyframes bentoGlow { 0%,100%{box-shadow:0 0 0 0 rgba(100,240,214,0);} 50%{box-shadow:0 0 24px 2px rgba(100,240,214,0.10);} }
-    .bc-breath { animation: bentoGlow 5s ease-in-out infinite; }
+    /* Pulsing glow — opacity-only animation on pseudo-element (GPU-composited, no repaint) */
+    .bc-breath::after {
+      content: ''; position: absolute; inset: -1px; pointer-events: none;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 0 28px 4px rgba(100,240,214,0.16);
+      opacity: 0; will-change: opacity;
+      animation: bentoGlow 5s ease-in-out infinite;
+    }
+    @keyframes bentoGlow { 0%,100%{opacity:0;} 50%{opacity:1;} }
     .how-cta { text-align: center; margin-top: 40px; }
 
     /* ===== ENVIRONMENTS ===== */
