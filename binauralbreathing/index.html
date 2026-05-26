@@ -827,10 +827,33 @@
     .footer-copy { font-size: 11px; color: var(--color-text-light); }
 
     /* ===== REVEAL ===== */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.62s ease var(--reveal-delay,0ms), transform 0.62s ease var(--reveal-delay,0ms);
+    }
     .reveal.visible { opacity: 1; transform: none; }
+
+    .reveal-left {
+      opacity: 0; transform: translateX(-36px);
+      transition: opacity 0.65s ease var(--reveal-delay,0ms), transform 0.65s cubic-bezier(0.25,1,0.5,1) var(--reveal-delay,0ms);
+    }
+    .reveal-left.visible { opacity: 1; transform: none; }
+
+    .reveal-right {
+      opacity: 0; transform: translateX(36px);
+      transition: opacity 0.65s ease var(--reveal-delay,0ms), transform 0.65s cubic-bezier(0.25,1,0.5,1) var(--reveal-delay,0ms);
+    }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    .reveal-scale {
+      opacity: 0; transform: scale(0.91) translateY(16px);
+      transition: opacity 0.5s ease var(--reveal-delay,0ms), transform 0.55s cubic-bezier(0.34,1.4,0.64,1) var(--reveal-delay,0ms);
+    }
+    .reveal-scale.visible { opacity: 1; transform: none; }
+
     @media (prefers-reduced-motion: reduce) {
-      .reveal, .phone-orb-svg, .phone-orb-glow-ring,
+      .reveal, .reveal-left, .reveal-right, .reveal-scale,
+      .phone-orb-svg, .phone-orb-glow-ring,
       .phone-progress-fill, .float-card, .glow {
         animation: none !important; transition: none !important;
         opacity: 1 !important; transform: none !important;
@@ -1805,8 +1828,42 @@
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  }, { threshold: 0.07, rootMargin: '0px 0px -28px 0px' });
+
+  /* — directional variants: swap .reveal on specific elements — */
+  const steps = document.querySelectorAll('.steps-grid .step');
+  if (steps[0]) steps[0].classList.replace('reveal', 'reveal-left');
+  if (steps[2]) steps[2].classList.replace('reveal', 'reveal-right');
+
+  document.querySelectorAll('.state-card').forEach(el => el.classList.replace('reveal', 'reveal-scale'));
+  document.querySelectorAll('.science-grid .sci-card').forEach(el => el.classList.replace('reveal', 'reveal-scale'));
+  document.querySelectorAll('.testimonials-grid .t-card').forEach(el => el.classList.replace('reveal', 'reveal-scale'));
+
+  const habitCopy = document.querySelector('.habit-copy');
+  if (habitCopy) habitCopy.querySelectorAll('.reveal').forEach(el => el.classList.replace('reveal', 'reveal-left'));
+  const habitVis = document.querySelector('.habit-visual');
+  if (habitVis) habitVis.classList.replace('reveal', 'reveal-right');
+
+  /* — auto-stagger: assign --reveal-delay to list/grid children — */
+  [
+    ['.states-grid .state-card',         65],
+    ['.community-grid .comm-feat',       85],
+    ['.sessions-list .session-card',     65],
+    ['.env-grid .env-card',              50],
+    ['.science-grid .sci-card',          75],
+    ['.testimonials-grid .t-card',       95],
+    ['.steps-grid .step',               115],
+    ['.lb-row',                          55],
+    ['.badge-item',                      50],
+    ['.faq-item',                        38],
+  ].forEach(([sel, gap]) => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.style.setProperty('--reveal-delay', `${i * gap}ms`);
+    });
+  });
+
+  /* — observe all reveal variants — */
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => revealObserver.observe(el));
 
   /* ===== ANIMATED COUNTERS ===== */
   function animateCounter(el) {
