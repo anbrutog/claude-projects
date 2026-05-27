@@ -293,7 +293,9 @@
     }
 
     /* ===== HERO DARK OVERRIDE ===== */
-    .hero { background: #0F0F0F; }
+    .hero { background: #0F0F0F; padding: 48px 0; }
+    @media (min-width:768px)  { .hero { padding: 60px 0; } }
+    @media (min-width:1600px) { .hero { padding: 72px 0; } }
     .hero-grid-bg {
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
