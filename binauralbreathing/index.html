@@ -981,6 +981,86 @@
     }
     .footer-copy { font-size: 11px; color: var(--color-text-light); }
 
+    /* ===== DARK SECTION ===== */
+    .section-dark { background: #171717; }
+    .section-dark .section-eyebrow { color: var(--color-blue); }
+    .section-dark .section-title   { color: #FFFFFF; }
+    .section-dark .section-desc    { color: rgba(255,255,255,0.58); }
+    .section-dark .btn-ghost {
+      color: #FFFFFF; border-color: rgba(255,255,255,0.22);
+    }
+    .section-dark .btn-ghost:hover {
+      background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.38);
+    }
+
+    /* Bento (How It Works) */
+    .section-dark .bento-card { border-color: rgba(255,255,255,0.08); }
+    .section-dark .bento-card:hover { border-color: var(--color-aqua-border); transform: translateY(-3px); }
+    .section-dark .bc-breath { background: linear-gradient(140deg, rgba(237,22,84,0.12) 0%, rgba(237,22,84,0.06) 100%); }
+    .section-dark .bc-sound  { background: linear-gradient(180deg, rgba(0,172,238,0.12) 0%, rgba(0,172,238,0.06) 100%); }
+    .section-dark .bc-state,
+    .section-dark .bc-shift  { background: rgba(255,255,255,0.04); }
+    .section-dark .bento-title { color: #FFFFFF; }
+    .section-dark .bento-desc  { color: rgba(255,255,255,0.58); }
+    .section-dark .bento-stat-label { color: rgba(255,255,255,0.35); }
+
+    /* Sessions */
+    .section-dark .session-card {
+      background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08);
+    }
+    .section-dark .session-card:hover {
+      background: rgba(255,255,255,0.09); border-color: rgba(0,172,238,0.28);
+    }
+    .section-dark .session-name { color: #FFFFFF; }
+    .section-dark .session-meta { color: rgba(255,255,255,0.50); }
+    .section-dark .session-dot  { background: rgba(255,255,255,0.25); }
+    .section-dark .session-tag  { background: rgba(0,172,238,0.14); color: var(--color-aqua); }
+
+    /* Custom builder (inside sessions) */
+    .section-dark .custom-builder-card {
+      background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.09);
+    }
+    .section-dark .custom-builder-card::before {
+      background: radial-gradient(ellipse at 90% 50%, rgba(0,172,238,0.08) 0%, transparent 55%);
+    }
+    .section-dark .custom-left .state-name { color: #FFFFFF; }
+    .section-dark .custom-left .state-desc { color: rgba(255,255,255,0.58); }
+    .section-dark .custom-bullet  { color: rgba(255,255,255,0.58); }
+    .section-dark .seq-title       { color: rgba(255,255,255,0.35); }
+    .section-dark .seq-divider     { background: rgba(255,255,255,0.08); }
+    .section-dark .seq-example-note{ color: rgba(255,255,255,0.35); }
+
+    /* Community */
+    .section-dark .comm-feat,
+    .section-dark .leaderboard-card,
+    .section-dark .badges-card {
+      background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08);
+    }
+    .section-dark .comm-feat:hover {
+      background: rgba(255,255,255,0.09); border-color: var(--color-aqua-border);
+    }
+    .section-dark .comm-feat-title { color: #FFFFFF; }
+    .section-dark .comm-feat-desc  { color: rgba(255,255,255,0.58); }
+    .section-dark .lb-title  { color: #FFFFFF; }
+    .section-dark .lb-name   { color: #FFFFFF; }
+    .section-dark .lb-sub, .section-dark .lb-streak, .section-dark .lb-period { color: rgba(255,255,255,0.45); }
+    .section-dark .lb-row    { border-bottom-color: rgba(255,255,255,0.08); }
+    .section-dark .comm-cta-sub { color: rgba(255,255,255,0.40); }
+
+    /* Science */
+    .section-dark .sci-card { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08); }
+    .section-dark .sci-card:hover { background: rgba(255,255,255,0.09); border-color: var(--color-aqua-border); }
+    .section-dark .sci-title { color: #FFFFFF; }
+    .section-dark .sci-desc  { color: rgba(255,255,255,0.58); }
+
+    /* Final CTA override on dark */
+    .section-dark.final-cta {
+      background: radial-gradient(ellipse at 50% 60%, rgba(237,22,84,0.10) 0%, transparent 55%), #171717;
+    }
+    .section-dark .cta-title { color: #FFFFFF; }
+    .section-dark .cta-micro { color: rgba(255,255,255,0.60); }
+    .section-dark .cta-avail { color: rgba(255,255,255,0.35); }
+
     /* ===== REVEAL ===== */
     .reveal {
       opacity: 0; transform: translateY(24px);
@@ -1359,7 +1439,7 @@
   </section>
 
   <!-- ===== HOW IT WORKS — BENTO ===== -->
-  <section class="how" id="how" aria-labelledby="how-heading">
+  <section class="how section-dark" id="how" aria-labelledby="how-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-eyebrow">Three minutes. Real change.</span>
@@ -1446,7 +1526,7 @@
 
   <!-- ===== SESSIONS ===== -->
   <!-- WP: sessions from 'bb_session' CPT — WP_Query with posts_per_page=5 -->
-  <section class="sessions" id="sessions" aria-labelledby="sessions-heading">
+  <section class="sessions section-dark" id="sessions" aria-labelledby="sessions-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-eyebrow">Start here. Come back often.</span>
@@ -1553,7 +1633,7 @@
 
   <!-- ===== COMMUNITY ===== -->
   <!-- WP: community section — leaderboard and badges driven by custom user meta or a plugin like BuddyBoss -->
-  <section class="community" id="community" aria-labelledby="community-heading">
+  <section class="community section-dark" id="community" aria-labelledby="community-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-eyebrow">Your Community</span>
@@ -1753,7 +1833,7 @@
   </section>
 
   <!-- ===== SCIENCE ===== -->
-  <section class="science" id="science" aria-labelledby="sci-heading">
+  <section class="science section-dark" id="science" aria-labelledby="sci-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-eyebrow">Your breath changes more than you think</span>
@@ -1931,7 +2011,7 @@
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="final-cta" id="final-cta" aria-labelledby="cta-heading">
+  <section class="final-cta section-dark" id="final-cta" aria-labelledby="cta-heading">
     <div class="cta-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="cta-content">
