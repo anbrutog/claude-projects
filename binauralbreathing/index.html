@@ -697,6 +697,46 @@
     .session-tag  { font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: var(--radius-full); background: var(--color-aqua-glow); color: var(--color-aqua); }
     .sessions-cta { text-align: center; margin-top: 32px; }
 
+    /* session play/pause icon toggle */
+    .icon-play  { display: block; }
+    .icon-pause { display: none; }
+    .session-card.playing .icon-play  { display: none; }
+    .session-card.playing .icon-pause { display: block; }
+
+    /* session playing state */
+    .session-card.playing {
+      border-color: var(--color-aqua);
+      transform: translateX(4px);
+    }
+    .session-card.playing .session-play {
+      background: var(--color-aqua);
+      box-shadow: 0 0 26px rgba(0,172,238,0.40);
+    }
+    .section-dark .session-card.playing {
+      background: rgba(0,172,238,0.07);
+      border-color: var(--color-aqua);
+    }
+
+    /* now playing label */
+    .session-now { display: none; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-aqua); }
+    .session-card.playing .session-now { display: inline; }
+
+    /* animated waveform */
+    .session-wave { display: none; align-items: flex-end; gap: 3px; height: 20px; flex-shrink: 0; }
+    .session-card.playing .session-wave { display: flex; }
+    .wave-bar {
+      width: 3px; border-radius: 2px; background: var(--color-aqua);
+      animation: waveBar 0.85s ease-in-out infinite alternate;
+      transform-origin: bottom;
+    }
+    .wave-bar:nth-child(1) { height: 7px;  animation-delay: 0s;     }
+    .wave-bar:nth-child(2) { height: 15px; animation-delay: 0.17s;  }
+    .wave-bar:nth-child(3) { height: 10px; animation-delay: 0.34s;  }
+    .wave-bar:nth-child(4) { height: 18px; animation-delay: 0.08s;  }
+    .wave-bar:nth-child(5) { height: 8px;  animation-delay: 0.25s;  }
+    @keyframes waveBar { from { transform: scaleY(0.35); } to { transform: scaleY(1); } }
+    @media (prefers-reduced-motion: reduce) { .wave-bar { animation: none; transform: scaleY(0.7); } }
+
     /* ===== HABIT ===== */
     .habit { background: var(--color-bg-deep); }
     .habit-grid { display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; }
@@ -1533,40 +1573,60 @@
         <h2 class="section-title" id="sessions-heading">Press play. Follow along.</h2>
       </div>
       <div class="sessions-list" role="list">
-        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Return to Centre, 5 minutes, for stress">
-          <div class="session-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Return to Centre, 5 minutes, for stress" data-left="200" data-right="210">
+          <div class="session-play" aria-hidden="true">
+            <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </div>
           <div class="session-info">
             <p class="session-name">Return to Centre</p>
-            <div class="session-meta"><span>5 min</span><span class="session-dot"></span><span>For stress</span><span class="session-tag">Calm</span></div>
+            <div class="session-meta"><span>5 min</span><span class="session-dot"></span><span>For stress</span><span class="session-tag">Calm</span><span class="session-now">Now Playing</span></div>
           </div>
+          <div class="session-wave" aria-hidden="true"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
         </article>
-        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Deep Focus, 10 minutes, for work">
-          <div class="session-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Deep Focus, 10 minutes, for work" data-left="220" data-right="238">
+          <div class="session-play" aria-hidden="true">
+            <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </div>
           <div class="session-info">
             <p class="session-name">Deep Focus</p>
-            <div class="session-meta"><span>10 min</span><span class="session-dot"></span><span>For work</span><span class="session-tag">Focus</span></div>
+            <div class="session-meta"><span>10 min</span><span class="session-dot"></span><span>For work</span><span class="session-tag">Focus</span><span class="session-now">Now Playing</span></div>
           </div>
+          <div class="session-wave" aria-hidden="true"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
         </article>
-        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Sleep Drift, 15 minutes, for winding down">
-          <div class="session-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Sleep Drift, 15 minutes, for winding down" data-left="180" data-right="184">
+          <div class="session-play" aria-hidden="true">
+            <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </div>
           <div class="session-info">
             <p class="session-name">Sleep Drift</p>
-            <div class="session-meta"><span>15 min</span><span class="session-dot"></span><span>For winding down</span><span class="session-tag">Sleep</span></div>
+            <div class="session-meta"><span>15 min</span><span class="session-dot"></span><span>For winding down</span><span class="session-tag">Sleep</span><span class="session-now">Now Playing</span></div>
           </div>
+          <div class="session-wave" aria-hidden="true"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
         </article>
-        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Calm Reset, 3 minutes, for busy days">
-          <div class="session-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Calm Reset, 3 minutes, for busy days" data-left="196" data-right="204">
+          <div class="session-play" aria-hidden="true">
+            <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </div>
           <div class="session-info">
             <p class="session-name">Calm Reset</p>
-            <div class="session-meta"><span>3 min</span><span class="session-dot"></span><span>For busy days</span><span class="session-tag">Calm</span></div>
+            <div class="session-meta"><span>3 min</span><span class="session-dot"></span><span>For busy days</span><span class="session-tag">Calm</span><span class="session-now">Now Playing</span></div>
           </div>
+          <div class="session-wave" aria-hidden="true"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
         </article>
-        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Morning Activation, 6 minutes, for energy">
-          <div class="session-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <article class="session-card reveal" role="listitem" tabindex="0" aria-label="Morning Activation, 6 minutes, for energy" data-left="220" data-right="245">
+          <div class="session-play" aria-hidden="true">
+            <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </div>
           <div class="session-info">
             <p class="session-name">Morning Activation</p>
-            <div class="session-meta"><span>6 min</span><span class="session-dot"></span><span>For energy</span><span class="session-tag">Energy</span></div>
+            <div class="session-meta"><span>6 min</span><span class="session-dot"></span><span>For energy</span><span class="session-tag">Energy</span><span class="session-now">Now Playing</span></div>
           </div>
+          <div class="session-wave" aria-hidden="true"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
         </article>
       </div>
       <div class="sessions-cta reveal">
@@ -2186,6 +2246,102 @@
   });
 
   /* Nav CTA always visible — nav is static, no scroll toggle needed */
+
+  /* ===== BINAURAL AUDIO ===== */
+  let audioCtx = null;
+  let activeNodes = null;
+  let activeCard = null;
+
+  function ensureCtx() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function startBinaural(leftHz, rightHz) {
+    ensureCtx();
+    const ctx = audioCtx;
+
+    const master = ctx.createGain();
+    master.gain.setValueAtTime(0, ctx.currentTime);
+    master.gain.linearRampToValueAtTime(0.18, ctx.currentTime + 2.2);
+    master.connect(ctx.destination);
+
+    const merger = ctx.createChannelMerger(2);
+    merger.connect(master);
+
+    const leftOsc = ctx.createOscillator();
+    leftOsc.type = 'sine';
+    leftOsc.frequency.value = leftHz;
+    const leftGain = ctx.createGain();
+    leftGain.gain.value = 1;
+    leftOsc.connect(leftGain);
+    leftGain.connect(merger, 0, 0);
+
+    const rightOsc = ctx.createOscillator();
+    rightOsc.type = 'sine';
+    rightOsc.frequency.value = rightHz;
+    const rightGain = ctx.createGain();
+    rightGain.gain.value = 1;
+    rightOsc.connect(rightGain);
+    rightGain.connect(merger, 0, 1);
+
+    /* LFO pulses master volume at ~0.13 Hz — one slow breath cycle per ~7.5s */
+    const lfo = ctx.createOscillator();
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.13;
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.value = 0.06;
+    lfo.connect(lfoGain);
+    lfoGain.connect(master.gain);
+
+    leftOsc.start();
+    rightOsc.start();
+    lfo.start();
+
+    return { master, leftOsc, rightOsc, lfo };
+  }
+
+  function stopBinaural(nodes) {
+    if (!nodes) return;
+    const ctx = audioCtx;
+    const now = ctx.currentTime;
+    nodes.master.gain.cancelScheduledValues(now);
+    nodes.master.gain.setValueAtTime(nodes.master.gain.value, now);
+    nodes.master.gain.linearRampToValueAtTime(0, now + 1.6);
+    setTimeout(() => {
+      try { nodes.leftOsc.stop(); nodes.rightOsc.stop(); nodes.lfo.stop(); } catch(e) {}
+    }, 1700);
+  }
+
+  document.querySelectorAll('.session-card').forEach(card => {
+    const leftHz  = parseFloat(card.dataset.left);
+    const rightHz = parseFloat(card.dataset.right);
+
+    function toggle() {
+      if (activeCard === card) {
+        stopBinaural(activeNodes);
+        activeNodes = null;
+        activeCard = null;
+        card.classList.remove('playing');
+        card.setAttribute('aria-label', card.getAttribute('aria-label').replace(' — now playing', ''));
+      } else {
+        if (activeCard) {
+          stopBinaural(activeNodes);
+          activeCard.classList.remove('playing');
+          activeCard.setAttribute('aria-label', activeCard.getAttribute('aria-label').replace(' — now playing', ''));
+        }
+        activeNodes = startBinaural(leftHz, rightHz);
+        activeCard = card;
+        card.classList.add('playing');
+        card.setAttribute('aria-label', card.getAttribute('aria-label') + ' — now playing');
+      }
+    }
+
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
 </script>
 </body>
 </html>
