@@ -26,6 +26,7 @@ http://localhost/sites/claude/<directory>/          # directory project
 | `report/index.html` | Anthropic News Report (April 2026) |
 | `firsttest/index.html` | Marketing Camelot — Doberman Dan |
 | `the-four-systems/` | Four-SEO-skills dashboard (keyword research, content, links, tracking) |
+| `binauralbreathing/index.html` | Binaural Breathing — app landing page; light theme + selective dark sections; Web Audio API binaural player in sessions section |
 | `next-app/` | Next.js app — has `node_modules`, needs `npm run dev` (see note below) |
 
 ## Repository Conventions
@@ -75,6 +76,24 @@ Product: document auditing automation, PII redaction, accessible PDF remediation
 | Border radius | **0px** containers, cards, step numbers, nav buttons; **2px** on badges and tags only |
 
 Do not introduce additional colours. Amber is the only non-black/white element.
+
+### Binaural Breathing (`binauralbreathing/`)
+
+Light theme with selective dark sections. Do not deviate:
+
+| Token | Value |
+|-------|-------|
+| Font | Inter only (no second typeface) |
+| Primary accent | `#ED1654` (pink); hover `#D41249` |
+| Secondary accent | `#00ACEE` (cyan) |
+| Near-black | `#171717` (dark sections + headings) |
+| Background | `#FFFFFF`; surface `#F7F7F7`; mid `#F2F2F2` |
+| Hero background | `#0F0F0F` (dark, not rebrandable) |
+| Container radius | **0px**; button radius **6px** |
+
+Dark sections use `.section-dark` utility class: how-it-works, sessions, community, science, final-cta.
+
+`blueprint/style.html` — Lawrence van Lingen Shopify page kept as typography reference. Do not delete.
 
 ### Tictactoe (`tictactoe.html`)
 
