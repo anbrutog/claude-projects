@@ -74,5 +74,12 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Advice given: make it manual-only. Done: `disable-model-invocation: true` added (backup of the original SKILL.md in the session scratchpad); always call it with a command + target, e.g. `/impeccable critique site/index.html`; main commands for Keith: critique, audit, polish, plus layout/typeset when needed; leave the design-detector hook off; don't run `init`/`document` on PR2 (CLAUDE.md already holds the context); don't use `clarify` on PR2 (copy is locked).
 - Suggested finishing order: impeccable critique → fixes → impeccable audit → impeccable polish → Emil skills for motion.
 
+**Side topic: taste skill (`design-taste-frontend`, tasteskill 2.5.1)**
+- Installed globally (`~/.agents/skills/design-taste-frontend`, linked from `~/.claude/skills/`). It is auto-invoked and its description claims any landing page build, redesign, polish or review.
+- Heavy: 1,631 files, 31k-char SKILL.md, Node 22+ and Chrome (both present: Node v24, Chrome).
+- It has a **Stop hook** in its frontmatter: once a build is armed (`.taste-skill/build.json` in the project), `gate.mjs` runs headless-Chrome checks at the end of every turn (up to 10 min) and won't let the work finish while FAILs remain. Dormant until armed; there is no `.taste-skill/` folder in this workspace.
+- Its house rules conflict with PR2: it writes its own copy and lints it (60–80 words a screen), requires hover and entrance animations ("never strip"), one section per screen, its own CSS system, stand-in photos. Incompatible with locked copy, long-form DR letters and the Framer-import rules.
+- Advice: make it manual-only; use it only for new brochure/company sites built from scratch (e.g. local-business audit mockups), never on PR2 or other DR sales pages. Keith said yes: added `disable-model-invocation: true` after the `name:` line (the description is a multi-line block). YAML validated; original backed up in the session scratchpad. Invoke with `/design-taste-frontend`.
+
 **Next**
 - Keith to review Draft 2. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
