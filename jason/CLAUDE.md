@@ -35,7 +35,7 @@ Preview locally: `cd site && python3 -m http.server 8000` (or `npx serve site`).
 ## Hard rules
 1. **Copy is locked.** Use Jason's wording exactly, typos included. Don't rewrite, trim or "improve" it. Known issues are logged in `copy/COPY-ISSUES.md` for Keith to raise at the end.
 2. **Keep it Framer-importable.** The page will be pulled into Framer with Framer's **HTML to Framer** Chrome extension (copies static sections from a live page) or the **Vortex / "AI Design to Framer"** plugin (paste HTML). These tools only bring over static layout, so:
-   - Layout uses **flexbox only**. Avoid CSS grid and avoid `::before`/`::after` decoration.
+   - Layout uses **flexbox only**. Avoid CSS grid and avoid `::before`/`::after` decoration. One exception, at Keith's request: the letter-opening text wraps around Jason's photo using `float` (Framer can't wrap text, so rebuild that block as two columns there).
    - No JS-driven UI. The FAQ is an accordion built with native `<details>`/`<summary>` (no JS, Keith asked for it 22 Nov); rebuild it with Framer's Accordion component on import. No animations. Add motion in Framer afterwards.
    - Images are real `<img>` tags, not CSS background images.
    - Fonts are **Google Fonts only** (Framer has them all).

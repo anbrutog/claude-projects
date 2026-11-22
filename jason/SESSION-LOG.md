@@ -141,5 +141,9 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Tablet/phone: photo on top (max 420px), text below.
   - RB's photo has a trophy badge over the corner; not added (nothing equivalent supplied). Page text identical (checked).
 
+- Keith asked for the letter-opening text to **wrap around** Jason's photo. Done with `float:left` on `.intro-photo` (400px desktop, 320px tablet; no float on phone, photo on top) inside a 980px `display:flow-root` block; paragraphs get 22px bottom margin there.
+  - **Breaks the flexbox-only Framer rule** (exception approved by asking): Framer has no text wrap, so on import this block lands as photo + text side by side, or rebuild it there as two columns. Flagged to Keith.
+  - Text under the photo runs 980px wide, wider than the 700px letter column that follows.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
