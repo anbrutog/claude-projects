@@ -88,5 +88,11 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Copy check against Draft 2: nothing removed or changed; only the stack's text was added (titles verbatim, values normalised).
 - Checked at 1440 and 390: doodles match label widths exactly, arrows hidden on phone, no horizontal scroll.
 
+**Keith's feedback on the RB pass**
+- Keith didn't recognise "the stack" and said: "Absolutely nothing should change in terms of design, it should be the exact same." Removed the offer-stack box, its CSS and the chevron that came with it. Lesson: don't add new sections or content blocks; only decorate existing content.
+- Kept the doodle underlines, arrows and 2 chevrons for now, and asked Keith to confirm whether they stay.
+- Keith said yes to a hero button: added "Join Now And Receive Instant, Lifetime Access To PR2" (existing CTA wording) below "Elite Poker Performance", linking to `#join`. Left-aligned on desktop, full width on phone.
+- Text diff vs Draft 2: only the hero button text added.
+
 **Next**
-- Keith to review Draft 2.1. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
+- Keith to confirm the doodles/arrows/chevrons stay. Then price/checkout. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

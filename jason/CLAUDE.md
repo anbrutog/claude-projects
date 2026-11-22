@@ -65,7 +65,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - Logo: `site/img/brand/jason-su-logo-light.svg` (white text) in the hero bar and footer; `jason-su-logo-dark.svg` for light backgrounds.
 
 ## Page structure (section → `data-framer-name`)
-1. Hero: headline, "Here's a hint", "Has NOTHING to do with Elite Poker Performance", Jason photo
+1. Hero: headline, "Here's a hint", "Has NOTHING to do with Elite Poker Performance", CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason photo
 2. Letter – Opening: "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 proof cards ($1,000,000 / 10x Stakes / Months → Minutes)
 4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**
@@ -74,7 +74,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 7. Testimonial – Felipe Boianovsky
 8. Bonuses: 7 bonus cards + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow
-10. Offer: "Everything you get" value stack (mockup slot, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
+10. Offer: $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
 12. Guarantee: 100-day seal
 13. FAQ: 6 static Q&As + CTA
@@ -85,9 +85,9 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - "Total bonus value $11,391": the sum of the 7 listed bonus values (copy says "over $10,000").
 - 100-day guarantee seal section, which reuses the refund-policy text from the FAQ.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
-- Small eyebrow labels ("For poker players who play for more than the money", "What's inside", "Included free", "Everything you get").
-- **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 9 labels (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?", between stack and "Outside of this program"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
-- **Offer value stack:** recaps the 7 bonus titles verbatim with values normalised to plain dollars ($1,500 … $2,997), plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
+- Small eyebrow labels ("For poker players who play for more than the money", "What's inside", "Included free").
+- **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 9 labels (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 2 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
+- **No new sections or content blocks.** Keith rejected an added offer-stack box (22 Nov): design passes may restyle and decorate existing content only, never add sections. Only exception so far: the hero CTA button, which Keith asked for.
 
 ## Open items / placeholders
 - [ ] **Price:** `$[PRICE]` in the Offer section. Not decided yet.
