@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PR2 — Presence and Profit 2.0 | Jason Su</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens (match these in Framer as colour/text styles) =====
+   Ink        #0B0B0C   page dark
+   Coal       #151517   dark cards
+   Line       #2A2A2D   dark borders
+   Paper      #F5F0E6   letter background
+   Paper-2    #EDE5D6   letter cards
+   Text-dark  #1B1A17
+   Text-light #ECE7DD
+   Muted      #A39E94
+   Gold       #C9A24A   accent (bracelet gold)
+   Gold-light #E2C57E
+   Fonts: Playfair Display (headings), Source Serif 4 (body), Inter (labels, buttons)
+*/
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:#0B0B0C;color:#1B1A17;font-family:"Source Serif 4",Georgia,serif;font-size:20px;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+.section{width:100%;display:flex;flex-direction:column;align-items:center;padding:96px 24px}
+.dark{background:#0B0B0C;color:#ECE7DD}
+.coal{background:#111113;color:#ECE7DD}
+.paper{background:#F5F0E6;color:#1B1A17}
+.col{width:100%;max-width:700px;display:flex;flex-direction:column;gap:22px}
+.wide{width:100%;max-width:1120px;display:flex;flex-direction:column;gap:40px}
+
+.eyebrow{font-family:Inter,sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#C9A24A}
+.h1{font-family:"Playfair Display",Georgia,serif;font-weight:800;font-size:46px;line-height:1.12;letter-spacing:-.01em}
+.h2{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:40px;line-height:1.15}
+.h3{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:28px;line-height:1.25}
+.center{text-align:center;align-items:center}
+.gold{color:#C9A24A}
+.muted{color:#A39E94}
+.em{font-style:italic}
+strong{font-weight:700}
+.hl{background:#E2C57E55;padding:0 3px}
+.dark .hl,.coal .hl{background:transparent;color:#E2C57E}
+
+/* Buttons */
+.btn{display:flex;flex-direction:column;align-items:center;gap:4px;background:#C9A24A;color:#0B0B0C;text-decoration:none;border-radius:10px;padding:22px 40px;font-family:Inter,sans-serif;font-weight:700;font-size:20px;letter-spacing:.01em;box-shadow:0 10px 30px rgba(201,162,74,.28);text-align:center;width:100%;max-width:520px}
+.btn small{font-weight:500;font-size:13px;letter-spacing:.04em;opacity:.75}
+.btn-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;padding-top:12px}
+.trust{font-family:Inter,sans-serif;font-size:13px;color:#A39E94;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+
+/* ===== HERO ===== */
+.hero{padding:0 24px;background:#0B0B0C;color:#ECE7DD}
+.hero-bar{width:100%;max-width:1120px;display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid #2A2A2D}
+.logo-ph{font-family:"Playfair Display",serif;font-weight:700;font-size:22px;letter-spacing:.02em}
+.logo-ph span{color:#C9A24A}
+.hero-inner{width:100%;max-width:1120px;display:flex;gap:56px;align-items:center;padding:64px 0 0}
+.hero-copy{flex:1 1 0;display:flex;flex-direction:column;gap:26px;padding-bottom:72px}
+.hero-photo{flex:0 0 400px;align-self:flex-end}
+.hero-photo img{width:100%;height:auto}
+.hint{display:flex;flex-direction:column;gap:10px;border-left:3px solid #C9A24A;padding-left:22px}
+.hint-label{font-family:"Playfair Display",serif;font-style:italic;font-size:22px;color:#C9A24A}
+.hint-text{font-size:21px;line-height:1.5;color:#ECE7DD}
+.nothing{font-family:Inter,sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:#A39E94}
+.nothing u{color:#ECE7DD;text-decoration-color:#C9A24A;text-decoration-thickness:3px;text-underline-offset:5px}
+.elite{font-family:"Playfair Display",serif;font-weight:800;font-size:44px;line-height:1.1;color:#ECE7DD}
+
+/* ===== Letter ===== */
+.salute{font-family:"Playfair Display",serif;font-style:italic;font-size:26px}
+.sub{font-family:"Playfair Display",serif;font-weight:700;font-size:32px;line-height:1.2;padding-top:26px}
+.pull{font-family:"Playfair Display",serif;font-style:italic;font-weight:700;font-size:36px;line-height:1.25;text-align:center;padding:26px 0;border-top:1px solid #D8CDB8;border-bottom:1px solid #D8CDB8;margin:10px 0}
+.oneline{font-weight:700}
+.big-q{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;padding:36px 0 10px}
+.big-q .k{font-family:Inter,sans-serif;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A6E2E}
+.big-q .q{font-family:"Playfair Display",serif;font-weight:800;font-size:48px;line-height:1.1}
+.stack-lines{display:flex;flex-direction:column;gap:6px;font-size:22px;font-style:italic;padding:6px 0 6px 22px;border-left:3px solid #C9A24A}
+.stat-line{font-family:"Playfair Display",serif;font-weight:700;font-size:30px;text-align:center;padding:10px 0}
+.verbs{display:flex;flex-direction:column;gap:4px;font-size:24px;font-weight:600}
+
+/* ===== Good news band ===== */
+.gn{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.gn .a{font-family:"Playfair Display",serif;font-style:italic;font-size:26px;color:#A39E94}
+.gn .b{font-family:"Playfair Display",serif;font-weight:800;font-size:52px;line-height:1.08}
+.gn .c{font-family:"Playfair Display",serif;font-weight:800;font-size:52px;line-height:1.08;color:#C9A24A}
+.cases{display:flex;gap:24px;flex-wrap:wrap;width:100%}
+.case{flex:1 1 300px;background:#151517;border:1px solid #2A2A2D;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.case .num{font-family:"Playfair Display",serif;font-weight:800;font-size:40px;line-height:1;color:#C9A24A}
+.case .lbl{font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#A39E94}
+.case p{font-size:18px;line-height:1.6;color:#D6D0C4}
+.case p strong{color:#ECE7DD}
+.closer{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;font-size:22px}
+.closer .big{font-family:"Playfair Display",serif;font-weight:700;font-size:34px;line-height:1.2}
+
+/* ===== Introducing ===== */
+.intro-k{font-family:"Playfair Display",serif;font-style:italic;font-size:26px;color:#A39E94}
+.product{font-family:"Playfair Display",serif;font-weight:800;font-size:96px;line-height:1;color:#C9A24A;letter-spacing:-.02em}
+.product-sub{font-family:Inter,sans-serif;font-weight:600;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#ECE7DD}
+.tagline{display:flex;flex-direction:column;gap:2px;font-family:"Playfair Display",serif;font-size:30px;line-height:1.3;text-align:center}
+.mock{width:100%;max-width:820px;aspect-ratio:16/9;border:1px dashed #4A4A4F;border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#6E6A63;background:#151517;text-align:center;padding:20px}
+
+/* ===== Testimonials ===== */
+.testi{width:100%;max-width:1000px;display:flex;gap:0;background:#151517;border:1px solid #2A2A2D;border-radius:18px;overflow:hidden;color:#ECE7DD}
+.testi-photo{flex:0 0 42%;min-height:100%}
+.testi-photo img{width:100%;height:100%;object-fit:cover}
+.testi-body{flex:1 1 0;padding:44px;display:flex;flex-direction:column;gap:22px;justify-content:center}
+.stars{font-size:20px;letter-spacing:4px;color:#C9A24A}
+.testi-q{font-family:"Playfair Display",serif;font-style:italic;font-size:25px;line-height:1.45}
+.testi-name{font-family:Inter,sans-serif;font-weight:700;font-size:17px;color:#ECE7DD}
+.creds{display:flex;flex-direction:column;gap:4px}
+.cred{font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#C9A24A}
+.paper .testi{background:#111113}
+
+/* ===== Learn list ===== */
+.learn{display:flex;flex-direction:column;gap:0;background:#FFFFFF;border:1px solid #E2D8C5;border-radius:18px;padding:12px 36px}
+.li{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #EDE5D6}
+.li:last-child{border-bottom:none}
+.tick{flex:0 0 30px;height:30px;border-radius:50%;background:#0B0B0C;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.li p{font-size:19px;line-height:1.6}
+
+/* ===== Bonuses ===== */
+.bonuses{display:flex;flex-direction:column;gap:22px;width:100%}
+.bonus{display:flex;gap:28px;background:#151517;border:1px solid #2A2A2D;border-radius:16px;padding:32px 36px;align-items:flex-start}
+.bonus-no{flex:0 0 64px;display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:4px}
+.bonus-no .t{font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;color:#A39E94}
+.bonus-no .n{font-family:"Playfair Display",serif;font-weight:800;font-size:40px;line-height:1;color:#C9A24A}
+.bonus-main{flex:1 1 0;display:flex;flex-direction:column;gap:14px}
+.bonus-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.bonus-title{font-family:"Playfair Display",serif;font-weight:700;font-size:28px;line-height:1.2;color:#ECE7DD}
+.val{font-family:Inter,sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;color:#0B0B0C;background:#E2C57E;border-radius:999px;padding:7px 14px;white-space:nowrap}
+.bl{display:flex;flex-direction:column;gap:10px}
+.bl-i{display:flex;gap:12px;font-size:18px;line-height:1.6;color:#D6D0C4}
+.dot{flex:0 0 7px;height:7px;border-radius:50%;background:#C9A24A;margin-top:12px}
+.bonus.feature{border:1px solid #C9A24A;background:#18160F}
+.bonus p.plain{font-size:18px;line-height:1.65;color:#D6D0C4}
+.total{display:flex;justify-content:center;align-items:center;gap:14px;font-family:Inter,sans-serif;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#A39E94;padding-top:6px;text-align:center}
+.total b{font-family:"Playfair Display",serif;letter-spacing:0;text-transform:none;font-size:30px;color:#C9A24A}
+
+/* ===== Compare ===== */
+.compare{display:flex;gap:24px;width:100%;max-width:900px;align-items:stretch}
+.cmp{flex:1 1 0;border-radius:16px;padding:34px;display:flex;flex-direction:column;gap:12px}
+.cmp.old{background:#EDE5D6;color:#5E594F}
+.cmp.new{background:#0B0B0C;color:#ECE7DD;border:2px solid #C9A24A}
+.cmp .k{font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.cmp .p{font-family:"Playfair Display",serif;font-weight:800;font-size:44px;line-height:1.05}
+.cmp.old .p{text-decoration:line-through;text-decoration-color:#B0412E;text-decoration-thickness:3px}
+.cmp.new .p{color:#C9A24A}
+.cmp p{font-size:17px;line-height:1.55}
+.cmp-lines{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;font-family:"Playfair Display",serif;font-weight:700;font-size:32px;line-height:1.25}
+
+/* ===== Sign-off ===== */
+.signoff{display:flex;gap:22px;align-items:center;padding-top:10px}
+.signoff img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:50% 30%}
+.sig{font-family:"Playfair Display",serif;font-style:italic;font-weight:700;font-size:40px;line-height:1}
+.sig-sub{font-family:Inter,sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7A7468;padding-top:8px}
+
+/* ===== Guarantee ===== */
+.guar{display:flex;gap:36px;align-items:center;width:100%;max-width:900px;background:#151517;border:1px solid #2A2A2D;border-radius:18px;padding:40px}
+.seal{flex:0 0 150px;height:150px;border-radius:50%;border:3px solid #C9A24A;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0}
+.seal .d{font-family:"Playfair Display",serif;font-weight:800;font-size:54px;line-height:1;color:#C9A24A}
+.seal .t{font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ECE7DD;padding-top:4px}
+.guar-body{display:flex;flex-direction:column;gap:12px}
+.guar-body p{font-size:18px;line-height:1.6;color:#D6D0C4}
+
+/* ===== FAQ ===== */
+.faq{display:flex;flex-direction:column;width:100%}
+.qa{display:flex;flex-direction:column;gap:10px;padding:28px 0;border-bottom:1px solid #D8CDB8}
+.qa .q{font-family:"Playfair Display",serif;font-weight:700;font-size:24px;line-height:1.3}
+.qa p{font-size:18px;line-height:1.65;color:#3B3832}
+
+/* ===== Footer ===== */
+.footer{padding:40px 24px;background:#0B0B0C;color:#6E6A63;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;text-align:center}
+.footer a{color:#A39E94}
+
+/* ===== Tablet (Framer 810) ===== */
+@media (max-width:1000px){
+  .hero-inner{flex-direction:column;gap:0;padding-top:40px}
+  .hero-photo{flex:0 0 auto;width:100%;max-width:360px;align-self:center}
+  .hero-copy{padding-bottom:36px}
+  .testi{flex-direction:column}
+  .testi-photo{flex:0 0 auto;height:320px}
+}
+/* ===== Phone (Framer 390) ===== */
+@media (max-width:640px){
+  body{font-size:18px}
+  .section{padding:64px 20px}
+  .h1{font-size:31px}
+  .h2{font-size:30px}
+  .elite{font-size:32px}
+  .hint-text{font-size:18px}
+  .sub{font-size:26px}
+  .pull{font-size:28px}
+  .big-q .q{font-size:36px}
+  .gn .b,.gn .c{font-size:36px}
+  .product{font-size:68px}
+  .tagline{font-size:23px}
+  .stat-line{font-size:24px}
+  .closer .big{font-size:27px}
+  .testi-body{padding:30px 24px}
+  .testi-q{font-size:21px}
+  .testi-photo{height:240px}
+  .learn{padding:6px 20px}
+  .bonus{flex-direction:column;gap:12px;padding:26px 22px}
+  .bonus-no{flex-direction:row;gap:8px;align-items:baseline}
+  .bonus-no .n{font-size:30px}
+  .bonus-title{font-size:23px}
+  .compare{flex-direction:column}
+  .cmp-lines{font-size:25px}
+  .guar{flex-direction:column;text-align:center;padding:30px 22px}
+  .btn{font-size:18px;padding:20px 22px}
+  .hero-photo{max-width:280px}
+  .hero-bar .eyebrow{display:none}
+  .sig{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="section hero" data-framer-name="Hero">
+  <div class="hero-bar">
+    <div class="logo-ph">Jason <span>Su</span></div>
+    <div class="eyebrow">PR2 · Presence and Profit 2.0</div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">For poker players who play for more than the money</div>
+      <h1 class="h1">Why Do So Many Of The World Series And Triton Champions You See On TV Keep Hiring Me To Train Them In <span class="gold">“Full Presence”</span> After Having Worked With The Other Top Coaches?</h1>
+      <div class="hint">
+        <div class="hint-label">Here’s A Hint:</div>
+        <div class="hint-text">Optimizing Your Routine, Being “Professional,” Removing “Subconscious Blocks,” And Building A “Strong Mindset”</div>
+      </div>
+      <div class="nothing">Has <u>nothing</u> to do with</div>
+      <div class="elite">Elite Poker Performance</div>
+    </div>
+    <div class="hero-photo"><img src="img/jason-seated.jpg" alt="Jason Su"></div>
+  </div>
+</section>
+
+<!-- ================= LETTER 1 ================= -->
+<section class="section paper" data-framer-name="Letter – Opening">
+  <div class="col">
+    <p class="salute">Dear Friend,</p>
+    <p>If you’re reading this, you probably want to win a ton of money playing poker.</p>
+    <p>But you’re probably also one of the people for whom poker is about way more than just the money.</p>
+    <p class="oneline">It’s also about crushing the competition.</p>
+    <p>Going toe to toe against your toughest opponents at the highest stakes to see who executes the best while feeling extreme pressure and emotion.</p>
+    <p>It’s about getting those “in the zone” experiences, where you get to show everyone what you’re capable of—where you earn the respect of your peers and a feeling of satisfaction that money can’t buy.</p>
+    <p class="oneline">And it’s about the peace.</p>
+    <p>The peace that comes with going to sleep each night free from the endless cycle of thoughts about what you could have done different or what tomorrow will bring—and instead completely content with how you’re performing.</p>
+    <p>If these are the things you’re interested in?</p>
+    <p class="oneline">This letter can show you how it’s done.</p>
+
+    <h2 class="sub">The Truth About Winning Big</h2>
+    <p>Winning big in poker is not linear.</p>
+    <p>It does not simply come to those who work the hardest.</p>
+    <p>There is no amount of poker strategy knowledge that guarantees you’ll become “that” player who just keeps finding ways to win by making the perfect play in just the right moment.</p>
+    <p>If you want to be that player?</p>
+    <p class="oneline">You will need skills that go way beyond poker knowledge.</p>
+    <p>The biggest winners in poker don’t just understand how to play well—they can also sense when something feels off in a hand.</p>
+    <p>When it’s time to deviate from the usual play.</p>
+    <p>And they have the ability to hear that voice, then say:</p>
+    <p class="pull">“Fuck it, I don’t believe you”</p>
+    <p>And where other equally knowledgable players talk will themselves out of it, the big winners will pull the trigger on that huge tournament-defining bluff or hero call which can often be the difference between getting your winner’s photo taken at the end of the day instead of sitting there thinking “I wish I’d gone for it” on the flight home.</p>
+    <p>Playing like this has nothing to do with how much you study.</p>
+    <p>Zero to do with how much you meditate.</p>
+    <p>Or what you eat, or how much you sleep, or whether you exercised this morning and did your pregame routine (in fact, many of my players started winning more once I convinced them to stop adhering to their routine), or how much time you’ve wasted talking about your “types of tilt” and “the root cause” of why you’re still underperforming after all these years.</p>
+
+    <div class="big-q">
+      <div class="k">It comes down to one thing only:</div>
+      <h2 class="q">Do You Play With Full Presence?</h2>
+    </div>
+
+    <p>By that, I mean:</p>
+    <div class="stack-lines">
+      <span>Regardless of how big and uncomfortable the fear is …</span>
+      <span>No matter how much pressure you’re feeling in this spot …</span>
+    </div>
+    <p class="oneline">Can you still play freely and with confidence?</p>
+    <p>Can you still think clearly, pick up reads others miss, then trust those reads by following through on plays that you otherwise would never make because your gut is telling you to?</p>
+    <p>Do you know how to activate this?</p>
+    <p>Or is it just something you wander into occasionally?</p>
+    <p class="stat-line">For the 99.9%, it’s random.</p>
+    <p>You randomly have that “Full Presence” some days, and those are the days where you notice everything, the answers are coming to you, and you execute on your ideas without hesitation. You leave these sessions with the best feeling in poker, that deep down satisfied feeling of knowing that <strong class="hl">nobody could have done it better than you did</strong> today.</p>
+    <p>But randomly and rarely is all most people get.</p>
+    <p>And so the rest of the time, in the tough spots against your toughest competition, you do the opposite.</p>
+    <div class="verbs">
+      <span>You tense up.</span>
+      <span>Freeze, overthink, struggle to see the solution.</span>
+    </div>
+    <p>Or worse, you talk yourself out of pulling the trigger and blow the spot even when you do see the answer—then have to think about that hand weeks or even months later while never getting a whiff of that deeply satisfied feeling that comes only when you put on an elite performance.</p>
+    <p>Meanwhile …</p>
+    <p class="oneline">The .1% are happily taking all the money and bracelets and glory that everyone else forfeits by not being able to play this way.</p>
+  </div>
+</section>
+
+<!-- ================= GOOD NEWS / PROOF ================= -->
+<section class="section dark" data-framer-name="Full Presence Can Be Trained">
+  <div class="wide center">
+    <div class="gn">
+      <div class="a">The Good News Is …</div>
+      <div class="b">Full Presence Is a Skill …</div>
+      <div class="c">And It Can Be Trained</div>
+    </div>
+    <div class="eyebrow">Here’s what it looks like:</div>
+    <div class="cases" style="text-align:left">
+      <div class="case">
+        <div class="lbl">10 years stuck under $50k</div>
+        <div class="num">$1,000,000</div>
+        <p>I once started coaching a player who had never won more than $50k in a tournament in over ten years of grinding. Within a month of doing this work we <strong>smashed through that</strong> with a $200k score, and then a few weeks later, a <strong>million dollar win</strong></p>
+      </div>
+      <div class="case">
+        <div class="lbl">Scraping by at mid-stakes</div>
+        <div class="num">10x Stakes</div>
+        <p>A new client was stuck at mid-stakes, scraping by on a few thousand a month. After <strong>our first conversation,</strong> he tells me he feels confidence he hasn’t felt in forever, then immediately starts crushing and is winning at 10x the stakes within a few months</p>
+      </div>
+      <div class="case">
+        <div class="lbl">Tried every other program</div>
+        <div class="num">Months → Minutes</div>
+        <p>A high-stakes client who had done every other mindset coaching program in existence starts winning more than ever and tells me that … “cycles of self-doubt that used to linger for months are often <strong>resolved in minutes.</strong>”</p>
+      </div>
+    </div>
+    <div class="closer">
+      <span class="muted">As you can see …</span>
+      <span>Full Presence isn’t just powerful and profitable.</span>
+      <span class="big">It also works really damn fast.</span>
+      <span class="muted em">On that note, I’ve got something I want to show you.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRODUCING PR2 ================= -->
+<section class="section coal" data-framer-name="Introducing PR2">
+  <div class="wide center">
+    <div class="intro-k">Introducing …</div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+      <div class="product">PR2</div>
+      <div class="product-sub">Presence and Profit 2.0</div>
+    </div>
+    <div class="tagline">
+      <span>The Coaching Program That Has Made</span>
+      <span class="gold"><em>A Whole Bunch Of Money</em></span>
+      <span>And Filled Many Trophy Cases</span>
+      <span>For A Whole Lot Of People</span>
+    </div>
+    <div class="mock">Product mockup / VSL goes here<br>(PR2 logo + course screens)</div>
+  </div>
+</section>
+
+<!-- Testimonial: Ryan -->
+<section class="section coal" style="padding-top:0" data-framer-name="Testimonial – Ryan Hoenig">
+  <div class="testi">
+    <div class="testi-photo"><img src="img/ryan.jpg" alt="Ryan Hoenig with trophy"></div>
+    <div class="testi-body">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">“Within months of joining Jason’s program, I won my first WSOP bracelet and final tabled the next event I played. The people I’d played with for years could sense something had changed—my presence.”</p>
+      <div class="creds">
+        <div class="testi-name">Ryan Hoenig</div>
+        <div class="cred">WSOP Dealer’s Choice Champion</div>
+        <div class="cred">PokerGo Tour Mixed Game Champion</div>
+        <div class="cred">#1 All-Time in SHRPO Tournament Wins</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU'LL LEARN ================= -->
+<section class="section paper" data-framer-name="Inside PR2">
+  <div class="col">
+    <div class="eyebrow center" style="color:#8A6E2E;text-align:center">What’s inside</div>
+    <h2 class="h2" style="text-align:center">Inside PR2, You Will Learn:</h2>
+    <div class="learn">
+      <div class="li"><div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div><p>My exact methods that allow my clients to consistently hit their initial <strong>“breakthrough”</strong> six and seven-figure scores</p></div>
+      <div class="li"><div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div><p>Why certain people have “it” (think Phil Ivey in his prime) and even good players will tense up and punt to them (and once when you understand these principles, you can now show up as that person)</p></div>
+      <div class="li"><div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div><p>The techniques that have clients saying they now feel “immune to variance.”</p></div>
+      <div class="li"><div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div><p>Why the “Full Presence” method gets far <strong>better performance with way less effort</strong> than the “work hard, optimize your life, and talk about your past” agenda that the old guard of mindset coaches and sports psychologists have been unsuccessfully selling for decades</p></div>
+      <div class="li"><div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div><p>How to overcome the tension and pressure, then “let it rip” in the toughest spots against even your most difficult opponents</p></div>
+      <div class="li"><div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div><p>Why overthinking is the greatest enemy to your poker profits, and how you can end this destructive habit using a <strong>“mind control” technique</strong> so simple to do that you can start feeling like a far better version of yourself in your very next session</p></div>
+    </div>
+    <div class="btn-wrap">
+      <a class="btn" href="#join">Join Now And Receive Instant, Lifetime Access To PR2</a>
+      <div class="trust"><span>✓ Instant access</span><span>✓ Lifetime access</span><span>✓ 100-day guarantee</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial: Felipe -->
+<section class="section paper" style="padding-top:0" data-framer-name="Testimonial – Felipe Boianovsky">
+  <div class="testi">
+    <div class="testi-photo"><img src="img/felipe.jpg" alt="Felipe Boianovsky with BSOP trophy" style="object-position:48% 50%"></div>
+    <div class="testi-body">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">“I had worked with the other coaches but still lacked confidence, didn’t trust my intuition, and cared too much about other people’s opinions. Now I’m playing better, more freely, with more fun and enjoyment.”</p>
+      <div class="creds">
+        <div class="testi-name">Felipe Boianovsky</div>
+        <div class="cred">2x Online World Championship Main Event Champion</div>
+        <div class="cred">BSOP High-Roller Champion</div>
+        <div class="cred">PokerGo Tour High-Roller Champion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BONUSES ================= -->
+<section class="section dark" data-framer-name="Bonuses">
+  <div class="wide" style="max-width:900px">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+      <div class="eyebrow">Included free</div>
+      <h2 class="h2">When You Join PR2, You Will Also Receive Instant Access To The Following Bonus Trainings:</h2>
+    </div>
+    <div class="bonuses">
+      <div class="bonus">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">1</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">The “It Factor”</div><div class="val">Cost: $1500 per attendee</div></div>
+          <div class="bl">
+            <div class="bl-i"><span class="dot"></span><span>Grow genuine, unshakeable confidence at the table</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Access the “hidden profit engine” lesson that resulted in over 70% of attendees taking down the largest tournament scores of their lives within a few months (most of whom were already longtime professionals)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">2</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">Crushing The Series</div><div class="val">Cost: $1200 per attendee</div></div>
+          <div class="bl">
+            <div class="bl-i"><span class="dot"></span><span>Learn how over 50% of our initial users broke their record for their <strong>largest lifetime score</strong> at the World Series of Poker that year</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Shield yourself from the hidden emotional traps that break so many seasoned pros at the WSOP every summer (and capture the money and deep runs they are giving away)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">3</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">Unbreakable</div><div class="val">Regular Price: $800</div></div>
+          <div class="bl">
+            <div class="bl-i"><span class="dot"></span><span>Gain a level of poise and confidence in the face of big emotions that one of the best Pot-Limit Omaha players in the world calls his “new superpower”</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Save untold amounts of money and humiliation by learning to sense when you are about to make an emotionally driven decision, then stop yourself before you do it</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Unlock the power of having everyone in your life helping you to reach your biggest poker goals instead of becoming hidden obstacles</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">4</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">Conquer Cravings</div><div class="val">Regular price $497</div></div>
+          <div class="bl">
+            <div class="bl-i"><span class="dot"></span><span>Eliminate any habits that are getting in the way of your peak performance (smoking, drinking, drugs, scrolling, binge-watching, etc)</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Learn to “detrigger” yourself in scenarios that in the past have caused you to start up the unwanted behaviors again so you can stay on track crushing at the game you love</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">5</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">The Vault</div><div class="val">Regular price: $2400</div></div>
+          <div class="bl">
+            <div class="bl-i"><span class="dot"></span><span>Access 80+ hours of presentations and real-time coaching as I explain how to effectively use my techniques in any situation you will ever come across</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Learn how my clients have mastered the principles of elite poker performance while driving in their car, doing the dishes, or even falling asleep</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">6</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">A 6 Month Membership to my ongoing coaching group</div><div class="val">Regular price: $1997</div></div>
+          <div class="bl">
+            <div class="bl-i"><span class="dot"></span><span>Get <strong>direct, face-to-face coaching</strong> with me on any topic you like of my monthly group coaching calls</span></div>
+            <div class="bl-i"><span class="dot"></span><span>Receive my weekly “Monday Memo” containing my latest thoughts and ideas on how you can maximize your performance and earnings at the table (plus over 150 archived issues only members can access)</span></div>
+            <div class="bl-i"><span class="dot"></span><span>The ability to <strong>directly ask me any question you like</strong> and get a personal response from me on your situation, seven days a week</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bonus feature">
+        <div class="bonus-no"><span class="t">BONUS</span><span class="n">7</span></div>
+        <div class="bonus-main">
+          <div class="bonus-head"><div class="bonus-title">6 Months of Custom Performance Plans</div><div class="val">$2997 value</div></div>
+          <p class="plain">When you join, I will personally ask you some questions about your biggest goals and problems holding you back, then I will sit down and create a program customized for your specific issues so that you won’t just get you to Full Presence—but get you there fast.</p>
+          <p class="plain">I’ll do this for you many times as you want for six months.</p>
+        </div>
+      </div>
+    </div>
+    <div class="total">Total bonus value <b>$11,391</b></div>
+  </div>
+</section>
+
+<!-- Testimonial: Kevin -->
+<section class="section dark" style="padding-top:0" data-framer-name="Testimonial – Kevin Rabichow">
+  <div class="testi">
+    <div class="testi-photo"><img src="img/kevin.jpg" alt="Kevin Rabichow at the poker table"></div>
+    <div class="testi-body">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">“Jason’s approach has been game changing for me. I’ll be coming back to these practices again and again as I run into new challenges, and I’m confident they will continue to deliver.”</p>
+      <div class="creds">
+        <div class="testi-name">Kevin Rabichow</div>
+        <div class="cred">World Poker Tour Champion</div>
+        <div class="cred">Triton Poker Analyst</div>
+        <div class="cred">Strategy Coach to 100+ Pro Poker Players</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARE / OFFER ================= -->
+<section class="section paper" id="join" data-framer-name="Offer">
+  <div class="wide center" style="max-width:900px">
+    <p class="salute muted" style="color:#7A7468">Outside of this program …</p>
+    <p style="max-width:700px">The only place I am able to offer this kind of long-term individual attention to solving your problems is through my private coaching programs, which is usually full and also starts at $25,000 for six months of coaching.</p>
+    <div class="compare">
+      <div class="cmp old">
+        <div class="k">Private coaching · 6 months</div>
+        <div class="p">$25,000</div>
+        <p>Usually full.</p>
+      </div>
+      <div class="cmp new">
+        <div class="k gold">PR2 · Presence and Profit 2.0</div>
+        <div class="p">$[PRICE]</div>
+        <p>Plus over $10,000 worth of bonuses.</p>
+      </div>
+    </div>
+    <div class="cmp-lines">
+      <span>PR2 gets you my full attention and dedication …</span>
+      <span class="gold" style="color:#8A6E2E">At a tiny fraction of the cost</span>
+      <span>My clients are paying me</span>
+    </div>
+    <div class="btn-wrap">
+      <a class="btn" href="#checkout">Yes, I Want In<small>INSTANT, LIFETIME ACCESS TO PR2</small></a>
+      <div class="trust" style="color:#7A7468"><span>✓ Secure checkout</span><span>✓ 100-day money back guarantee</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSE ================= -->
+<section class="section paper" style="padding-top:0" data-framer-name="Letter – Close">
+  <div class="col">
+    <p class="sub" style="padding-top:0">This is everything, literally.</p>
+    <p>Everything I’ve ever made.</p>
+    <p>Every idea I’ve ever put out (including many I’ve kept secret for my clients over the years), which in total have made millions of dollars for my long list of happy clients.</p>
+    <p class="oneline"><u style="text-decoration-color:#C9A24A;text-decoration-thickness:2px;text-underline-offset:4px">Nothing got held back.</u></p>
+    <p>Plus, when you join you’ll immediately get access to <strong class="hl">over $10,000 worth of bonuses</strong>, AND the ability to get direct, personal feedback and coaching from me on anything you want help with without having to pay anything remotely close to the $25,000 that my private coaching clients pay me to be able to do this.</p>
+    <p>I’ve dedicated my life to teaching people how to execute under pressure.</p>
+    <p>On this topic, there’s a long list of happy clients who say I have no equal.</p>
+    <p>Everything you need to execute under pressure and master the art of winning big is inside this program.</p>
+    <p>If this doesn’t speak to you, no problem.</p>
+    <p>But if you’re ready to say yes and get to work?</p>
+    <p>I couldn’t be more excited to help you get everything you want.</p>
+    <div class="signoff">
+      <img src="img/jason-close.jpg" alt="Jason Su">
+      <div><div class="sig">Jason Su</div><div class="sig-sub">Creator of PR2</div></div>
+    </div>
+    <div class="btn-wrap" style="padding-top:28px">
+      <a class="btn" href="#checkout">Yes, I’m Ready To Start Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GUARANTEE ================= -->
+<section class="section dark" data-framer-name="Guarantee">
+  <div class="guar">
+    <div class="seal"><span class="d">100</span><span class="t">Day<br>Guarantee</span></div>
+    <div class="guar-body">
+      <div class="h3">Try It For A Full 100 Days</div>
+      <p>PR2 has a full satisfaction money back guarantee that lasts far longer than any other program on the market. Try it for a full 100 days, and if you’re not experiencing a substantial difference in how you execute at the tables, I will refund every penny to you with no questions asked.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section paper" data-framer-name="FAQ">
+  <div class="col">
+    <h2 class="h2" style="text-align:center">Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="qa"><div class="q">What’s your refund policy?</div>
+        <p>PR2 has a full satisfaction money back guarantee that lasts far longer than any other program on the market. Try it for a full 100 days, and if you’re not experiencing a substantial difference in how you execute at the tables, I will refund every penny to you with no questions asked.</p>
+        <p>I understand that many have tried things and been burned before by the allure of fancy marketing and coaches promising to answer your questions and then sending you the same old recycled ideas that don’t work and passing your questions off to their “team” of assistants. I’m excited to show you how much this program is the exact opposite of that.</p></div>
+      <div class="qa"><div class="q">Why are you so confident your methods are best?</div>
+        <p>Because I don’t just have a long line of the sharpest and most successful poker players in the world asking for my help. They also all consistently tell me that the other methods of mindset coaching, therapy, and hypnotherapy left them unsatisfied with how they were executing under pressure at the table. And when we’ve completed our work, they consistently thank me and tell me this was exactly what they were looking for the whole time.</p></div>
+      <div class="qa"><div class="q">But how can I be sure this will work for me?</div>
+        <p>We can never be sure of anything. That’s why I give everyone a full 100 days to dive in, use the techniques, get coaching from me, and see for yourself how quickly things can change at the table once someone who actually understands how it works hands the winning formula to you on a silver platter.</p></div>
+      <div class="qa"><div class="q">Do I need to be a pro?</div>
+        <p>No, but it is recommended that you be playing stakes that matter, where you can imagine easily recouping the cost of your investment by executing more sharply and having far greater emotional control while you play. If that is your situation, I am confident using this program would provide a great return on investment for you as it has for many before.</p></div>
+      <div class="qa"><div class="q">How will I receive access to the course?</div>
+        <p>Once your payment is confirmed, you will receive an email invite that will get you immediate access to all of your program materials.</p></div>
+      <div class="qa" style="border-bottom:none"><div class="q">Will you really still help me once I’m in the program?</div>
+        <p>Yes. Ask anyone who has worked with me and they will tell you nobody loves this more than I do, and I always want to help my people as much as I can with whatever you have going on. All you have to do is show up and ask.</p></div>
+    </div>
+    <div class="btn-wrap" style="padding-top:20px">
+      <a class="btn" href="#checkout">Yes, I’m Ready To Start Now</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" data-framer-name="Footer">
+  <a href="#fulfillment">Fulfillment Policy</a>
+  <span>© Jason Su. All rights reserved.</span>
+</footer>
+
+</body>
+</html>
