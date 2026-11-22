@@ -145,5 +145,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - **Breaks the flexbox-only Framer rule** (exception approved by asking): Framer has no text wrap, so on import this block lands as photo + text side by side, or rebuild it there as two columns. Flagged to Keith.
   - Text under the photo runs 980px wide, wider than the 700px letter column that follows.
 
+- Keith then asked to put the excess text in a separate block instead of wrapping. Float removed (back to flexbox only; the Framer exception in CLAUDE.md removed). Photo (440px) + "Dear Friend" … "satisfaction that money can't buy." side by side, vertically centred; then "And it's about the peace." … "This letter can show you how it's done." in the normal 700px letter column below, 64px gap. Phone/tablet: photo on top.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
