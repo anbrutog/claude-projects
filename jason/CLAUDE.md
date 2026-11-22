@@ -16,7 +16,8 @@ Read this first. It covers what this project is, what has been decided, and what
 ```
 site/index.html      The page. One file, all CSS inline in <style>. No JS.
 site/img/            Photos (already resized/compressed for the web)
-  jason-seated.jpg   hero (portrait, black studio background)
+  jason-seated-cutout.webp  hero (Jason cut out, transparent background, 900×1350, ~100KB)
+  jason-seated.jpg   original hero portrait (black studio background), source for the cut-out
   jason-close.jpg    sign-off avatar
   jason-table.jpg    spare landscape shot (unused so far)
   ryan.jpg           Ryan Hoenig testimonial (Hard Rock trophy)
@@ -61,11 +62,12 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - Radius: buttons **3px** (as on his site), cards **8px**.
 - `.glow` sections (Hero, Full Presence proof, Guarantee) use navy with CSS radial gradients (orange glow bottom, blue glow top right), copying his hero. Gradients are fills, not images, so they import into Framer.
 - His site's thin orange swoosh lines are **not** in the code. Add them in Framer as an SVG/image layer (decorative elements don't import reliably).
-- Photos have black backgrounds, so they sit in black panels/cards on navy.
+- Photos have black backgrounds, so they sit in black panels/cards on navy. Exception: the **hero** uses a transparent cut-out of Jason in front of an orange circle (Magnetic Marketing style). The circle is a `radial-gradient` fill on `.hero-photo`, not an image or pseudo-element. The photo column stretches to the copy's height and Jason sits on the hero's bottom edge.
+- The cut-out was made locally with macOS Vision subject lifting (`VNGenerateForegroundInstanceMaskRequest`, a small Swift script) and converted to WebP in Chrome. No photo was uploaded anywhere. Repeat the same way for other photos.
 - Logo: `site/img/brand/jason-su-logo-light.svg` (white text) in the hero bar and footer; `jason-su-logo-dark.svg` for light backgrounds.
 
 ## Page structure (section → `data-framer-name`)
-1. Hero: headline, "Here's a hint", "Has NOTHING to do with Elite Poker Performance", CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason photo
+1. Hero: tiered headline (small lead-in / huge "Full Presence" / medium close + orange rule), "Here's a hint", "Has NOTHING to do with Elite Poker Performance", CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on an orange circle
 2. Letter – Opening: "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 proof cards ($1,000,000 / 10x Stakes / Months → Minutes)
 4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**

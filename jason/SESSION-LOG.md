@@ -100,6 +100,11 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - The headline is split into 3 sizes with no words changed (same h1, three spans): small white lead-in "Why Do So Many … Train Them In" (28px) → huge orange **"Full Presence"** (80px, weight 900) → medium white "After Having Worked With The Other Top Coaches?" (34px). Then a 4px orange rule underneath, like their red line.
 - Sizes: key 80px desktop, 62px at ≤1200px (incl. tablet), 50px phone. Checked "Full Presence" stays on one line at 1440, 1200, 1100, 1001, 1000, 810, 640 and 390. h1 text is identical to before.
 - Alternative emphasis offered: make "World Series And Triton Champions" the big line instead.
+- Step 2: Jason in front of a circle, like Dan Kennedy, and moved up beside the copy.
+  - The circle uses brand orange `#FF3500` (fading to `#D62B00` at the edge), since colours stay the same. Keith said "red"; flagged.
+  - Cut Jason out of `jason-seated.jpg` locally with macOS Vision subject lifting (Swift script in the session scratchpad). Edges checked: clean. Saved as `site/img/jason-seated-cutout.webp` (900×1350, ~100KB, transparent). Original jpg kept.
+  - Layout: `.hero-inner` align-items stretch; `.hero-photo` 520px column with the circle as a radial-gradient fill; Jason sits on the hero's bottom edge. Copy bottom padding 88→56px. At 1440 his head top is 210px vs headline top 198px (it was ~430px before).
+  - Checked at 1440, 1280, 1100, 810 and 390: "Full Presence" stays on one line, no horizontal scroll; on tablet/phone Jason + circle sit below the copy.
 
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
