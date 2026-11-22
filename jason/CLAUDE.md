@@ -34,7 +34,7 @@ Preview locally: `cd site && python3 -m http.server 8000` (or `npx serve site`).
 1. **Copy is locked.** Use Jason's wording exactly, typos included. Don't rewrite, trim or "improve" it. Known issues are logged in `copy/COPY-ISSUES.md` for Keith to raise at the end.
 2. **Keep it Framer-importable.** The page will be pulled into Framer with Framer's **HTML to Framer** Chrome extension (copies static sections from a live page) or the **Vortex / "AI Design to Framer"** plugin (paste HTML). These tools only bring over static layout, so:
    - Layout uses **flexbox only**. Avoid CSS grid and avoid `::before`/`::after` decoration.
-   - No JS-driven UI: FAQ is static, not an accordion. No animations. Add motion in Framer afterwards.
+   - No JS-driven UI. The FAQ is an accordion built with native `<details>`/`<summary>` (no JS, Keith asked for it 22 Nov); rebuild it with Framer's Accordion component on import. No animations. Add motion in Framer afterwards.
    - Images are real `<img>` tags, not CSS background images.
    - Fonts are **Google Fonts only** (Framer has them all).
    - Each top-level `<section>` has a `data-framer-name` so it can be imported one at a time and lands with a sensible layer name.
@@ -79,7 +79,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 10. Offer: "Everything you get" value stack (mockup slot, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
 12. Guarantee: 100-day seal
-13. FAQ: 6 static Q&As + CTA
+13. FAQ: 6 Q&As as accordion cards (details/summary, orange left border, plus icon) + CTA
 14. Footer: Fulfillment Policy link, ©
 
 ### Design additions not in the copy (decided by us, flag to Keith if changing)

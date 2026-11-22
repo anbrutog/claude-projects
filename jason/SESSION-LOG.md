@@ -119,5 +119,9 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Measured: exactly half above / half below the edge at 1440, 1100, 810 and 390. Between 641 and ~700px it's slightly uneven (card height varies); in Framer set the overlap per breakpoint by hand.
   - Framer note: negative margin overlap may not survive import; if not, place the card as its own layer across the boundary.
 
+- FAQ restyled as accordion drop-downs (Keith's screenshot): mist `#EBF0F2` background; heading left-aligned with an orange 4px line running to the right; each question a white card with a 5px orange left border, 8px radius, orange SVG plus (turns to minus when open), navy question 22px; answer indented under the question.
+  - Built with native `<details>/<summary>`: still **no JavaScript**. This overrides the old "FAQ is static, not an accordion" rule, at Keith's request. In Framer, rebuild with Framer's own Accordion component (details/summary won't import as interactive).
+  - FAQ wording checked identical to before. No horizontal scroll at 1440 or 390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
