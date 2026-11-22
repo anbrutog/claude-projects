@@ -69,5 +69,10 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Installed by Keith (global, in `~/.agents/skills/`, linked from `~/.claude/skills/`): emil-design-eng, find-animation-opportunities, review-animations, choreograph, animation-performance.
 - `review-animations` already ships with `disable-model-invocation: true`; added that line to the other four, so all five are manual-only (`/skill-name`). Re-check after any `npx skills update`.
 
+**Side topic: impeccable skill (impeccable.style)**
+- Keith installed `impeccable` v4.10.0 globally (`~/.agents/skills/impeccable`, linked from `~/.claude/skills/`). It is currently auto-invoked and its description covers almost any frontend work, so it overlaps frontend-design / ui-ux-pro-max.
+- Advice given: make it manual-only. Done: `disable-model-invocation: true` added (backup of the original SKILL.md in the session scratchpad); always call it with a command + target, e.g. `/impeccable critique site/index.html`; main commands for Keith: critique, audit, polish, plus layout/typeset when needed; leave the design-detector hook off; don't run `init`/`document` on PR2 (CLAUDE.md already holds the context); don't use `clarify` on PR2 (copy is locked).
+- Suggested finishing order: impeccable critique → fixes → impeccable audit → impeccable polish → Emil skills for motion.
+
 **Next**
 - Keith to review Draft 2. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
