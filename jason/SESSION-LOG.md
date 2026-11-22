@@ -95,5 +95,11 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Text diff vs Draft 2: only the hero button text added.
 - Keith then confirmed: **keep the doodles/arrows/chevrons**, and **add the stack back** (he likes it even though it adds new copy). Restored the stack HTML and CSS exactly as in commit 7b52a9d, alongside the new hero button. Original copy unchanged; checked 760px wide on desktop, 8 rows, total $11,391, no phone overflow.
 
+**Hero refinement: modelled on Dan Kennedy's Magnetic Marketing hero (Keith's screenshot)**
+- Keith wants the hero to resemble the Magnetic Marketing hero, done step by step. Step 1: the headline.
+- The headline is split into 3 sizes with no words changed (same h1, three spans): small white lead-in "Why Do So Many … Train Them In" (28px) → huge orange **"Full Presence"** (80px, weight 900) → medium white "After Having Worked With The Other Top Coaches?" (34px). Then a 4px orange rule underneath, like their red line.
+- Sizes: key 80px desktop, 62px at ≤1200px (incl. tablet), 50px phone. Checked "Full Presence" stays on one line at 1440, 1200, 1100, 1001, 1000, 810, 640 and 390. h1 text is identical to before.
+- Alternative emphasis offered: make "World Series And Triton Champions" the big line instead.
+
 **Next**
-- Price and checkout platform; PR2 mockup (goes in the stack slot and in Introducing PR2). Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
+- Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
