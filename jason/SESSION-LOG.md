@@ -81,5 +81,12 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Its house rules conflict with PR2: it writes its own copy and lints it (60–80 words a screen), requires hover and entrance animations ("never strip"), one section per screen, its own CSS system, stand-in photos. Incompatible with locked copy, long-form DR letters and the Framer-import rules.
 - Advice: make it manual-only; use it only for new brochure/company sites built from scratch (e.g. local-business audit mockups), never on PR2 or other DR sales pages. Keith said yes: added `disable-model-invocation: true` after the `name:` line (the description is a multi-line block). YAML validated; original backed up in the session scratchpad. Invoke with `/design-taste-frontend`.
 
+**Russell Brunson skill applied (Draft 2.1)**
+- Keith asked to use the `russell-brunson-landing-page` skill on the page, keeping fonts and colours the same.
+- Applied the skill's design patterns only, in brand colours: doodle underlines under 9 labels (flex shrink-wrap + `width:0;min-width:100%` SVG trick instead of `display:table`, to stay flexbox-only); doodle arrows either side of 2 CTAs (flex row, hidden under 900px); 3 dotted-chevron dividers; an "Everything you get" offer-stack box in the Offer section.
+- Not applied, and why: Bebas Neue/Work Sans/red/gold buttons (brand kept); hover effects (no motion, Framer); urgency section and "Your Host" bio (no copy for them, and no fake urgency); credibility logo bar (no logos); generated device mockup (waiting on the real PR2 mockup); hero CTA (would interrupt the hook; possible option).
+- Copy check against Draft 2: nothing removed or changed; only the stack's text was added (titles verbatim, values normalised).
+- Checked at 1440 and 390: doodles match label widths exactly, arrows hidden on phone, no horizontal scroll.
+
 **Next**
-- Keith to review Draft 2. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
+- Keith to review Draft 2.1. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
