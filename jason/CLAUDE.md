@@ -74,7 +74,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 7. Testimonial – Felipe Boianovsky
 8. Bonuses: 7 bonus cards + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow
-10. Offer: $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
+10. Offer: "Everything you get" value stack (mockup slot, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
 12. Guarantee: 100-day seal
 13. FAQ: 6 static Q&As + CTA
@@ -86,8 +86,9 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - 100-day guarantee seal section, which reuses the refund-policy text from the FAQ.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
 - Small eyebrow labels ("For poker players who play for more than the money", "What's inside", "Included free").
-- **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 9 labels (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 2 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
-- **No new sections or content blocks.** Keith rejected an added offer-stack box (22 Nov): design passes may restyle and decorate existing content only, never add sections. Only exception so far: the hero CTA button, which Keith asked for.
+- **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 9 labels (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?", between the stack and "Outside of this program"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
+- **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($1,500 … $2,997), total $11,391, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
+- **Rule: don't add new sections or content blocks without asking Keith first.** The stack and the hero CTA were both approved explicitly.
 
 ## Open items / placeholders
 - [ ] **Price:** `$[PRICE]` in the Offer section. Not decided yet.

@@ -93,6 +93,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Kept the doodle underlines, arrows and 2 chevrons for now, and asked Keith to confirm whether they stay.
 - Keith said yes to a hero button: added "Join Now And Receive Instant, Lifetime Access To PR2" (existing CTA wording) below "Elite Poker Performance", linking to `#join`. Left-aligned on desktop, full width on phone.
 - Text diff vs Draft 2: only the hero button text added.
+- Keith then confirmed: **keep the doodles/arrows/chevrons**, and **add the stack back** (he likes it even though it adds new copy). Restored the stack HTML and CSS exactly as in commit 7b52a9d, alongside the new hero button. Original copy unchanged; checked 760px wide on desktop, 8 rows, total $11,391, no phone overflow.
 
 **Next**
-- Keith to confirm the doodles/arrows/chevrons stay. Then price/checkout. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
+- Price and checkout platform; PR2 mockup (goes in the stack slot and in Introducing PR2). Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
