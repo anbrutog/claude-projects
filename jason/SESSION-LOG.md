@@ -60,5 +60,14 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - CLAUDE.md design system table updated to the new tokens.
 - Swoosh lines left for Framer (decorative, not import-safe).
 
+**Side topic: Emil Kowalski skills**
+- Keith wants to install `emilkowalski/skills` (aiforui.dev/skills) but use it sparingly, for finishing touches only, not auto-invoked every time.
+- It's a pack of ~20 skills (main one `emil-design-eng`, ~28k chars, mostly animation/interaction polish). Correct command: `npx skills@latest add emilkowalski/skills` (the plural `skills`).
+- Advice given: install only the skills needed, globally; add `disable-model-invocation: true` to each SKILL.md frontmatter so they run only when called by name (/emil-design-eng); re-apply that after updates.
+- Recommended picks (from the 20 offered): `emil-design-eng`, `find-animation-opportunities`, `review-animations`. Skip mobile/Swift/Expo/Sonner and the rest. For future projects the same three are the essentials; optional later: `choreograph` (multi-element entrance sequences), `animation-performance` (if pages get animation-heavy).
+- Note for PR2: the page must stay animation-free for Framer import, so on this project use the skill for motion advice to apply in Framer, not for code.
+- Installed by Keith (global, in `~/.agents/skills/`, linked from `~/.claude/skills/`): emil-design-eng, find-animation-opportunities, review-animations, choreograph, animation-performance.
+- `review-animations` already ships with `disable-model-invocation: true`; added that line to the other four, so all five are manual-only (`/skill-name`). Re-check after any `npx skills update`.
+
 **Next**
 - Keith to review Draft 2. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
