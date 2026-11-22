@@ -51,5 +51,14 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Confirmed the same tokens site-wide: Gabarito only (400/500/600/700), orange `#FF3500`, navy `#001E3A`, `#EBF0F2`/`#D6DEE3`, greys `#444`/`#777`. No uppercase text on the site; uppercase shows up only on YouTube.
 - Fetched page HTML was kept only in the scratchpad; screenshots are kept in `reference/` (committed).
 
+**Draft 2 built (Keith: "Yes, go ahead with Draft 2")**
+- Restyled `site/index.html` to Jason's brand, modelled on his coaching page. Copy is unchanged: a text diff against Draft 1 differs only by the old "Jason Su" text logo, now the real SVG logo.
+- Section backgrounds: Hero / Full Presence proof / Guarantee = navy + orange/blue glow; Introducing PR2 + Ryan = navy-deep; letter sections, Inside PR2, Felipe, Offer, Close, FAQ = white; Bonuses + Kevin = navy; footer navy-deep with logo.
+- Gabarito throughout; Playfair italic kept only for the signature. Orange buttons with 3px radius; cards 8px. Orange-deep `#D62B00` for orange text on white (contrast).
+- The hero photo sits in a black panel so its black background doesn't clash with navy.
+- Checked at 1440px and 390px: no horizontal scroll. Fixed the guarantee seal squashing into an oval on phone.
+- CLAUDE.md design system table updated to the new tokens.
+- Swoosh lines left for Framer (decorative, not import-safe).
+
 **Next**
-- Waiting on Keith: decision on brand direction, then price/checkout. Logo is in hand. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
+- Keith to review Draft 2. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

@@ -40,26 +40,29 @@ Preview locally: `cd site && python3 -m http.server 8000` (or `npx serve site`).
    - Inline SVG is used only for the tick icons.
 3. **Responsive breakpoints match Framer's:** desktop (>1000px), tablet (≤1000px, Framer 810), phone (≤640px, Framer 390). For import, copy each section once at desktop width and once at ~390px for the phone breakpoint.
 
-## Design system (current: provisional until Jason's brand assets arrive)
-Jason's photos all have black studio backgrounds, so the page is dark and premium with a cream "letter" background for the long reading sections.
+## Design system (Draft 2: Jason Su brand, taken from pokerwithpresence.com)
+Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand with orange accent; long reading sections on white.
 
 | Token | Value | Use |
 |---|---|---|
-| Ink | `#0B0B0C` | page dark / hero |
-| Coal | `#111113` / `#151517` | dark bands / dark cards |
-| Line | `#2A2A2D` | dark borders |
-| Paper | `#F5F0E6` | letter background |
-| Paper-2 | `#EDE5D6` | cards on paper |
-| Text dark | `#1B1A17` | |
-| Text light | `#ECE7DD` | |
-| Muted | `#A39E94` | |
-| Gold | `#C9A24A` | accent, buttons (bracelet gold) |
-| Gold light | `#E2C57E` | highlights, value badges |
-| Gold deep | `#8A6E2E` | gold text on paper |
+| Navy | `#001E3A` | brand dark: hero, dark bands, headings on light |
+| Navy-deep | `#00152A` | alternate dark band (Introducing PR2), footer |
+| Navy-card | `#062A4C` | cards on navy |
+| Line | `#24425F` | borders on navy |
+| Orange | `#FF3500` | buttons, ticks, big numbers, accents on navy |
+| Orange-deep | `#D62B00` | orange *text* on light backgrounds (contrast) |
+| Mist | `#EBF0F2` | light panels (learn list, value badges, old-price card) |
+| Mist-2 | `#D6DEE3` | dividers on light |
+| White | `#FFFFFF` | letter background |
+| Body | `#444444` | body text on light |
+| Muted-light | `#ABC7D1` | secondary text on navy |
 
-Fonts: **Playfair Display** (headings), **Source Serif 4** (body, 20px desktop / 18px phone), **Inter** (labels, buttons).
-
-**Pending from Keith:** Jason's logo, brand colours/fonts and reference links. When they arrive, swap the tokens above, replace the text logo placeholder in the hero bar (`.logo-ph`) and add a PR2 product logo.
+- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Playfair Display italic** only for the "Jason Su" signature.
+- Radius: buttons **3px** (as on his site), cards **8px**.
+- `.glow` sections (Hero, Full Presence proof, Guarantee) use navy with CSS radial gradients (orange glow bottom, blue glow top right), copying his hero. Gradients are fills, not images, so they import into Framer.
+- His site's thin orange swoosh lines are **not** in the code. Add them in Framer as an SVG/image layer (decorative elements don't import reliably).
+- Photos have black backgrounds, so they sit in black panels/cards on navy.
+- Logo: `site/img/brand/jason-su-logo-light.svg` (white text) in the hero bar and footer; `jason-su-logo-dark.svg` for light backgrounds.
 
 ## Page structure (section → `data-framer-name`)
 1. Hero: headline, "Here's a hint", "Has NOTHING to do with Elite Poker Performance", Jason photo
@@ -88,11 +91,12 @@ Fonts: **Playfair Display** (headings), **Source Serif 4** (body, 20px desktop /
 - [ ] **Price:** `$[PRICE]` in the Offer section. Not decided yet.
 - [ ] **Checkout:** platform not decided (Stripe / ThriveCart / Kajabi?). All CTAs point at `#checkout` / `#join`.
 - [ ] **PR2 logo + product mockup / VSL:** placeholder box in "Introducing PR2".
-- [ ] **Jason logo + brand colours/fonts:** Keith is sending these.
+- [x] **Jason logo + brand colours/fonts:** pulled from pokerwithpresence.com and applied in Draft 2.
 - [ ] **Fulfillment Policy page:** footer link has no target.
 - [ ] Tracking: Keith said **no GA4**. Meta Pixel not discussed.
 - [ ] Copy fixes: see `copy/COPY-ISSUES.md` (raise at the end).
 
 ## Status
 - Draft 1 built and reviewed at desktop + phone widths (22 Nov 2026).
-- Next: apply Jason's brand once assets arrive (Draft 2), fill price/checkout, then import to Framer section by section and add breakpoints/animations there.
+- Draft 2 (Jason's brand) applied and checked at desktop + phone widths (22 Nov 2026). Draft 1 styles are in git history (commit a8cb7c1).
+- Next: fill price/checkout and the PR2 mockup, then import to Framer section by section and add breakpoints, animations and the swoosh lines there.
