@@ -41,5 +41,15 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - Look: navy hero with orange line-art swoops and a glow, white text, solid orange buttons with small radius.
 - This is quite different from the provisional Draft 1 system (black/cream/gold, Playfair + Source Serif). Asked Keith whether Draft 2 should match the site.
 
+**More brand references from Keith**
+- YouTube channel banner (saved as `reference/youtube-banner.png`): navy gradient, heavy UPPERCASE sans headline ("WIN MORE WITH LESS STRESS... AND NO REGRETS"), red-orange brush-stroke underline, small white URL line.
+- Coaching page https://www.pokerwithpresence.com/coaching (`reference/site-coaching-hero.jpg`, `site-coaching-lower.jpg`): this is the closest match to a sales page.
+  - Hero: navy `#001E3A` with an orange/rust radial glow at the bottom and a lighter blue glow top right, thin orange line-art swoops at the edges, centred white Gabarito Bold headline, muted white body, solid orange button (3px radius).
+  - White band with a navy Gabarito ExtraBold section heading ("Client Testimonials", "Why my coaching?").
+  - Long run of testimonial cards: navy, thin light border, small radius, white text, name in bold.
+  - "Why my coaching?" 3 cards on navy with an orange glow behind them; email optin on white with a light grey-blue input `#EBF0F2` and an orange button.
+- Confirmed the same tokens site-wide: Gabarito only (400/500/600/700), orange `#FF3500`, navy `#001E3A`, `#EBF0F2`/`#D6DEE3`, greys `#444`/`#777`. No uppercase text on the site; uppercase shows up only on YouTube.
+- Fetched page HTML was kept only in the scratchpad; screenshots are kept in `reference/` (committed).
+
 **Next**
 - Waiting on Keith: decision on brand direction, then price/checkout. Logo is in hand. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
