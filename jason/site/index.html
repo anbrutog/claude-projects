@@ -81,6 +81,16 @@ strong{font-weight:700}
 /* Jason cut-out in front of an orange circle (Magnetic Marketing style). Circle = gradient fill, so it imports to Framer */
 .hero-photo{flex:0 0 520px;display:flex;align-items:flex-end;justify-content:center;background:radial-gradient(circle closest-side at 50% 56%,#FF3500 0%,#FF3500 60%,#D62B00 90%,rgba(214,43,0,0) 91%)}
 .hero-photo img{width:100%;height:auto}
+/* Testimonial card straddling the hero / letter boundary (half in each). Negative bottom margin; next section gets the same back as padding */
+.hero-proof{position:relative;z-index:2;width:100%;max-width:1000px;margin-bottom:-72px;display:flex;align-items:center;gap:28px;background:#FFFFFF;border-radius:8px;padding:28px 40px;box-shadow:0 24px 60px rgba(0,21,42,.28)}
+.hp-avatar{flex:0 0 88px;width:88px;height:88px;border-radius:50%;border:3px solid #FF3500;object-fit:cover}
+.hp-body{flex:1 1 0;display:flex;flex-direction:column;gap:8px}
+.hp-quote{font-weight:500;font-size:21px;line-height:1.45;color:#001E3A}
+.hp-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:16px;line-height:1.3}
+.hp-stars{color:#FF3500;letter-spacing:.1em}
+.hp-name{font-weight:800;color:#001E3A}
+.hp-cred{color:#444444}
+.after-proof{padding-top:168px}
 /* Hint: one sentence, one size (Keith, 22 Nov) */
 .hint{font-weight:500;font-size:18px;line-height:1.5;color:#FFFFFF;max-width:620px}
 .hint-label{font-weight:700;color:#FF3500}
@@ -278,6 +288,10 @@ strong{font-weight:700}
   .guar{flex-direction:column;text-align:center;padding:30px 22px}
   .btn{font-size:19px;padding:20px 22px}
   .hero-photo{max-width:320px}
+  .hero-proof{flex-direction:column;text-align:center;gap:14px;padding:24px 20px;margin-bottom:-154px}
+  .hp-meta{justify-content:center;gap:4px 10px}
+  .hp-quote{font-size:18px}
+  .after-proof{padding-top:210px}
   .hero-bar .eyebrow{display:none}
   .btn-wrap.hero-cta{align-items:stretch}
   .sig{font-size:36px}
@@ -308,10 +322,17 @@ strong{font-weight:700}
     </div>
     <div class="hero-photo"><img src="img/jason-seated-cutout.webp" alt="Jason Su" width="900" height="1350"></div>
   </div>
+  <figure class="hero-proof" data-framer-name="Hero Testimonial">
+    <img class="hp-avatar" src="img/ryan-avatar.jpg" alt="Ryan Hoenig" width="240" height="240">
+    <div class="hp-body">
+      <blockquote class="hp-quote">“Within months of joining Jason’s program, I won my first WSOP bracelet and final tabled the next event I played.”</blockquote>
+      <figcaption class="hp-meta"><span class="hp-stars" aria-label="5 stars">★★★★★</span><span class="hp-name">Ryan Hoenig</span><span class="hp-cred">WSOP Dealer’s Choice Champion</span></figcaption>
+    </div>
+  </figure>
 </section>
 
 <!-- ================= LETTER 1 ================= -->
-<section class="section light" data-framer-name="Letter – Opening">
+<section class="section light after-proof" data-framer-name="Letter – Opening">
   <div class="col">
     <p class="salute">Dear Friend,</p>
     <p>If you’re reading this, you probably want to win a ton of money playing poker.</p>

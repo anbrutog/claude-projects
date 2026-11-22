@@ -112,5 +112,12 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Follow-up: Keith asked for the hint at 18px. Now 18px at all widths (the 20px phone override was removed). The page uses px throughout.
   - Removed with the merge: the left orange border on the hint, the doodle underline under "Here's A Hint:" (can't sit under inline text), the separate small-caps "Has nothing to do with" line, and the 50px "Elite Poker Performance" line.
 
+- Step 4 (Keith's screenshot of a press-logo bar straddling two sections): a **testimonial card that sits half in the hero, half in the letter** (requested by Keith).
+  - Content: Ryan Hoenig snippet, verbatim first sentence of his testimonial ("Within months of joining Jason's program, I won my first WSOP bracelet and final tabled the next event I played."), 5 orange stars, name, and his first credential "WSOP Dealer's Choice Champion".
+  - Circular photo: new `site/img/ryan-avatar.jpg`, a 240×240 square crop of Ryan's face from `ryan.jpg` (pre-cropped so the circle imports cleanly into Framer), 88px with an orange ring.
+  - White card, 8px radius, big soft shadow, max 1000px. Built as `<figure class="hero-proof" data-framer-name="Hero Testimonial">` inside the Hero section, with `margin-bottom:-72px` (phone `-154px`, card stacks centred) and the Letter section given `.after-proof` padding to match (168px desktop / 210px phone).
+  - Measured: exactly half above / half below the edge at 1440, 1100, 810 and 390. Between 641 and ~700px it's slightly uneven (card height varies); in Framer set the overlap per breakpoint by hand.
+  - Framer note: negative margin overlap may not survive import; if not, place the card as its own layer across the boundary.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
