@@ -109,6 +109,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Eyebrow "For poker players who play for more than the money" now shows in sentence case (no uppercase transform, hero only), centred.
   - Everything in the hero copy column is centred (eyebrow, headline, rule, hint, button). The orange rule is shortened to 360px.
   - The hint block is now **one sentence at one size** (24px desktop, 20px phone): "Here's A Hint: Optimizing Your Routine … "Strong Mindset" Has NOTHING To Do With Elite Poker Performance". Same words; the all-caps line "HAS NOTHING TO DO WITH" is set in title case with NOTHING kept in caps and underlined orange. "Here's A Hint:" stays orange, "Elite Poker Performance" bold.
+  - Follow-up: Keith asked for the hint at 18px. Now 18px at all widths (the 20px phone override was removed). The page uses px throughout.
   - Removed with the merge: the left orange border on the hint, the doodle underline under "Here's A Hint:" (can't sit under inline text), the separate small-caps "Has nothing to do with" line, and the 50px "Elite Poker Performance" line.
 
 **Next**
