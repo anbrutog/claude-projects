@@ -67,7 +67,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - Logo: `site/img/brand/jason-su-logo-light.svg` (white text) in the hero bar and footer; `jason-su-logo-dark.svg` for light backgrounds.
 
 ## Page structure (section → `data-framer-name`)
-1. Hero: tiered headline (small lead-in / huge "Full Presence" / medium close + orange rule), "Here's a hint", "Has NOTHING to do with Elite Poker Performance", CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on an orange circle
+1. Hero (copy column centred): sentence-case eyebrow, tiered headline (small lead-in / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on an orange circle
 2. Letter – Opening: "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 proof cards ($1,000,000 / 10x Stakes / Months → Minutes)
 4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**
@@ -88,7 +88,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - 100-day guarantee seal section, which reuses the refund-policy text from the FAQ.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
 - Small eyebrow labels ("For poker players who play for more than the money", "What's inside", "Included free").
-- **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 9 labels (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?", between the stack and "Outside of this program"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
+- **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 8 labels (the 9th, "Here's A Hint", was dropped when the hint became one sentence) (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?", between the stack and "Outside of this program"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
 - **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($1,500 … $2,997), total $11,391, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
 - **Rule: don't add new sections or content blocks without asking Keith first.** The stack and the hero CTA were both approved explicitly.
 

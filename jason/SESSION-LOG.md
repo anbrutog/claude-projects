@@ -105,6 +105,11 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Cut Jason out of `jason-seated.jpg` locally with macOS Vision subject lifting (Swift script in the session scratchpad). Edges checked: clean. Saved as `site/img/jason-seated-cutout.webp` (900×1350, ~100KB, transparent). Original jpg kept.
   - Layout: `.hero-inner` align-items stretch; `.hero-photo` 520px column with the circle as a radial-gradient fill; Jason sits on the hero's bottom edge. Copy bottom padding 88→56px. At 1440 his head top is 210px vs headline top 198px (it was ~430px before).
   - Checked at 1440, 1280, 1100, 810 and 390: "Full Presence" stays on one line, no horizontal scroll; on tablet/phone Jason + circle sit below the copy.
+- Step 3 (Keith's screenshots): centre the hero, and make the eyebrow lower case.
+  - Eyebrow "For poker players who play for more than the money" now shows in sentence case (no uppercase transform, hero only), centred.
+  - Everything in the hero copy column is centred (eyebrow, headline, rule, hint, button). The orange rule is shortened to 360px.
+  - The hint block is now **one sentence at one size** (24px desktop, 20px phone): "Here's A Hint: Optimizing Your Routine … "Strong Mindset" Has NOTHING To Do With Elite Poker Performance". Same words; the all-caps line "HAS NOTHING TO DO WITH" is set in title case with NOTHING kept in caps and underlined orange. "Here's A Hint:" stays orange, "Elite Poker Performance" bold.
+  - Removed with the merge: the left orange border on the hint, the doodle underline under "Here's A Hint:" (can't sit under inline text), the separate small-caps "Has nothing to do with" line, and the 50px "Elite Poker Performance" line.
 
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
