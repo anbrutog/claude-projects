@@ -20,6 +20,7 @@ site/img/            Photos (already resized/compressed for the web)
   jason-seated.jpg   original hero portrait (black studio background), source for the cut-out
   jason-close.jpg    sign-off avatar
   poker-with-presence-cover.jpg  Jason's book cover (Inside PR2 section)
+  jason-arms-crossed.jpg  letter-opening photo (portrait crop of Keith's studio shot)
   jason-table.jpg    spare landscape shot (unused so far)
   ryan.jpg           Ryan Hoenig testimonial (Hard Rock trophy)
   felipe.jpg         Felipe Boianovsky testimonial (BSOP trophy)
@@ -69,7 +70,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 
 ## Page structure (section → `data-framer-name`)
 1. Hero (copy column centred): sentence-case eyebrow, tiered headline (small lead-in / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on an orange circle, and a white testimonial card (Ryan snippet + round avatar `img/ryan-avatar.jpg`) straddling the hero/letter edge, half in each
-2. Letter – Opening: "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
+2. Letter – Opening: Jason photo `img/jason-arms-crossed.jpg` on the left beside the first paragraphs (RB letter layout, mirrored), "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 proof cards ($1,000,000 / 10x Stakes / Months → Minutes)
 4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**
 5. Testimonial – Ryan Hoenig

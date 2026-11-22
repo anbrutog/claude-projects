@@ -135,5 +135,11 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Tablet/phone: book on top (300px / 240px), then the 6 boxes stacked in order.
   - Page text identical to before (checked). No horizontal scroll at 1440/810/390.
 
+- Letter opening: Jason's photo added beside "Dear Friend", like Russell Brunson's "From: Russell Brunson" letter block, but **mirrored (photo left, text right)** as Keith asked.
+  - Keith supplied a new studio shot (Jason, arms crossed on a table, black background). Cropped locally to portrait 4:5 and saved as `site/img/jason-arms-crossed.jpg` (800×1000, ~131KB). He looks to the right, towards the text.
+  - Layout: `.letter-intro` (max 1120px, flex row, gap 64px): 440px photo with 16px radius + deep shadow, then "Dear Friend," … "This letter can show you how it's done." in the right column. The chevrons and the rest of the letter continue in the normal 700px centred column.
+  - Tablet/phone: photo on top (max 420px), text below.
+  - RB's photo has a trophy badge over the corner; not added (nothing equivalent supplied). Page text identical (checked).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

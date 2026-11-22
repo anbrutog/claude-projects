@@ -91,6 +91,11 @@ strong{font-weight:700}
 .hp-name{font-weight:800;color:#001E3A}
 .hp-cred{color:#444444}
 .after-proof{padding-top:168px}
+/* Letter opening: Jason photo left, first paragraphs right (Russell Brunson "From:" layout, mirrored) */
+.letter-intro{width:100%;max-width:1120px;display:flex;align-items:flex-start;gap:64px;padding-bottom:22px}
+.intro-photo{flex:0 0 440px;display:flex}
+.intro-photo img{width:100%;height:auto;border-radius:16px;box-shadow:0 30px 60px rgba(0,21,42,.25)}
+.intro-text{flex:1 1 0;display:flex;flex-direction:column;gap:22px;max-width:640px}
 /* Hint: one sentence, one size (Keith, 22 Nov) */
 .hint{font-weight:500;font-size:18px;line-height:1.5;color:#FFFFFF;max-width:620px}
 .hint-label{font-weight:700;color:#FF3500}
@@ -273,6 +278,9 @@ strong{font-weight:700}
   .hero-photo{flex:0 0 auto;width:100%;max-width:400px}
   .hero-copy{padding-bottom:40px}
   .testi{flex-direction:column}
+  .letter-intro{flex-direction:column;align-items:center;gap:40px}
+  .intro-photo{flex:0 0 auto;width:100%;max-width:420px}
+  .intro-text{max-width:700px}
   .learn-wrap{flex-direction:column}
   .learn-book{order:-1;flex:0 0 auto;width:300px}
   .learn-col{width:100%;max-width:640px}
@@ -364,17 +372,22 @@ strong{font-weight:700}
 
 <!-- ================= LETTER 1 ================= -->
 <section class="section light after-proof" data-framer-name="Letter – Opening">
+  <div class="letter-intro">
+    <div class="intro-photo"><img src="img/jason-arms-crossed.jpg" alt="Jason Su" width="800" height="1000"></div>
+    <div class="intro-text">
+      <p class="salute">Dear Friend,</p>
+      <p>If you’re reading this, you probably want to win a ton of money playing poker.</p>
+      <p>But you’re probably also one of the people for whom poker is about way more than just the money.</p>
+      <p class="oneline">It’s also about crushing the competition.</p>
+      <p>Going toe to toe against your toughest opponents at the highest stakes to see who executes the best while feeling extreme pressure and emotion.</p>
+      <p>It’s about getting those “in the zone” experiences, where you get to show everyone what you’re capable of—where you earn the respect of your peers and a feeling of satisfaction that money can’t buy.</p>
+      <p class="oneline">And it’s about the peace.</p>
+      <p>The peace that comes with going to sleep each night free from the endless cycle of thoughts about what you could have done different or what tomorrow will bring—and instead completely content with how you’re performing.</p>
+      <p>If these are the things you’re interested in?</p>
+      <p class="oneline">This letter can show you how it’s done.</p>
+    </div>
+  </div>
   <div class="col">
-    <p class="salute">Dear Friend,</p>
-    <p>If you’re reading this, you probably want to win a ton of money playing poker.</p>
-    <p>But you’re probably also one of the people for whom poker is about way more than just the money.</p>
-    <p class="oneline">It’s also about crushing the competition.</p>
-    <p>Going toe to toe against your toughest opponents at the highest stakes to see who executes the best while feeling extreme pressure and emotion.</p>
-    <p>It’s about getting those “in the zone” experiences, where you get to show everyone what you’re capable of—where you earn the respect of your peers and a feeling of satisfaction that money can’t buy.</p>
-    <p class="oneline">And it’s about the peace.</p>
-    <p>The peace that comes with going to sleep each night free from the endless cycle of thoughts about what you could have done different or what tomorrow will bring—and instead completely content with how you’re performing.</p>
-    <p>If these are the things you’re interested in?</p>
-    <p class="oneline">This letter can show you how it’s done.</p>
     <div class="chevrons" aria-hidden="true"><svg width="400" height="60" viewBox="0 0 400 60" fill="#FF3500" opacity="0.28"><circle cx="5" cy="5" r="4"/><circle cx="17" cy="5" r="4"/><circle cx="15" cy="17" r="4"/><circle cx="27" cy="17" r="4"/><circle cx="25" cy="29" r="4"/><circle cx="37" cy="29" r="4"/><circle cx="35" cy="41" r="4"/><circle cx="47" cy="41" r="4"/><circle cx="55" cy="53" r="4"/><circle cx="93" cy="5" r="4"/><circle cx="105" cy="5" r="4"/><circle cx="83" cy="17" r="4"/><circle cx="95" cy="17" r="4"/><circle cx="73" cy="29" r="4"/><circle cx="85" cy="29" r="4"/><circle cx="63" cy="41" r="4"/><circle cx="75" cy="41" r="4"/><circle cx="150" cy="5" r="4"/><circle cx="162" cy="5" r="4"/><circle cx="160" cy="17" r="4"/><circle cx="172" cy="17" r="4"/><circle cx="170" cy="29" r="4"/><circle cx="182" cy="29" r="4"/><circle cx="180" cy="41" r="4"/><circle cx="192" cy="41" r="4"/><circle cx="200" cy="53" r="4"/><circle cx="238" cy="5" r="4"/><circle cx="250" cy="5" r="4"/><circle cx="228" cy="17" r="4"/><circle cx="240" cy="17" r="4"/><circle cx="218" cy="29" r="4"/><circle cx="230" cy="29" r="4"/><circle cx="208" cy="41" r="4"/><circle cx="220" cy="41" r="4"/><circle cx="295" cy="5" r="4"/><circle cx="307" cy="5" r="4"/><circle cx="305" cy="17" r="4"/><circle cx="317" cy="17" r="4"/><circle cx="315" cy="29" r="4"/><circle cx="327" cy="29" r="4"/><circle cx="325" cy="41" r="4"/><circle cx="337" cy="41" r="4"/><circle cx="345" cy="53" r="4"/><circle cx="383" cy="5" r="4"/><circle cx="395" cy="5" r="4"/><circle cx="373" cy="17" r="4"/><circle cx="385" cy="17" r="4"/><circle cx="363" cy="29" r="4"/><circle cx="375" cy="29" r="4"/><circle cx="353" cy="41" r="4"/><circle cx="365" cy="41" r="4"/></svg></div>
 
     <h2 class="sub">The Truth About Winning Big</h2>
