@@ -130,5 +130,10 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Placeholder iPads: 7 hand-built SVGs in `site/img/bonus/bonus-1..7.svg` (generator script in the session scratchpad, `ipads.py`): royal flush in a spotlight, trophy + chip stacks, shield with spade, calm waves + face-down cards, video library grid, video-call coaching grid, checklist clipboard + chip. Each shows "BONUS #N" + the bonus name on screen. No image service used. Swap for real mockups later (keep `filter: drop-shadow`).
   - Container widened 900→1040px. Checked at 1440, 810, 390; no horizontal scroll.
 
+- "Inside PR2, You Will Learn:" restyled like Keith's DotComSecrets screenshot: Jason's book cover **Poker With Presence: Unlocking The Final 15%** (Keith supplied it; saved as `site/img/poker-with-presence-cover.jpg`, 648×900, ~156KB) in the centre with a deep shadow, 3 learning points in white boxes on each side (1–3 left, 4–6 right, orange triangle bullets). Section background now mist `#EBF0F2` like the screenshot; Felipe's testimonial section below also switched to mist so there's no seam (it uses padding-top:0).
+  - The DCS boxes have their own headings and handwritten notes ("The Fast Way To…"); not added, since we have no approved copy for them. Ask Keith if wanted.
+  - Tablet/phone: book on top (300px / 240px), then the 6 boxes stacked in order.
+  - Page text identical to before (checked). No horizontal scroll at 1440/810/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

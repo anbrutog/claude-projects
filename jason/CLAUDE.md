@@ -19,6 +19,7 @@ site/img/            Photos (already resized/compressed for the web)
   jason-seated-cutout.webp  hero (Jason cut out, transparent background, 900×1350, ~100KB)
   jason-seated.jpg   original hero portrait (black studio background), source for the cut-out
   jason-close.jpg    sign-off avatar
+  poker-with-presence-cover.jpg  Jason's book cover (Inside PR2 section)
   jason-table.jpg    spare landscape shot (unused so far)
   ryan.jpg           Ryan Hoenig testimonial (Hard Rock trophy)
   felipe.jpg         Felipe Boianovsky testimonial (BSOP trophy)
@@ -72,8 +73,8 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 3. Full Presence Can Be Trained: 3 proof cards ($1,000,000 / 10x Stakes / Months → Minutes)
 4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**
 5. Testimonial – Ryan Hoenig
-6. Inside PR2: 6 learning bullets + CTA
-7. Testimonial – Felipe Boianovsky
+6. Inside PR2 (mist): book cover `img/poker-with-presence-cover.jpg` centred, 6 learning points in white boxes, 3 each side (DotComSecrets layout) + CTA
+7. Testimonial – Felipe Boianovsky (mist, to match Inside PR2)
 8. Bonuses: 7 white bonus cards (placeholder iPad SVG left in `img/bonus/`, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow
 10. Offer: "Everything you get" value stack (mockup slot, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
