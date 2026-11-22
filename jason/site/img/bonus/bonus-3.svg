@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+<defs>
+<linearGradient id="felt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E6B45"/><stop offset="1" stop-color="#06402A"/></linearGradient>
+<linearGradient id="navy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A3A66"/><stop offset="1" stop-color="#001E3A"/></linearGradient>
+<radialGradient id="spot" cx=".5" cy=".35" r=".6"><stop offset="0" stop-color="#FF3500" stop-opacity=".55"/><stop offset="1" stop-color="#FF3500" stop-opacity="0"/></radialGradient>
+<clipPath id="scr"><rect x="44" y="44" width="512" height="712" rx="14"/></clipPath>
+
+</defs>
+<rect x="8" y="8" width="584" height="784" rx="46" fill="#1B1B1F"/>
+<rect x="12" y="12" width="576" height="776" rx="42" fill="#0B0B0D" stroke="#3A3A40" stroke-width="2"/>
+<circle cx="300" cy="28" r="5" fill="#26262B"/>
+<g clip-path="url(#scr)"><rect width="600" height="800" fill="url(#navy)"/><path d="M300 140 L470 200 V360 C470 470 390 540 300 580 C210 540 130 470 130 360 V200 Z" fill="#062A4C" stroke="#FF3500" stroke-width="10"/><text x="300" y="440" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="230" fill="#fff">♠</text><rect x="44" y="638" width="512" height="118" fill="#000" fill-opacity=".35"/>
+<text x="300" y="676" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#FF3500">BONUS #3</text>
+<text x="300" y="714" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="800" fill="#fff">Unbreakable</text></g>
+<rect x="44" y="44" width="512" height="712" rx="14" fill="none" stroke="#000" stroke-opacity=".35"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+<defs>
+<linearGradient id="felt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E6B45"/><stop offset="1" stop-color="#06402A"/></linearGradient>
+<linearGradient id="navy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A3A66"/><stop offset="1" stop-color="#001E3A"/></linearGradient>
+<radialGradient id="spot" cx=".5" cy=".35" r=".6"><stop offset="0" stop-color="#FF3500" stop-opacity=".55"/><stop offset="1" stop-color="#FF3500" stop-opacity="0"/></radialGradient>
+<clipPath id="scr"><rect x="44" y="44" width="512" height="712" rx="14"/></clipPath>
+
+</defs>
+<rect x="8" y="8" width="584" height="784" rx="46" fill="#1B1B1F"/>
+<rect x="12" y="12" width="576" height="776" rx="42" fill="#0B0B0D" stroke="#3A3A40" stroke-width="2"/>
+<circle cx="300" cy="28" r="5" fill="#26262B"/>
+<g clip-path="url(#scr)"><rect width="600" height="800" fill="#0F3B5C"/><path d="M0 200 C150 160 300 240 600 190" fill="none" stroke="#ABC7D1" stroke-opacity="0.15" stroke-width="4"/><path d="M0 260 C150 220 300 300 600 250" fill="none" stroke="#ABC7D1" stroke-opacity="0.22999999999999998" stroke-width="4"/><path d="M0 320 C150 280 300 360 600 310" fill="none" stroke="#ABC7D1" stroke-opacity="0.31" stroke-width="4"/><path d="M0 380 C150 340 300 420 600 370" fill="none" stroke="#ABC7D1" stroke-opacity="0.39" stroke-width="4"/><path d="M0 440 C150 400 300 480 600 430" fill="none" stroke="#ABC7D1" stroke-opacity="0.47" stroke-width="4"/><g transform="translate(240,470) rotate(-10)"><rect x="-60" y="-84" width="120" height="168" rx="10" fill="#D62B00" stroke="#fff" stroke-width="4"/><rect x="-46" y="-70" width="92" height="140" rx="6" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2"/></g><g transform="translate(360,470) rotate(10)"><rect x="-60" y="-84" width="120" height="168" rx="10" fill="#D62B00" stroke="#fff" stroke-width="4"/><rect x="-46" y="-70" width="92" height="140" rx="6" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2"/></g><rect x="44" y="638" width="512" height="118" fill="#000" fill-opacity=".35"/>
+<text x="300" y="676" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#FF3500">BONUS #4</text>
+<text x="300" y="714" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="800" fill="#fff">Conquer Cravings</text></g>
+<rect x="44" y="44" width="512" height="712" rx="14" fill="none" stroke="#000" stroke-opacity=".35"/>
+</svg>

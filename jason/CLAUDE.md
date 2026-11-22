@@ -74,7 +74,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 5. Testimonial – Ryan Hoenig
 6. Inside PR2: 6 learning bullets + CTA
 7. Testimonial – Felipe Boianovsky
-8. Bonuses: 7 bonus cards + "Total bonus value $11,391"
+8. Bonuses: 7 white bonus cards (placeholder iPad SVG left in `img/bonus/`, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow
 10. Offer: "Everything you get" value stack (mockup slot, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
@@ -87,6 +87,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - "Total bonus value $11,391": the sum of the 7 listed bonus values (copy says "over $10,000").
 - 100-day guarantee seal section, which reuses the refund-policy text from the FAQ.
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).
+- Bonus card pills: "Instant Access" and "Today: FREE!" microcopy, original values struck through (Keith asked for the RB card style, 22 Nov). iPad images are placeholders.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
 - Small eyebrow labels ("For poker players who play for more than the money", "What's inside", "Included free").
 - **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines under 8 labels (the 9th, "Here's A Hint", was dropped when the hint became one sentence) (never under headings), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?", between the stack and "Outside of this program"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.

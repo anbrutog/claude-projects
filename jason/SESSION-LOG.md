@@ -123,5 +123,12 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Built with native `<details>/<summary>`: still **no JavaScript**. This overrides the old "FAQ is static, not an accordion" rule, at Keith's request. In Framer, rebuild with Framer's own Accordion component (details/summary won't import as interactive).
   - FAQ wording checked identical to before. No horizontal scroll at 1440 or 390.
 
+- Bonuses restyled to match Keith's Russell Brunson screenshot ("FREE BONUS #1" card with tablet mockup and dashed price pill), in Jason's fonts/colours:
+  - Each bonus is a white card (16px radius, deep shadow) on the navy section: iPad mockup left (260px; 200px tablet; stacked on top on phone), copy right.
+  - Copy column: "BONUS #N" label (orange-deep caps), title (navy, 34px), bullets in body grey, then a dashed orange pill on a light orange tint (`#FFF0EB`): cloud-download icon + "Instant Access" on the left; the original value line struck through + **"Today: FREE!"** on the right. Bonus 7 keeps its orange outline as the featured one.
+  - New microcopy (flag to Keith): "Instant Access" and "Today: FREE!" in each pill; label changed from "BONUS 1" to "Bonus #1". Didn't add the word "FREE" to the label. All original bonus wording unchanged (text diff checked).
+  - Placeholder iPads: 7 hand-built SVGs in `site/img/bonus/bonus-1..7.svg` (generator script in the session scratchpad, `ipads.py`): royal flush in a spotlight, trophy + chip stacks, shield with spade, calm waves + face-down cards, video library grid, video-call coaching grid, checklist clipboard + chip. Each shows "BONUS #N" + the bonus name on screen. No image service used. Swap for real mockups later (keep `filter: drop-shadow`).
+  - Container widened 900→1040px. Checked at 1440, 810, 390; no horizontal scroll.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
