@@ -203,5 +203,8 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to bring the FAQ question font weight down to 500. `.qa .q` 700 → 500 (answers unchanged).
 
+- Keith (screenshot) asked to turn the Private coaching vs PR2 comparison into two side-by-side boxes: negatives with red X's on the left, positives with green ticks on the right. Built: left `.cmp.old` navy box (label + struck-through $25,000 + 4 red-X lines, white text); right `.cmp.new` mist box (label + $[PRICE] in orange-deep + 5 green-checkbox lines, navy text). 16px radius, stacked on phone. Replaced the old one-liners "Usually full." and "Plus over $10,000 worth of bonuses." (our microcopy).
+  - **New list copy, needs Keith/Jason sign-off.** From Jason's copy: "Starts at $25,000 for six months of coaching", "My full attention and dedication … at a tiny fraction of the cost", "Instant, lifetime access to PR2", "Over $10,000 worth of bonuses", "Direct, personal feedback and coaching from me on anything you want help with", "100-day money back guarantee". **Written by us (factual claims Jason must confirm):** "Usually full, so you may have to wait for a spot", "Six months of coaching, then it ends", "Bonus trainings not included".
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
