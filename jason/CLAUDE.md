@@ -81,7 +81,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 7. Testimonial – Felipe Boianovsky (white section, to match Inside PR2)
 8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow (white card, no stars)
-10. Offer: "Everything you get" value stack (devices mockup `img/stack-devices.svg` overhanging the top of the box: monitor/laptop/iPad/phone built from the bonus photos, placeholder until the real PR2 mockup, green checkbox ticks `#12B312` and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $11,391) → $25,000 private coaching vs **$[PRICE]** comparison (two boxes: navy with red X's / mist with green ticks; 3 X lines are our wording, need Jason to confirm) + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
+10. Offer: "Everything you get" value stack (devices mockup `img/stack-devices.svg` overhanging the top of the box: monitor/laptop/iPad/phone built from the bonus photos, placeholder until the real PR2 mockup, green checkbox ticks `#12B312` and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $11,391) → private coaching vs PR2 comparison (two boxes, centred normal-case headings with a thin divider, no prices since 23 Nov: navy with red X's / mist with green ticks; 3 X lines are our wording, need Jason to confirm) + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
 12. Guarantee: RB-style near-black box inside the navy glow section: "Try It For A Full 100 Days" / "100 DAY GUARANTEE" / refund text / Jason Su signature / green CTA, Jason photo right (`img/jason-guarantee.jpg`, CSS mask fade)
 13. FAQ: 6 Q&As as accordion cards (details/summary, orange left border, plus icon) + CTA
@@ -100,7 +100,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - **Rule: don't add new sections or content blocks without asking Keith first.** The stack and the hero CTA were both approved explicitly.
 
 ## Open items / placeholders
-- [ ] **Price:** `$[PRICE]` in the Offer section. Not decided yet.
+- [ ] **Price:** not decided. The `$[PRICE]` placeholder was removed from the comparison box at Keith's request (23 Nov), so the price currently appears nowhere on the page.
 - [ ] **Checkout:** platform not decided (Stripe / ThriveCart / Kajabi?). All CTAs point at `#checkout` / `#join`.
 - [ ] **PR2 logo + product mockup:** devices mockup in the value stack is a stand-in. The "Introducing PR2" VSL/mockup placeholder was removed (22 Nov); a VSL would need a new slot.
 - [x] **Jason logo + brand colours/fonts:** pulled from pokerwithpresence.com and applied in Draft 2.

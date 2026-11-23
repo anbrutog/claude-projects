@@ -221,5 +221,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"Outside of this program" headline weights (Keith).** Lines 2–5 now weight 500 by default; bold (900) only on "private coaching programs,", "which is usually full" and "$25,000 for six months of coaching." Orange `#FF3500` underline (4px, 3px on phone, no ink-skip) under "which is usually full" and "$25,000", same colour as the hero's NOTHING underline. Line 1 unchanged. Checked 1440/810/390, no overflow.
 
+- **Comparison box headings (Keith).** Removed the struck-through "$25,000" and the "$[PRICE]" placeholder. Headings "Private coaching · 6 months" / "PR2 · Presence and Profit 2.0" now normal case, centred, 22px weight 700, same colour as each box's bullets (white on navy, navy on mist), with a 1px divider beneath (`#24425F` / `#D6DEE3`). Kept "2.0" (Keith typed "2"; flagged). Price now shown nowhere on the page. Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
