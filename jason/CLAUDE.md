@@ -92,7 +92,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).
 - Bonus card pills: "Instant Access" and "Today: FREE!" microcopy, original values struck through (Keith asked for the RB card style, 22 Nov). iPad images are placeholders.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
-- Small eyebrow labels ("For poker players who play for more than the money", "What's inside", "Included free").
+- Small eyebrow labels ("For poker players who play for more than the money", "What's inside"; "Included free" removed 22 Nov).
 - **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines (**all removed at Keith's request, 22 Nov**), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (end of opening letter, before "Do You Play With Full Presence?", between the stack and "Outside of this program"). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
 - **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($1,500 … $2,997), total $11,391, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
 - **Rule: don't add new sections or content blocks without asking Keith first.** The stack and the hero CTA were both approved explicitly.

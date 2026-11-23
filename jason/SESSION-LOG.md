@@ -181,5 +181,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to break the Bonuses heading into three lines via spans: "When You Join PR2," / "You Will Also Receive Instant Access" / "To The Following Bonus Trainings:". `h2.h2-lines` is a centred flex column of three spans (spaces kept between spans so the text reads the same). Desktop shows exactly those 3 lines; on phone the longer lines wrap within themselves. Wording unchanged.
 
+- Keith (screenshot) asked to delete the "Included free" eyebrow above the Bonuses heading and size the heading like his screenshot. Eyebrow removed (it was our microcopy). Heading: line 1 "When You Join PR2," 72px/900, lines 2–3 44px/900 (tablet 56/34, phone 34/20, so each line stays on one line on phone). Checked 1440/810/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
