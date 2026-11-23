@@ -326,8 +326,8 @@ strong{font-weight:700}
 .sval{flex:0 0 128px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;white-space:nowrap}
 .sval b{font-size:24px;font-weight:900;line-height:1;color:#12B312}
 .sval span{font-size:16px;font-weight:500;color:#E31B3D}
-.stack-total{border-radius:0 0 19px 19px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#001E3A;color:#FFFFFF;padding:22px 32px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.stack-total b{font-size:30px;font-weight:900;letter-spacing:-.01em;color:#FF3500;text-transform:none}
+.stack-total{border-radius:0 0 19px 19px;display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 18px;background:#001E3A;color:#FFFFFF;padding:30px 32px 34px;font-size:52px;font-weight:800;line-height:1.12;letter-spacing:-.02em;text-align:center}
+.stack-total b{font-weight:900;color:#FF3500}
 @media (max-width:640px){
   .stack{margin-top:-90px;border-radius:16px}
   .stack-k{padding:36px 18px 0}
@@ -338,14 +338,14 @@ strong{font-weight:700}
   .sval{flex:0 0 100px}
   .sval b{font-size:20px}
   .sval span{font-size:14px}
-  .stack-total{padding:18px;font-size:13px}
-  .stack-total b{font-size:24px}
+  .stack .stack-total{padding:22px 18px 26px;font-size:30px}
 }
 
 /* Narrow desktop (1001–1200px): keep "Full Presence" on one line */
 @media (max-width:1200px){.h1-key{font-size:62px}}
 /* ===== Tablet (Framer 810) ===== */
 @media (max-width:1000px){
+  .stack-total{font-size:40px}
   .total{font-size:40px}
   .cmp-lines .cl1{font-size:27px}
   .cmp-lines .cl2{font-size:42px}
@@ -797,7 +797,7 @@ strong{font-weight:700}
         <div class="srow"><span class="stick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12B312" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 13l5.5 5.5L21 5"/></svg></span><div class="sname"><span class="stag">Bonus 6</span>A 6 Month Membership to my ongoing coaching group</div><div class="sval"><b>FREE!</b><span>($1,997 Value)</span></div></div>
         <div class="srow"><span class="stick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12B312" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 13l5.5 5.5L21 5"/></svg></span><div class="sname"><span class="stag">Bonus 7</span>6 Months of Custom Performance Plans</div><div class="sval"><b>FREE!</b><span>($2,997 Value)</span></div></div>
       </div>
-      <div class="stack-total"><span>Total bonus value</span><b>$11,391</b></div>
+      <div class="stack-total"><span>Total Bonus Value</span> <b>$11,391</b></div>
     </div>
     <div class="doodle-wrap center" style="margin-top:32px"><p class="salute muted serif">Outside of this program …</p></div>
     <h3 class="outside-h"><span class="o1">The only place I am able to offer</span> <span class="o2">this kind of long-term individual attention to solving your problems</span> <span class="o3">is through my <b>private coaching programs,</b></span> <span class="o4"><u>which is usually full</u> and also starts</span> <span class="o5">at <b><u>$25,000</u> for six months of coaching.</b></span></h3>
