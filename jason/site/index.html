@@ -65,6 +65,11 @@ strong{font-weight:700}
 /* Buttons */
 .btn{display:flex;flex-direction:column;align-items:center;gap:4px;background:#FF3500;color:#FFFFFF;text-decoration:none;border-radius:3px;padding:22px 40px;font-family:Gabarito,sans-serif;font-weight:700;font-size:21px;line-height:1.3;box-shadow:0 12px 30px rgba(255,53,0,.30);text-align:center;width:100%;max-width:540px}
 .btn small{font-weight:700;font-size:14px;letter-spacing:.06em}
+/* Green CTA (RB style, Keith's screenshot 22 Nov): offer button only */
+.btn.btn-green{max-width:650px;gap:6px;padding:26px 40px;border-radius:8px;background:linear-gradient(180deg,#16E01F 0%,#0A9A0A 100%);box-shadow:0 14px 32px rgba(10,154,10,.30)}
+.btn-green .bt{display:flex;align-items:center;justify-content:center;gap:18px;font-size:32px;font-weight:800;line-height:1.15}
+.btn-green .bt-arrow{flex:0 0 auto}
+.btn-green small{font-size:19px;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.72)}
 .btn-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;padding-top:12px}
 .btn-wrap.hero-cta{align-items:center;padding-top:8px}
 .trust{font-size:14px;font-weight:500;color:#777777;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
@@ -343,6 +348,9 @@ strong{font-weight:700}
   .qa .a{padding:0 18px 22px 50px}
   .guar{flex-direction:column;text-align:center;padding:30px 22px}
   .btn{font-size:19px;padding:20px 22px}
+  .btn.btn-green{padding:22px 18px}
+  .btn-green .bt{font-size:24px;gap:12px}
+  .btn-green small{font-size:15px}
   .hero-photo{max-width:320px}
   .hero-proof{flex-direction:column;text-align:center;gap:14px;padding:24px 20px;margin-bottom:-154px}
   .hp-meta{justify-content:center;gap:4px 10px}
@@ -722,7 +730,7 @@ strong{font-weight:700}
       <span>My clients are paying me</span>
     </div>
     <div class="btn-wrap">
-      <div class="arrow-row"><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 10,10 C 18,28 22,50 30,62 C 38,74 55,80 88,80"/><path d="M 76,70 C 82,74 88,80 88,80 C 82,80 78,86 76,90"/></svg><a class="btn" href="#checkout">Yes, I Want In<small>INSTANT, LIFETIME ACCESS TO PR2</small></a><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 105,10 C 97,28 93,50 85,62 C 77,74 60,80 27,80"/><path d="M 39,70 C 33,74 27,80 27,80 C 33,80 37,86 39,90"/></svg></div>
+      <div class="arrow-row"><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 10,10 C 18,28 22,50 30,62 C 38,74 55,80 88,80"/><path d="M 76,70 C 82,74 88,80 88,80 C 82,80 78,86 76,90"/></svg><a class="btn btn-green" href="#checkout"><span class="bt">Yes, I Want In<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><small>Instant, Lifetime Access To PR2</small></a><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 105,10 C 97,28 93,50 85,62 C 77,74 60,80 27,80"/><path d="M 39,70 C 33,74 27,80 27,80 C 33,80 37,86 39,90"/></svg></div>
       <div class="trust"><span>✓ Secure checkout</span><span>✓ 100-day money back guarantee</span></div>
     </div>
   </div>

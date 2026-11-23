@@ -167,5 +167,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith (RB screenshot) asked for the stack ticks to become green rounded-square checkboxes and the values to show as "FREE!" with the value underneath, in the screenshot's colours. Ticks: white check on green `#12B312`, 5px radius. Values: "FREE!" 24px/900 green `#12B312` over "($1,500 Value)" 16px red `#E31B3D`, in a fixed 128px column (100px phone) so they line up. **New colours (green, red) and microcopy ("FREE!", "($X Value)") outside Jason's brand, both at Keith's request; flagged.** PR2 row has no value, unchanged. Total bar unchanged.
 
+- Keith (One Comma Club screenshot) asked for the CTA button in that style at ~650px. Applied to the Offer CTA under the value stack only ("Yes, I Want In"), as `.btn.btn-green`: 650px max, green gradient `#16E01F`→`#0A9A0A`, 8px radius, 32px/800 white title with a dark-green `#0A8A0A` arrow beside it, subline 19px/400 white at 72% opacity, now in title case ("Instant, Lifetime Access To PR2", our microcopy, was all caps). The doodle arrows either side still fit (650 + 2×96 + gaps inside the 900px column). Phone: full width, 24px title. Other CTAs (hero, Inside PR2, sign-off, FAQ) still orange; offered to roll out.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
