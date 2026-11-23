@@ -257,5 +257,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"PR2 gets you … / At a tiny fraction … / My clients are paying me" resized (Keith screenshot).** Three sizes: 34/52/46px desktop (27/42/37 tablet, 15.5/26/24 phone); weights 800/900/500. "At a tiny fraction of the cost" is now navy with an orange `#FF3500` underline (5px, 3px phone) instead of orange text. Checked 1440/810/390, no overflow.
 
+- **Bonuses "Total Bonus Value" as a headline (Keith).** Under the bonus cards: label now white, title case "Total Bonus Value", same size/weight as the "Everything You Get" headline (52px / 40px tablet / 30px phone, weight 800); "$11,391" stays orange `#FF3500` at the same size (weight 900). Wraps to two lines on phone. The navy total bar inside the value-stack card is unchanged. Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
