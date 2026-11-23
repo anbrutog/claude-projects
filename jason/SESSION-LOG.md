@@ -195,5 +195,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked for the same subtle hover movement (movement only) on the three proof cards and the bonus cards. `.case` and `.bonus` now lift 3px over 0.2s on hover (no colour/shadow change); off under `prefers-reduced-motion`. The proof cards' shadow strip stays put underneath. Rebuild as Hover variants in Framer.
 
+- Keith asked for "It comes down to one thing only:" in lower case and the question laid out as "Do You Play With" / "Full Presence?". Label now sentence case, 20px/700 orange-deep (was 15px uppercase spaced); question split into two spans in a centred flex column. Same layout on desktop and phone.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
