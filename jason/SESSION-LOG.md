@@ -189,5 +189,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith (screenshot) asked for the "only place I am able to offer" headline with varied line sizes. Each span now has its own size, measured to match his screenshot's proportions (widest line fills the 900px column), weight 900: desktop 52/30/46/52/39px, tablet 40/23/35/40/30, phone 22/16/18/20/18 (each line on one line except the long 2nd line, which wraps in two). Checked 1440/1100/810/390, no overflow.
 
+- Keith asked for a nice hover on the CTA buttons. All `.btn-green`: 0.2s ease lift 3px, slightly brighter green, deeper green shadow, arrow slides 6px right; pressed state settles to 1px; keyboard focus gets the same effect plus a white outline; turned off under `prefers-reduced-motion`. First motion in the code (the no-animation rule is relaxed for this, at Keith's request). Framer import won't carry hover: rebuild as a Hover variant on the button component.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

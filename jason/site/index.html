@@ -71,6 +71,14 @@ strong{font-weight:700}
 .btn-green.long .bt{font-size:25px}
 .btn-green .bt-arrow{display:inline-block;vertical-align:middle;margin:-4px 0 0 16px}
 .btn-green small{font-size:19px;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.72)}
+/* CTA hover (Keith 22 Nov): lift, brighten, deeper shadow, arrow nudges right. Rebuild as a Hover variant in Framer. */
+.btn.btn-green{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.btn-green .bt-arrow{transition:transform .2s ease}
+.btn.btn-green:hover,.btn.btn-green:focus-visible{transform:translateY(-3px);filter:brightness(1.07) saturate(1.05);box-shadow:0 20px 40px rgba(10,154,10,.42)}
+.btn-green:hover .bt-arrow,.btn-green:focus-visible .bt-arrow{transform:translateX(6px)}
+.btn.btn-green:active{transform:translateY(-1px);box-shadow:0 10px 24px rgba(10,154,10,.35)}
+.btn.btn-green:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.btn.btn-green,.btn-green .bt-arrow{transition:none}.btn.btn-green:hover,.btn.btn-green:focus-visible{transform:none}.btn-green:hover .bt-arrow{transform:none}}
 .btn-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;padding-top:12px}
 .btn-wrap.hero-cta{align-items:center;padding-top:8px}
 .trust{font-size:14px;font-weight:500;color:#777777;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
