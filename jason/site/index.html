@@ -6,7 +6,7 @@
 <title>PR2 — Presence and Profit 2.0 | Jason Su</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&family=Gochi+Hand&display=swap" rel="stylesheet">
 <style>
 /* ===== Tokens: Jason Su brand (from pokerwithpresence.com). Match these in Framer as colour/text styles =====
    Navy        #001E3A   brand dark: hero, dark bands
@@ -120,12 +120,16 @@ strong{font-weight:700}
 .gn .a{font-weight:600;font-size:24px;color:#ABC7D1}
 .gn .b{font-weight:900;font-size:56px;line-height:1.05;letter-spacing:-.02em;color:#FFFFFF}
 .gn .c{font-weight:900;font-size:56px;line-height:1.05;letter-spacing:-.02em;color:#FF3500}
-.cases{display:flex;gap:24px;flex-wrap:wrap;width:100%}
-.case{flex:1 1 300px;background:#062A4C;border:1px solid #24425F;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:16px}
-.case .num{font-weight:900;font-size:42px;line-height:1;letter-spacing:-.02em;color:#FF3500}
-.case .lbl{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ABC7D1}
-.case p{font-size:18px;line-height:1.6;color:#D6DEE3}
-.case p strong{color:#FFFFFF}
+.cases{display:flex;gap:32px;flex-wrap:wrap;width:100%;align-items:stretch}
+.case-wrap{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;align-items:center}
+.case{width:100%;flex:1 1 auto;background:#FFFFFF;border-radius:16px;padding:32px 32px 36px;display:flex;flex-direction:column;gap:18px;box-shadow:0 8px 0 #D6DEE3,0 34px 60px -12px rgba(0,0,0,.55)}
+.case-shadow{width:88%;height:34px;margin-top:2px;margin-bottom:-18px;background:radial-gradient(ellipse 50% 100% at 50% 0%,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 100%)}
+.hand-row{display:flex;align-items:flex-end;gap:6px}
+.hand{font-family:'Gochi Hand',cursive;font-size:40px;line-height:1;color:#D62B00;transform:rotate(-4deg);transform-origin:left bottom;flex:0 1 auto;min-width:0}
+.hand.hand-two{width:min-content}
+.hand-arrow{flex:0 0 auto;margin-bottom:-18px}
+.case p{font-size:18px;line-height:1.6;color:#444444}
+.case p strong{color:#001E3A}
 .closer{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;font-size:22px}
 .closer .big{font-weight:800;font-size:36px;line-height:1.15;letter-spacing:-.015em}
 
@@ -445,20 +449,26 @@ strong{font-weight:700}
     </div>
     <div class="doodle-wrap center"><div class="eyebrow">Here’s what it looks like:</div><svg class="doodle dark" height="14" viewBox="0 0 500 18" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M2,14 C45,6 90,17 135,10 C180,3 225,16 270,10 C315,4 360,15 405,9 C435,5 465,13 498,10" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div class="cases" style="text-align:left">
-      <div class="case">
-        <div class="lbl">10 years stuck under $50k</div>
-        <div class="num">$1,000,000</div>
+      <div class="case-wrap">
+        <div class="case">
+        <div class="hand-row"><div class="hand">$1,000,000</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#D62B00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#D62B00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <p>I once started coaching a player who had never won more than $50k in a tournament in over ten years of grinding. Within a month of doing this work we <strong>smashed through that</strong> with a $200k score, and then a few weeks later, a <strong>million dollar win</strong></p>
       </div>
-      <div class="case">
-        <div class="lbl">Scraping by at mid-stakes</div>
-        <div class="num">10x Stakes</div>
+      <div class="case-shadow" aria-hidden="true"></div>
+      </div>
+      <div class="case-wrap">
+        <div class="case">
+        <div class="hand-row"><div class="hand">10x Stakes</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#D62B00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#D62B00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <p>A new client was stuck at mid-stakes, scraping by on a few thousand a month. After <strong>our first conversation,</strong> he tells me he feels confidence he hasn’t felt in forever, then immediately starts crushing and is winning at 10x the stakes within a few months</p>
       </div>
-      <div class="case">
-        <div class="lbl">Tried every other program</div>
-        <div class="num">Months → Minutes</div>
+      <div class="case-shadow" aria-hidden="true"></div>
+      </div>
+      <div class="case-wrap">
+        <div class="case">
+        <div class="hand-row"><div class="hand hand-two">Months&nbsp;→ Minutes</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#D62B00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#D62B00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <p>A high-stakes client who had done every other mindset coaching program in existence starts winning more than ever and tells me that … “cycles of self-doubt that used to linger for months are often <strong>resolved in minutes.</strong>”</p>
+      </div>
+      <div class="case-shadow" aria-hidden="true"></div>
       </div>
     </div>
     <div class="closer">

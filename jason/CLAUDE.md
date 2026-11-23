@@ -60,7 +60,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 | Body | `#444444` | body text on light |
 | Muted-light | `#ABC7D1` | secondary text on navy |
 
-- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Playfair Display italic** only for the "Jason Su" signature.
+- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Playfair Display italic** only for the "Jason Su" signature. **Gochi Hand** only for the handwritten proof-card headlines (Keith asked, 22 Nov).
 - Radius: buttons **3px** (as on his site), cards **8px**.
 - `.glow` sections (Hero, Full Presence proof, Guarantee) use navy with CSS radial gradients (orange glow bottom, blue glow top right), copying his hero. Gradients are fills, not images, so they import into Framer.
 - His site's thin orange swoosh lines are **not** in the code. Add them in Framer as an SVG/image layer (decorative elements don't import reliably).
@@ -71,7 +71,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 ## Page structure (section → `data-framer-name`)
 1. Hero (copy column centred): sentence-case eyebrow, tiered headline (small lead-in / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on an orange circle, and a white testimonial card (Ryan snippet + round avatar `img/ryan-avatar.jpg`) straddling the hero/letter edge, half in each
 2. Letter – Opening: Jason photo `img/jason-arms-crossed.jpg` on the left beside the first paragraphs (RB letter layout, mirrored), "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
-3. Full Presence Can Be Trained: 3 proof cards ($1,000,000 / 10x Stakes / Months → Minutes)
+3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) with doodle arrows
 4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**
 5. Testimonial – Ryan Hoenig
 6. Inside PR2 (mist): book cover `img/poker-with-presence-cover.jpg` centred, 6 learning points in white boxes, 3 each side (DotComSecrets layout) + CTA
@@ -85,7 +85,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 14. Footer: Fulfillment Policy link, ©
 
 ### Design additions not in the copy (decided by us, flag to Keith if changing)
-- Proof cards headline numbers: "$1,000,000", "10x Stakes", "Months → Minutes", plus small labels above them.
+- Proof cards headline numbers: "$1,000,000", "10x Stakes", "Months → Minutes" (handwritten). The small labels above them were removed at Keith's request (22 Nov).
 - "Total bonus value $11,391": the sum of the 7 listed bonus values (copy says "over $10,000").
 - 100-day guarantee seal section, which reuses the refund-policy text from the FAQ.
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).

@@ -147,5 +147,11 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith then asked to put the excess text in a separate block instead of wrapping. Float removed (back to flexbox only; the Framer exception in CLAUDE.md removed). Photo (440px) + "Dear Friend" … "satisfaction that money can't buy." side by side, vertically centred; then "And it's about the peace." … "This letter can show you how it's done." in the normal 700px letter column below, 64px gap. Phone/tablet: photo on top.
 
+- Keith asked to restyle the "Full Presence Is a Skill … And It Can Be Trained" proof cards (screenshots: DotComSecrets box shadow, Tony Robbins card with handwritten note + arrow).
+  - Cards are now **white** (16px radius) with a 3D look: an 8px light-grey slab edge under each card, a deep soft shadow, and a separate in-flow shadow strip below (`.case-shadow`, radial-gradient fill, so it imports to Framer).
+  - **Removed the small labels** above each headline ("10 years stuck under $50k", "Scraping by at mid-stakes", "Tried every other program"). These were our microcopy, not Jason's.
+  - Headlines ($1,000,000 / 10x Stakes / Months → Minutes) are now **handwritten** in Gochi Hand (Google Font, added for this only), orange-deep `#D62B00`, tilted -4°, with a hand-drawn SVG arrow curving down into the story. "Months → Minutes" sits on two lines so the three cards stay side by side on desktop.
+  - Story text now dark on white (#444, bold in navy). Copy unchanged (checked).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
