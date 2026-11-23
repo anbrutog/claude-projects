@@ -225,5 +225,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"Here's what it looks like:" in Merriweather (Keith).** Now `.serif` italic 700, sentence case, 24px, orange (was 14px uppercase Gabarito eyebrow). Checked 1440/390.
 
+- **"As you can see …" in Merriweather (Keith).** Added `.serif` (italic 700), colour unchanged (muted light blue). Checked 1440.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
