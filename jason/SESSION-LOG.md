@@ -171,5 +171,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to change ALL buttons to the green style. All 5 CTAs now `.btn.btn-green` (hero, Inside PR2, Offer, sign-off, FAQ). Arrow now sits inline after the last word (so it follows wrapped text); the two long "Join Now And Receive Instant, Lifetime Access To PR2" buttons get class `long` (25px title, balanced wrap, 2 lines). No sublines added to the others (would be new copy); only the Offer button has one. Hero button is 560px (limited by the hero copy column); others 650px. Phone: full width, 22px titles. Checked 1440 and 390, no overflow. The old orange `.btn` base style is still in the CSS underneath.
 
+- Keith asked to put "PR2" and "Presence and Profit 2.0" on the same line, both red, subtitle in normal case. New `.product-line` flex row (baseline-aligned, centred): PR2 120px/900 + "Presence and Profit 2.0" 46px/800, both orange `#FF3500`, no caps/letter-spacing. Phone: 54px + 20px so it stays on one line. Copy has "PR2 (Presence and Profit 2.0)" with brackets; brackets still not shown (as before), mentioned to Keith.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

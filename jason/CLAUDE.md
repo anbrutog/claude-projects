@@ -73,7 +73,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 1. Hero (copy column centred): sentence-case eyebrow, tiered headline (small lead-in / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on an orange circle, and a white testimonial card (Ryan snippet + round avatar `img/ryan-avatar.jpg`) straddling the hero/letter edge, half in each
 2. Letter – Opening: Jason photo `img/jason-arms-crossed.jpg` on the left beside the first paragraphs (RB letter layout, mirrored), "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
-4. Introducing PR2: product name, tagline, **mockup/VSL placeholder box**
+4. Introducing PR2: "PR2" + "Presence and Profit 2.0" on one line in orange, tagline, **mockup/VSL placeholder box**
 5. Testimonial – Ryan Hoenig
 6. Inside PR2 (mist): book cover `img/poker-with-presence-cover.jpg` centred, 6 learning points in white boxes, 3 each side (DotComSecrets layout) + CTA
 7. Testimonial – Felipe Boianovsky (mist, to match Inside PR2)
