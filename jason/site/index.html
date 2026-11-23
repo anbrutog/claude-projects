@@ -126,7 +126,7 @@ strong{font-weight:700}
 /* ===== Letter ===== */
 .salute{font-weight:700;font-size:26px;color:#001E3A}
 .serif{font-family:"Merriweather",Georgia,serif;font-style:italic;font-weight:700;letter-spacing:0}
-.eyebrow.looks-k{text-transform:none;font-size:24px}
+.eyebrow.looks-k{text-transform:none;font-size:24px;color:#ABC7D1}
 .sub{font-weight:800;font-size:34px;line-height:1.15;letter-spacing:-.015em;color:#001E3A;padding-top:26px}
 .pull{display:flex;flex-direction:column;align-items:center;gap:14px;background:#FFF0EB;border:2px dashed #FF3500;border-radius:8px;padding:36px 32px 40px;margin:14px 0}
 .pull-q{margin:0;font-family:'Merriweather',Georgia,serif;font-style:italic;font-weight:700;font-size:44px;line-height:1.25;letter-spacing:-.01em;color:#001E3A;text-align:center}
@@ -148,7 +148,9 @@ strong{font-weight:700}
 .gn{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .gn .a{font-weight:600;font-size:24px;color:#ABC7D1}
 .gn .b{font-weight:900;font-size:56px;line-height:1.05;letter-spacing:-.02em;color:#FFFFFF}
-.gn .c{font-weight:900;font-size:56px;line-height:1.05;letter-spacing:-.02em;color:#FF3500}
+.gn .c{font-weight:900;font-size:56px;line-height:1.05;letter-spacing:-.02em;color:#FFFFFF;padding-bottom:8px}
+.gn .c-reg{font-weight:500}
+.gn .c u{text-decoration-color:#FF3500;text-decoration-thickness:5px;text-underline-offset:9px;text-decoration-skip-ink:none}
 .cases{display:flex;gap:32px;flex-wrap:wrap;width:100%;align-items:stretch}
 .case-wrap{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;align-items:center}
 .case{width:100%;flex:1 1 auto;background:#FFFFFF;border-radius:16px;padding:32px 32px 36px;display:flex;flex-direction:column;gap:18px;box-shadow:0 8px 0 #D6DEE3,0 34px 60px -12px rgba(0,0,0,.55)}
@@ -388,7 +390,9 @@ strong{font-weight:700}
   .pull-q{font-size:21px}
   .pull-ico{width:40px;height:34px}
   .big-q .q{font-size:38px}
-  .gn .b,.gn .c{font-size:38px}
+  .gn .b,.gn .c{font-size:29px}
+  .gn .c u{white-space:nowrap}
+  .gn .c u{text-decoration-thickness:4px;text-underline-offset:6px}
   .product,.product-sub{font-size:26px}
   .product-line{column-gap:8px}
   .tagline{font-size:24px}
@@ -545,7 +549,7 @@ strong{font-weight:700}
     <div class="gn">
       <div class="doodle-wrap center"><div class="a serif">The Good News Is …</div></div>
       <div class="b">Full Presence Is a Skill …</div>
-      <div class="c">And It Can Be Trained</div>
+      <div class="c"><span class="c-reg">And It</span> <u>Can Be Trained</u></div>
     </div>
     <div class="doodle-wrap center"><div class="eyebrow serif looks-k">Here’s what it looks like:</div></div>
     <div class="cases" style="text-align:left">

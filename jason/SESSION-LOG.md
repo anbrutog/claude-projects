@@ -231,5 +231,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Bonuses heading weights (Keith).** Lines 2–3 ("You Will Also Receive … / To The Following Bonus Trainings:") now weight 500; "Instant Access" stays 900 with the orange `#FF3500` underline (4px, 3px phone), same style as the Outside-of-this-program headline. "When You Join PR2," unchanged. Checked 1440/390.
 
+- **Good News lines (Keith).** "And It Can Be Trained" now white (was orange): "And It" weight 500, "Can Be Trained" 900 with orange `#FF3500` underline (5px desktop, 4px phone). "Here's what it looks like:" now muted blue `#ABC7D1` to match "The Good News Is …". Phone: both big lines 29px (were 38px and wrapping); each now fits on one line. Checked 1440/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
