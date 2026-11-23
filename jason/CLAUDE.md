@@ -52,7 +52,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 | Navy-deep | `#00152A` | alternate dark band (Introducing PR2), footer |
 | Navy-card | `#062A4C` | cards on navy |
 | Line | `#24425F` | borders on navy |
-| Orange | `#FF3500` | buttons, ticks, big numbers, accents on navy |
+| Orange | `#FF3500` | ticks, big numbers, accents on navy |
 | Orange-deep | `#D62B00` | orange *text* on light backgrounds (contrast) |
 | Mist | `#EBF0F2` | light panels (learn list, value badges, old-price card) |
 | Mist-2 | `#D6DEE3` | dividers on light |
@@ -61,7 +61,8 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 | Muted-light | `#ABC7D1` | secondary text on navy |
 
 - Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Playfair Display italic** only for the "Jason Su" signature. **Gochi Hand** only for the handwritten proof-card headlines (Keith asked, 22 Nov).
-- Radius: buttons **3px** (as on his site), cards **8px**.
+- Radius: buttons **8px**, cards **8px**.
+- **Buttons (Keith, 22 Nov):** all CTAs are green RB-style (`.btn-green`): gradient `#16E01F`→`#0A9A0A`, white 800 title + dark-green `#0A8A0A` arrow, max 650px. Replaces the orange buttons from his site.
 - `.glow` sections (Hero, Full Presence proof, Guarantee) use navy with CSS radial gradients (orange glow bottom, blue glow top right), copying his hero. Gradients are fills, not images, so they import into Framer.
 - His site's thin orange swoosh lines are **not** in the code. Add them in Framer as an SVG/image layer (decorative elements don't import reliably).
 - Photos have black backgrounds, so they sit in black panels/cards on navy. Exception: the **hero** uses a transparent cut-out of Jason in front of an orange circle (Magnetic Marketing style). The circle is a `radial-gradient` fill on `.hero-photo`, not an image or pseudo-element. The photo column stretches to the copy's height and Jason sits on the hero's bottom edge.

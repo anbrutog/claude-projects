@@ -67,8 +67,9 @@ strong{font-weight:700}
 .btn small{font-weight:700;font-size:14px;letter-spacing:.06em}
 /* Green CTA (RB style, Keith's screenshot 22 Nov): offer button only */
 .btn.btn-green{max-width:650px;gap:6px;padding:26px 40px;border-radius:8px;background:linear-gradient(180deg,#16E01F 0%,#0A9A0A 100%);box-shadow:0 14px 32px rgba(10,154,10,.30)}
-.btn-green .bt{display:flex;align-items:center;justify-content:center;gap:18px;font-size:32px;font-weight:800;line-height:1.15}
-.btn-green .bt-arrow{flex:0 0 auto}
+.btn-green .bt{display:block;font-size:32px;font-weight:800;line-height:1.2;text-wrap:balance}
+.btn-green.long .bt{font-size:25px}
+.btn-green .bt-arrow{display:inline-block;vertical-align:middle;margin:-4px 0 0 16px}
 .btn-green small{font-size:19px;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.72)}
 .btn-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;padding-top:12px}
 .btn-wrap.hero-cta{align-items:center;padding-top:8px}
@@ -349,7 +350,8 @@ strong{font-weight:700}
   .guar{flex-direction:column;text-align:center;padding:30px 22px}
   .btn{font-size:19px;padding:20px 22px}
   .btn.btn-green{padding:22px 18px}
-  .btn-green .bt{font-size:24px;gap:12px}
+  .btn-green .bt,.btn-green.long .bt{font-size:22px}
+  .btn-green .bt-arrow{width:28px;margin-left:10px}
   .btn-green small{font-size:15px}
   .hero-photo{max-width:320px}
   .hero-proof{flex-direction:column;text-align:center;gap:14px;padding:24px 20px;margin-bottom:-154px}
@@ -381,7 +383,7 @@ strong{font-weight:700}
       <div class="h1-rule"></div>
       <p class="hint"><span class="hint-label">Here’s A Hint:</span> Optimizing Your Routine, Being “Professional,” Removing “Subconscious Blocks,” And Building A “Strong Mindset” Has <u>NOTHING</u> To Do With <span class="elite">Elite Poker Performance</span></p>
       <div class="btn-wrap hero-cta">
-        <a class="btn" href="#join">Join Now And Receive Instant, Lifetime Access To PR2</a>
+        <a class="btn btn-green long" href="#join"><span class="bt">Join Now And Receive Instant, Lifetime Access To PR2<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
     </div>
     <div class="hero-photo"><img src="img/jason-seated-cutout.webp" alt="Jason Su" width="900" height="1350"></div>
@@ -554,7 +556,7 @@ strong{font-weight:700}
       </div>
     </div>
     <div class="btn-wrap">
-      <a class="btn" href="#join">Join Now And Receive Instant, Lifetime Access To PR2</a>
+      <a class="btn btn-green long" href="#join"><span class="bt">Join Now And Receive Instant, Lifetime Access To PR2<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <div class="trust"><span>✓ Instant access</span><span>✓ Lifetime access</span><span>✓ 100-day guarantee</span></div>
     </div>
   </div>
@@ -755,7 +757,7 @@ strong{font-weight:700}
       <div><div class="sig">Jason Su</div><div class="sig-sub">Creator of PR2</div></div>
     </div>
     <div class="btn-wrap" style="padding-top:28px">
-      <a class="btn" href="#checkout">Yes, I’m Ready To Start Now</a>
+      <a class="btn btn-green" href="#checkout"><span class="bt">Yes, I’m Ready To Start Now<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -791,7 +793,7 @@ strong{font-weight:700}
         <div class="a"><p>Yes. Ask anyone who has worked with me and they will tell you nobody loves this more than I do, and I always want to help my people as much as I can with whatever you have going on. All you have to do is show up and ask.</p></div></details>
     </div>
     <div class="btn-wrap" style="padding-top:20px">
-      <div class="arrow-row"><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 10,10 C 18,28 22,50 30,62 C 38,74 55,80 88,80"/><path d="M 76,70 C 82,74 88,80 88,80 C 82,80 78,86 76,90"/></svg><a class="btn" href="#checkout">Yes, I’m Ready To Start Now</a><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 105,10 C 97,28 93,50 85,62 C 77,74 60,80 27,80"/><path d="M 39,70 C 33,74 27,80 27,80 C 33,80 37,86 39,90"/></svg></div>
+      <div class="arrow-row"><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 10,10 C 18,28 22,50 30,62 C 38,74 55,80 88,80"/><path d="M 76,70 C 82,74 88,80 88,80 C 82,80 78,86 76,90"/></svg><a class="btn btn-green" href="#checkout"><span class="bt">Yes, I’m Ready To Start Now<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 105,10 C 97,28 93,50 85,62 C 77,74 60,80 27,80"/><path d="M 39,70 C 33,74 27,80 27,80 C 33,80 37,86 39,90"/></svg></div>
     </div>
   </div>
 </section>
