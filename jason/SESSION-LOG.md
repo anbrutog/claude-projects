@@ -219,5 +219,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **More Merriweather (Keith).** Added utility `.serif` (Merriweather italic 700) to: hero eyebrow "For poker players…" (now white), "Dear Friend,", "It comes down to one thing only:" (now navy `#001E3A`, was orange-deep), "The Good News Is …", "Introducing …", "Outside of this program …", "Try It For A Full 100 Days". Signatures `.sig` and `.guar-sig` switched from Playfair Display to Merriweather; Playfair removed from the font link. Testimonial quotes (`.hp-quote` hero card, `.testi-q` Ryan/Felipe/Kevin) now Merriweather italic **400** (lighter weight for longer text; names/credentials unchanged in Gabarito). Last stars removed (hero card `.hp-stars` + CSS). Font link now loads Merriweather ital 400+700. Checked 1440/390, no overflow.
 
+- **"Outside of this program" headline weights (Keith).** Lines 2–5 now weight 500 by default; bold (900) only on "private coaching programs,", "which is usually full" and "$25,000 for six months of coaching." Orange `#FF3500` underline (4px, 3px on phone, no ink-skip) under "which is usually full" and "$25,000", same colour as the hero's NOTHING underline. Line 1 unchanged. Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
