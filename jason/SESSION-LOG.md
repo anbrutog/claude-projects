@@ -185,5 +185,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to delete the red stars from the Felipe Boianovsky testimonial. Removed (and the now-unused `.stars` CSS). No testimonial section has stars now; the small hero testimonial card still has its 5 stars.
 
+- Keith asked to make the "The only place I am able to offer …" paragraph (Offer section, after "Outside of this program …") a headline, broken into his 5 lines. Now `h3.outside-h`: 5 spans, 32px/800 navy, centred (tablet 26px, phone 21px). Lines don't wrap above 1100px (the long 2nd line is ~943px, slightly wider than the 900px column, centred, no page overflow); below that, long lines wrap within themselves. Wording unchanged.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
