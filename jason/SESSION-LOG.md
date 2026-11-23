@@ -245,5 +245,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Bonus bullets as green tick boxes (Keith screenshot).** All 14 bonus bullets: orange square `.dot` replaced by `.btick`, 20px rounded green box `#12B312` (same green as the value-stack and comparison ticks) with white tick SVG; slightly smaller than those (24–26px). Checked 1440/390, no overflow.
 
+- **"Everything you get" box overlaps the Kevin section (Keith: "exact same" as Inside PR2).** Devices mockup removed from the page (`img/stack-devices.svg` file kept). `.stack` restyled like `.learn-card`: white, 1px `#E3E8EC` border, 20px radius (16px phone), same soft shadow, `margin-top:-180px` (-90px phone), z-index 2. Kevin section gets `before-stack` (padding-bottom 276px / 150px phone); Offer section `stack-sec` (padding-top 0). "Everything you get" label moved inside the box. Width stays 900px (the Offer column), vs 1100px for Inside PR2. Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

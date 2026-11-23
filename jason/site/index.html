@@ -206,8 +206,8 @@ strong{font-weight:700}
 /* ===== Learn list ===== */
 /* Book in the centre, 3 boxed points either side (DotComSecrets layout, Keith's screenshot) */
 .learn-section{gap:28px;align-items:center}
-.section.before-learn{padding-bottom:276px}
-.section.learn-sec{padding-top:0}
+.section.before-learn,.section.before-stack{padding-bottom:276px}
+.section.learn-sec,.section.stack-sec{padding-top:0}
 .learn-card{position:relative;z-index:2;margin-top:-180px;width:100%;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:18px;background:#FFFFFF;border:1px solid #E3E8EC;border-radius:20px;padding:64px 72px 60px;box-shadow:0 30px 80px rgba(0,30,58,.14),0 4px 14px rgba(0,30,58,.05)}
 .learn-h{text-align:center;font-size:52px}
 .learn-div{display:flex;align-items:center;gap:22px;width:100%;max-width:760px;padding:4px 0 18px}
@@ -310,10 +310,8 @@ strong{font-weight:700}
 @media (min-width:900px){.arrow{display:block}}
 
 /* ===== Offer stack ===== */
-.stack{width:100%;max-width:760px;background:#FFFFFF;border:2px solid #001E3A;border-radius:8px;box-shadow:0 24px 60px rgba(0,30,58,.16);display:flex;flex-direction:column;margin-top:120px}
-.stack-mock{width:100%;display:flex;justify-content:center;margin-top:-130px;padding:0 12px 8px}
-@media (min-width:1001px){.stack-mock img{width:112%}}
-.stack-mock img{width:100%;max-width:none;flex:0 0 auto;height:auto;filter:drop-shadow(0 22px 34px rgba(0,21,42,.35))}
+.stack{position:relative;z-index:2;width:100%;max-width:900px;background:#FFFFFF;border:1px solid #E3E8EC;border-radius:20px;box-shadow:0 30px 80px rgba(0,30,58,.14),0 4px 14px rgba(0,30,58,.05);display:flex;flex-direction:column;margin-top:-180px}
+.stack-k{display:flex;justify-content:center;padding:48px 32px 8px}
 .stack-rows{display:flex;flex-direction:column;padding:10px 32px}
 .srow{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #D6DEE3;text-align:left}
 .srow:last-child{border-bottom:none}
@@ -324,11 +322,12 @@ strong{font-weight:700}
 .sval{flex:0 0 128px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;white-space:nowrap}
 .sval b{font-size:24px;font-weight:900;line-height:1;color:#12B312}
 .sval span{font-size:16px;font-weight:500;color:#E31B3D}
-.stack-total{border-radius:0 0 6px 6px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#001E3A;color:#FFFFFF;padding:22px 32px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.stack-total{border-radius:0 0 19px 19px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#001E3A;color:#FFFFFF;padding:22px 32px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .stack-total b{font-size:30px;font-weight:900;letter-spacing:-.01em;color:#FF3500;text-transform:none}
 @media (max-width:640px){
-  .stack{margin-top:56px}
-  .stack-mock{margin-top:-60px;padding:0 4px 4px}
+  .stack{margin-top:-90px;border-radius:16px}
+  .stack-k{padding:32px 18px 4px}
+  .stack-total{border-radius:0 0 15px 15px}
   .stack-rows{padding:4px 18px}
   .sname{font-size:16px}
   .srow.main .sname{font-size:18px}
@@ -427,7 +426,7 @@ strong{font-weight:700}
   .guar-copy p{font-size:17px}
   .learn-list{gap:20px}
   .learn-card{margin-top:-90px;padding:36px 22px;border-radius:16px}
-  .section.before-learn{padding-bottom:150px}
+  .section.before-learn,.section.before-stack{padding-bottom:150px}
   .learn-h{font-size:30px}
   .learn-list p{font-size:17px}
   .guar-copy .btn-green .bt{font-size:22px}
@@ -753,7 +752,7 @@ strong{font-weight:700}
 </section>
 
 <!-- Testimonial: Kevin -->
-<section class="section navy" style="padding-top:0" data-framer-name="Testimonial – Kevin Rabichow">
+<section class="section navy before-stack" style="padding-top:0" data-framer-name="Testimonial – Kevin Rabichow">
   <div class="testi testi-white">
     <div class="testi-photo"><img src="img/kevin.jpg" alt="Kevin Rabichow at the poker table"></div>
     <div class="testi-body">
@@ -769,11 +768,10 @@ strong{font-weight:700}
 </section>
 
 <!-- ================= COMPARE / OFFER ================= -->
-<section class="section light" id="join" data-framer-name="Offer">
+<section class="section light stack-sec" id="join" data-framer-name="Offer">
   <div class="wide center" style="max-width:900px">
-    <div class="doodle-wrap center"><div class="eyebrow">Everything you get</div></div>
     <div class="stack">
-      <div class="stack-mock"><img src="img/stack-devices.svg" alt="PR2 on a monitor, laptop, iPad and phone (placeholder mockup)" width="1600" height="700"></div>
+      <div class="stack-k"><div class="eyebrow">Everything you get</div></div>
       <div class="stack-rows">
         <div class="srow main"><span class="stick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="sname">PR2 · Presence and Profit 2.0</div></div>
         <div class="srow"><span class="stick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="sname"><span class="stag">Bonus 1</span>The “It Factor”</div><div class="sval"><b>FREE!</b><span>($1,500 Value)</span></div></div>
