@@ -229,5 +229,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Tinted heading bands (Keith, "Section #3: Funnel Scripts" screenshot).** New `.band` utility: full letter-column width, light orange `#FFF0EB` fill (same as the bonus pill, in place of the screenshot's pink), centred, no border/radius. Applied to "The Truth About Winning Big", the "It comes down to one thing only: / Do You Play With Full Presence?" block, "For the 99.9%, it's random." and "This is everything, literally.". Screenshot's bold-label/regular-rest mix applied where the line splits at a comma: **For the 99.9%,** it's random. / **This is everything,** literally. (our choice; flagged). Phone: lead-in 17px so "only:" doesn't wrap. Checked 1440/390, no overflow.
 
+- **Bonuses heading weights (Keith).** Lines 2–3 ("You Will Also Receive … / To The Following Bonus Trainings:") now weight 500; "Instant Access" stays 900 with the orange `#FF3500` underline (4px, 3px phone), same style as the Outside-of-this-program headline. "When You Join PR2," unchanged. Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
