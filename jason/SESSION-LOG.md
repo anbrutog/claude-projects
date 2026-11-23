@@ -249,5 +249,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"Everything You Get" as a headline (Keith).** The small orange eyebrow in the value-stack card is now an `h2.h2.learn-h` (same as "Inside PR2, You Will Learn:": 52px / 40px tablet / 30px phone) with the same grey divider line beneath. Title-cased to match the headline format (our label, not Jason's copy). Checked 1440/810/390, no overflow.
 
+- **All ticks restyled (Keith screenshot: plain bold tick, keep green).** Every tick on the page is now a plain bold green `#12B312` SVG tick (path `M3.5 13l5.5 5.5L21 5`, stroke 5.5, round caps), no box: 14 bonus bullets (`.btick` 20px), 8 value-stack rows (`.stick` 26px), 5 comparison ticks (`.cl-ico.tick` 24px), and the 5 "✓" text characters in the trust lines under CTAs (now `.tr-i` with a 14px SVG tick, stroke 5). Boxes' green backgrounds removed. Comparison red X's unchanged. Checked 1440/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
