@@ -21,7 +21,8 @@ site/img/            Photos (already resized/compressed for the web)
   jason-close.jpg    sign-off avatar
   poker-with-presence-cover.jpg  Jason's book cover (Inside PR2 section)
   jason-arms-crossed.jpg  letter-opening photo (portrait crop of Keith's studio shot)
-  jason-table.jpg    spare landscape shot (unused so far)
+  jason-table.jpg    landscape shot, source for jason-guarantee.jpg
+  jason-guarantee.jpg  portrait crop used in the Guarantee box
   ryan.jpg           Ryan Hoenig testimonial (Hard Rock trophy)
   felipe.jpg         Felipe Boianovsky testimonial (BSOP trophy)
   kevin.jpg          Kevin Rabichow testimonial (at the table)
@@ -82,14 +83,14 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 9. Testimonial – Kevin Rabichow (white card, no stars)
 10. Offer: "Everything you get" value stack (devices mockup `img/stack-devices.svg` overhanging the top of the box: monitor/laptop/iPad/phone built from the bonus photos, placeholder until the real PR2 mockup, green checkbox ticks `#12B312` and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $11,391) → $25,000 private coaching vs **$[PRICE]** comparison + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
-12. Guarantee: 100-day seal
+12. Guarantee: RB-style near-black box inside the navy glow section: "Try It For A Full 100 Days" / "100 DAY GUARANTEE" / refund text / Jason Su signature / green CTA, Jason photo right (`img/jason-guarantee.jpg`, CSS mask fade)
 13. FAQ: 6 Q&As as accordion cards (details/summary, orange left border, plus icon) + CTA
 14. Footer: Fulfillment Policy link, ©
 
 ### Design additions not in the copy (decided by us, flag to Keith if changing)
 - Proof cards headline numbers: "$1,000,000", "10x Stakes", "Months → Minutes" (handwritten). The small labels above them were removed at Keith's request (22 Nov).
 - "Total bonus value $11,391": the sum of the 7 listed bonus values (copy says "over $10,000").
-- 100-day guarantee seal section, which reuses the refund-policy text from the FAQ.
+- Guarantee section (reuses the refund-policy text from the FAQ). Heading "100 Day Guarantee" is Keith's wording (23 Nov); seal removed; CTA added there.
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).
 - Bonus card pills: "Instant Access" and "Today: FREE!" microcopy, original values struck through (Keith asked for the RB card style, 22 Nov). iPad images are placeholders.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
