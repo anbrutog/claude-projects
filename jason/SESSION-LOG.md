@@ -239,5 +239,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"You tense up. / Freeze, overthink …" centred (Keith).** `.verbs` now centred. Checked 1440/390.
 
+- **"Regardless of how big … / No matter how much pressure …" centred (Keith).** `.stack-lines` centred, orange left bar removed. Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
