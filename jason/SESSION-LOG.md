@@ -183,5 +183,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith (screenshot) asked to delete the "Included free" eyebrow above the Bonuses heading and size the heading like his screenshot. Eyebrow removed (it was our microcopy). Heading: line 1 "When You Join PR2," 72px/900, lines 2–3 44px/900 (tablet 56/34, phone 34/20, so each line stays on one line on phone). Checked 1440/810/390.
 
+- Keith asked to delete the red stars from the Felipe Boianovsky testimonial. Removed (and the now-unused `.stars` CSS). No testimonial section has stars now; the small hero testimonial card still has its 5 stars.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
