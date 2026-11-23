@@ -255,7 +255,11 @@ strong{font-weight:700}
 .cmp.new .cl{font-weight:500}
 .cl-ico{flex:0 0 24px;width:24px;height:24px;margin-top:2px}
 .cl-ico.tick{display:flex;align-items:center;justify-content:center}
-.cmp-lines{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;font-weight:800;font-size:32px;line-height:1.25;letter-spacing:-.01em;color:#001E3A}
+.cmp-lines{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;font-weight:800;font-size:32px;line-height:1.2;letter-spacing:-.01em;color:#001E3A}
+.cmp-lines .cl1{font-size:34px;font-weight:800}
+.cmp-lines .cl2{font-size:52px;font-weight:900;padding-bottom:6px}
+.cmp-lines .cl2 u{text-decoration-color:#FF3500;text-decoration-thickness:5px;text-underline-offset:9px;text-decoration-skip-ink:none}
+.cmp-lines .cl3{font-size:46px;font-weight:500}
 
 /* ===== Sign-off ===== */
 .signoff{display:flex;gap:22px;align-items:center;padding-top:10px}
@@ -342,6 +346,9 @@ strong{font-weight:700}
 @media (max-width:1200px){.h1-key{font-size:62px}}
 /* ===== Tablet (Framer 810) ===== */
 @media (max-width:1000px){
+  .cmp-lines .cl1{font-size:27px}
+  .cmp-lines .cl2{font-size:42px}
+  .cmp-lines .cl3{font-size:37px}
   .learn-card{padding:48px 40px}
   .learn-h{font-size:40px}
   .guar-copy{padding:44px 0 44px 40px}
@@ -414,7 +421,10 @@ strong{font-weight:700}
   .compare{flex-direction:column}
   .cmp{padding:30px 24px 32px}
   .cl{font-size:17px}
-  .cmp-lines{font-size:25px}
+  .cmp-lines .cl1{font-size:15.5px}
+  .cmp-lines .cl2{font-size:26px}
+  .cmp-lines .cl2 u{text-decoration-thickness:3px;text-underline-offset:5px}
+  .cmp-lines .cl3{font-size:24px}
   .qa summary{padding:20px 18px;gap:12px}
   .qa .q{font-size:19px}
   .qa .a{padding:0 18px 22px 50px}
@@ -807,9 +817,9 @@ strong{font-weight:700}
       </div>
     </div>
     <div class="cmp-lines">
-      <span>PR2 gets you my full attention and dedication …</span>
-      <span class="accent">At a tiny fraction of the cost</span>
-      <span>My clients are paying me</span>
+      <span class="cl1">PR2 gets you my full attention and dedication …</span>
+      <span class="cl2"><u>At a tiny fraction of the cost</u></span>
+      <span class="cl3">My clients are paying me</span>
     </div>
     <div class="btn-wrap">
       <div class="arrow-row"><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 10,10 C 18,28 22,50 30,62 C 38,74 55,80 88,80"/><path d="M 76,70 C 82,74 88,80 88,80 C 82,80 78,86 76,90"/></svg><a class="btn btn-green" href="#checkout"><span class="bt">Yes, I Want In<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><small>Instant, Lifetime Access To PR2</small></a><svg class="arrow" width="96" height="76" viewBox="0 0 115 90" fill="none" aria-hidden="true"><path d="M 105,10 C 97,28 93,50 85,62 C 77,74 60,80 27,80"/><path d="M 39,70 C 33,74 27,80 27,80 C 33,80 37,86 39,90"/></svg></div>
