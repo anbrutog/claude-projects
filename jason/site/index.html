@@ -189,7 +189,14 @@ strong{font-weight:700}
 /* ===== Learn list ===== */
 /* Book in the centre, 3 boxed points either side (DotComSecrets layout, Keith's screenshot) */
 .learn-section{gap:28px;align-items:center}
-.learn-list{list-style:none;margin:8px 0 0;width:100%;max-width:1000px;display:flex;flex-direction:column;gap:26px;background:#FFFFFF;border:1px solid #E3E8EC;border-radius:20px;padding:56px 64px;box-shadow:0 30px 80px rgba(0,30,58,.10),0 4px 14px rgba(0,30,58,.04)}
+.section.before-learn{padding-bottom:276px}
+.section.learn-sec{padding-top:0}
+.learn-card{position:relative;z-index:2;margin-top:-180px;width:100%;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:18px;background:#FFFFFF;border:1px solid #E3E8EC;border-radius:20px;padding:64px 72px 60px;box-shadow:0 30px 80px rgba(0,30,58,.14),0 4px 14px rgba(0,30,58,.05)}
+.learn-h{text-align:center;font-size:52px}
+.learn-div{display:flex;align-items:center;gap:22px;width:100%;max-width:760px;padding:4px 0 18px}
+.ld-line{flex:1 1 0;height:3px;border-radius:2px;background:#D6DEE3}
+.learn-mark{flex:0 0 auto}
+.learn-list{list-style:none;margin:0;padding:0;width:100%;max-width:900px;display:flex;flex-direction:column;gap:26px}
 .learn-list li{display:flex;gap:16px;align-items:flex-start}
 .lb-mark{flex:0 0 12px;width:12px;height:12px;margin-top:9px}
 .learn-list p{font-size:20px;line-height:1.55;color:#444444}
@@ -323,7 +330,8 @@ strong{font-weight:700}
 @media (max-width:1200px){.h1-key{font-size:62px}}
 /* ===== Tablet (Framer 810) ===== */
 @media (max-width:1000px){
-  .learn-list{padding:44px 40px}
+  .learn-card{padding:48px 40px}
+  .learn-h{font-size:40px}
   .guar-copy{padding:44px 0 44px 40px}
   .guar-h{font-size:48px}
   .guar-photo{flex:0 0 300px}
@@ -394,7 +402,10 @@ strong{font-weight:700}
   .guar-k{font-size:20px}
   .guar-h{font-size:38px}
   .guar-copy p{font-size:17px}
-  .learn-list{gap:20px;padding:30px 22px;border-radius:16px}
+  .learn-list{gap:20px}
+  .learn-card{margin-top:-90px;padding:36px 22px;border-radius:16px}
+  .section.before-learn{padding-bottom:150px}
+  .learn-h{font-size:30px}
   .learn-list p{font-size:17px}
   .guar-copy .btn-green .bt{font-size:22px}
   .guar-photo{flex:0 0 auto;height:300px}
@@ -569,7 +580,7 @@ strong{font-weight:700}
 </section>
 
 <!-- Testimonial: Ryan -->
-<section class="section deep" style="padding-top:0" data-framer-name="Testimonial – Ryan Hoenig">
+<section class="section deep before-learn" style="padding-top:0" data-framer-name="Testimonial – Ryan Hoenig">
   <div class="testi testi-white">
     <div class="testi-photo"><img src="img/ryan.jpg" alt="Ryan Hoenig with trophy"></div>
     <div class="testi-body">
@@ -585,18 +596,21 @@ strong{font-weight:700}
 </section>
 
 <!-- ================= WHAT YOU'LL LEARN ================= -->
-<section class="section light" data-framer-name="Inside PR2">
+<section class="section light learn-sec" data-framer-name="Inside PR2">
   <div class="wide learn-section">
-    <div class="doodle-wrap center"><div class="eyebrow">What’s inside</div></div>
-    <h2 class="h2" style="text-align:center">Inside PR2, You Will Learn:</h2>
-    <ul class="learn-list" role="list">
-      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>My exact methods that allow my clients to consistently hit their initial <strong>“breakthrough”</strong> six and seven-figure scores</p></li>
-      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why certain people have “it” (think Phil Ivey in his prime) and even good players will tense up and punt to them (and once when you understand these principles, you can now show up as that person)</p></li>
-      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>The techniques that have clients saying they now feel “immune to variance.”</p></li>
-      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why the “Full Presence” method gets far <strong>better performance with way less effort</strong> than the “work hard, optimize your life, and talk about your past” agenda that the old guard of mindset coaches and sports psychologists have been unsuccessfully selling for decades</p></li>
-      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>How to overcome the tension and pressure, then “let it rip” in the toughest spots against even your most difficult opponents</p></li>
-      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why overthinking is the greatest enemy to your poker profits, and how you can end this destructive habit using a <strong>“mind control” technique</strong> so simple to do that you can start feeling like a far better version of yourself in your very next session</p></li>
-    </ul>
+    <div class="learn-card">
+      <div class="eyebrow">What’s inside</div>
+      <h2 class="h2 learn-h">Inside PR2, You Will Learn:</h2>
+      <div class="learn-div"><span class="ld-line"></span><svg class="learn-mark" width="26" height="28" viewBox="0 0 26 28" aria-hidden="true"><path d="M13 1C9 7 2 10.5 2 16.5 2 20 4.7 22.5 8 22.5c1.7 0 3.1-.7 4-1.8-.3 2.3-1.3 4.3-3 5.8h8c-1.7-1.5-2.7-3.5-3-5.8.9 1.1 2.3 1.8 4 1.8 3.3 0 6-2.5 6-6C24 10.5 17 7 13 1z" fill="#FF3500"/></svg><span class="ld-line"></span></div>
+      <ul class="learn-list" role="list">
+        <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>My exact methods that allow my clients to consistently hit their initial <strong>“breakthrough”</strong> six and seven-figure scores</p></li>
+        <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why certain people have “it” (think Phil Ivey in his prime) and even good players will tense up and punt to them (and once when you understand these principles, you can now show up as that person)</p></li>
+        <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>The techniques that have clients saying they now feel “immune to variance.”</p></li>
+        <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why the “Full Presence” method gets far <strong>better performance with way less effort</strong> than the “work hard, optimize your life, and talk about your past” agenda that the old guard of mindset coaches and sports psychologists have been unsuccessfully selling for decades</p></li>
+        <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>How to overcome the tension and pressure, then “let it rip” in the toughest spots against even your most difficult opponents</p></li>
+        <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why overthinking is the greatest enemy to your poker profits, and how you can end this destructive habit using a <strong>“mind control” technique</strong> so simple to do that you can start feeling like a far better version of yourself in your very next session</p></li>
+      </ul>
+    </div>
     <div class="btn-wrap">
       <a class="btn btn-green long" href="#join"><span class="bt">Join Now And Receive Instant, Lifetime Access To PR2<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <div class="trust"><span>✓ Instant access</span><span>✓ Lifetime access</span><span>✓ 100-day guarantee</span></div>
