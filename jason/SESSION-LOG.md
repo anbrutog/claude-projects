@@ -215,5 +215,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Hero headline highlighter.** Keith asked for a yellow highlighter (from an "Attention:" screenshot) on "World Series And Triton Champions". Wrapped it in `<mark class="hl-yellow">`: pale yellow `#FFF9A6` with navy `#001E3A` text (white would be unreadable on yellow), and `box-decoration-break:clone` so it wraps cleanly on two lines. New name because `.hl` already exists on the page (orange text on navy). Yellow is a new colour; flagged to Keith. Checked at 1440/810/390, no overflow.
 
+- **"Fuck it, I don't believe you" pull quote restyled.** Keith sent a quote-box screenshot (dashed border, light tint, quote mark icon, serif italic quote) and asked for the bonus "Instant Access" pill colours. Now `.pull` box: `#FFF0EB` fill, 2px dashed `#FF3500` border, 8px radius, inline SVG quote mark `#FFC3AE`, quote in **Merriweather italic 700** (new Google Font, closest match to the screenshot) navy, 44px desktop / 21px phone (one line). The screenshot's handwritten attribution was not added: the copy has none. Old orange top/bottom rules removed. Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

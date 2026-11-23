@@ -62,7 +62,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 | Body | `#444444` | body text on light |
 | Muted-light | `#ABC7D1` | secondary text on navy |
 
-- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Playfair Display italic** only for the "Jason Su" signature. **Gochi Hand** only for the handwritten proof-card headlines (Keith asked, 22 Nov).
+- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Playfair Display italic** only for the "Jason Su" signature. **Gochi Hand** only for the handwritten proof-card headlines (Keith asked, 22 Nov). **Merriweather italic 700** only for the "Fuck it, I don't believe you" pull quote (dashed orange box, Keith 23 Nov).
 - Radius: buttons **8px**, cards **8px**.
 - **Buttons (Keith, 22 Nov):** all CTAs are green RB-style (`.btn-green`): gradient `#16E01F`→`#0A9A0A`, white 800 title + dark-green `#0A8A0A` arrow, max 650px. Replaces the orange buttons from his site.
 - `.glow` sections (Hero, Full Presence proof, Guarantee) use navy with CSS radial gradients (orange glow bottom, blue glow top right), copying his hero. Gradients are fills, not images, so they import into Framer.
