@@ -173,5 +173,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to put "PR2" and "Presence and Profit 2.0" on the same line, both red, subtitle in normal case. New `.product-line` flex row (baseline-aligned, centred): PR2 120px/900 + "Presence and Profit 2.0" 46px/800, both orange `#FF3500`, no caps/letter-spacing. Phone: 54px + 20px so it stays on one line. Copy has "PR2 (Presence and Profit 2.0)" with brackets; brackets still not shown (as before), mentioned to Keith.
 
+- Keith asked for PR2 and "Presence and Profit 2.0" at the same size. Both now 68px/900 orange (52px tablet, 26px phone), 18px gap, one line at every width checked (1440/810/390).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
