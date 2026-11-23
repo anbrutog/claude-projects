@@ -197,5 +197,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked for "It comes down to one thing only:" in lower case and the question laid out as "Do You Play With" / "Full Presence?". Label now sentence case, 20px/700 orange-deep (was 15px uppercase spaced); question split into two spans in a centred flex column. Same layout on desktop and phone.
 
+- Keith asked to take out the dotted chevrons but keep them aside to maybe reuse in another section. Removed all 3 (end of opening letter, before "It comes down to one thing only", between the value stack and "Outside of this program"). Markup saved in `snippets/chevrons.html` (with where each one sat); the `.chevrons` CSS stays in the page so it can be dropped back in. Added 32px above "Outside of this program …" so it doesn't crowd the value box.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
