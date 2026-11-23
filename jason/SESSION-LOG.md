@@ -208,5 +208,8 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to remove the book cover from "Inside PR2, You Will Learn:" and make it a plain section: headline + bullets with the red arrow, white background. Section now `light` (white); the 6 points are a single centred `ul.learn-list` (max 780px, 20px text, orange triangle bullets, no boxes). Book cover and the DotComSecrets box layout removed (`poker-with-presence-cover.jpg` stays in `img/`, unused). Felipe's testimonial section switched back to `light` to match (it has no top padding, so it must share the background). "What's inside" eyebrow and CTA kept. Wording unchanged.
 
+- Keith (DotComSecrets "Is This Book For Me?" screenshot) asked to style the Inside PR2 list box like it. `.learn-list` is now a white card: 1px `#E3E8EC` border, 20px radius, soft wide shadow, 56px/64px padding, max 1000px (tablet 44/40, phone 30/22, 16px radius). Ignored the smudge effect in the screenshot's corner, as asked.
+- Fixed a thin navy line between two white sections (Inside PR2 → Felipe) on phone: the body background is navy and sub-pixel gaps between sections let it show. Added `.section+.section{margin-top:-1px}` site-wide.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

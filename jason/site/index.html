@@ -32,6 +32,8 @@ img{display:block;max-width:100%}
 a{color:inherit}
 
 .section{width:100%;display:flex;flex-direction:column;align-items:center;padding:96px 24px}
+/* 1px overlap so no navy body background shows through sub-pixel gaps between sections */
+.section+.section{margin-top:-1px}
 .navy{background:#001E3A;color:#FFFFFF}
 .deep{background:#00152A;color:#FFFFFF}
 .light{background:#FFFFFF;color:#444444}
@@ -187,7 +189,7 @@ strong{font-weight:700}
 /* ===== Learn list ===== */
 /* Book in the centre, 3 boxed points either side (DotComSecrets layout, Keith's screenshot) */
 .learn-section{gap:28px;align-items:center}
-.learn-list{list-style:none;margin:0;padding:0;width:100%;max-width:780px;display:flex;flex-direction:column;gap:26px}
+.learn-list{list-style:none;margin:8px 0 0;width:100%;max-width:1000px;display:flex;flex-direction:column;gap:26px;background:#FFFFFF;border:1px solid #E3E8EC;border-radius:20px;padding:56px 64px;box-shadow:0 30px 80px rgba(0,30,58,.10),0 4px 14px rgba(0,30,58,.04)}
 .learn-list li{display:flex;gap:16px;align-items:flex-start}
 .lb-mark{flex:0 0 12px;width:12px;height:12px;margin-top:9px}
 .learn-list p{font-size:20px;line-height:1.55;color:#444444}
@@ -321,6 +323,7 @@ strong{font-weight:700}
 @media (max-width:1200px){.h1-key{font-size:62px}}
 /* ===== Tablet (Framer 810) ===== */
 @media (max-width:1000px){
+  .learn-list{padding:44px 40px}
   .guar-copy{padding:44px 0 44px 40px}
   .guar-h{font-size:48px}
   .guar-photo{flex:0 0 300px}
@@ -391,7 +394,7 @@ strong{font-weight:700}
   .guar-k{font-size:20px}
   .guar-h{font-size:38px}
   .guar-copy p{font-size:17px}
-  .learn-list{gap:20px}
+  .learn-list{gap:20px;padding:30px 22px;border-radius:16px}
   .learn-list p{font-size:17px}
   .guar-copy .btn-green .bt{font-size:22px}
   .guar-photo{flex:0 0 auto;height:300px}

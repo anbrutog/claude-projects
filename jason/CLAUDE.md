@@ -77,7 +77,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
 4. Introducing PR2: italic "Introducing …", "PR2 Presence and Profit 2.0" on one line, same size, in orange, tagline lines 44/56/44/34px, tagline (mockup/VSL placeholder removed 22 Nov)
 5. Testimonial – Ryan Hoenig (white card, no stars)
-6. Inside PR2 (white): headline + 6 learning points as a plain list with orange triangle bullets (book cover removed 23 Nov) + CTA
+6. Inside PR2 (white): headline + 6 learning points with orange triangle bullets in a white bordered card (DotComSecrets style; book cover removed 23 Nov) + CTA
 7. Testimonial – Felipe Boianovsky (white section, to match Inside PR2)
 8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow (white card, no stars)
