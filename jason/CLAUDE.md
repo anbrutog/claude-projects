@@ -36,7 +36,7 @@ Preview locally: `cd site && python3 -m http.server 8000` (or `npx serve site`).
 1. **Copy is locked.** Use Jason's wording exactly, typos included. Don't rewrite, trim or "improve" it. Known issues are logged in `copy/COPY-ISSUES.md` for Keith to raise at the end.
 2. **Keep it Framer-importable.** The page will be pulled into Framer with Framer's **HTML to Framer** Chrome extension (copies static sections from a live page) or the **Vortex / "AI Design to Framer"** plugin (paste HTML). These tools only bring over static layout, so:
    - Layout uses **flexbox only**. Avoid CSS grid and avoid `::before`/`::after` decoration.
-   - No JS-driven UI. The FAQ is an accordion built with native `<details>`/`<summary>` (no JS, Keith asked for it 22 Nov); rebuild it with Framer's Accordion component on import. No animations, except the CTA hover (Keith asked, 22 Nov; rebuild as a Hover variant in Framer). Add other motion in Framer afterwards.
+   - No JS-driven UI. The FAQ is an accordion built with native `<details>`/`<summary>` (no JS, Keith asked for it 22 Nov); rebuild it with Framer's Accordion component on import. No animations, except hovers Keith asked for on 22 Nov: CTA buttons (lift, brighten, arrow nudge) and proof/bonus cards (3px lift only). Rebuild them as Hover variants in Framer. Add other motion in Framer afterwards.
    - Images are real `<img>` tags, not CSS background images.
    - Fonts are **Google Fonts only** (Framer has them all).
    - Each top-level `<section>` has a `data-framer-name` so it can be imported one at a time and lands with a sensible layer name.

@@ -193,5 +193,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to delete the "Product mockup / VSL goes here" placeholder box in Introducing PR2. Removed (and its `.mock` CSS). If a VSL or mockup arrives later it needs a new slot.
 
+- Keith asked for the same subtle hover movement (movement only) on the three proof cards and the bonus cards. `.case` and `.bonus` now lift 3px over 0.2s on hover (no colour/shadow change); off under `prefers-reduced-motion`. The proof cards' shadow strip stays put underneath. Rebuild as Hover variants in Framer.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

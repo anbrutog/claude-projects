@@ -78,6 +78,10 @@ strong{font-weight:700}
 .btn-green:hover .bt-arrow,.btn-green:focus-visible .bt-arrow{transform:translateX(6px)}
 .btn.btn-green:active{transform:translateY(-1px);box-shadow:0 10px 24px rgba(10,154,10,.35)}
 .btn.btn-green:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+/* Card hover (Keith 22 Nov): same 3px lift as the CTAs, movement only. Rebuild as Hover variants in Framer. */
+.case,.bonus{transition:transform .2s ease}
+.case:hover,.bonus:hover{transform:translateY(-3px)}
+@media (prefers-reduced-motion:reduce){.case,.bonus{transition:none}.case:hover,.bonus:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){.btn.btn-green,.btn-green .bt-arrow{transition:none}.btn.btn-green:hover,.btn.btn-green:focus-visible{transform:none}.btn-green:hover .bt-arrow{transform:none}}
 .btn-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;padding-top:12px}
 .btn-wrap.hero-cta{align-items:center;padding-top:8px}
