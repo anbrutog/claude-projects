@@ -213,5 +213,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith (One Comma Club "What's My Investment?" screenshot) asked to raise the Inside PR2 box so it sits partly inside the section above, with the headline inside the box. New `.learn-card` (white, 1px border, 20px radius, soft shadow) holds the "What's inside" eyebrow, the h2 (52px), a divider (two grey lines + orange spade SVG, in place of the screenshot's logo; our decoration) and the list. Card is pulled up 180px (`margin-top:-180px`, z-index 2) into the Ryan testimonial section, which gets `padding-bottom:276px` (`.section.before-learn`) so the gap above the card stays ~95px; Inside PR2 section has no top padding. Phone: 90px overlap, 150px Ryan bottom padding, 30px headline. CTA stays below the card. Checked 1440/810/390.
 
+- **Hero headline highlighter.** Keith asked for a yellow highlighter (from an "Attention:" screenshot) on "World Series And Triton Champions". Wrapped it in `<mark class="hl-yellow">`: pale yellow `#FFF9A6` with navy `#001E3A` text (white would be unreadable on yellow), and `box-decoration-break:clone` so it wraps cleanly on two lines. New name because `.hl` already exists on the page (orange text on navy). Yellow is a new colour; flagged to Keith. Checked at 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
