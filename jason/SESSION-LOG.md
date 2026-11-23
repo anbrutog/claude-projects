@@ -179,5 +179,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to put the Ryan Hoenig testimonial on a white background, remove the stars and recolour the text; same for Kevin Rabichow only (Felipe unchanged). Added `.testi-white` to both: white card, light border `#D6DEE3`, deep shadow, quote and name navy `#001E3A`, credentials grey-blue `#5A6B7A`. Stars removed from both (Felipe keeps his). Checked 1440 and 390.
 
+- Keith asked to break the Bonuses heading into three lines via spans: "When You Join PR2," / "You Will Also Receive Instant Access" / "To The Following Bonus Trainings:". `h2.h2-lines` is a centred flex column of three spans (spaces kept between spans so the text reads the same). Desktop shows exactly those 3 lines; on phone the longer lines wrap within themselves. Wording unchanged.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
