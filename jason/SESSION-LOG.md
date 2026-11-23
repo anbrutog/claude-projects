@@ -165,5 +165,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith: the inverted stack "doesn't really work well", so reverse it. Restored `site/index.html` from c724ebd (white box, navy total bar, original tick colours). CLAUDE.md note removed.
 
+- Keith (RB screenshot) asked for the stack ticks to become green rounded-square checkboxes and the values to show as "FREE!" with the value underneath, in the screenshot's colours. Ticks: white check on green `#12B312`, 5px radius. Values: "FREE!" 24px/900 green `#12B312` over "($1,500 Value)" 16px red `#E31B3D`, in a fixed 128px column (100px phone) so they line up. **New colours (green, red) and microcopy ("FREE!", "($X Value)") outside Jason's brand, both at Keith's request; flagged.** PR2 row has no value, unchanged. Total bar unchanged.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
