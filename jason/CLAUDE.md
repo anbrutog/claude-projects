@@ -77,7 +77,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
 4. Introducing PR2: italic "Introducing …", "PR2 Presence and Profit 2.0" on one line, same size, in orange, tagline lines 44/56/44/34px, tagline (mockup/VSL placeholder removed 22 Nov)
 5. Testimonial – Ryan Hoenig (white card, no stars)
-6. Inside PR2 (white): white card overlapping the bottom of the Ryan section (negative margin, like the hero testimonial card), holding eyebrow + headline + spade divider + 6 learning points with orange triangle bullets (book cover removed 23 Nov) + CTA
+6. Inside PR2 (white): white card overlapping the bottom of the Ryan section (negative margin, like the hero testimonial card), holding headline + plain grey divider line (eyebrow and spade removed 23 Nov) + 6 learning points with orange triangle bullets (book cover removed 23 Nov) + CTA
 7. Testimonial – Felipe Boianovsky (white section, to match Inside PR2)
 8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow (white card, no stars)
@@ -94,7 +94,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).
 - Bonus card pills: "Instant Access" and "Today: FREE!" microcopy, original values struck through (Keith asked for the RB card style, 22 Nov). iPad images are placeholders.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
-- Small eyebrow labels ("For poker players who play for more than the money", "What's inside"; "Included free" removed 22 Nov).
+- Small eyebrow labels ("For poker players who play for more than the money"; "Included free" removed 22 Nov).
 - **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines (**all removed at Keith's request, 22 Nov**), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (removed 23 Nov; markup kept in `snippets/chevrons.html` for possible reuse). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
 - **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($1,500 … $2,997), total $11,391, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
 - **Rule: don't add new sections or content blocks without asking Keith first.** The stack and the hero CTA were both approved explicitly.

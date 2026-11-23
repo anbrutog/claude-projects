@@ -241,5 +241,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"Regardless of how big … / No matter how much pressure …" centred (Keith).** `.stack-lines` centred, orange left bar removed. Checked 1440/390.
 
+- **Inside PR2 card trimmed (Keith).** Removed the "What's inside" eyebrow and the orange spade; the divider is now one plain grey line under the headline. Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
