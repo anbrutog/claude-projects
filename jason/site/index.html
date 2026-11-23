@@ -136,6 +136,12 @@ strong{font-weight:700}
 .big-q .q{font-weight:900;font-size:52px;line-height:1.05;letter-spacing:-.02em;color:#001E3A;display:flex;flex-direction:column;align-items:center}
 .stack-lines{display:flex;flex-direction:column;gap:6px;font-size:22px;font-weight:500;color:#001E3A;padding:6px 0 6px 22px;border-left:4px solid #FF3500}
 .stat-line{font-weight:800;font-size:32px;letter-spacing:-.01em;color:#001E3A;text-align:center;padding:10px 0}
+/* Tinted heading band (Keith, 23 Nov: "Section #3" screenshot style) */
+.band{align-self:stretch;width:100%;background:#FFF0EB;text-align:center;padding:26px 32px;margin:18px 0 6px}
+.sub.band,.stat-line.band{line-height:1.25}
+.stat-line.band,p.sub.band{font-weight:400}
+.band b{font-weight:800}
+.big-q.band{padding:34px 32px 38px}
 .verbs{display:flex;flex-direction:column;gap:4px;font-size:24px;font-weight:700;color:#001E3A}
 
 /* ===== Good news band ===== */
@@ -387,6 +393,9 @@ strong{font-weight:700}
   .tagline .t4{font-size:20px}
   .intro-k{font-size:28px}
   .stat-line{font-size:25px}
+  .band{padding:20px 18px}
+  .big-q.band{padding:26px 18px 30px}
+  .big-q .k{font-size:17px}
   .closer .big{font-size:28px}
   .testi-body{padding:30px 24px}
   .testi-q{font-size:20px}
@@ -484,7 +493,7 @@ strong{font-weight:700}
     <p>If these are the things you’re interested in?</p>
     <p class="oneline">This letter can show you how it’s done.</p>
 
-    <h2 class="sub">The Truth About Winning Big</h2>
+    <h2 class="sub band">The Truth About Winning Big</h2>
     <p>Winning big in poker is not linear.</p>
     <p>It does not simply come to those who work the hardest.</p>
     <p>There is no amount of poker strategy knowledge that guarantees you’ll become “that” player who just keeps finding ways to win by making the perfect play in just the right moment.</p>
@@ -499,7 +508,7 @@ strong{font-weight:700}
     <p>Zero to do with how much you meditate.</p>
     <p>Or what you eat, or how much you sleep, or whether you exercised this morning and did your pregame routine (in fact, many of my players started winning more once I convinced them to stop adhering to their routine), or how much time you’ve wasted talking about your “types of tilt” and “the root cause” of why you’re still underperforming after all these years.</p>
 
-    <div class="big-q">
+    <div class="big-q band">
       <div class="doodle-wrap center"><div class="k serif">It comes down to one thing only:</div></div>
       <h2 class="q"><span>Do You Play With</span> <span>Full Presence?</span></h2>
     </div>
@@ -513,7 +522,7 @@ strong{font-weight:700}
     <p>Can you still think clearly, pick up reads others miss, then trust those reads by following through on plays that you otherwise would never make because your gut is telling you to?</p>
     <p>Do you know how to activate this?</p>
     <p>Or is it just something you wander into occasionally?</p>
-    <p class="stat-line">For the 99.9%, it’s random.</p>
+    <p class="stat-line band"><b>For the 99.9%,</b> it’s random.</p>
     <p>You randomly have that “Full Presence” some days, and those are the days where you notice everything, the answers are coming to you, and you execute on your ideas without hesitation. You leave these sessions with the best feeling in poker, that deep down satisfied feeling of knowing that <strong class="hl">nobody could have done it better than you did</strong> today.</p>
     <p>But randomly and rarely is all most people get.</p>
     <p>And so the rest of the time, in the tough spots against your toughest competition, you do the opposite.</p>
@@ -808,7 +817,7 @@ strong{font-weight:700}
 <!-- ================= CLOSE ================= -->
 <section class="section light" style="padding-top:0" data-framer-name="Letter – Close">
   <div class="col">
-    <p class="sub" style="padding-top:0">This is everything, literally.</p>
+    <p class="sub band"><b>This is everything,</b> literally.</p>
     <p>Everything I’ve ever made.</p>
     <p>Every idea I’ve ever put out (including many I’ve kept secret for my clients over the years), which in total have made millions of dollars for my long list of happy clients.</p>
     <p class="oneline"><u class="underline">Nothing got held back.</u></p>
