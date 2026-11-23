@@ -259,5 +259,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Bonuses "Total Bonus Value" as a headline (Keith).** Under the bonus cards: label now white, title case "Total Bonus Value", same size/weight as the "Everything You Get" headline (52px / 40px tablet / 30px phone, weight 800); "$11,391" stays orange `#FF3500` at the same size (weight 900). Wraps to two lines on phone. The navy total bar inside the value-stack card is unchanged. Checked 1440/810/390, no overflow.
 
+- **CTA under the bonus total (Keith).** Added the green "Join Now And Receive Instant, Lifetime Access To PR2" button (copy of the Inside PR2 CTA, links to `#join`) with its three trust ticks, under "Total Bonus Value $11,391" in the Bonuses section. Checked 1440/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
