@@ -177,5 +177,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith (screenshot) asked to enlarge the Introducing PR2 tagline lines and make "Introducing …" italic, and to delete the doodle underline from all headlines. "Introducing …" now 38px/700 italic (Gabarito has no italic, so the browser slants it; same in Framer). Tagline: 44px/700 "The Coaching Program That Has Made", 56px/900 orange "A Whole Bunch Of Money", 44px "And Filled Many Trophy Cases", 34px "For A Whole Lot Of People" (tablet 34/44/27, phone 24/28/20). Removed all 8 doodle underline SVGs and their CSS (labels keep their `doodle-wrap` wrappers, harmless). Doodle arrows, chevrons and the proof-card handwriting arrows kept. Checked 1440/810/390, no overflow.
 
+- Keith asked to put the Ryan Hoenig testimonial on a white background, remove the stars and recolour the text; same for Kevin Rabichow only (Felipe unchanged). Added `.testi-white` to both: white card, light border `#D6DEE3`, deep shadow, quote and name navy `#001E3A`, credentials grey-blue `#5A6B7A`. Stars removed from both (Felipe keeps his). Checked 1440 and 390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

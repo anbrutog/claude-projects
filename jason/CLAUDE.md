@@ -74,11 +74,11 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 2. Letter – Opening: Jason photo `img/jason-arms-crossed.jpg` on the left beside the first paragraphs (RB letter layout, mirrored), "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
 4. Introducing PR2: italic "Introducing …", "PR2 Presence and Profit 2.0" on one line, same size, in orange, tagline lines 44/56/44/34px, tagline, **mockup/VSL placeholder box**
-5. Testimonial – Ryan Hoenig
+5. Testimonial – Ryan Hoenig (white card, no stars)
 6. Inside PR2 (mist): book cover `img/poker-with-presence-cover.jpg` centred, 6 learning points in white boxes, 3 each side (DotComSecrets layout) + CTA
 7. Testimonial – Felipe Boianovsky (mist, to match Inside PR2)
 8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
-9. Testimonial – Kevin Rabichow
+9. Testimonial – Kevin Rabichow (white card, no stars)
 10. Offer: "Everything you get" value stack (devices mockup `img/stack-devices.svg` overhanging the top of the box: monitor/laptop/iPad/phone built from the bonus photos, placeholder until the real PR2 mockup, green checkbox ticks `#12B312` and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
 12. Guarantee: 100-day seal
