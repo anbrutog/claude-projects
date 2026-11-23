@@ -155,5 +155,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to put the handwritten headlines and doodle arrows **outside the boxes, in white**. Moved each `.hand-row` above its card (still inside `.case-wrap`), text and arrows now `#FFFFFF` on navy, arrows point down into the card. "Months → Minutes" back on one line (36px desktop, 30px below 1240px) so all three cards line up. Checked at 1440/1100/1001/810/390, no overflow.
 
+- Keith (screenshot) asked to rotate the 1st handwritten headline + arrow more steeply, and the 3rd the opposite way. `.tilt-l` rotates the whole row -13° (pivot bottom-left, about -17° with the text's own tilt), `.tilt-r` rotates +9° (pivot bottom-right, text +4°, so about +13°). The middle one stays at -4°. Transforms only, so the cards still line up; on phone the two tilted rows get 28px more space above. Checked at 1440/1100/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

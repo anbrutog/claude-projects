@@ -127,6 +127,10 @@ strong{font-weight:700}
 .hand-row{align-self:flex-start;display:flex;align-items:flex-end;gap:6px;padding:0 0 14px 12px}
 .hand{font-family:'Gochi Hand',cursive;font-size:36px;white-space:nowrap;line-height:1;color:#FFFFFF;transform:rotate(-4deg);transform-origin:left bottom;flex:0 1 auto;min-width:0}
 .hand-arrow{flex:0 0 auto;margin-bottom:-18px}
+.hand-row.tilt-l{transform:rotate(-13deg);transform-origin:left bottom}
+.hand-row.tilt-r{transform:rotate(9deg);transform-origin:right bottom}
+.tilt-r .hand{transform:rotate(4deg)}
+@media (max-width:640px){.hand-row.tilt-l,.hand-row.tilt-r{margin-top:28px}}
 @media (max-width:1240px){.hand{font-size:30px}.hand-arrow{width:42px;height:40px}}
 .case p{font-size:18px;line-height:1.6;color:#444444}
 .case p strong{color:#001E3A}
@@ -450,7 +454,7 @@ strong{font-weight:700}
     <div class="doodle-wrap center"><div class="eyebrow">Here’s what it looks like:</div><svg class="doodle dark" height="14" viewBox="0 0 500 18" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M2,14 C45,6 90,17 135,10 C180,3 225,16 270,10 C315,4 360,15 405,9 C435,5 465,13 498,10" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div class="cases" style="text-align:left">
       <div class="case-wrap">
-        <div class="hand-row"><div class="hand">$1,000,000</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hand-row tilt-l"><div class="hand">$1,000,000</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="case">
         <p>I once started coaching a player who had never won more than $50k in a tournament in over ten years of grinding. Within a month of doing this work we <strong>smashed through that</strong> with a $200k score, and then a few weeks later, a <strong>million dollar win</strong></p>
       </div>
@@ -464,7 +468,7 @@ strong{font-weight:700}
       <div class="case-shadow" aria-hidden="true"></div>
       </div>
       <div class="case-wrap">
-        <div class="hand-row"><div class="hand">Months → Minutes</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hand-row tilt-r"><div class="hand">Months → Minutes</div><svg class="hand-arrow" width="54" height="52" viewBox="0 0 54 52" fill="none" aria-hidden="true"><path d="M6 8 C 30 4, 46 14, 40 42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 33 C 35 37, 38 40, 40 43 C 43 39, 46 36, 50 33" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="case">
         <p>A high-stakes client who had done every other mindset coaching program in existence starts winning more than ever and tells me that … “cycles of self-doubt that used to linger for months are often <strong>resolved in minutes.</strong>”</p>
       </div>
