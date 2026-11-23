@@ -243,5 +243,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Inside PR2 card trimmed (Keith).** Removed the "What's inside" eyebrow and the orange spade; the divider is now one plain grey line under the headline. Checked 1440/390.
 
+- **Bonus bullets as green tick boxes (Keith screenshot).** All 14 bonus bullets: orange square `.dot` replaced by `.btick`, 20px rounded green box `#12B312` (same green as the value-stack and comparison ticks) with white tick SVG; slightly smaller than those (24–26px). Checked 1440/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
