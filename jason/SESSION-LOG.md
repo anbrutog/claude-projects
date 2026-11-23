@@ -163,5 +163,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked to invert the "Everything you get" box: box now navy `#001E3A` (item names and values white, "Bonus N" labels orange `#FF3500`, row dividers `#24425F`, tick circles white with orange-deep `#D62B00` ticks); the "Total bonus value" bar is now white (label navy, $11,391 orange-deep `#D62B00`). Checked desktop and phone.
 
+- Keith: the inverted stack "doesn't really work well", so reverse it. Restored `site/index.html` from c724ebd (white box, navy total bar, original tick colours). CLAUDE.md note removed.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
