@@ -223,5 +223,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Comparison box headings (Keith).** Removed the struck-through "$25,000" and the "$[PRICE]" placeholder. Headings "Private coaching · 6 months" / "PR2 · Presence and Profit 2.0" now normal case, centred, 22px weight 700, same colour as each box's bullets (white on navy, navy on mist), with a 1px divider beneath (`#24425F` / `#D6DEE3`). Kept "2.0" (Keith typed "2"; flagged). Price now shown nowhere on the page. Checked 1440/390.
 
+- **"Here's what it looks like:" in Merriweather (Keith).** Now `.serif` italic 700, sentence case, 24px, orange (was 14px uppercase Gabarito eyebrow). Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
