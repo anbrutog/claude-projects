@@ -278,9 +278,8 @@ strong{font-weight:700}
 
 /* ===== FAQ ===== */
 .faq-col{max-width:880px;gap:36px}
-.faq-head{display:flex;align-items:center;gap:32px}
+.faq-head{display:flex;justify-content:center;text-align:center}
 .faq-head .h2{flex:0 1 auto;color:#001E3A}
-.faq-line{flex:1 1 0;min-width:48px;height:4px;background:#FF3500;border-radius:2px}
 /* Accordion: native <details>, no JS. In Framer, rebuild with its Accordion component */
 .faq{display:flex;flex-direction:column;gap:14px;width:100%}
 .qa{background:#FFFFFF;border-left:5px solid #FF3500;border-radius:8px;box-shadow:0 2px 10px rgba(0,30,58,.05)}
@@ -416,7 +415,6 @@ strong{font-weight:700}
   .cmp{padding:30px 24px 32px}
   .cl{font-size:17px}
   .cmp-lines{font-size:25px}
-  .faq-head{gap:16px}
   .qa summary{padding:20px 18px;gap:12px}
   .qa .q{font-size:19px}
   .qa .a{padding:0 18px 22px 50px}
@@ -861,7 +859,7 @@ strong{font-weight:700}
 <!-- ================= FAQ ================= -->
 <section class="section mist" data-framer-name="FAQ" aria-labelledby="faq-heading">
   <div class="col faq-col">
-    <div class="faq-head"><h2 class="h2" id="faq-heading">Frequently Asked Questions</h2><div class="faq-line"></div></div>
+    <div class="faq-head"><h2 class="h2" id="faq-heading">Frequently Asked Questions</h2></div>
     <div class="faq">
       <details class="qa"><summary><svg class="plus" viewBox="0 0 20 20" fill="none" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 10h14"/><path class="v" d="M10 3v14"/></svg><span class="q">What’s your refund policy?</span></summary>
         <div class="a"><p>PR2 has a full satisfaction money back guarantee that lasts far longer than any other program on the market. Try it for a full 100 days, and if you’re not experiencing a substantial difference in how you execute at the tables, I will refund every penny to you with no questions asked.</p>

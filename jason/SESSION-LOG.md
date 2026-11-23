@@ -253,5 +253,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Hero orange circle removed (Keith).** Dropped the `radial-gradient` fill on `.hero-photo`; Jason's cut-out now sits straight on the navy hero glow. Checked 1440/390.
 
+- **FAQ heading centred (Keith).** "Frequently Asked Questions" centred; the orange line beside it (`.faq-line`) removed with its CSS. Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
