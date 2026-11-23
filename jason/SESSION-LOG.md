@@ -201,5 +201,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith (RB "Get Your FREE Book, Send Me YOUR ADDRESS" screenshot) asked to restyle the Guarantee section like it, with "100 Day Guarantee" in place of "YOUR ADDRESS", a photo of Jason, and the box kept inside the navy glow section. New `.guar`: near-black box (`#131313`, 16px radius, deep shadow), copy left: orange "Try It For A Full 100 Days" (existing line) → white uppercase "100 DAY GUARANTEE" (64px/900, Keith's wording) → refund paragraph (unchanged) → "Jason Su" white Playfair signature → green CTA "Yes, I'm Ready To Start Now" (reused CTA copy, links #checkout). Photo right: new crop `img/jason-guarantee.jpg` (806×1000, from jason-table.jpg) fading into the box via CSS mask (Framer may not import the mask; use a gradient overlay there if needed). 100-day seal removed. Phone: photo on top fading down, copy centred. **Added a CTA button inside the guarantee (in the screenshot); flagged.**
 
+- Keith asked to bring the FAQ question font weight down to 500. `.qa .q` 700 → 500 (answers unchanged).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
