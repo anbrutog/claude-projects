@@ -153,5 +153,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   - Headlines ($1,000,000 / 10x Stakes / Months → Minutes) are now **handwritten** in Gochi Hand (Google Font, added for this only), orange-deep `#D62B00`, tilted -4°, with a hand-drawn SVG arrow curving down into the story. "Months → Minutes" sits on two lines so the three cards stay side by side on desktop.
   - Story text now dark on white (#444, bold in navy). Copy unchanged (checked).
 
+- Keith asked to put the handwritten headlines and doodle arrows **outside the boxes, in white**. Moved each `.hand-row` above its card (still inside `.case-wrap`), text and arrows now `#FFFFFF` on navy, arrows point down into the card. "Months → Minutes" back on one line (36px desktop, 30px below 1240px) so all three cards line up. Checked at 1440/1100/1001/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
