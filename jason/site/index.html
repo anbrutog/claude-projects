@@ -187,14 +187,11 @@ strong{font-weight:700}
 /* ===== Learn list ===== */
 /* Book in the centre, 3 boxed points either side (DotComSecrets layout, Keith's screenshot) */
 .learn-section{gap:28px;align-items:center}
-.learn-wrap{width:100%;display:flex;align-items:center;gap:28px}
-.learn-col{flex:1 1 0;display:flex;flex-direction:column;gap:20px}
-.learn-book{flex:0 0 340px;display:flex;justify-content:center}
-.learn-book img{width:100%;height:auto;border-radius:4px;box-shadow:0 30px 60px rgba(0,21,42,.35),0 6px 14px rgba(0,21,42,.2)}
-.lbox{display:flex;gap:12px;align-items:flex-start;background:#FFFFFF;border-radius:8px;padding:22px 24px;box-shadow:0 12px 30px rgba(0,30,58,.08)}
-.lb-mark{flex:0 0 10px;margin-top:8px}
-.lbox p{font-size:17px;line-height:1.55;color:#444444}
-.lbox strong{color:#001E3A}
+.learn-list{list-style:none;margin:0;padding:0;width:100%;max-width:780px;display:flex;flex-direction:column;gap:26px}
+.learn-list li{display:flex;gap:16px;align-items:flex-start}
+.lb-mark{flex:0 0 12px;width:12px;height:12px;margin-top:9px}
+.learn-list p{font-size:20px;line-height:1.55;color:#444444}
+.learn-list strong{color:#001E3A}
 
 /* ===== Bonuses ===== */
 .bonuses{display:flex;flex-direction:column;gap:28px;width:100%}
@@ -341,9 +338,6 @@ strong{font-weight:700}
   .letter-intro{flex-direction:column;align-items:center;gap:40px}
   .intro-photo{flex:0 0 auto;width:100%;max-width:420px}
   .intro-text{max-width:700px}
-  .learn-wrap{flex-direction:column}
-  .learn-book{order:-1;flex:0 0 auto;width:300px}
-  .learn-col{width:100%;max-width:640px}
   .bonus{gap:32px;padding:32px}
   .bonus-img{flex:0 0 200px}
   .bonus-title{font-size:28px}
@@ -380,8 +374,6 @@ strong{font-weight:700}
   .testi-body{padding:30px 24px}
   .testi-q{font-size:20px}
   .testi-photo{height:240px}
-  .lbox{padding:18px 18px}
-  .learn-book{width:240px}
   .bonus{flex-direction:column;gap:20px;padding:28px 20px;align-items:stretch}
   .bonus-img{flex:0 0 auto;align-self:center;width:200px}
   .bonus-title{font-size:26px}
@@ -399,6 +391,8 @@ strong{font-weight:700}
   .guar-k{font-size:20px}
   .guar-h{font-size:38px}
   .guar-copy p{font-size:17px}
+  .learn-list{gap:20px}
+  .learn-list p{font-size:17px}
   .guar-copy .btn-green .bt{font-size:22px}
   .guar-photo{flex:0 0 auto;height:300px}
   .guar-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
@@ -588,23 +582,18 @@ strong{font-weight:700}
 </section>
 
 <!-- ================= WHAT YOU'LL LEARN ================= -->
-<section class="section mist" data-framer-name="Inside PR2">
+<section class="section light" data-framer-name="Inside PR2">
   <div class="wide learn-section">
     <div class="doodle-wrap center"><div class="eyebrow">What’s inside</div></div>
     <h2 class="h2" style="text-align:center">Inside PR2, You Will Learn:</h2>
-    <div class="learn-wrap">
-      <div class="learn-col">
-        <div class="lbox"><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>My exact methods that allow my clients to consistently hit their initial <strong>“breakthrough”</strong> six and seven-figure scores</p></div>
-        <div class="lbox"><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why certain people have “it” (think Phil Ivey in his prime) and even good players will tense up and punt to them (and once when you understand these principles, you can now show up as that person)</p></div>
-        <div class="lbox"><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>The techniques that have clients saying they now feel “immune to variance.”</p></div>
-      </div>
-      <div class="learn-book"><img src="img/poker-with-presence-cover.jpg" alt="Poker With Presence: Unlocking The Final 15% by Jason Su" width="648" height="900"></div>
-      <div class="learn-col">
-        <div class="lbox"><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why the “Full Presence” method gets far <strong>better performance with way less effort</strong> than the “work hard, optimize your life, and talk about your past” agenda that the old guard of mindset coaches and sports psychologists have been unsuccessfully selling for decades</p></div>
-        <div class="lbox"><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>How to overcome the tension and pressure, then “let it rip” in the toughest spots against even your most difficult opponents</p></div>
-        <div class="lbox"><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why overthinking is the greatest enemy to your poker profits, and how you can end this destructive habit using a <strong>“mind control” technique</strong> so simple to do that you can start feeling like a far better version of yourself in your very next session</p></div>
-      </div>
-    </div>
+    <ul class="learn-list" role="list">
+      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>My exact methods that allow my clients to consistently hit their initial <strong>“breakthrough”</strong> six and seven-figure scores</p></li>
+      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why certain people have “it” (think Phil Ivey in his prime) and even good players will tense up and punt to them (and once when you understand these principles, you can now show up as that person)</p></li>
+      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>The techniques that have clients saying they now feel “immune to variance.”</p></li>
+      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why the “Full Presence” method gets far <strong>better performance with way less effort</strong> than the “work hard, optimize your life, and talk about your past” agenda that the old guard of mindset coaches and sports psychologists have been unsuccessfully selling for decades</p></li>
+      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>How to overcome the tension and pressure, then “let it rip” in the toughest spots against even your most difficult opponents</p></li>
+      <li><svg class="lb-mark" width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M1 1l8 5-8 5z" fill="#FF3500"/></svg><p>Why overthinking is the greatest enemy to your poker profits, and how you can end this destructive habit using a <strong>“mind control” technique</strong> so simple to do that you can start feeling like a far better version of yourself in your very next session</p></li>
+    </ul>
     <div class="btn-wrap">
       <a class="btn btn-green long" href="#join"><span class="bt">Join Now And Receive Instant, Lifetime Access To PR2<svg class="bt-arrow" width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true"><path d="M2 9h26" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round"/><path d="M21 2.5L29.5 9L21 15.5" stroke="#0A8A0A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <div class="trust"><span>✓ Instant access</span><span>✓ Lifetime access</span><span>✓ 100-day guarantee</span></div>
@@ -613,7 +602,7 @@ strong{font-weight:700}
 </section>
 
 <!-- Testimonial: Felipe -->
-<section class="section mist" style="padding-top:0" data-framer-name="Testimonial – Felipe Boianovsky">
+<section class="section light" style="padding-top:0" data-framer-name="Testimonial – Felipe Boianovsky">
   <div class="testi">
     <div class="testi-photo"><img src="img/felipe.jpg" alt="Felipe Boianovsky with BSOP trophy" style="object-position:48% 50%"></div>
     <div class="testi-body">

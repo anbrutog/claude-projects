@@ -19,7 +19,7 @@ site/img/            Photos (already resized/compressed for the web)
   jason-seated-cutout.webp  hero (Jason cut out, transparent background, 900×1350, ~100KB)
   jason-seated.jpg   original hero portrait (black studio background), source for the cut-out
   jason-close.jpg    sign-off avatar
-  poker-with-presence-cover.jpg  Jason's book cover (Inside PR2 section)
+  poker-with-presence-cover.jpg  Jason's book cover (unused since 23 Nov)
   jason-arms-crossed.jpg  letter-opening photo (portrait crop of Keith's studio shot)
   jason-table.jpg    landscape shot, source for jason-guarantee.jpg
   jason-guarantee.jpg  portrait crop used in the Guarantee box
@@ -77,8 +77,8 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
 4. Introducing PR2: italic "Introducing …", "PR2 Presence and Profit 2.0" on one line, same size, in orange, tagline lines 44/56/44/34px, tagline (mockup/VSL placeholder removed 22 Nov)
 5. Testimonial – Ryan Hoenig (white card, no stars)
-6. Inside PR2 (mist): book cover `img/poker-with-presence-cover.jpg` centred, 6 learning points in white boxes, 3 each side (DotComSecrets layout) + CTA
-7. Testimonial – Felipe Boianovsky (mist, to match Inside PR2)
+6. Inside PR2 (white): headline + 6 learning points as a plain list with orange triangle bullets (book cover removed 23 Nov) + CTA
+7. Testimonial – Felipe Boianovsky (white section, to match Inside PR2)
 8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow (white card, no stars)
 10. Offer: "Everything you get" value stack (devices mockup `img/stack-devices.svg` overhanging the top of the box: monitor/laptop/iPad/phone built from the bonus photos, placeholder until the real PR2 mockup, green checkbox ticks `#12B312` and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $11,391) → $25,000 private coaching vs **$[PRICE]** comparison (two boxes: navy with red X's / mist with green ticks; 3 X lines are our wording, need Jason to confirm) + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
