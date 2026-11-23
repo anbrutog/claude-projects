@@ -191,5 +191,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - Keith asked for a nice hover on the CTA buttons. All `.btn-green`: 0.2s ease lift 3px, slightly brighter green, deeper green shadow, arrow slides 6px right; pressed state settles to 1px; keyboard focus gets the same effect plus a white outline; turned off under `prefers-reduced-motion`. First motion in the code (the no-animation rule is relaxed for this, at Keith's request). Framer import won't carry hover: rebuild as a Hover variant on the button component.
 
+- Keith asked to delete the "Product mockup / VSL goes here" placeholder box in Introducing PR2. Removed (and its `.mock` CSS). If a VSL or mockup arrives later it needs a new slot.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
