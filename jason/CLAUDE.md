@@ -76,7 +76,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 5. Testimonial – Ryan Hoenig
 6. Inside PR2 (mist): book cover `img/poker-with-presence-cover.jpg` centred, 6 learning points in white boxes, 3 each side (DotComSecrets layout) + CTA
 7. Testimonial – Felipe Boianovsky (mist, to match Inside PR2)
-8. Bonuses: 7 white bonus cards (placeholder iPad SVG left in `img/bonus/`, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
+8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total bonus value $11,391"
 9. Testimonial – Kevin Rabichow
 10. Offer: "Everything you get" value stack (mockup slot, PR2 + 7 bonuses with values, total $11,391) → dotted chevrons → $25,000 private coaching vs **$[PRICE]** comparison + CTA with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
