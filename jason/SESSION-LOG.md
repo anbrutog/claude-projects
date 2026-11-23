@@ -235,5 +235,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"As you can see …" bigger (Keith).** `.closer .seen`: 36px desktop (28px phone), font-family `"Merriweather",Georgia,serif` set explicitly (italic 700, muted blue, unchanged). Checked 1440/390.
 
+- **Pull quote marks removed (Keith).** "Fuck it, I don't believe you" now without the curly quotes in the text; the SVG quote mark above it stays. Keith's explicit request (copy has the quotes).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
