@@ -26,7 +26,7 @@ site/img/            Photos (already resized/compressed for the web)
   ryan.jpg           Ryan Hoenig testimonial (Hard Rock trophy)
   felipe.jpg         Felipe Boianovsky testimonial (BSOP trophy)
   kevin.jpg          Kevin Rabichow testimonial (at the table)
-copy/PR2_copy.md     Copy as markdown (source of truth for wording)
+copy/PR2_copy.md     Copy as markdown, version 2 from Jason (24 Nov); source of truth for wording
 copy/PR2_copy_original.docx   Original copy file from the client
 copy/COPY-ISSUES.md  Typos/gaps to raise with Keith at the END, not now
 snippets/chevrons.html  Dotted chevron divider, parked (Keith may reuse it)
@@ -75,13 +75,13 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 1. Hero (copy column centred): sentence-case eyebrow, tiered headline (small lead-in with "World Series And Triton Champions" in a yellow highlighter `.hl-yellow` `#FFF9A6`, Keith 23 Nov / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on the navy glow (orange circle removed 23 Nov), and a white testimonial card (Ryan snippet + round avatar `img/ryan-avatar.jpg`) straddling the hero/letter edge, half in each
 2. Letter – Opening: Jason photo `img/jason-arms-crossed.jpg` on the left beside the first paragraphs (RB letter layout, mirrored), "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
-4. Introducing PR2: italic "Introducing …", "PR2 Presence and Profit 2.0" on one line, same size, in orange, tagline lines 44/56/44/34px, tagline (mockup/VSL placeholder removed 22 Nov)
+4. Introducing PR2: italic "Introducing …", "The PR2 Formula" (big, orange) over "(Presence and Profit 2.0)" (smaller, white) (v2 copy, 24 Nov), tagline lines 44/56/44/34px, tagline (mockup/VSL placeholder removed 22 Nov)
 5. Testimonial – Ryan Hoenig (white card, no stars)
-6. Inside PR2 (white): white card overlapping the bottom of the Ryan section (negative margin, like the hero testimonial card), holding headline + plain grey divider line (eyebrow and spade removed 23 Nov) + 6 learning points with orange triangle bullets (book cover removed 23 Nov) + CTA
+6. Inside PR2 (white): white card overlapping the bottom of the Ryan section (negative margin, like the hero testimonial card), holding headline + plain grey divider line (eyebrow and spade removed 23 Nov) + 7 learning points with orange triangle bullets (book cover removed 23 Nov) + CTA
 7. Testimonial – Felipe Boianovsky (white section, to match Inside PR2)
-8. Bonuses: 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total Bonus Value $11,391" (white headline, orange amount) + green Join Now CTA (Keith, 23 Nov)
+8. Bonuses (v2 line-up, 24 Nov: It Factor, Crushing The Series, Unbreakable, Conquer Cravings, High Stakes Letters, The Immersion, 6 Month Performance Lab Membership): 7 white bonus cards (iPad SVG left in `img/bonus/bonus-N.svg`, with Keith's stock poker photos embedded as base64 on the screen (22 Nov); bonus 7 reuses the casino-table photo, cropped on the chips, "Bonus #N" label, title, bullets, dashed "Instant Access … Today: FREE!" pill) + "Total Bonus Value $10,794" (white headline, orange amount) + green Join Now CTA (Keith, 23 Nov)
 9. Testimonial – Kevin Rabichow (white card, no stars)
-10. Offer: "Everything you get" value stack (white card overlapping the bottom of the Kevin section, same as the Inside PR2 card; devices mockup removed 23 Nov, `img/stack-devices.svg` kept on disk; plain bold green ticks `#12B312` (no box, all ticks on the page, 23 Nov) and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $11,391) → private coaching vs PR2 comparison (two boxes, centred normal-case headings with a thin divider, no prices since 23 Nov: navy with red X's / mist with green ticks; 3 X lines are our wording, need Jason to confirm) + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
+10. Offer: "Everything you get" value stack (white card overlapping the bottom of the Kevin section, same as the Inside PR2 card; devices mockup removed 23 Nov, `img/stack-devices.svg` kept on disk; plain bold green ticks `#12B312` (no box, all ticks on the page, 23 Nov) and "FREE!" (green) over "($X Value)" (red `#E31B3D`) per bonus, RB style at Keith's request 22 Nov; the only green/red on the page, PR2 + 7 bonuses with values, total $10,794) → private coaching vs PR2 comparison (two boxes, centred normal-case headings with a thin divider, no prices since 23 Nov: navy with red X's / mist with green ticks; 3 X lines are our wording, need Jason to confirm) + green RB-style CTA (`.btn-green`, 650px, Keith 22 Nov) with doodle arrows (`id="join"`)
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
 12. Guarantee: RB-style near-black box inside the navy glow section: "Try It For A Full 100 Days" / "100 DAY GUARANTEE" / refund text / Jason Su signature / green CTA, Jason photo right (`img/jason-guarantee.jpg`, CSS mask fade)
 13. FAQ: 6 Q&As as accordion cards (details/summary, orange left border, plus icon) + CTA
@@ -89,18 +89,19 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 
 ### Design additions not in the copy (decided by us, flag to Keith if changing)
 - Proof cards headline numbers: "$1,000,000", "10x Stakes", "Months → Minutes" (handwritten). The small labels above them were removed at Keith's request (22 Nov).
-- "Total bonus value $11,391": the sum of the 7 listed bonus values (copy says "over $10,000").
+- "Total bonus value $10,794": the sum of the 7 listed bonus values (copy says "over $10,000").
 - Guarantee section (reuses the refund-policy text from the FAQ). Heading "100 Day Guarantee" is Keith's wording (23 Nov); seal removed; CTA added there.
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).
 - Bonus card pills: "Instant Access" and "Today: FREE!" microcopy, original values struck through (Keith asked for the RB card style, 22 Nov). iPad images are placeholders.
 - Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
 - Small eyebrow labels ("For poker players who play for more than the money"; "Included free" removed 22 Nov).
 - **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines (**all removed at Keith's request, 22 Nov**), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (removed 23 Nov; markup kept in `snippets/chevrons.html` for possible reuse). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
-- **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($1,500 … $2,997), total $11,391, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
+- **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($497 … $2,800), total $10,794, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
 - **Rule: don't add new sections or content blocks without asking Keith first.** The stack and the hero CTA were both approved explicitly.
 
 ## Open items / placeholders
-- [ ] **Price:** not decided. The `$[PRICE]` placeholder was removed from the comparison box at Keith's request (23 Nov), so the price currently appears nowhere on the page.
+- [ ] **Price:** **$1,997 or 6 payments of $397** (Jason, 24 Nov). Not on the page yet: it goes in the price reveal at the bottom of the "Everything You Get" card, which moves below "Outside of this program" (Jason's request). The comparison boxes come out in that step.
+- [ ] **Guarantee:** v2 copy says **60 days** (FAQ); page still says 100 everywhere until Jason confirms.
 - [ ] **Checkout:** platform not decided (Stripe / ThriveCart / Kajabi?). All CTAs point at `#checkout` / `#join`.
 - [ ] **PR2 logo + product mockup:** devices mockup in the value stack is a stand-in. The "Introducing PR2" VSL/mockup placeholder was removed (22 Nov); a VSL would need a new slot.
 - [x] **Jason logo + brand colours/fonts:** pulled from pokerwithpresence.com and applied in Draft 2.

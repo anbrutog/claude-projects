@@ -263,5 +263,38 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Value-stack total bar matches the bonus total (Keith).** Navy bar at the bottom of the "Everything You Get" card now reads "Total Bonus Value $11,391" centred, white headline (52/40/30px, weight 800) with orange amount (900), replacing the small uppercase label left / amount right. Phone rule given `.stack .stack-total` specificity (the tablet block comes later in the CSS). Checked 1440/810/390, no overflow.
 
+---
+
+## 24 Nov 2026: Jason's version 2 copy
+
+**Jason's email (via Keith)**
+- Updated copy (pasted by Keith; saved as `copy/PR2_copy.md`, v1 in git history).
+- Price reveal: move "Everything You Get" below the "Outside of this program" paragraph; extend its bottom with a struck-through $25,000 private coaching line, then "Your total investment: $1997 or 6 payments of $397"; then "As you can see … PR2 gets you my full attention and dedication".
+- Mobile: hide the first (hero) photo of Jason.
+- Copy the "Introducing The PR2 Formula" lines above the first green button in the hero, and keep them in the middle too.
+
+**Decisions**
+- Keith emailed Jason the plan and a **$100 extra charge** for this round (24 Nov).
+- **Comparison boxes (private coaching vs PR2) will be removed** in the price-reveal step (Keith agreed; the struck-through $25k makes the same point).
+- Order of work: 1) copy swap, 2) 100 → 60 days (waiting on Jason to confirm), 3) price reveal, 4) hide hero photo on phone, 5) compact "Introducing" block in hero.
+- Open questions sent to Jason: 60-day guarantee everywhere? Wording "Private coaching (6 months): $25,000" for the struck-through line?
+
+**Done: step 1, copy swap (wording only)**
+- Hero headline: "Who You See On TV … To Show Them In".
+- Letter opening rewritten. First 6 paragraphs sit beside the photo; from "killer instinct" on, in the column below. Short punch lines use `.oneline`.
+- Truth About Winning Big rewritten; "I wish I'd gone for it" is its own bold line; routine parenthetical removed.
+- Full Presence: "And no matter …"; the two "Can you still …" lines replaced by the "Will you be able to see that key detail …" paragraph; "Or worse …" and "The players at the top …" rewritten.
+- "And It Can Be Trained." (full stop added, per copy).
+- Introducing: "The PR2 Formula" (orange, 68/52/36px) with "(Presence and Profit 2.0)" as a smaller white line beneath (34/28/19px, weight 700). `.product-line` is now a column.
+- Inside PR2: 7 new bullets (was 6). The pasted copy has no bold, so the old bold phrases are gone. Ask Keith for Jason's file if he wants bold carried over.
+- Bonuses heading: "When you join PR2, / you will also unlock **over $10,000** / in bonus trainings and services:" (sentence case as written; the red underline moved from "Instant Access" to "over $10,000").
+- Bonuses: #1 "Grow genuine…" removed, "Make yourself unreadable…" added; #2 bullet 1 rewritten (kept bold "largest lifetime score"); #4 "the" removed; #5 The Vault → **High Stakes Letters ($2000 value)**; #6 → **The Immersion ($2800)**; #7 → **6 Month Performance Lab Membership ($1997)** with 3 bullets (Custom Performance Plans removed; orange "feature" outline kept on #7). iPad SVG labels for 5–7 updated.
+- Totals: **$10,794** (was $11,391) under the bonuses and in the value stack. Value-stack rows 5–7 updated; first row reads "The PR2 Formula (Presence and Profit 2.0)".
+- Kevin: "Poker Strategy Coach to 100+ Professional Players".
+- Close: added "More importantly … / It's the best and latest. / The exact ideas …"; "Nothing is held back." (underline kept).
+- FAQ: Q2 answer extended; new Q3 "Other people sell programs for less money. Why should I buy yours?". **100-day wording left as is** until Jason confirms 60.
+- `copy/COPY-ISSUES.md` rewritten for v2 (new typos: "show them in", "the was", "go come", "can't stop keep"; fixed items listed).
+- Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
