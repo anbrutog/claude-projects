@@ -27,7 +27,8 @@ site/img/            Photos (already resized/compressed for the web)
   felipe.jpg         Felipe Boianovsky testimonial (BSOP trophy)
   kevin.jpg          Kevin Rabichow testimonial (at the table)
 copy/PR2_copy.md     Copy as markdown, version 2 from Jason (24 Nov); source of truth for wording
-copy/PR2_copy_original.docx   Original copy file from the client
+copy/PR2 v2.docx     Jason's version 2 copy file (24 Nov): source for bold/italic
+copy/PR2_copy_original.docx   Original copy file from the client (v1)
 copy/COPY-ISSUES.md  Typos/gaps to raise with Keith at the END, not now
 snippets/chevrons.html  Dotted chevron divider, parked (Keith may reuse it)
 ```

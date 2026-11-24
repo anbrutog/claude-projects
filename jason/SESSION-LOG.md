@@ -296,5 +296,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - `copy/COPY-ISSUES.md` rewritten for v2 (new typos: "show them in", "the was", "go come", "can't stop keep"; fixed items listed).
 - Checked 1440/810/390, no overflow.
 
+- **Formatting from Jason's file (Keith added `copy/PR2 v2.docx`).** Read the docx's bold/italic/underline; most already matched the page. Added: italic "six and seven figure wins" + bold "with way less effort" (Inside PR2 bullet 1); bold "“presence mind control” technique" (bullet 3); bold "face-to-face coaching" and "ask me any question you like" (Bonus 7). "I wish I'd gone for it" is italic in the doc: now bold italic (kept our bold one-line style). Checked 1440, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

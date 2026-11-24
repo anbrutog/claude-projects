@@ -1,6 +1,6 @@
 # PR2 sales page copy (Jason Su), version 2, 24 Nov 2026
 
-Pasted by Keith from Jason's updated copy (email, 24 Nov 2026). Plain text, so any bold/italic in Jason's file is not captured here. Version 1 (converted from PR2_copy_original.docx) is in git history.
+Pasted by Keith from Jason's updated copy (email, 24 Nov 2026). Plain text: for bold/italic/underline check `copy/PR2 v2.docx` (Jason's file), which is the formatting source. Version 1 (converted from PR2_copy_original.docx) is in git history.
 
 Price (from Jason's email, not in the copy itself): **$1997 or 6 payments of $397**.
 
