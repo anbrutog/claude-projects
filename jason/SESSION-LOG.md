@@ -312,5 +312,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Hero "The PR2 Formula" white (Keith).** `.hi-name` orange → white `#FFFFFF`. The middle-of-page "Introducing" version stays orange. Checked 1440.
 
+- **"Here's A Hint:" white, bold, red underline (Keith screenshot).** `.hint-label` orange 700 → white 800 with an orange `#FF3500` underline (3px, offset 5px), matching "NOTHING". Checked 1440/390.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
