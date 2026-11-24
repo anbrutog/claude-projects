@@ -316,5 +316,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **"Everything You Get" header band navy (Keith screenshot).** `.stack-k` now a navy `#001E3A` band across the top of the value-stack card (rounded top corners), heading white, matching the navy price block at the bottom. The grey divider under the heading was removed (the band edge replaces it). Rows get a little more top padding. Checked 1440/390, no overflow.
 
+- **Value stack rows restyled (Keith screenshot).** "Bonus N" labels (`.stag`) 12px orange-deep 700 → 18px navy `#001E3A` 800 (15px on phone), still uppercase and letter-spaced. Bonus names (`.sname`) 600 → 400; the PR2 Formula row stays 800. Checked 1440/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
