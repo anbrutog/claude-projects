@@ -308,5 +308,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Hero "Introducing" trimmed (Keith).** Removed the tagline ("The Coaching Program That Has Made … For A Whole Lot Of People") and the navy box; "Introducing … / The PR2 Formula / (Presence and Profit 2.0)" now sit as plain text on the hero glow. Hero CTA now fully above the fold: 738–858px on 1440×900, 683–814px on 390×844. Checked 1440/810/390, no overflow.
 
+- **Testimonial credentials in Merriweather (Keith screenshot).** `.cred` (Ryan, Felipe, Kevin cards) now Merriweather italic 400, 16px, normal case (was Gabarito 600 uppercase, 14px, letter-spaced); colours unchanged. Hero card `.hp-cred` the same at 15px. Names stay Gabarito 800 (Keith: "NOT the name"). Checked 1440/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
