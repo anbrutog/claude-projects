@@ -310,5 +310,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Testimonial credentials in Merriweather (Keith screenshot).** `.cred` (Ryan, Felipe, Kevin cards) now Merriweather italic 400, 16px, normal case (was Gabarito 600 uppercase, 14px, letter-spaced); colours unchanged. Hero card `.hp-cred` the same at 15px. Names stay Gabarito 800 (Keith: "NOT the name"). Checked 1440/390, no overflow.
 
+- **Hero "The PR2 Formula" white (Keith).** `.hi-name` orange → white `#FFFFFF`. The middle-of-page "Introducing" version stays orange. Checked 1440.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
