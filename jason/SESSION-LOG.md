@@ -304,5 +304,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Compact "Introducing" block in the hero (step 5, Jason).** Between the hint and the first CTA: `.hero-intro` box (navy-card `#062A4C`, 1px `#24425F` border, 8px radius, max 620px) with "Introducing …" (Merriweather italic, muted), "The PR2 Formula" (orange 900, 40px / 30px phone), "(Presence and Profit 2.0)" (white 700), and the four tagline lines run together as one paragraph ("A Whole Bunch Of Money" orange, kept on one line). Full version stays in the middle of the page. Side effect: the hero CTA moves down ~230px; it now sits just below the fold on a 1440×900 laptop and a typical phone. Checked 1440/810/390, no overflow.
 
+- **Hero eyebrow removed (Keith).** "For poker players who play for more than the money" (our microcopy, not Jason's) deleted at all widths, with its `.hero-copy .eyebrow` CSS. Hero CTA moves up ~53px: top edge at 876px on 1440×900, 826px on a 390×844 phone (still just below the fold, with the top of the button showing). Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
