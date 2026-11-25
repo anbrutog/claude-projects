@@ -320,5 +320,7 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **CTA doodle arrows restyled (Keith, DotComSecrets reference).** The arrows either side of "Yes, I Want In" (Offer) and "Yes, I'm Ready To Start Now" (FAQ) are now looping C-curves that swing out and hook back in at the button, with an open arrowhead and a thicker 5px brush stroke (120×103, viewBox 140×120; right arrow mirrored by coordinates, no transforms). Colour rule: navy `#001E3A` on light backgrounds (default), white on navy/deep/glow sections (existing `.navy/.deep/.glow .arrow path` rule). Both current arrows sit on light sections, so both are navy. Still desktop only (≥900px). The small white arrows on the proof-card headlines were left as they are. Checked 1440.
 
+- **Doodle arrows on the Bonuses CTA (Keith).** Same looping arrows either side of "Join Now And Receive Instant, Lifetime Access To PR2" under "Total Bonus Value $10,794". Section is navy, so they are white. Desktop only (≥900px); button width unchanged at tablet (650px) and phone. Checked 1440/810/390, no overflow.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
