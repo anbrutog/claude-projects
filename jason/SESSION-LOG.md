@@ -347,5 +347,15 @@ Running record of what was discussed and decided in each Claude Code session. Ne
   7. Un-draft and publish once Jason approves.
   Embed-the-whole-page fallback noted but not recommended. CLAUDE.md updated (platform line, breakpoint rule).
 
+- **Framer pilot import: Hero (Keith screenshot).** Keith set `/pr2` to Draft and imported the Hero with the HTML to Framer extension. Results:
+  - Fonts and colours came through.
+  - The tiered headline collapsed into one 48px white text block, because the tiers were display:block spans inside one `<h1>`. It overlapped the hint text and lost the orange "Full Presence" and the yellow highlight.
+  - All three images were dropped (logo SVG, cut-out WebP, Ryan avatar), although they load fine from pearldesign.ie.
+  - The hero card's quote was dropped (`<figure>`/`<blockquote>`).
+  - Inline underlines were lost.
+  - The button gradient came in upside down and its arrow SVG was dropped.
+  - The Desktop breakpoint took the browser width (1777px).
+- **Code fix for import (no visual change).** The headline is now separate elements in a `div.h1.h1-tiered`: `p.h1-lead` / `h1.h1-key` ("Full Presence" is the page's h1) / `p.h1-tail`. The hero card is `div` / `p.hp-quote` / `div.hp-meta` instead of figure/blockquote/figcaption. Verified identical positions and sizes at 1440/810/390 against the previous version.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
