@@ -363,5 +363,8 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 **Request (25 Nov, after the Framer build):** Page is now built in Framer by importing each section by hand (live at pokerwithpresence.com/pr2). Jason clarified: he wanted to KEEP the middle PR2 Formula introduction after "On that note, I've got something I want to show you", and only remove the word "Introducing".
 **Change:** Restored the section in `site/index.html` (as `data-framer-name="PR2 Formula"`) minus the "Introducing …" line; Ryan section gets `padding-top:0` back. Hero left as it is. Checked at 1440 and 390. Keith needs to add it to the Framer page between the Full Presence section and Ryan's testimonial.
 
+**Request (25 Nov):** Compare live pokerwithpresence.com/pr2 with the local page.
+**Findings:** Copy matches word for word; all images load; FAQ accordion works. Problems: (1) "A Whole Bunch Of Money" missing from the restored PR2 Formula section (blank gap); (2) only the hero button is a link, and it points to pearldesign.ie/jason/#join; the other 7 CTAs and the Fulfillment Policy link go nowhere; (3) tablet (810) and phone (390) layouts not done yet: hero text squeezed to a narrow column, one letter per line on phone, value stack cut off; (4) small desktop differences: "Yes, I Want In" lost its arrow, trust ticks navy instead of green, "This is everything," lost its bold; (5) page title is just "Jason Su".
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
