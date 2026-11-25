@@ -8,7 +8,7 @@ Read this first. It covers what this project is, what has been decided, and what
 - **Client:** Jason Su, a poker performance coach.
 - **Product:** PR2 (Presence and Profit 2.0), an online coaching program for poker players.
 - **Deliverable:** one long-form direct-response sales page.
-- **Final platform:** Framer, in a **new project in Jason's Framer account**. Keith does not control that account, so we build and iterate the page as code here and import it into Framer at the end.
+- **Final platform:** Framer, as a **new page `/pr2` in Jason's existing Framer site** (pokerwithpresence.com/pr2). Not a separate project (Keith, 25 Nov). Keith has editor access. Build the page as a **Draft** so it stays hidden when anyone publishes the site; other people also edit that project. The site already has `/fulfillment`, `/privacy` and `/terms` pages (link the footer's Fulfillment Policy to `/fulfillment`), plus the orange swoosh lines on `/thank-you` to copy.
 - **Deadline:** live before Black Friday. Keith wants it wrapped by the weekend of 22 Nov 2026.
 - **Owner:** Keith (keithcommins.com / Best Sales Funnels), who builds it for Jason.
 
@@ -44,7 +44,7 @@ Preview locally: `cd site && python3 -m http.server 8000` (or `npx serve site`).
    - Fonts are **Google Fonts only** (Framer has them all).
    - Each top-level `<section>` has a `data-framer-name` so it can be imported one at a time and lands with a sensible layer name.
    - Inline SVG is used for the tick icons and the Russell Brunson-style doodles (underlines, arrows, dotted chevrons). They are in-flow flex children, not absolutely positioned, so they import as SVG layers.
-3. **Responsive breakpoints match Framer's:** desktop (>1000px), tablet (≤1000px, Framer 810), phone (≤640px, Framer 390). For import, copy each section once at desktop width and once at ~390px for the phone breakpoint.
+3. **Responsive breakpoints match Framer's:** desktop (>1000px), tablet (≤1000px, Framer 810), phone (≤640px, Framer 390). For import, copy each section at desktop width only (from the live copy at pearldesign.ie/jason/, so Framer can fetch the images), then adjust Tablet and Phone with breakpoint overrides in Framer. Pasting a second copy at 390px would create unlinked layers. Pilot with the Hero first and fix what doesn't survive in the code before importing the rest.
 
 ## Design system (Draft 2: Jason Su brand, taken from pokerwithpresence.com)
 Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand with orange accent; long reading sections on white.

@@ -337,5 +337,15 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 - **Tagline back in the hero, middle Introducing removed (Jason).** `.hero-tag` under "(Presence and Profit 2.0)": four lines, white 700 21px, "A Whole Bunch Of Money" orange 900 27px (17/21px on phone). Plain text, no box. The middle "Introducing PR2" section is deleted entirely, so "On that note, I've got something I want to show you." now leads straight into Ryan's testimonial; the Ryan section got its normal top padding back. Side effect: hero CTA back below the fold (top edge 880px on 1440×900, 801px on 390×844). Checked 1440/810/390, no overflow.
 - Jason: "let's go ahead and load it up" (build in Framer next).
 
+- **Framer move started (Keith, 25 Nov).** Keith is in Jason's Framer project, which is his live site pokerwithpresence.com. Decision: the sales page is a new page **`/pr2`** in that site, not a separate project ("project" in the brief meant the job, not Framer terminology). Plan agreed:
+  1. Re-upload the latest page to pearldesign.ie/jason/.
+  2. Add `/pr2` as a Draft.
+  3. Import the Hero with the HTML to Framer extension as a pilot and fix what breaks in the code.
+  4. Import the remaining sections at desktop width.
+  5. Adjust Tablet and Phone with breakpoint overrides.
+  6. Rebuild the FAQ accordion, hovers, swooshes and the phone hide on the hero photo; link the footer to `/fulfillment`.
+  7. Un-draft and publish once Jason approves.
+  Embed-the-whole-page fallback noted but not recommended. CLAUDE.md updated (platform line, breakpoint rule).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
