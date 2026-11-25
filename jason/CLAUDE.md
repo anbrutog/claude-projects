@@ -63,7 +63,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 | Body | `#444444` | body text on light |
 | Muted-light | `#ABC7D1` | secondary text on navy |
 
-- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Merriweather italic** (Keith, 23 Nov) for: "Jason Su" signatures, lead-in lines (`.serif`: Dear Friend, It comes down to…, The Good News Is…, Here's what it looks like:, As you can see…, Introducing…, Outside of this program…, Try It For A Full 100 Days) at 700, and testimonial quotes and credential lines (`.cred`, `.hp-cred`; names stay Gabarito, Keith 24 Nov) at 400. Playfair Display no longer used. **Gochi Hand** only for the handwritten proof-card headlines (Keith asked, 22 Nov). Merriweather also on the "Fuck it, I don't believe you" pull quote (dashed orange box).
+- Font: **Gabarito** for everything (400–900; headings 800–900, tight letter-spacing). **Merriweather italic** (Keith, 23 Nov) for: "Jason Su" signatures, lead-in lines (`.serif`: Dear Friend, It comes down to…, The Good News Is…, Here's what it looks like:, As you can see…, Introducing…, Outside of this program…, Try It For A Full 60 Days) at 700, and testimonial quotes and credential lines (`.cred`, `.hp-cred`; names stay Gabarito, Keith 24 Nov) at 400. Playfair Display no longer used. **Gochi Hand** only for the handwritten proof-card headlines (Keith asked, 22 Nov). Merriweather also on the "Fuck it, I don't believe you" pull quote (dashed orange box).
 - Radius: buttons **8px**, cards **8px**.
 - **Buttons (Keith, 22 Nov):** all CTAs are green RB-style (`.btn-green`): gradient `#16E01F`→`#0A9A0A`, white 800 title + dark-green `#0A8A0A` arrow, max 650px. Replaces the orange buttons from his site.
 - `.glow` sections (Hero, Full Presence proof, Guarantee) use navy with CSS radial gradients (orange glow bottom, blue glow top right), copying his hero. Gradients are fills, not images, so they import into Framer.
@@ -84,17 +84,17 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 9. Testimonial – Kevin Rabichow (white card, no stars)
 10. Offer (price reveal, Jason's flow, 24 Nov): "Outside of this program …" headline → "Everything You Get" value stack card (standalone white card with shadow, no longer overlapping Kevin; navy header band with white heading, Keith 24 Nov; plain bold green ticks `#12B312`; "FREE!" green over "($X Value)" red `#E31B3D`; PR2 + 7 bonuses) with an extended navy bottom: "Total Bonus Value $10,794" / "Private coaching (6 months): ~~$25,000~~" (our wording, red strike) / divider / "Your total investment:" / **$1,997** (big white) / "or 6 payments of $397" → "As you can see …" (serif, from Jason's email) → "PR2 gets you my full attention…" lines → green "Yes, I Want In" CTA with doodle arrows (`id="join"`). Comparison boxes removed 24 Nov (Keith).
 11. Letter – Close: "This is everything, literally." → Jason Su sign-off + CTA
-12. Guarantee: RB-style near-black box inside the navy glow section: "Try It For A Full 100 Days" / "100 DAY GUARANTEE" / refund text / Jason Su signature / green CTA, Jason photo right (`img/jason-guarantee.jpg`, CSS mask fade)
+12. Guarantee: RB-style near-black box inside the navy glow section: "Try It For A Full 60 Days" / "60 DAY GUARANTEE" / refund text / Jason Su signature / green CTA, Jason photo right (`img/jason-guarantee.jpg`, CSS mask fade)
 13. FAQ: 6 Q&As as accordion cards (details/summary, orange left border, plus icon) + CTA
 14. Footer: Fulfillment Policy link, ©
 
 ### Design additions not in the copy (decided by us, flag to Keith if changing)
 - Proof cards headline numbers: "$1,000,000", "10x Stakes", "Months → Minutes" (handwritten). The small labels above them were removed at Keith's request (22 Nov).
 - "Total bonus value $10,794": the sum of the 7 listed bonus values (copy says "over $10,000").
-- Guarantee section (reuses the refund-policy text from the FAQ). Heading "100 Day Guarantee" is Keith's wording (23 Nov); seal removed; CTA added there.
+- Guarantee section (reuses the refund-policy text from the FAQ). Heading "60 Day Guarantee" is Keith's wording (23 Nov; was 100 until 24 Nov); seal removed; CTA added there.
 - Hero testimonial card straddling hero/letter (Keith asked for it, 22 Nov).
 - Bonus card pills: "Instant Access" and "Today: FREE!" microcopy, original values struck through (Keith asked for the RB card style, 22 Nov). iPad images are placeholders.
-- Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 100-day guarantee).
+- Trust lines under CTAs (✓ Instant access, ✓ Lifetime access, ✓ 60-day guarantee).
 - Small eyebrow labels: none left ("Included free" removed 22 Nov; hero "For poker players who play for more than the money" removed 24 Nov).
 - **Russell Brunson skill pass (22 Nov):** hand-drawn doodle underlines (**all removed at Keith's request, 22 Nov**), doodle arrows either side of the Offer CTA and the final FAQ CTA (desktop ≥900px only), 3 dotted-chevron dividers (removed 23 Nov; markup kept in `snippets/chevrons.html` for possible reuse). All in brand colours (orange `#FF3500` on navy, orange-deep `#D62B00` on white). The skill's own fonts/colours (Bebas Neue, Work Sans, red, gold buttons) were deliberately NOT used.
 - **Offer value stack (approved by Keith, 22 Nov):** "Everything you get" box recapping the 7 bonus titles verbatim with values normalised to plain dollars ($497 … $2,800), total $10,794, plus a PR2 mockup slot. When the real mockup arrives, make it hover over the top of the box in Framer (skill pattern: overlap + drop-shadow).
@@ -102,7 +102,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 
 ## Open items / placeholders
 - [x] **Price:** **$1,997 or 6 payments of $397** (Jason, 24 Nov), shown in the price reveal at the bottom of the "Everything You Get" card. Waiting on Jason to OK the "Private coaching (6 months): $25,000" wording.
-- [ ] **Guarantee:** v2 copy says **60 days** (FAQ); page still says 100 everywhere until Jason confirms.
+- [x] **Guarantee:** **60 days** everywhere (v2 copy; Keith switched from 100 on 24 Nov).
 - [ ] **Checkout:** platform not decided (Stripe / ThriveCart / Kajabi?). All CTAs point at `#checkout` / `#join`.
 - [ ] **PR2 logo + product mockup:** devices mockup in the value stack is a stand-in. The "Introducing PR2" VSL/mockup placeholder was removed (22 Nov); a VSL would need a new slot.
 - [x] **Jason logo + brand colours/fonts:** pulled from pokerwithpresence.com and applied in Draft 2.

@@ -15,7 +15,6 @@ Updated 24 Nov 2026 for Jason's version 2 copy. Items fixed by the rewrite are l
 8. The first proof story ends with no full stop ("a **million dollar win**"), and so does the second ("within a few months").
 9. "Fulfillment Policy" at the end of the doc: a page/link needs to exist.
 10. **Bonuses heading** is in sentence case ("When you join PR2, you will also unlock…") while every other headline is Title Case. Rendered as written.
-11. **Guarantee length:** the FAQ now says 60 days; the Guarantee section and trust lines still say 100 (being confirmed with Jason, 24 Nov).
 
 ## Small normalisations made on the page (no change to wording)
 - The "Fuck it, I don't believe you" pull quote has a straight opening quote and a curly closing one in the copy. The page shows it without quote marks, at Keith's request.
@@ -28,5 +27,6 @@ Updated 24 Nov 2026 for Jason's version 2 copy. Items fixed by the rewrite are l
 - "once when you understand" (bullet rewritten)
 - "won't just get you to Full Presence" and "many times as you want" (Custom Performance Plans bonus removed)
 - "on any topic you like of my monthly group coaching calls" (bullet rewritten)
+- Guarantee length: v2 says 60 days; the page now says 60 everywhere (Guarantee section, trust lines, FAQ), 24 Nov
 - No price in the copy: Jason gave it by email ($1997 or 6 payments of $397)
 - Mixed bullet styles in the bonus list (all normalised on the page anyway)

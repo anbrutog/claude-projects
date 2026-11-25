@@ -322,5 +322,9 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Doodle arrows on the Bonuses CTA (Keith).** Same looping arrows either side of "Join Now And Receive Instant, Lifetime Access To PR2" under "Total Bonus Value $10,794". Section is navy, so they are white. Desktop only (≥900px); button width unchanged at tablet (650px) and phone. Checked 1440/810/390, no overflow.
 
+- **Live review (Keith uploaded to pearldesign.ie/jason/).** Live HTML identical to local; all 17 images and the Gabarito, Merriweather and Gochi Hand fonts load; no overflow at 1440/390. Only error: missing favicon on pearldesign.ie. Flagged to Keith: no noindex on the public preview, 100 vs 60 days, the $25k wording, dead checkout buttons, placeholder iPads, typos still in, Fulfillment Policy link.
+
+- **Guarantee changed to 60 days (Keith).** Jason's v2 copy only says 60 days (both FAQ answers); the 100 came from v1. All 8 mentions changed: trust lines (×3), Guarantee section kicker, heading and body, and the two FAQ answers. Checked 1440: no "100 day" left on the page.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
