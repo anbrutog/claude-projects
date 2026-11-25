@@ -52,7 +52,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 | Token | Value | Use |
 |---|---|---|
 | Navy | `#001E3A` | brand dark: hero, dark bands, headings on light |
-| Navy-deep | `#00152A` | alternate dark band (Introducing PR2), footer |
+| Navy-deep | `#00152A` | alternate dark band (testimonials), footer |
 | Navy-card | `#062A4C` | cards on navy |
 | Line | `#24425F` | borders on navy |
 | Orange | `#FF3500` | ticks, big numbers, accents on navy |
@@ -73,10 +73,10 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 - Logo: `site/img/brand/jason-su-logo-light.svg` (white text) in the hero bar and footer; `jason-su-logo-dark.svg` for light backgrounds.
 
 ## Page structure (section → `data-framer-name`)
-1. Hero (copy column centred; eyebrow removed 24 Nov): tiered headline (small lead-in with "World Series And Triton Champions" in a yellow highlighter `.hl-yellow` `#FFF9A6`, Keith 23 Nov / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), compact "Introducing … / The PR2 Formula / (Presence and Profit 2.0)" as plain text (Jason, 24 Nov; tagline and box removed by Keith), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on the navy glow (orange circle removed 23 Nov), and a white testimonial card (Ryan snippet + round avatar `img/ryan-avatar.jpg`) straddling the hero/letter edge, half in each
+1. Hero (copy column centred; eyebrow removed 24 Nov): tiered headline (small lead-in with "World Series And Triton Champions" in a yellow highlighter `.hl-yellow` `#FFF9A6`, Keith 23 Nov / huge "Full Presence" / medium close + orange rule), hint as one same-size sentence ("Here's A Hint: … Has NOTHING To Do With Elite Poker Performance"), compact "Introducing … / The PR2 Formula / (Presence and Profit 2.0)" as plain text (Jason, 24 Nov) plus the four-line tagline `.hero-tag` ("A Whole Bunch Of Money" in orange; Jason asked for it back, 25 Nov), CTA button (reuses "Join Now And Receive Instant, Lifetime Access To PR2"), Jason cut-out on the navy glow (orange circle removed 23 Nov), and a white testimonial card (Ryan snippet + round avatar `img/ryan-avatar.jpg`) straddling the hero/letter edge, half in each
 2. Letter – Opening: Jason photo `img/jason-arms-crossed.jpg` on the left beside the first paragraphs (RB letter layout, mirrored), "Dear Friend" → "The Truth About Winning Big" → pull quote → "Do You Play With Full Presence?" → the .1%
 3. Full Presence Can Be Trained: 3 white proof cards with 3D shadow (slab edge + `.case-shadow` strip), handwritten headlines ($1,000,000 / 10x Stakes / Months → Minutes) in white above each card, with white doodle arrows pointing into it
-4. Introducing PR2: italic "Introducing …", "The PR2 Formula" (big, orange) over "(Presence and Profit 2.0)" (smaller, white) (v2 copy, 24 Nov), tagline lines 44/56/44/34px, tagline (mockup/VSL placeholder removed 22 Nov)
+4. ~~Introducing PR2~~: **section removed 25 Nov** (Jason: already introduced in the hero). Its CSS (`.intro-k`, `.product*`, `.tagline`) is still in the file, unused.
 5. Testimonial – Ryan Hoenig (white card, no stars)
 6. Inside PR2 (white): white card overlapping the bottom of the Ryan section (negative margin, like the hero testimonial card), holding headline + plain grey divider line (eyebrow and spade removed 23 Nov) + 7 learning points with orange triangle bullets (book cover removed 23 Nov) + CTA
 7. Testimonial – Felipe Boianovsky (white section, to match Inside PR2)

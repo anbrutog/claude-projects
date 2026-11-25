@@ -5,10 +5,6 @@ Updated 24 Nov 2026 for Jason's version 2 copy. Items fixed by the rewrite are l
 
 ## Still open (version 2 copy)
 
-1. **Hero headline:** "Keep Hiring Me To **Show** Them In 'Full Presence'". Probably "Train Them In" (the v1 wording) or "Show Them Full Presence".
-2. **Dear Friend:** "crushing the soul of a good player who thought **the** was making a winning play" → "he".
-3. **Truth About Winning Big:** "It does not **go come** to those who work the hardest" → "go to" or "come to".
-4. **Full Presence:** "then you **can't stop keep** replaying the hand" → "can't stop replaying".
 5. "what you could have done **different**" → "differently" (may be an intentional voice choice).
 6. "my private coaching programs, which **is** usually full" → "are".
 7. **Offer section:** "PR2 gets you my full attention and dedication … / At a tiny fraction of the cost / My clients are paying me" still reads as if a phrase is missing after "paying me".
@@ -21,6 +17,12 @@ Updated 24 Nov 2026 for Jason's version 2 copy. Items fixed by the rewrite are l
 - "I wish I'd gone for it" uses curly quotes on the page.
 - "tough spot..." (three dots) is shown as an ellipsis "…".
 - The double space in the first "Inside PR2" bullet ("seven figure wins  for") is collapsed.
+
+## Fixed by Jason, 25 Nov (final pass)
+- Headline "Show Them In" → "Train Them In"
+- "the was making" → "he was making"
+- "go come to" → "go to"
+- "can't stop keep replaying" → "then you keep replaying"
 
 ## Fixed by the version 2 copy
 - "knowledgable" / "talk will themselves" (paragraph rewritten)

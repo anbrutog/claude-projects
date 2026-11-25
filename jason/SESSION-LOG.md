@@ -326,5 +326,16 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **Guarantee changed to 60 days (Keith).** Jason's v2 copy only says 60 days (both FAQ answers); the 100 came from v1. All 8 mentions changed: trust lines (×3), Guarantee section kicker, heading and body, and the two FAQ answers. Checked 1440: no "100 day" left on the page.
 
+- **Jason's final pass (email via Keith, 25 Nov).** Copy changes, applied to the page and to `copy/PR2_copy.md`:
+  - Hero headline "Show Them In" → "Train Them In".
+  - Typo fixes he approved: "the was making" → "he was making"; "go come to" → "go to"; "then you can't stop keep replaying" → "then you keep replaying".
+  - Removed "When it's time to deviate from the usual play." (Truth About Winning Big).
+  - Inside PR2 bullet: "using my “presence mind control” technique" → "using the …" (bold kept).
+  - It Factor bullet 2: added "(hat, sunglasses, and scarf not needed)".
+  - Outside of this program: "private coaching programs," → "program,".
+  - COPY-ISSUES.md: those four typos moved to "Fixed by Jason".
+- **Tagline back in the hero, middle Introducing removed (Jason).** `.hero-tag` under "(Presence and Profit 2.0)": four lines, white 700 21px, "A Whole Bunch Of Money" orange 900 27px (17/21px on phone). Plain text, no box. The middle "Introducing PR2" section is deleted entirely, so "On that note, I've got something I want to show you." now leads straight into Ryan's testimonial; the Ryan section got its normal top padding back. Side effect: hero CTA back below the fold (top edge 880px on 1440×900, 801px on 390×844). Checked 1440/810/390, no overflow.
+- Jason: "let's go ahead and load it up" (build in Framer next).
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.

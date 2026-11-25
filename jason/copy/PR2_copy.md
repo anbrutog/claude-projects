@@ -4,9 +4,11 @@ Pasted by Keith from Jason's updated copy (email, 24 Nov 2026). Plain text: for 
 
 Price (from Jason's email, not in the copy itself): **$1997 or 6 payments of $397**.
 
+Jason's final-pass edits (email, 25 Nov 2026) are applied below: "train them in", "he was", "go to", "then you keep replaying", deviate line removed, "using the", hat/sunglasses/scarf, "program". He also asked for the tagline in the hero and the middle "Introducing" block removed (layout, not copy).
+
 ---
 
-WHY DO SO MANY OF THE WORLD SERIES AND TRITON CHAMPIONS WHO YOU SEE ON TV KEEP HIRING ME TO SHOW THEM IN “FULL PRESENCE” AFTER HAVING WORKED WITH THE OTHER TOP COACHES?
+WHY DO SO MANY OF THE WORLD SERIES AND TRITON CHAMPIONS WHO YOU SEE ON TV KEEP HIRING ME TO TRAIN THEM IN “FULL PRESENCE” AFTER HAVING WORKED WITH THE OTHER TOP COACHES?
 
 Here's A Hint:
 
@@ -32,7 +34,7 @@ It’s about finding out how great you can become—thriving under pressure whil
 
 It’s about bringing out that “killer instinct” inside you.
 
-Where you can sense when it’s exactly the right time to do something different than normal, then you just do it—crushing the soul of a good player who thought the was making a winning play.
+Where you can sense when it’s exactly the right time to do something different than normal, then you just do it—crushing the soul of a good player who thought he was making a winning play.
 
 And it’s about the peace.
 
@@ -44,15 +46,13 @@ The Truth About Winning Big
 
 Winning big in poker is not linear.
 
-It does not go come to those who work the hardest and “deserve” it.
+It does not go to those who work the hardest and “deserve” it.
 
 And there is no amount of poker strategy knowledge that guarantees you’ll become “that” player who just keeps finding ways to make the winning play while feeling huge amounts of pressure and emotion.
 
 If you want to be that?
 
 It’s not enough to just understand how to play well—you also need to be able to sense when something feels off in a hand.
-
-When it’s time to deviate from the usual play.
 
 To be able to hear that voice, then say:
 
@@ -96,7 +96,7 @@ You tense up.
 
 Freeze, overthink, struggle to see the solution.
 
-Or worse, you see the answer but talk yourself out of it, too scared of being wrong or what others might think—then you can’t stop keep replaying the hand in your mind weeks or even months later, wondering what could have been.
+Or worse, you see the answer but talk yourself out of it, too scared of being wrong or what others might think—then you keep replaying the hand in your mind weeks or even months later, wondering what could have been.
 
 Meanwhile …
 
@@ -149,7 +149,7 @@ Inside PR2, You Will Learn:
 
 - Why my “Full Presence Method” has created far more six and seven figure wins  for my clients with way less effort than the standard “work hard, optimize your life, and talk about your past” routines that the old guard of mindset coaches and sports psychologists pushed on them before they found me
 - What never to do at your next big final table
-- How to end the plague of overthinking using my “presence mind control” technique so simple to learn that you can start playing like a far better version of yourself in your very next session
+- How to end the plague of overthinking using the “presence mind control” technique so simple to learn that you can start playing like a far better version of yourself in your very next session
 - Why certain players have “it” (think Phil Ivey in his prime) and how it causes even great players to tense up, brain fart, and punt to them (and once you feel this for yourself you’ll never want to stop)
 - How to easily and effectively disrupt your opponent’s poker face … giving you access to reads and epiphanies nobody else can get
 - My secret 1 minute “pregame routine” that my clients swear outperforms all the high-priced, time-wasting routines other coaches gave them
@@ -169,7 +169,7 @@ When you join PR2, you will also unlock over $10,000 in bonus trainings and serv
 The “It Factor” (Cost: $1500 per attendee)
 
 - Access the “hidden profit engine” lesson that resulted in over 70% of attendees taking down the largest tournament scores of their lives within a few months (most of whom were already longtime professionals)
-- Make yourself unreadable, no matter how uncomfortable you feel and no matter who is staring you down
+- Make yourself unreadable, no matter how uncomfortable you feel and no matter who is staring you down (hat, sunglasses, and scarf not needed)
 
 Crushing The Series (Cost: $1200 per attendee)
 
@@ -212,7 +212,7 @@ Poker Strategy Coach to 100+ Professional Players
 
 Outside of this program …
 
-The only place I am able to offer this kind of long-term individual attention to solving your problems is through my private coaching programs, which is usually full and also starts at $25,000 for six months of coaching.
+The only place I am able to offer this kind of long-term individual attention to solving your problems is through my private coaching program, which is usually full and also starts at $25,000 for six months of coaching.
 
 PR2 gets you my full attention and dedication …
 
