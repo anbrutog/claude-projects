@@ -1,4 +1,4 @@
-# PR2 page: Framer fixes (revision 2)
+# PR2 page: Framer fixes (revision 3)
 
 - **Page:** pokerwithpresence.com/pr2
 - **Reference (how it should look):** https://pearldesign.ie/jason/
@@ -25,190 +25,176 @@
 
 ## Done since the last check
 
-- [x] "A Whole Bunch Of Money" is back in the PR2 Formula section.
-- [x] All 7 green buttons link to `#join` (the Offer section). Fulfillment Policy links to `/fulfillment`.
-- [x] Page title: "PR2 — Presence and Profit 2.0 | Jason Su".
-- [x] Bold, italic and highlight inside paragraphs, apart from the 3 items in section 4.
-- [x] "I wish I'd gone for it" is italic. "Nothing is held back." is underlined.
-- [x] $25,000 in the value stack is struck through in red.
-- [x] The "Yes, I Want In" subtitle is 72% white.
-- [x] The bonus pill prices are 18px.
-- [x] The ticks are green. The green buttons have their arrow.
-- [x] The Hero and Guarantee glow backgrounds.
+- [x] **No more overlapping layers.** Every section now flows top to bottom, and nothing runs off the side at any width.
+- [x] "Outside of this program" block: the sizes, weights and orange underlines are right.
+- [x] "A Whole Bunch Of Money" (middle section) is italic.
+- [x] Footer: the logo no longer overlaps the © line.
+- [x] From before:
+  - links
+  - page title
+  - inline bold, italic and highlights
+  - $25,000 strike-through
+  - green ticks
+  - button arrows
+  - glows
+  - FAQ accordion
 
 ---
 
-## 1. URGENT: the layout is broken on every screen size
+## 1. Fix first: wrong or missing on every screen size
 
-The page is public. Anyone with the link can open it right now. Until this is fixed, either set the page back to **Draft** or don't share the link.
+- [ ] **Two "Join Now" buttons have blue text.** On the Inside PR2 button and the Bonuses button, the text is link-blue on green and hard to read. Set the text colour to **white `#FFFFFF`**, 800 weight, the same as the hero button.
+- [ ] **The Hero Testimonial card is gone.** This is the white card with Ryan's round photo:
+  - Quote: “Within months of joining Jason’s program, I won my first WSOP bracelet and final tabled the next event I played.”
+  - Then "Ryan Hoenig" and "WSOP Dealer’s Choice Champion".
+  - It should sit across the bottom edge of the hero, half on the navy and half on the white. Add it back.
+- [ ] **"Can Be Trained." is in the wrong place.** It's at the bottom of the Full Presence section, after "On that note, I’ve got something I want to show you."
+  - Move it up so the headline reads: "Full Presence Is a Skill … / And It **Can Be Trained.**"
+  - On desktop, "And It" and "Can Be Trained." sit on one line.
+- [ ] **The handwritten proof headlines are still missing.** Add back "$1,000,000", "10x Stakes" and "Months → Minutes", each above its proof card:
+  - Gochi Hand, 36px, white.
+  - Each with its small white curved arrow pointing into the card.
+- [ ] **The letter photo is at the end of the letter.** Jason's arms-crossed photo should be at the **start**, beside "Dear Friend," and the first paragraphs. On phone and tablet it goes above "Dear Friend,".
+- [ ] **The hero hint is still underlined all the way through.** Only **"Here’s A Hint:"** and **"NOTHING"** get the orange underline. Remove it from the rest of the paragraph, including "Elite Poker Performance".
+- [ ] **Bonus cards are in the wrong order inside.**
+  - It should be:
 
-**What's wrong**
-- The sections have been turned into vertical Stacks, which is right.
-- But in 5 sections, the text and images inside are still set to **Position: Absolute**. That's left over from the HTML import.
-- So they all sit at the top of the section on top of each other, and the section keeps its old fixed height. You get overlapping text, then a big empty gap.
+    ```
+    Desktop:  [iPad image 260px] | BONUS #N
+                                 | Title
+                                 | ✓ bullet
+                                 | ✓ bullet
+                                 | [pill]
+    Phone:    iPad image (200px, centred)
+              BONUS #N / Title / ✓ bullets / [pill]
+    ```
 
-| Section (Framer layer name) | Absolute layers inside | What you see |
-|---|---|---|
-| Letter Opening | 41 | Whole letter overlapped in one strip, then about 3,500px of blank white |
-| Full Presence Results | 12 | Headline, proof cards and "As you can see…" piled on one line |
-| Bonuses | 70 | Heading and the 7 bonus cards overlapping, then a long blank navy area |
-| Offer and Pricing | 47 | "Outside of this program" lines and the value stack overlapping, then blank space |
-| Closing Letter | 17 | Letter text overlapped, then blank space; the sign-off photo is half off-screen |
-| Ryan, Felipe and Kevin Testimonials, Inside PR2, Guarantee | 1–3 each | The card floats over the section above it |
-| Footer | 2 | The logo overlaps the © line |
+  - Right now it's label, title, pill, image, bullets. Move the **pill to the bottom** and the **image to the top** (or to the left on desktop).
+- [ ] **The bonus pill is broken.** It has grown into a big oval with its contents stacked.
+  - It should be **one row**, padding 14/24, full radius (999), and about 56px tall:
 
-**How to fix each section in Framer**
-1. Select the section, then its content frame (for example "Letter Opening Desktop Content").
-2. Select **all the layers inside it**: click the first, Shift-click the last.
-3. In the right panel, under **Position**, change **Absolute** to **Relative**.
-4. Set each layer's **Width** to **Fill** (text) or to a fixed size (images). Set **Height** to **Fit**.
-5. Set the content frame's and the section's **Height** to **Fit**.
-6. Check the layers are in reading order in the Layers panel, and drag any that aren't.
-7. Repeat for any frames nested inside (cards, rows) that still show Absolute children.
+    ```
+    ( ☁ Instant Access                Cost: $1500 per attendee  Today: FREE! )
+    ```
 
-**Do this on the Desktop breakpoint first.** Tablet and Phone inherit from Desktop, then you override them. At the moment Desktop has the phone layout on it: one column and full-width buttons.
+  - Left: cloud icon + "Instant Access". Right: struck price (grey) + "**Today: FREE!**" (800).
+  - Use Distribute: Space Between, Align: Center.
+  - **On Phone only:** radius 16, text 16px, and it can wrap onto 2 lines.
+- [ ] **Value stack rows are broken up.** Each row's tick, "BONUS N", name and "FREE!/(Value)" are stacked vertically, and each tick has dropped to the top of the next row.
+  - Each row should be **one horizontal line**, gap 14, padding 14 top and bottom, with a 1px `#D6DEE3` line underneath:
+
+    ```
+    ✓   BONUS 1                         FREE!
+        The “It Factor”                 ($1,500 Value)
+    ```
+
+    - Tick: 26px, green.
+    - Middle (Fill): "BONUS N" (18px desktop and 15px phone, 800, letter-spaced, navy) over the name (18px, 400).
+    - Right column (128px desktop, 100px phone): "FREE!" (24px, 900, green `#12B312`) over "($X Value)" (16px, 500, red `#E31B3D`).
+  - The PR2 row is the same but has no "BONUS" label, and its name is 21px, 800.
+  - **Move "6 Month Performance Lab Membership"** back into the Bonus 7 row. It's currently stranded under the price box.
+- [ ] **Trust lines are split up.** Under the 3 "Join Now" buttons, the 3 ticks sit in a vertical column with the labels in a row below them.
+  - Each tick belongs **beside** its label, all on one line, centred: ✓ Instant access · ✓ Lifetime access · ✓ 60-day guarantee.
+  - Tick 14px, 6px gap, 18px between items, text 14px, weight 500.
+  - Same under "Yes, I Want In" (✓ Secure checkout · ✓ 60-day money back guarantee). Those are currently left-aligned and far below the button. Centre them directly under the button.
+- [ ] **The "Yes, I Want In" block is in the wrong order.** It should read top to bottom:
+
+  ```
+  As you can see …
+  PR2 gets you my full attention and dedication …
+  At a tiny fraction of the cost      ← move up (currently below the button)
+  My clients are paying me
+  [ Yes, I Want In ]                  ← doodle arrow either side (desktop)
+  ✓ Secure checkout   ✓ 60-day money back guarantee
+  ```
+
+- [ ] **Sign-off photo.** In the Closing Letter, Jason's round photo is below the button.
+  - It belongs **to the left of the "Jason Su" signature**: a horizontal row, gap 22, photo 96px with an orange 3px border.
+  - The "Yes, I’m Ready To Start Now" button comes after that row.
+- [ ] **Doodle arrows beside the CTAs are missing.** There should be 3 pairs, on desktop only:
+  - White, either side of the Bonuses "Join Now" button.
+  - Navy, either side of "Yes, I Want In".
+  - Navy, either side of the FAQ "Yes, I’m Ready To Start Now".
+  - Use a horizontal row: arrow (120px) | button | arrow, gap 14, centred. Hide the arrows on Tablet and Phone.
+- [ ] **FAQ questions are cut off on phone** ("Why are you so confident y…"). Set the question text to **Width: Fill** so it wraps.
+- [ ] **Footer order (minor):** Fulfillment Policy, then logo, then ©. Right now the logo is last.
 
 ---
 
 ## 2. Desktop layout (1200px and up)
 
-Every section works the same way:
-- The section is full width with its background colour, padding **96px** top and bottom and **24px** at the sides.
-- Inside, a centred content frame has **Max Width** set, so the content doesn't stretch to the edges like it does now.
+Desktop currently shows the phone layout stretched across the full screen: one column, with text and buttons running edge to edge. Set these on the **Desktop** breakpoint.
 
-| Section | Content max width | Layout inside |
+**Width rule for every section:**
+- The section is full width, with padding **96px** top and bottom and **24px** at the sides.
+- Inside it, a content frame is centred with **Max Width** set (table below).
+- Body text never runs wider than **700px**.
+- Buttons are **max 650px** wide, centred. The arrow sits right after the text with a 16px gap, not at the far right.
+
+| Section | Content max width | Layout |
 |---|---|---|
-| **Hero** | 1120 | Logo bar: horizontal, space-between (logo left, "PR2 · PRESENCE AND PROFIT 2.0" right). Below it a **horizontal** row, gap 40: the copy column (Fill, centred text, gap 26) on the left and Jason's photo (**520px** wide, aligned to the bottom) on the right. |
-| **Hero Testimonial card** | 1000 | **Horizontal**: round avatar 88px on the left, quote and name on the right, gap 28, padding 28/40. White, radius 8. It overlaps the bottom of the hero by 72px (negative margin or offset). |
-| **Letter Opening** | 1120 for the top row, then **700** | Top row: horizontal, gap 64, Jason photo **440px** on the left, text column (max 620) on the right. Below it, a single 700px text column with gap 22. |
-| **Full Presence Results** | 1120 | Headline block centred. **3 proof cards side by side**, gap 32, each Fill. Handwritten headline and arrow above each card. "As you can see…" block centred below. |
-| **PR2 Formula** | 1120 | Centred column (already fine). |
-| **Testimonials** (Ryan, Felipe, Kevin) | 1000 | **Horizontal**: photo **42%** on the left (fill height, cover crop), text on the right with padding 44 and gap 22. |
-| **Inside PR2** | 1100 card | White card, radius 20, padding 64/72. It overlaps the bottom of the Ryan section by 180px. List max 900, gap 26. |
-| **Bonuses** | 1120 | Heading centred. 7 bonus cards in a column, gap 28. Each card is **horizontal**: iPad image **260px** on the left, text on the right, gap 48, padding 40/48, radius 16. |
-| **Offer and Pricing** | 900 for the value stack | "Outside of this program" lines centred, then the value stack card, then the "As you can see…" lines and the CTA with a doodle arrow either side. |
-| **Closing Letter** | 700 | Single text column, gap 22. Sign-off row: photo 96px plus name, horizontal, gap 22. |
-| **Guarantee** | 1100 | Black box, radius 16, **horizontal**: copy on the left (padding 56/0/56/64) and photo **400px** on the right with the left-edge fade. |
-| **FAQ** | 880 | Heading, then the accordion items with gap 14 (already fine). |
-| **Footer** | — | Centred column, gap 14: logo, link, ©. |
+| **Hero** | 1120 | Logo bar: horizontal, **space-between**. The "PR2 · PRESENCE AND PROFIT 2.0" label goes far right. Below it, a **horizontal row**, gap 40: the copy column on the left (Fill, centred, gap 26, including the button) and Jason's photo on the right (**520px**, aligned to the bottom of the hero). |
+| **Hero Testimonial card** | 1000 | **Horizontal**: avatar 88px on the left, quote and name on the right, gap 28, padding 28/40, white, radius 8, overlapping the hero bottom by 72px. |
+| **Letter Opening** | 1120 top row, then **700** | Top row: horizontal, gap 64. Photo **440px** on the left (radius 16). "Dear Friend," and the first paragraphs on the right (max 620). The rest of the letter is in a 700px column, gap 22. |
+| **Full Presence Results** | 1120 | Headline centred. **3 proof cards side by side**, gap 32, each Fill, with its handwritten headline above. "As you can see…" block centred below. |
+| **Testimonials** (Ryan, Felipe, Kevin) | 1000 | **Horizontal**: photo **42%** on the left (fill height, cover crop), text on the right (padding 44, gap 22). |
+| **Inside PR2** | 1100 | White card, padding 64/72, overlapping the Ryan section by 180px. List max 900. Button and trust line centred below the card. |
+| **Bonuses** | 1120 | Cards in a column, gap 28. Each card **horizontal**: iPad 260px on the left, text on the right, gap 48, padding 40/48, radius 16. |
+| **Offer and Pricing** | 900 | "Outside" lines centred. Value stack card max 900. "Yes, I Want In" block centred. |
+| **Closing Letter** | 700 | Text column, gap 22. Sign-off row. Button. |
+| **Guarantee** | 1100 | Black box, **horizontal**: copy on the left (padding 56/0/56/64, left aligned) and photo **400px** on the right with the left-edge fade (transparent → solid at 45%). |
+| **FAQ** | 880 | Heading, then the items with gap 14. Button max 650. |
 
-**Desktop text sizes** (these are currently 44–46px everywhere)
+**Desktop text sizes** (most headings are still at phone size)
 
 | Text | Size | Weight |
 |---|---|---|
-| “Full Presence” (hero) | 80px | 900 |
 | Hero lead line | 28px | 700 |
+| “Full Presence” (hero) | **80px** | 900 |
 | Hero closing line | 34px | 800 |
 | "The PR2 Formula" (hero) | 40px | 900 |
 | "Do You Play With / Full Presence?" | 52px | 900 |
-| "Full Presence Is a Skill … / And It Can Be Trained." | 56px | 900 |
-| "The PR2 Formula" (middle section) | 68px | 900 |
-| "A Whole Bunch Of Money" (middle section) | 56px | 900, italic |
+| "Full Presence Is a Skill … / And It Can Be Trained." | **56px** | 900 ("And It" 500) |
+| "The PR2 Formula" (middle) | 68px | 900 |
 | "Inside PR2, You Will Learn:" and "Everything You Get" | 52px | 900 |
 | "When you join PR2," | 72px | 900 |
-| "you will also unlock" | 44px | **500** (now 400) |
 | "Total Bonus Value $10,794" (both) | 52px | 800/900 |
-| **$1,997** | 99px | 900 |
+| **$1,997** | **99px** | 900 |
 | "At a tiny fraction of the cost" | 52px | 900 |
 | "60 DAY GUARANTEE" | 64px | 900 |
-| Testimonial credentials and "($X Value)" in the stack | 16px | — (now 18) |
+| "Jason Su" signature (Closing Letter) | 42px | Merriweather 700 italic |
 
 ---
 
 ## 3. Tablet (810px): overrides
 
-- Section padding: 96px top and bottom, 24px sides. The content frames keep their max width but are Fill.
-- **Hero:**
-  - Row becomes **vertical**, centred, gap 0.
-  - Copy first, then the photo at **max 400px** wide.
-  - "Full Presence" 62px.
-- **Letter Opening:** top row **vertical**, centred, gap 40. Photo max 420px, text max 700px.
-- **Full Presence Results:** proof cards wrap; 2 on the first row and 1 below is fine, or stack them vertically.
-- **Testimonials:** **vertical**. Photo on top at **320px** high, cover crop.
-- **Inside PR2:** card padding 48/40. Heading 40px.
-- **Bonuses:** cards stay horizontal. Image 200px, gap 32, padding 32, title 28px.
-- **Offer:**
-  - "Outside" lines: 40 / 23 / 35 / 40 / 30px.
-  - Stack total 40px.
+The tablet view is close; the hero is right. Only change these:
+
+- **Hero:** photo max **400px** wide (it's about 500 now). "Full Presence" 62px.
+- **Letter Opening:** photo at the top, max 420px, centred.
+- **Full Presence Results:** proof cards stacked, or 2 + 1.
+- **Testimonials:** vertical, photo **320px** high (cover crop), full card width.
+- **Bonuses:** cards **horizontal** again (image 200px on the left, text on the right), gap 32, padding 32, title 28px.
 - **Guarantee:**
+  - Horizontal, photo 300px on the right.
   - Copy padding 44/0/44/40.
   - Heading 48px.
-  - Photo 300px.
+- **Offer:** "Outside" lines 40 / 23 / 35 / 40 / 30px. Stack total 40px.
 
 ---
 
 ## 4. Phone (390px): overrides
 
-- Section padding: **64px** top and bottom, **20px** sides. Body text 18px.
-- **Hero:**
-  - **Hide Jason's photo.**
-  - Logo 26px high. Hide "PR2 · PRESENCE AND PROFIT 2.0".
-  - Lead 20px, "Full Presence" 50px, closing line 24px. Orange rule max 220px.
-  - "The PR2 Formula" 30px. Tagline 17px, "A Whole Bunch Of Money" 21px.
-- **Hero Testimonial card:** **vertical**, centred text, gap 14, padding 24/20. Quote 18px.
-- **Letter Opening:** photo full width above the text.
-  - Pull quote 21px.
-  - "Do You Play With Full Presence?" 38px.
-  - Pink boxes: padding 20/18.
-- **Full Presence Results:**
-  - Cards **vertical**, full width.
-  - "Full Presence Is a Skill…" 29px.
-  - "It also works really damn fast." 28px.
-- **PR2 Formula:** "The PR2 Formula" 36px, subtitle 19px, tagline 24px, "A Whole Bunch Of Money" 28px.
-- **Testimonials:**
-  - Photo 240px high.
-  - Text padding 30/24.
-  - Quote 20px.
-- **Inside PR2:**
-  - Card overlaps by 90px, padding 36/22, radius 16.
-  - Heading 30px.
-  - List text 17px, gap 20.
-- **Bonuses:**
-  - Each card **vertical**: image 200px centred on top, padding 28/20, gap 20.
-  - Title 26px.
-  - Pill: radius 16, text 16px.
-- **Offer:**
-  - "Outside" lines: 22 / 16 / 18 / 20 / 18px.
-  - Value stack: header padding 28/18, rows padding 4/18.
-  - Names 16px (PR2 row 18px), "BONUS N" 15px, value 20px. Value column 100px.
-  - Total block 30px.
-- **Closing Letter:** "This is everything" box padding 20/18.
-- **Guarantee:**
-  - **Vertical, photo on top** (300px high, fading out at the bottom: solid to 70%).
-  - Copy centred, padding 8/22/36.
-  - Small heading 20px, main heading 38px, body 17px.
-- **FAQ:** question 19px, row padding 20/18.
-- **Buttons:**
-  - Title 22px, padding 22/18.
-  - Arrow 28px wide, 10px gap.
-  - The button width is Fill, but it **must not wrap the arrow onto its own line**.
-- **Doodle arrows beside CTAs:** hide on Tablet and Phone. They're desktop only.
+Phone is mostly right now. Apart from the section 1 items, check these:
 
----
-
-## 5. Still to fix (desktop and everywhere)
-
-- [ ] **Hero hint underline.** The whole paragraph is underlined in orange. Only **"Here’s A Hint:"** and **"NOTHING"** should be underlined. Remove it from the rest.
-- [ ] **"Outside of this program" block.** Every line is now 44px. Restore the sizes and weights:
-
-  | Line | Size | Weight |
-  |---|---|---|
-  | "The only place I am able to offer" | 52px | 900 |
-  | "this kind of long-term…" | 30px | 500 |
-  | "is through my" (500) / **"private coaching program,"** (900) | 46px | as marked |
-  | **"which is usually full"** (900, orange underline) / "and also starts" (500) | 52px | as marked |
-  | "at" (500) / **"$25,000"** (900, orange underline) / **"for six months of coaching."** (900) | 39px | as marked |
-
-- [ ] **Handwritten proof headlines are missing.** "$1,000,000", "10x Stakes" and "Months → Minutes" (Gochi Hand, 36px, white) were deleted from above the three proof cards. Add them back, each with its small white arrow.
-- [ ] **Doodle arrows beside CTAs.** There should be 3 pairs (desktop only):
-  - White either side of the Bonuses "Join Now" button.
-  - Navy either side of "Yes, I Want In".
-  - Navy either side of the FAQ "Yes, I'm Ready To Start Now".
-  - Only 2 arrows are on the page now, and they're floating in the hero area.
-- [ ] **Button arrow position.** Once the buttons have their proper width (max **650px**, centred), the arrow should sit **right after the text**, 16px gap, not pinned to the far right edge.
-- [ ] **Guarantee photo fade.** After the layout fix, check the photo fades in from the left: a mask from transparent at the left edge to solid at 45%.
-- [ ] **Hero Testimonial card.** It should overlap the hero/letter boundary, half in each. It currently sits below the hero.
-- [ ] **Footer.** Logo, Fulfillment Policy and © should stack centred without overlapping. They're absolute now.
+- **Hero:** photo hidden ✓. "Full Presence" **50px** (it's about 30 now). Lead 20px, closing line 24px.
+- **Hero Testimonial card:** vertical, centred, padding 24/20, quote 18px.
+- **Full Presence Results:** "Full Presence Is a Skill …" 29px. "And It Can Be Trained." 29px.
+- **Testimonials:** photo 240px high and **full card width** (it's a smaller square now). Quote 20px.
+- **Bonuses:** image 200px centred on top. Pill as in section 1, phone version.
+- **Value stack:** rows as in section 1, with a 100px value column.
+- **Buttons:** title 22px. The arrow sits on the same line as the last word.
+- **Guarantee:** photo on top ✓, 300px high with a bottom fade (solid to 70%). Copy **centred**: it's left-aligned now.
 
 ---
 
@@ -217,8 +203,11 @@ Every section works the same way:
 - All copy text
 - Fonts
 - Colours
-- The FAQ accordion
-- The glows
+- Glows
 - Links
-- The page title
-- The ticks
+- Page title
+- Inline bold, italic and highlights
+- "Outside of this program" block
+- Everything You Get header and price block
+- FAQ accordion
+- Footer content
