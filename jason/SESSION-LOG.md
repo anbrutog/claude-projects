@@ -372,5 +372,9 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 **Request (25 Nov):** Export the remaining changes in a format to hand over for the Framer work.
 **Change:** Wrote `framer-import/framer-fixes.md`: a numbered checklist (38 items) with exact words, weights, colours and sizes, grouped into must-fix, inline text styles, other text, icons, and backgrounds/photo/tilt. Added `framer-import/svg/tick-green.svg` and `button-arrow.svg` to drag into Framer. Copied the checklist to the clipboard.
 
+**Request (26 Nov):** Re-check live /pr2 after Keith's Framer changes; revise the fix doc to include tablet and phone.
+**Findings:** Fixed: missing tagline line, all CTA links (#join on the Offer section), /fulfillment link, page title, nearly all inline bold/italic/highlight, $25,000 strike, ticks green, button arrows, subtitle opacity, pill sizes, glows. NEW and urgent: layout broken at every width. Sections are now vertical stacks but 5 (Letter Opening 41, Full Presence Results 12, Bonuses 70, Offer and Pricing 47, Closing Letter 17) still have Absolute-positioned children, so text piles up and overlaps with big blank gaps; desktop is carrying the phone layout (single column, full-width buttons, headings 44–46px). Also: hint underline covers the whole paragraph, "Outside" block all 44px, handwritten proof headlines deleted, doodle arrows misplaced, footer overlaps.
+**Change:** Rewrote `framer changes/framer-fixes.md` (also copied to `framer-import/framer-fixes.md`): done list, urgent Absolute→Relative fix steps per section, Desktop layout table plus text sizes, Tablet and Phone overrides taken from the page CSS, remaining fixes. Copied to clipboard.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
