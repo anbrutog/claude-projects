@@ -103,7 +103,7 @@ Matches Jason's site and coaching page (screenshots in `reference/`). Navy brand
 ## Open items / placeholders
 - [x] **Price:** **$1,997 or 6 payments of $397** (Jason, 24 Nov), shown in the price reveal at the bottom of the "Everything You Get" card. Waiting on Jason to OK the "Private coaching (6 months): $25,000" wording.
 - [x] **Guarantee:** **60 days** everywhere (v2 copy; Keith switched from 100 on 24 Nov).
-- [ ] **Checkout:** platform not decided (Stripe / ThriveCart / Kajabi?). All CTAs point at `#checkout` / `#join`.
+- [x] **Checkout:** on the live Framer page all 7 CTAs link to `https://www.jasonbsu.com/offers/VSxNFz2c/checkout` (set by Keith, seen 26 Nov; opens in a new tab). The local HTML still points at `#checkout` / `#join`.
 - [ ] **PR2 logo + product mockup:** devices mockup in the value stack is a stand-in. The "Introducing PR2" VSL/mockup placeholder was removed (22 Nov); a VSL would need a new slot.
 - [x] **Jason logo + brand colours/fonts:** pulled from pokerwithpresence.com and applied in Draft 2.
 - [ ] **Fulfillment Policy page:** footer link has no target.
