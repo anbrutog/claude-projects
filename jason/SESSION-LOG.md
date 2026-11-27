@@ -387,5 +387,12 @@ Running record of what was discussed and decided in each Claude Code session. Ne
 
 - **All-widths check after Jason's email (27 Nov).** Desktop is now essentially matching (only ~250px extra gap under the hero card). Phone: Framer has most headings at 32px and body at 20px (should be 18), which explains Jason's "doesn't feel like the same page". Also on phone: no triangle bullets in Inside PR2, handwritten proof headlines and arrows hidden, "Can Be Trained." on its own line, hero label showing, hint underlined throughout, hero card not overlapping, letter photo at the end, "At a tiny fraction" below the button, sign-off photo below the button. Tablet: layout fine, ~20 sizes off ($1,997 at 32 instead of 76). Wrote framer-fixes.md revision 4 (phone sizes table + tablet sizes), overwrote Keith's copy in `framer changes/`.
 
+**27 Nov: re-check of live page after Keith's phone fixes**
+- Keith asked: "Can you check whats there now?"
+- Phone, now fixed: Inside PR2 bullets, the handwritten proof headlines and arrows, the hint underline, the hero card overlap, the "tiny fraction" order, the sign-off photo, the hero lead and tail sizes, "Full Presence" (48), the buttons, $1,997 (52), the offer lines.
+- Phone, still open: the hero "PR2 · Presence…" label shows, "Can Be Trained." is on its own line, the letter photo is mid-letter (after "killer instinct", with a "Jason Su" caption) instead of above "Dear Friend", "Bonus 7" is lower case, body text is 20px, and many headings are still 32px.
+- Tablet: almost unchanged. Only "Inside PR2" is fixed (40). $1,997 is still 32.
+- Desktop: the gap under the hero card is down to about 140px.
+
 **Next**
 - Continue hero refinement towards the Magnetic Marketing layout (Keith to direct the next step). Then price/checkout and the PR2 mockup. Then price/checkout. Still to get: PR2 product logo/mockup (Draft 2), plus the price and checkout platform.
